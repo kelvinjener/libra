@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libra", "Libra\Libra.csproj", "{4A93439D-A373-44B6-917D-2BF302DDB83E}"
 EndProject
@@ -10,6 +10,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libra.Control", "Libra.Control\Libra.Control.csproj", "{E0B76615-86EC-47F5-957E-B8DA19A20C98}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libra.Entity", "Libra.Entity\Libra.Entity.csproj", "{6C5EAB5A-D3D7-4DA4-96E0-83250DC79116}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraUnitTest", "LibraUnitTest\LibraUnitTest.csproj", "{302FFE96-BE70-4472-982C-37A3053AA098}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraIntegratedTest", "LibraIntegratedTest\LibraIntegratedTest.csproj", "{2C3EE61F-5CEC-4B58-814C-FFFEB92BC2D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{6C5EAB5A-D3D7-4DA4-96E0-83250DC79116}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C5EAB5A-D3D7-4DA4-96E0-83250DC79116}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C5EAB5A-D3D7-4DA4-96E0-83250DC79116}.Release|Any CPU.Build.0 = Release|Any CPU
+		{302FFE96-BE70-4472-982C-37A3053AA098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{302FFE96-BE70-4472-982C-37A3053AA098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{302FFE96-BE70-4472-982C-37A3053AA098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{302FFE96-BE70-4472-982C-37A3053AA098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C3EE61F-5CEC-4B58-814C-FFFEB92BC2D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C3EE61F-5CEC-4B58-814C-FFFEB92BC2D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C3EE61F-5CEC-4B58-814C-FFFEB92BC2D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C3EE61F-5CEC-4B58-814C-FFFEB92BC2D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

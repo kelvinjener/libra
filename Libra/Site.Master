@@ -80,6 +80,7 @@
                                     <li runat="server" id="Fornecedores" visible="false">
                                         <a><i class="fa fa-table"></i>Fornecedores <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none">
+                                            <li runat="server" id="MenuFornecedores" visible="false"><a runat="server" href="~/CadastroFornecedores">Fornecedores</a></li>
                                         </ul>
                                     </li>
 

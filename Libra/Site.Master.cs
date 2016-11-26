@@ -202,6 +202,11 @@ namespace Libra
                 MenuCadastroProdutos.Visible = true;
             #endregion
 
+            #region Fornecedores
+            if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Cadastro de Fornecedores"))
+                MenuFornecedores.Visible = true;
+            #endregion
+
             #endregion
         }
 
