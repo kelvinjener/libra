@@ -286,7 +286,8 @@ namespace Libra
                     {
                         usuarioId = Salvar();
                     }
-                    else {
+                    else
+                    {
                         this.MessageBoxAtencao(this.Page, "Já existe usuário com o CPF e/ou E-mail informado! Verifique os dados informados.");
                         return;
                     }

@@ -369,6 +369,7 @@
     <Content Include="Content\ion.rangeSlider.css" />
     <Content Include="Content\ion.rangeSlider.skinFlat.css" />
     <Content Include="Forgot.aspx" />
+    <Content Include="CadastroFornecedores.aspx" />
     <Content Include="images\logoMobile.png" />
     <Content Include="Content\maps\jquery-jvectormap-2.0.3.css" />
     <Content Include="Content\normalize.css" />
@@ -838,12 +839,20 @@
     <Compile Include="Class\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Controllers\FornecedoresController.cs" />
     <Compile Include="Forgot.aspx.cs">
       <DependentUpon>Forgot.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Forgot.aspx.designer.cs">
       <DependentUpon>Forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroFornecedores.aspx.cs">
+      <DependentUpon>CadastroFornecedores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroFornecedores.aspx.designer.cs">
+      <DependentUpon>CadastroFornecedores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -852,6 +861,7 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\FornecedoresModel.cs" />
     <Compile Include="Models\UnidadeModel.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="OpenAuthProviders.ascx.cs">
@@ -1090,7 +1100,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Libra.Communs\Libra.Communs.csproj">
