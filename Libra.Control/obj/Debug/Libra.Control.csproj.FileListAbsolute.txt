@@ -1,0 +1,18 @@
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Control\bin\Debug\Libra.Control.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Control\bin\Debug\Libra.Control.pdb
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Control\obj\Debug\Libra.Control.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Control\obj\Debug\Libra.Control.pdb
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Control\obj\Debug\Libra.Control.csprojResolveAssemblyReference.cache
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Control\bin\Debug\Libra.Communs.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Control\bin\Debug\Libra.Entity.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Control\bin\Debug\Libra.Communs.pdb
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Control\bin\Debug\Libra.Entity.pdb
+F:\Mesklar\JAF Colchões\Libra\Libra.Control\bin\Debug\Libra.Control.dll
+F:\Mesklar\JAF Colchões\Libra\Libra.Control\bin\Debug\Libra.Control.pdb
+F:\Mesklar\JAF Colchões\Libra\Libra.Control\bin\Debug\Libra.Communs.dll
+F:\Mesklar\JAF Colchões\Libra\Libra.Control\bin\Debug\Libra.Entity.dll
+F:\Mesklar\JAF Colchões\Libra\Libra.Control\bin\Debug\Libra.Communs.pdb
+F:\Mesklar\JAF Colchões\Libra\Libra.Control\bin\Debug\Libra.Entity.pdb
+F:\Mesklar\JAF Colchões\Libra\Libra.Control\obj\Debug\Libra.Control.csprojResolveAssemblyReference.cache
+F:\Mesklar\JAF Colchões\Libra\Libra.Control\obj\Debug\Libra.Control.dll
+F:\Mesklar\JAF Colchões\Libra\Libra.Control\obj\Debug\Libra.Control.pdb

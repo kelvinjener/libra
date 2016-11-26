@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E0B76615-86EC-47F5-957E-B8DA19A20C98}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Libra.Control</RootNamespace>
+    <AssemblyName>Libra.Control</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AspNetUserBll.cs" />
+    <Compile Include="CaracteristicasDiversasBll.cs" />
+    <Compile Include="CorProdutoBll.cs" />
+    <Compile Include="DimensoesProdutoBll.cs" />
+    <Compile Include="FabricanteProdutoBll.cs" />
+    <Compile Include="FuncionalidadeBll.cs" />
+    <Compile Include="FuncionalidadePerfilBll.cs" />
+    <Compile Include="LogBll.cs" />
+    <Compile Include="MarcaProdutoBll.cs" />
+    <Compile Include="ModeloProdutoBll.cs" />
+    <Compile Include="PerfilBll.cs" />
+    <Compile Include="ProdutoBll.cs" />
+    <Compile Include="ProdutoCaracteristicaDiversaBll.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipoProdutoBll.cs" />
+    <Compile Include="UnidadeBll.cs" />
+    <Compile Include="UsuarioBll.cs" />
+    <Compile Include="UsuarioPerfilBll.cs" />
+    <Compile Include="UsuarioUnidadeBll.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libra.Communs\Libra.Communs.csproj">
+      <Project>{fffbb9a7-3f73-4d37-bd1e-777e00c39bce}</Project>
+      <Name>Libra.Communs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libra.Entity\Libra.Entity.csproj">
+      <Project>{6c5eab5a-d3d7-4da4-96e0-83250dc79116}</Project>
+      <Name>Libra.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

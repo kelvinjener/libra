@@ -1,0 +1,14 @@
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\bin\Debug\Libra.Communs.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\bin\Debug\Libra.Communs.pdb
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.csprojResolveAssemblyReference.cache
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.Resources.EnumLocalization.resources
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.csproj.GenerateResource.Cache
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.pdb
+F:\Mesklar\JAF Colchões\Libra\Libra.Communs\bin\Debug\Libra.Communs.dll
+F:\Mesklar\JAF Colchões\Libra\Libra.Communs\bin\Debug\Libra.Communs.pdb
+F:\Mesklar\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.csprojResolveAssemblyReference.cache
+F:\Mesklar\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.Resources.EnumLocalization.resources
+F:\Mesklar\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.csproj.GenerateResource.Cache
+F:\Mesklar\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.dll
+F:\Mesklar\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.pdb

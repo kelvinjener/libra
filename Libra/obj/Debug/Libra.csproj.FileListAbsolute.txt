@@ -1,0 +1,487 @@
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\ApplicationInsights.config
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\roslyn\csc.exe
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\roslyn\System.Collections.Immutable.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\roslyn\vbc.exe
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\roslyn\VBCSCompiler.exe
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\roslyn\VBCSCompiler.exe.config
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Libra.dll.config
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Libra.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Libra.pdb
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Antlr3.Runtime.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\AspNet.ScriptManager.bootstrap.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\AspNet.ScriptManager.jQuery.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\EntityFramework.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\EntityFramework.SqlServer.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AI.Web.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AI.WindowsServer.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.ApplicationInsights.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AspNet.FriendlyUrls.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.Security.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.Security.Google.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.ScriptManager.MSAjax.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.ScriptManager.WebForms.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Web.Infrastructure.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Newtonsoft.Json.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Owin.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\System.Web.Helpers.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\System.Web.Mvc.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\System.Web.Optimization.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\System.Web.Providers.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\System.Web.Razor.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\System.Web.Webpages.Deployment.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\System.Web.Webpages.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\System.Web.Webpages.Razor.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\WebGrease.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AI.Web.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AI.WindowsServer.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.ApplicationInsights.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\System.Web.Optimization.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Antlr3.Runtime.pdb
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Newtonsoft.Json.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AspNet.FriendlyUrls.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\System.Web.Razor.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\System.Web.Webpages.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\System.Web.Webpages.Deployment.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\System.Web.Webpages.Razor.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\System.Web.Helpers.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\System.Web.Mvc.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\EntityFramework.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\EntityFramework.SqlServer.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\System.Web.Providers.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.Security.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.Security.Google.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\obj\Debug\Libra.csprojResolveAssemblyReference.cache
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\obj\Debug\Libra.dll
+c:\users\kelvin.lima\documents\visual studio 2015\Projects\Libra\Libra\obj\Debug\Libra.pdb
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\ApplicationInsights.config
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\csc.exe
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\vbc.exe
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\VBCSCompiler.exe
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\desktop.ini
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.dll.config
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.pdb
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Antlr3.Runtime.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\EntityFramework.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\EntityFramework.SqlServer.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.Web.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.ApplicationInsights.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Newtonsoft.Json.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Owin.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Helpers.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Mvc.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Optimization.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Providers.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Razor.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.Deployment.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.Razor.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\WebGrease.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.Web.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.ApplicationInsights.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Optimization.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Antlr3.Runtime.pdb
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Newtonsoft.Json.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Razor.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.Deployment.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.Razor.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Helpers.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Mvc.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\EntityFramework.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\EntityFramework.SqlServer.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Providers.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\obj\Debug\Libra.csprojResolveAssemblyReference.cache
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\obj\Debug\Libra.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\obj\Debug\Libra.pdb
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.Communs.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.Communs.pdb
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.Control.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.Entity.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.Control.pdb
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.Entity.pdb
+F:\Mesklar\JAF Colchões\Libra\Libra\obj\Debug\Libra.csprojResolveAssemblyReference.cache
+F:\Mesklar\JAF Colchões\Libra\Libra\obj\Debug\Libra.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\obj\Debug\Libra.pdb
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\ApplicationInsights.config
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\roslyn\csc.exe
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\roslyn\desktop.ini
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\roslyn\System.Collections.Immutable.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\roslyn\System.Reflection.Metadata.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\roslyn\vbc.exe
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\roslyn\VBCSCompiler.exe
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\roslyn\VBCSCompiler.exe.config
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Libra.dll.config
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Libra.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Libra.pdb
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\AjaxControlToolkit.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Antlr3.Runtime.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\AspNet.ScriptManager.bootstrap.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\AspNet.ScriptManager.jQuery.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\EntityFramework.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\EntityFramework.SqlServer.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Libra.Communs.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Libra.Control.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Libra.Entity.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AI.DependencyCollector.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AI.Web.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AI.WindowsServer.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.ApplicationInsights.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.FriendlyUrls.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Facebook.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Google.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Twitter.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.ScriptManager.MSAjax.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.ScriptManager.WebForms.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Web.Infrastructure.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Newtonsoft.Json.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Owin.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\System.Web.Helpers.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\System.Web.Mvc.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\System.Web.Optimization.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\System.Web.Providers.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\System.Web.Razor.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.Deployment.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.Razor.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\WebGrease.dll
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Libra.Communs.pdb
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Libra.Control.pdb
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Libra.Entity.pdb
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AI.DependencyCollector.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AI.Web.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AI.WindowsServer.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.ApplicationInsights.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\System.Web.Optimization.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Antlr3.Runtime.pdb
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Newtonsoft.Json.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.FriendlyUrls.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\System.Web.Razor.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.Deployment.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.Razor.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\System.Web.Helpers.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\System.Web.Mvc.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\EntityFramework.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\EntityFramework.SqlServer.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\System.Web.Providers.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Facebook.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Google.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Twitter.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\Mesklar\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\ApplicationInsights.config
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\csc.exe
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\desktop.ini
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\vbc.exe
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\VBCSCompiler.exe
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.dll.config
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.pdb
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\AjaxControlToolkit.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Antlr3.Runtime.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\EntityFramework.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\EntityFramework.SqlServer.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.Communs.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.Control.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.Entity.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.Web.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.ApplicationInsights.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Newtonsoft.Json.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Owin.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Helpers.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Mvc.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Optimization.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Providers.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Razor.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.Deployment.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.Razor.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\WebGrease.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.Communs.pdb
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.Control.pdb
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Libra.Entity.pdb
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.Web.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.ApplicationInsights.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Optimization.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Antlr3.Runtime.pdb
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Newtonsoft.Json.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Razor.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.Deployment.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Webpages.Razor.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Helpers.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Mvc.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\EntityFramework.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\EntityFramework.SqlServer.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\System.Web.Providers.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\obj\Debug\Libra.csprojResolveAssemblyReference.cache
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\obj\Debug\Libra.dll
+C:\Users\kelvin.lima\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\obj\Debug\Libra.pdb
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra\bin\AjaxControlToolkit.dll
+F:\Libra\Libra\bin\ApplicationInsights.config
+F:\Libra\Libra\bin\roslyn\csc.exe
+F:\Libra\Libra\bin\roslyn\desktop.ini
+F:\Libra\Libra\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Libra\Libra\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Libra\Libra\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Libra\Libra\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Libra\Libra\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Libra\Libra\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Libra\Libra\bin\roslyn\System.Collections.Immutable.dll
+F:\Libra\Libra\bin\roslyn\System.Reflection.Metadata.dll
+F:\Libra\Libra\bin\roslyn\vbc.exe
+F:\Libra\Libra\bin\roslyn\VBCSCompiler.exe
+F:\Libra\Libra\bin\roslyn\VBCSCompiler.exe.config
+F:\Libra\Libra\bin\Libra.dll.config
+F:\Libra\Libra\bin\Libra.dll
+F:\Libra\Libra\bin\Libra.pdb
+F:\Libra\Libra\bin\AjaxControlToolkit.dll
+F:\Libra\Libra\bin\Antlr3.Runtime.dll
+F:\Libra\Libra\bin\AspNet.ScriptManager.bootstrap.dll
+F:\Libra\Libra\bin\AspNet.ScriptManager.jQuery.dll
+F:\Libra\Libra\bin\EntityFramework.dll
+F:\Libra\Libra\bin\EntityFramework.SqlServer.dll
+F:\Libra\Libra\bin\Libra.Communs.dll
+F:\Libra\Libra\bin\Libra.Control.dll
+F:\Libra\Libra\bin\Libra.Entity.dll
+F:\Libra\Libra\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Libra\Libra\bin\Microsoft.AI.DependencyCollector.dll
+F:\Libra\Libra\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Libra\Libra\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Libra\Libra\bin\Microsoft.AI.Web.dll
+F:\Libra\Libra\bin\Microsoft.AI.WindowsServer.dll
+F:\Libra\Libra\bin\Microsoft.ApplicationInsights.dll
+F:\Libra\Libra\bin\Microsoft.AspNet.FriendlyUrls.dll
+F:\Libra\Libra\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Libra\Libra\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Libra\Libra\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Libra\Libra\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+F:\Libra\Libra\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Libra\Libra\bin\Microsoft.Owin.dll
+F:\Libra\Libra\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Libra\Libra\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Libra\Libra\bin\Microsoft.Owin.Security.dll
+F:\Libra\Libra\bin\Microsoft.Owin.Security.Facebook.dll
+F:\Libra\Libra\bin\Microsoft.Owin.Security.Google.dll
+F:\Libra\Libra\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Libra\Libra\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Libra\Libra\bin\Microsoft.Owin.Security.Twitter.dll
+F:\Libra\Libra\bin\Microsoft.ScriptManager.MSAjax.dll
+F:\Libra\Libra\bin\Microsoft.ScriptManager.WebForms.dll
+F:\Libra\Libra\bin\Microsoft.Web.Infrastructure.dll
+F:\Libra\Libra\bin\Newtonsoft.Json.dll
+F:\Libra\Libra\bin\Owin.dll
+F:\Libra\Libra\bin\System.Web.Helpers.dll
+F:\Libra\Libra\bin\System.Web.Mvc.dll
+F:\Libra\Libra\bin\System.Web.Optimization.dll
+F:\Libra\Libra\bin\System.Web.Providers.dll
+F:\Libra\Libra\bin\System.Web.Razor.dll
+F:\Libra\Libra\bin\System.Web.Webpages.Deployment.dll
+F:\Libra\Libra\bin\System.Web.Webpages.dll
+F:\Libra\Libra\bin\System.Web.Webpages.Razor.dll
+F:\Libra\Libra\bin\WebGrease.dll
+F:\Libra\Libra\bin\Libra.Communs.pdb
+F:\Libra\Libra\bin\Libra.Control.pdb
+F:\Libra\Libra\bin\Libra.Entity.pdb
+F:\Libra\Libra\bin\Antlr3.Runtime.pdb
+F:\Libra\Libra\bin\Microsoft.AI.DependencyCollector.xml
+F:\Libra\Libra\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Libra\Libra\bin\Microsoft.AI.Web.xml
+F:\Libra\Libra\bin\Microsoft.AI.WindowsServer.xml
+F:\Libra\Libra\bin\Microsoft.ApplicationInsights.xml
+F:\Libra\Libra\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Libra\Libra\bin\Newtonsoft.Json.xml
+F:\Libra\Libra\bin\System.Web.Optimization.xml
+F:\Libra\Libra\bin\Microsoft.AspNet.FriendlyUrls.xml
+F:\Libra\Libra\bin\System.Web.Razor.xml
+F:\Libra\Libra\bin\System.Web.Webpages.xml
+F:\Libra\Libra\bin\System.Web.Webpages.Deployment.xml
+F:\Libra\Libra\bin\System.Web.Webpages.Razor.xml
+F:\Libra\Libra\bin\System.Web.Helpers.xml
+F:\Libra\Libra\bin\System.Web.Mvc.xml
+F:\Libra\Libra\bin\EntityFramework.xml
+F:\Libra\Libra\bin\EntityFramework.SqlServer.xml
+F:\Libra\Libra\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Libra\Libra\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Libra\Libra\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Libra\Libra\bin\System.Web.Providers.xml
+F:\Libra\Libra\bin\Microsoft.Owin.xml
+F:\Libra\Libra\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Libra\Libra\bin\Microsoft.Owin.Security.xml
+F:\Libra\Libra\bin\Microsoft.Owin.Security.Facebook.xml
+F:\Libra\Libra\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Libra\Libra\bin\Microsoft.Owin.Security.Google.xml
+F:\Libra\Libra\bin\Microsoft.Owin.Security.Twitter.xml
+F:\Libra\Libra\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\Libra\Libra\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Libra\Libra\obj\Debug\Libra.csprojResolveAssemblyReference.cache
+F:\Libra\Libra\obj\Debug\Libra.dll
+F:\Libra\Libra\obj\Debug\Libra.pdb

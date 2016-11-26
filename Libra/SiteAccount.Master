@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteAccount.Master.cs" Inherits="Libra.SiteAccount" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %>  | JAF Colchões | Libra</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/animate.min.css" rel="stylesheet" />
+    <link href="Content/icheck/flat/green.css" rel="stylesheet" />
+    <link href="Content/maps/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
+    <link href="Content/icheck/flat/green.css" rel="stylesheet" />
+    <link href="Content/floatexamples.css" rel="stylesheet" />
+    <link href="Content/switchery/switchery.min.css" rel="stylesheet" />
+    <link href="Content/datatables/tools/css/dataTables.tableTools.css" rel="stylesheet" />
+    <link href="fonts/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/custom.css" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="Scripts/jquery-3.1.0.js"></script>
+
+
+    <%--<%: Styles.Render("~/Content/css") %>--%>
+    <%--<%: Scripts.Render("~/bundles/jquery") %>--%>
+    <asp:PlaceHolder runat="server"></asp:PlaceHolder>
+    <%--<webopt:BundleReference runat="server" Path="~/Content/css" />--%>
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+  
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <!-- /footer content -->
+
+
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <%--<script type="text/javascript" src="Scripts/progressbar/bootstrap-progressbar.min.js"></script>--%>
+    <script type="text/javascript" src="Scripts/nicescroll/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="Scripts/icheck/icheck.min.js"></script>
+    <script type="text/javascript" src="Scripts/moment/moment.min.js"></script>
+    <script type="text/javascript" src="Scripts/datepicker/daterangepicker.js"></script>
+    <script type="text/javascript" src="Scripts/flot/jquery.flot.js"></script>
+    <script type="text/javascript" src="Scripts/flot/date.js"></script>
+    <script type="text/javascript" src="Scripts/flot/curvedLines.js"></script>
+    <script type="text/javascript" src="Scripts/notify/pnotify.core.js"></script>
+    <script type="text/javascript" src="Scripts/notify/pnotify.buttons.js"></script>
+    <script type="text/javascript" src="Scripts/notify/pnotify.nonblock.js"></script>
+    <script type="text/javascript" src="Scripts/modernizr-2.8.3.js"></script>
+    <%--<script type="text/javascript" src="Scripts/nprogress.js"></script>--%>
+    <script type="text/javascript" src="Scripts/switchery/switchery.min.js"></script>
+    <script type="text/javascript" src="Scripts/datatables/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="Scripts/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="Scripts/datatables/js/responsive.bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/datatables/tools/js/dataTables.tableTools.js"></script>
+    <script type="text/javascript" src="Scripts/custom.js"></script>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderScripts" runat="server">
+    </asp:ContentPlaceHolder>
+    <script>
+        //NProgress.done();
+    </script>
+
+</body>
+</html>
+

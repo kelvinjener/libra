@@ -1,0 +1,20 @@
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Entity\bin\Debug\Libra.Entity.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Entity\bin\Debug\Libra.Entity.pdb
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Entity\obj\Debug\Libra.Entity.csprojResolveAssemblyReference.cache
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Entity\obj\Debug\Libra.Entity.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Entity\obj\Debug\Libra.Entity.pdb
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Entity\bin\Debug\Libra.Entity.dll.config
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Entity\bin\Debug\Libra.Communs.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Entity\bin\Debug\Newtonsoft.Json.dll
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Entity\bin\Debug\Libra.Communs.pdb
+C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Entity\bin\Debug\Newtonsoft.Json.xml
+F:\Mesklar\JAF Colchões\Libra\Libra.Entity\bin\Debug\Libra.Entity.dll.config
+F:\Mesklar\JAF Colchões\Libra\Libra.Entity\bin\Debug\Libra.Entity.dll
+F:\Mesklar\JAF Colchões\Libra\Libra.Entity\bin\Debug\Libra.Entity.pdb
+F:\Mesklar\JAF Colchões\Libra\Libra.Entity\bin\Debug\Libra.Communs.dll
+F:\Mesklar\JAF Colchões\Libra\Libra.Entity\bin\Debug\Newtonsoft.Json.dll
+F:\Mesklar\JAF Colchões\Libra\Libra.Entity\bin\Debug\Libra.Communs.pdb
+F:\Mesklar\JAF Colchões\Libra\Libra.Entity\bin\Debug\Newtonsoft.Json.xml
+F:\Mesklar\JAF Colchões\Libra\Libra.Entity\obj\Debug\Libra.Entity.csprojResolveAssemblyReference.cache
+F:\Mesklar\JAF Colchões\Libra\Libra.Entity\obj\Debug\Libra.Entity.dll
+F:\Mesklar\JAF Colchões\Libra\Libra.Entity\obj\Debug\Libra.Entity.pdb
