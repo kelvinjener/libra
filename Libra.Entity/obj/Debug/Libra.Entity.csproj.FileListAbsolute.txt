@@ -18,3 +18,13 @@ F:\Mesklar\JAF Colchões\Libra\Libra.Entity\bin\Debug\Newtonsoft.Json.xml
 F:\Mesklar\JAF Colchões\Libra\Libra.Entity\obj\Debug\Libra.Entity.csprojResolveAssemblyReference.cache
 F:\Mesklar\JAF Colchões\Libra\Libra.Entity\obj\Debug\Libra.Entity.dll
 F:\Mesklar\JAF Colchões\Libra\Libra.Entity\obj\Debug\Libra.Entity.pdb
+D:\personal-repo\libra\Libra.Entity\bin\Debug\Libra.Entity.dll.config
+D:\personal-repo\libra\Libra.Entity\bin\Debug\Libra.Entity.dll
+D:\personal-repo\libra\Libra.Entity\bin\Debug\Libra.Entity.pdb
+D:\personal-repo\libra\Libra.Entity\bin\Debug\Libra.Communs.dll
+D:\personal-repo\libra\Libra.Entity\bin\Debug\Newtonsoft.Json.dll
+D:\personal-repo\libra\Libra.Entity\bin\Debug\Libra.Communs.pdb
+D:\personal-repo\libra\Libra.Entity\bin\Debug\Newtonsoft.Json.xml
+D:\personal-repo\libra\Libra.Entity\obj\Debug\Libra.Entity.csprojResolveAssemblyReference.cache
+D:\personal-repo\libra\Libra.Entity\obj\Debug\Libra.Entity.dll
+D:\personal-repo\libra\Libra.Entity\obj\Debug\Libra.Entity.pdb

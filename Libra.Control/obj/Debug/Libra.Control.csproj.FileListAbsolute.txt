@@ -16,3 +16,12 @@ F:\Mesklar\JAF Colchões\Libra\Libra.Control\bin\Debug\Libra.Entity.pdb
 F:\Mesklar\JAF Colchões\Libra\Libra.Control\obj\Debug\Libra.Control.csprojResolveAssemblyReference.cache
 F:\Mesklar\JAF Colchões\Libra\Libra.Control\obj\Debug\Libra.Control.dll
 F:\Mesklar\JAF Colchões\Libra\Libra.Control\obj\Debug\Libra.Control.pdb
+D:\personal-repo\libra\Libra.Control\bin\Debug\Libra.Control.dll
+D:\personal-repo\libra\Libra.Control\bin\Debug\Libra.Control.pdb
+D:\personal-repo\libra\Libra.Control\bin\Debug\Libra.Communs.dll
+D:\personal-repo\libra\Libra.Control\bin\Debug\Libra.Entity.dll
+D:\personal-repo\libra\Libra.Control\bin\Debug\Libra.Communs.pdb
+D:\personal-repo\libra\Libra.Control\bin\Debug\Libra.Entity.pdb
+D:\personal-repo\libra\Libra.Control\obj\Debug\Libra.Control.csprojResolveAssemblyReference.cache
+D:\personal-repo\libra\Libra.Control\obj\Debug\Libra.Control.dll
+D:\personal-repo\libra\Libra.Control\obj\Debug\Libra.Control.pdb

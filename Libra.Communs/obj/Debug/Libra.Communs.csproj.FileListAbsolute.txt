@@ -12,3 +12,10 @@ F:\Mesklar\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.Resources.E
 F:\Mesklar\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.csproj.GenerateResource.Cache
 F:\Mesklar\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.dll
 F:\Mesklar\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.pdb
+D:\personal-repo\libra\Libra.Communs\bin\Debug\Libra.Communs.dll
+D:\personal-repo\libra\Libra.Communs\bin\Debug\Libra.Communs.pdb
+D:\personal-repo\libra\Libra.Communs\obj\Debug\Libra.Communs.csprojResolveAssemblyReference.cache
+D:\personal-repo\libra\Libra.Communs\obj\Debug\Libra.Communs.Resources.EnumLocalization.resources
+D:\personal-repo\libra\Libra.Communs\obj\Debug\Libra.Communs.csproj.GenerateResource.Cache
+D:\personal-repo\libra\Libra.Communs\obj\Debug\Libra.Communs.dll
+D:\personal-repo\libra\Libra.Communs\obj\Debug\Libra.Communs.pdb
