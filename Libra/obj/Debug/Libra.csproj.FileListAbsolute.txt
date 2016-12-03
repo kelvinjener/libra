@@ -581,6 +581,7 @@ D:\personal-repo\libra\Libra\bin\Microsoft.Owin.Security.Google.xml
 D:\personal-repo\libra\Libra\bin\Microsoft.Owin.Security.Twitter.xml
 D:\personal-repo\libra\Libra\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\personal-repo\libra\Libra\bin\Microsoft.Owin.Security.OAuth.xml
+<<<<<<< HEAD
 C:\github\Libra\Libra\bin\ApplicationInsights.config
 C:\github\Libra\Libra\bin\roslyn\csc.exe
 C:\github\Libra\Libra\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -677,3 +678,5 @@ C:\github\Libra\Libra\bin\Microsoft.Owin.Security.OAuth.xml
 C:\github\Libra\Libra\obj\Debug\Libra.csprojResolveAssemblyReference.cache
 C:\github\Libra\Libra\obj\Debug\Libra.dll
 C:\github\Libra\Libra\obj\Debug\Libra.pdb
+=======
+>>>>>>> 0c4e5a53039be99f77677ac2e74736b1e93e6713

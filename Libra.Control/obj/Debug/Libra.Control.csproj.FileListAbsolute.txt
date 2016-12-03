@@ -25,6 +25,7 @@ D:\personal-repo\libra\Libra.Control\bin\Debug\Libra.Entity.pdb
 D:\personal-repo\libra\Libra.Control\obj\Debug\Libra.Control.csprojResolveAssemblyReference.cache
 D:\personal-repo\libra\Libra.Control\obj\Debug\Libra.Control.dll
 D:\personal-repo\libra\Libra.Control\obj\Debug\Libra.Control.pdb
+<<<<<<< HEAD
 C:\github\Libra\Libra.Control\bin\Debug\Libra.Control.dll
 C:\github\Libra\Libra.Control\bin\Debug\Libra.Control.pdb
 C:\github\Libra\Libra.Control\bin\Debug\Libra.Communs.dll
@@ -34,3 +35,5 @@ C:\github\Libra\Libra.Control\bin\Debug\Libra.Entity.pdb
 C:\github\Libra\Libra.Control\obj\Debug\Libra.Control.csprojResolveAssemblyReference.cache
 C:\github\Libra\Libra.Control\obj\Debug\Libra.Control.dll
 C:\github\Libra\Libra.Control\obj\Debug\Libra.Control.pdb
+=======
+>>>>>>> 0c4e5a53039be99f77677ac2e74736b1e93e6713

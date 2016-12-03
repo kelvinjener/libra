@@ -3,9 +3,12 @@ D:\personal-repo\libra\LibraIntegratedTest\bin\Debug\LibraIntegratedTest.pdb
 D:\personal-repo\libra\LibraIntegratedTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 D:\personal-repo\libra\LibraIntegratedTest\obj\Debug\LibraIntegratedTest.dll
 D:\personal-repo\libra\LibraIntegratedTest\obj\Debug\LibraIntegratedTest.pdb
+<<<<<<< HEAD
 C:\github\Libra\LibraIntegratedTest\bin\Debug\LibraIntegratedTest.dll
 C:\github\Libra\LibraIntegratedTest\bin\Debug\LibraIntegratedTest.pdb
 C:\github\Libra\LibraIntegratedTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\github\Libra\LibraIntegratedTest\obj\Debug\LibraIntegratedTest.csprojResolveAssemblyReference.cache
 C:\github\Libra\LibraIntegratedTest\obj\Debug\LibraIntegratedTest.dll
 C:\github\Libra\LibraIntegratedTest\obj\Debug\LibraIntegratedTest.pdb
+=======
+>>>>>>> 0c4e5a53039be99f77677ac2e74736b1e93e6713

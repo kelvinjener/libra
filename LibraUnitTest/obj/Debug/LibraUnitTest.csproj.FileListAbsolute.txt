@@ -58,6 +58,7 @@ D:\personal-repo\libra\LibraUnitTest\bin\Debug\System.Web.WebPages.xml
 D:\personal-repo\libra\LibraUnitTest\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\personal-repo\libra\LibraUnitTest\obj\Debug\LibraUnitTest.dll
 D:\personal-repo\libra\LibraUnitTest\obj\Debug\LibraUnitTest.pdb
+<<<<<<< HEAD
 C:\github\Libra\LibraUnitTest\bin\Debug\ApplicationInsights.config
 C:\github\Libra\LibraUnitTest\bin\Debug\roslyn\csc.exe
 C:\github\Libra\LibraUnitTest\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -118,3 +119,5 @@ C:\github\Libra\LibraUnitTest\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\github\Libra\LibraUnitTest\obj\Debug\LibraUnitTest.csprojResolveAssemblyReference.cache
 C:\github\Libra\LibraUnitTest\obj\Debug\LibraUnitTest.dll
 C:\github\Libra\LibraUnitTest\obj\Debug\LibraUnitTest.pdb
+=======
+>>>>>>> 0c4e5a53039be99f77677ac2e74736b1e93e6713

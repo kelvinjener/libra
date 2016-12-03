@@ -28,6 +28,7 @@ D:\personal-repo\libra\Libra.Entity\bin\Debug\Newtonsoft.Json.xml
 D:\personal-repo\libra\Libra.Entity\obj\Debug\Libra.Entity.csprojResolveAssemblyReference.cache
 D:\personal-repo\libra\Libra.Entity\obj\Debug\Libra.Entity.dll
 D:\personal-repo\libra\Libra.Entity\obj\Debug\Libra.Entity.pdb
+<<<<<<< HEAD
 C:\github\Libra\Libra.Entity\bin\Debug\Libra.Entity.dll.config
 C:\github\Libra\Libra.Entity\bin\Debug\Libra.Entity.dll
 C:\github\Libra\Libra.Entity\bin\Debug\Libra.Entity.pdb
@@ -38,3 +39,5 @@ C:\github\Libra\Libra.Entity\bin\Debug\Newtonsoft.Json.xml
 C:\github\Libra\Libra.Entity\obj\Debug\Libra.Entity.csprojResolveAssemblyReference.cache
 C:\github\Libra\Libra.Entity\obj\Debug\Libra.Entity.dll
 C:\github\Libra\Libra.Entity\obj\Debug\Libra.Entity.pdb
+=======
+>>>>>>> 0c4e5a53039be99f77677ac2e74736b1e93e6713
