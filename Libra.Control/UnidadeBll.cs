@@ -1,4 +1,5 @@
 ﻿using Libra.Communs;
+using Libra.Communs.Enumerators;
 using Libra.Entity;
 using System;
 using System.Collections.Generic;
@@ -59,7 +60,7 @@ namespace Libra.Control
                 result = result.Where(a => a.unidade.APELIDO.ToUpper().Contains(nomeUnidade.ToUpper()));
 
             if (!tipoUnidade.Equals(string.Empty))
-                result = result.Where(a => a.unidade.TIPOUNIDADE == (TipoUnidade)Enum.Parse(typeof(TipoUnidade), tipoUnidade));
+                result = result.Where(a => a.unidade.TIPOUNIDADE.Equals(EnumUtils.ParseEnum<TipoUnidadeEnum>(Convert.ToInt16(tipoUnidade))));
 
             var x = from p in result
                     select new UnidadeModelGrid
@@ -110,7 +111,7 @@ namespace Libra.Control
         public string Telefone1 { get; set; }
         public string Email1 { get; set; }
         public bool Ativo { get; set; }
-        public TipoUnidade TipoUnidade { get; set; }
+        public Int16 TipoUnidade { get; set; }
 
     }
 }

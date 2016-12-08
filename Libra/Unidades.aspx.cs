@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Libra.Entity;
+using Libra.Communs.Enumerators;
 
 namespace Libra
 {
@@ -411,10 +412,10 @@ namespace Libra
             ddlTipoUnidadeFiltro.Items.Add(new ListItem("Selecione...", ""));
             ddlTipoUnidade.Items.Add(new ListItem("Selecione...", ""));
 
-            foreach (string item in Enum.GetNames(typeof(TipoUnidade)))
+            foreach (string item in Enum.GetNames(typeof(TipoUnidadeEnum)))
             {
-                short value = Convert.ToInt16(Enum.Parse(typeof(TipoUnidade), item));
-                string text = Enum<TipoUnidade>.Description((TipoUnidade)Enum.Parse(typeof(TipoUnidade), item));
+                short value = Convert.ToInt16(Enum.Parse(typeof(TipoUnidadeEnum), item));
+                string text = Enum<TipoUnidadeEnum>.Description((TipoUnidadeEnum)Enum.Parse(typeof(TipoUnidadeEnum), item));
 
                 ddlTipoUnidadeFiltro.Items.Add(new ListItem(text, value.ToString()));
                 ddlTipoUnidade.Items.Add(new ListItem(text, value.ToString()));
@@ -436,7 +437,7 @@ namespace Libra
                 lbEmails.Text = GetEmailsUnidade(unidade);
                 lbObservacao.Text = unidade.OBSERVACAO == null ? "---" : unidade.OBSERVACAO;
                 lbAtiva.Text = unidade.ATIVO ? "Sim" : "Não";
-                lbTipoUnidade.Text = Enum<TipoUnidade>.Description((TipoUnidade)Enum.Parse(typeof(TipoUnidade), unidade.TIPOUNIDADE.ToString()));
+                lbTipoUnidade.Text = Enum<TipoUnidadeEnum>.Description((TipoUnidadeEnum)Enum.Parse(typeof(TipoUnidadeEnum), unidade.TIPOUNIDADE.ToString()));
 
                 mpeVisualizarUnidade.Show();
             }
@@ -472,7 +473,7 @@ namespace Libra
                 txtEmail1.Text = unidade.EMAIL1;
                 txtEmail2.Text = unidade.EMAIL2;
                 txtObservacao.Text = unidade.OBSERVACAO;
-                ddlTipoUnidade.SelectedValue = Convert.ToInt16(Enum.Parse(typeof(TipoUnidade), unidade.TIPOUNIDADE.ToString())).ToString();
+                ddlTipoUnidade.SelectedValue = Convert.ToInt16(Enum.Parse(typeof(TipoUnidadeEnum), unidade.TIPOUNIDADE.ToString())).ToString();
                 chkAtiva.Checked = unidade.ATIVO;
             }
             else
@@ -508,7 +509,7 @@ namespace Libra
                 unidade.EMAIL1 = txtEmail1.Text;
                 unidade.EMAIL2 = txtEmail2.Text;
                 unidade.OBSERVACAO = txtObservacao.Text;
-                unidade.TIPOUNIDADE = (TipoUnidade)Enum.Parse(typeof(TipoUnidade), ddlTipoUnidade.SelectedValue);
+                unidade.TIPOUNIDADE = Convert.ToInt16(ddlTipoUnidade.SelectedValue);
                 unidade.ATIVO = chkAtiva.Checked;
 
                 unidadeBll.Salvar(unidade);

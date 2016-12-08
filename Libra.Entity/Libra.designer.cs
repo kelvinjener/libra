@@ -1363,7 +1363,7 @@ namespace Libra.Entity
 		
 		private string _TELEFONE;
 		
-		private global::Libra.Communs.Sexo _SEXO;
+		private System.Nullable<short> _SEXO;
 		
 		private string _CPF;
 		
@@ -1395,7 +1395,7 @@ namespace Libra.Entity
     partial void OnNOMEChanged();
     partial void OnTELEFONEChanging(string value);
     partial void OnTELEFONEChanged();
-    partial void OnSEXOChanging(global::Libra.Communs.Sexo value);
+    partial void OnSEXOChanging(System.Nullable<short> value);
     partial void OnSEXOChanged();
     partial void OnCPFChanging(string value);
     partial void OnCPFChanged();
@@ -1479,8 +1479,8 @@ namespace Libra.Entity
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEXO", DbType="SmallInt", CanBeNull=true)]
-		public global::Libra.Communs.Sexo SEXO
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEXO", DbType="SmallInt")]
+		public System.Nullable<short> SEXO
 		{
 			get
 			{
@@ -2069,7 +2069,7 @@ namespace Libra.Entity
 		
 		private bool _ATIVO;
 		
-		private global::Libra.Communs.TipoUnidade _TIPOUNIDADE;
+		private short _TIPOUNIDADE;
 		
 		private EntitySet<USUARIOUNIDADE> _USUARIOUNIDADEs;
 		
@@ -2111,7 +2111,7 @@ namespace Libra.Entity
     partial void OnOBSERVACAOChanged();
     partial void OnATIVOChanging(bool value);
     partial void OnATIVOChanged();
-    partial void OnTIPOUNIDADEChanging(global::Libra.Communs.TipoUnidade value);
+    partial void OnTIPOUNIDADEChanging(short value);
     partial void OnTIPOUNIDADEChanged();
     #endregion
 		
@@ -2461,8 +2461,8 @@ namespace Libra.Entity
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIPOUNIDADE", DbType="SmallInt NOT NULL", CanBeNull=false)]
-		public global::Libra.Communs.TipoUnidade TIPOUNIDADE
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIPOUNIDADE", DbType="SmallInt NOT NULL")]
+		public short TIPOUNIDADE
 		{
 			get
 			{

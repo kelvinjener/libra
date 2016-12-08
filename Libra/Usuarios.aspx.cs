@@ -1,5 +1,6 @@
 ﻿using Libra.Class;
 using Libra.Communs;
+using Libra.Communs.Enumerators;
 using Libra.Control;
 using Libra.Entity;
 using Libra.Models;
@@ -544,10 +545,10 @@ namespace Libra
             ddlSexo.Items.Clear();
             ddlSexo.Items.Add(new ListItem("Selecione...", ""));
 
-            foreach (string item in Enum.GetNames(typeof(Sexo)))
+            foreach (string item in Enum.GetNames(typeof(SexoEnum)))
             {
-                short value = Convert.ToInt16(Enum.Parse(typeof(Sexo), item));
-                string text = Enum<Sexo>.Description((Sexo)Enum.Parse(typeof(Sexo), item));
+                short value = Convert.ToInt16(Enum.Parse(typeof(SexoEnum), item));
+                string text = Enum<SexoEnum>.Description((SexoEnum)Enum.Parse(typeof(SexoEnum), item));
 
                 ddlSexo.Items.Add(new ListItem(text, value.ToString()));
             }
@@ -615,7 +616,7 @@ namespace Libra
                     lbUsuario.Text = usuario.NOME;
                     lbNomeUsuario.Text = usuario.NOME;
                     lbCPFUsuario.Text = !string.IsNullOrEmpty(usuario.CPF) ? this.FormatarCpf(usuario.CPF) : "---";
-                    lbSexo.Text = Enum<Sexo>.Description((Sexo)Enum.Parse(typeof(Sexo), usuario.SEXO.ToString()));
+                    lbSexo.Text = Enum<SexoEnum>.Description((SexoEnum)Enum.Parse(typeof(SexoEnum), usuario.SEXO.ToString()));
                     lbDataNascimento.Text = !string.IsNullOrEmpty(usuario.DATANASCIMENTO.ToString()) ? Convert.ToDateTime(usuario.DATANASCIMENTO).ToShortDateString() : "---";
                     lbDataCadastro.Text = usuario.DATACADASTRO.ToShortDateString();
                     lbTelefone.Text = !string.IsNullOrEmpty(usuario.TELEFONE) ? this.FormatarTelefone(usuario.TELEFONE) : "---";
@@ -688,7 +689,7 @@ namespace Libra
                 //TODO: Informar campos para Editar.
                 txtNomeUsuario.Text = usuario.NOME;
                 txtCPF.Text = this.FormatarCpf(usuario.CPF);
-                ddlSexo.SelectedValue = Convert.ToInt16(Enum.Parse(typeof(Sexo), usuario.SEXO.ToString())).ToString();
+                ddlSexo.SelectedValue = Convert.ToInt16(Enum.Parse(typeof(SexoEnum), usuario.SEXO.ToString())).ToString();
                 txtDataNascimento.Text = Convert.ToDateTime(usuario.DATANASCIMENTO).ToShortDateString();
                 txtTelefone.Text = FormatarTelefone(usuario.TELEFONE);
                 txtEmail.Text = usuario.AspNetUser.Email;
@@ -776,7 +777,7 @@ namespace Libra
                     usuario.CPF = this.ClearCaracter(txtCPF.Text, ".-");
 
                     if (ddlSexo.SelectedIndex > 0)
-                        usuario.SEXO = (Sexo)Enum.Parse(typeof(Sexo), ddlSexo.SelectedValue);
+                        usuario.SEXO = Convert.ToInt16(ddlSexo.SelectedValue);
 
                     if (!string.IsNullOrEmpty(txtDataNascimento.Text))
                         usuario.DATANASCIMENTO = Convert.ToDateTime(txtDataNascimento.Text);

@@ -1,4 +1,5 @@
 ﻿using Libra.Communs;
+using Libra.Communs.Enumerators;
 using Libra.Control;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace Libra.Class
     public class BasePage : Page
     {
 
-      
+
 
         public UsuarioInfo UsuarioInfo
         {
@@ -341,7 +342,7 @@ namespace Libra.Class
         /// <returns>Lista de Uf´s</returns>
         public List<string> GetUfs()
         {
-            List<string> ufs = new List<string>(Enum.GetNames(typeof(UnidadeFederativa)));
+            List<string> ufs = new List<string>(Enum.GetNames(typeof(UnidadeFederativaEnum)));
             ufs.Sort();
 
             return ufs;

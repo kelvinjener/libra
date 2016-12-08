@@ -57,7 +57,7 @@
       <Column Name="USUARIOID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="NOME" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="TELEFONE" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
-      <Column Name="SEXO" Type="global::Libra.Communs.Sexo" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SEXO" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="CPF" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
       <Column Name="DATANASCIMENTO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="ATIVO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
@@ -102,7 +102,7 @@
       <Column Name="EMAIL2" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
       <Column Name="OBSERVACAO" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
       <Column Name="ATIVO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="TIPOUNIDADE" Type="global::Libra.Communs.TipoUnidade" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="TIPOUNIDADE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Association Name="UNIDADE_USUARIOUNIDADE" Member="USUARIOUNIDADEs" ThisKey="UNIDADEID" OtherKey="UNIDADEID" Type="USUARIOUNIDADE" />
     </Type>
   </Table>

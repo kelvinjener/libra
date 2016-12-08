@@ -28,11 +28,11 @@ namespace Libra.Models
 
         public string Telefone { get; set; }
 
-        public Sexo Sexo { get; set; }
+        public Int16 Sexo { get; set; }
 
         public DateTime DataNascimento { get; set; }
 
-        public Situacao Situacao { get; set; }
+        public Int16 Situacao { get; set; }
 
         public DateTime DataCadastro { get; set; }
 

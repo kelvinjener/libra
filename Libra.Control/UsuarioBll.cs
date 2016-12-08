@@ -1,4 +1,5 @@
 ﻿using Libra.Communs;
+using Libra.Communs.Enumerators;
 using Libra.Entity;
 using System;
 using System.Collections.Generic;
@@ -142,7 +143,7 @@ namespace Libra.Control
                                            string Nome,
                                            string CPF,
                                            string Telefone,
-                                           Sexo Sexo,
+                                           Int16? Sexo,
                                            DateTime DataNascimento,
                                            string Email,
                                            bool Ativo,
@@ -157,7 +158,7 @@ namespace Libra.Control
             usuarioInfo.Nome = Nome;
             usuarioInfo.CPF = CPF;
             usuarioInfo.Telefone = Telefone;
-            usuarioInfo.Sexo = EnumUtils.stringValueOf(Sexo);
+            usuarioInfo.Sexo = EnumUtils.stringValueOf((SexoEnum)Enum.Parse(typeof(SexoEnum), Sexo.ToString()));
             usuarioInfo.DataNascimento = DataNascimento;
             usuarioInfo.Email = Email;
             usuarioInfo.Ativo = Ativo;

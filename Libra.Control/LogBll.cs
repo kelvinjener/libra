@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Libra.Communs;
-
+using Libra.Communs.Enumerators;
 
 namespace Libra.Control
 {
@@ -19,9 +19,9 @@ namespace Libra.Control
 
             List<LOG> usuarioLog = (from log in dc.LOGs
                                     where log.IDUSUARIO == usuarioId
-                                    && ((TipoLog)log.TIPO == TipoLog.Delete
-                                    || (TipoLog)log.TIPO == TipoLog.Insert
-                                    || (TipoLog)log.TIPO == TipoLog.Update)
+                                    && ((TipoLogEnum)log.TIPO == TipoLogEnum.Delete
+                                    || (TipoLogEnum)log.TIPO == TipoLogEnum.Insert
+                                    || (TipoLogEnum)log.TIPO == TipoLogEnum.Update)
                                     select log).ToList();
 
             if (usuarioLog.Count > 0)

@@ -27,6 +27,6 @@ namespace Libra.Models
         public string Email2 { get; set; }
         public string Observacao { get; set; }
         public bool Ativo { get; set; }
-        public TipoUnidade TipoUnidade { get; set; }
+        public Int16 TipoUnidade { get; set; }
     }
 }

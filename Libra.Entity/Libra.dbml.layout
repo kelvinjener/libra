@@ -157,7 +157,7 @@
         <classShapeMoniker Id="03a31a0e-a35c-4500-8762-c3be773e3480" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 16.828125); (5.79166666666667 : 16.828125 : JumpStart); (5.95833333333333 : 16.828125 : JumpEnd); (8.32291666666667 : 16.828125 : JumpStart); (8.48958333333333 : 16.828125 : JumpEnd); (9.25 : 16.828125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 16.828125); (9.25 : 16.828125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibraDataContext/PERFI/PERFI_FUNCIONALIDADEPERFI" />
       <nodes>
         <classShapeMoniker Id="36a1dd9c-fb58-4ad8-84a3-b539ae647546" />
@@ -212,21 +212,21 @@
         <elementListCompartment Id="5c107f01-e3b5-438a-8d9b-a3bf47141a4a" absoluteBounds="9.89, 12.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.875 : 5.1362939453125); (9.25 : 5.5112939453125); (9.25 : 13.4335034179687); (9.875 : 13.4335034179687)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.875 : 5.1362939453125); (9.25 : 5.5112939453125); (9.25 : 13.4335034179687); (9.875 : 13.4335034179687)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibraDataContext/CORPRODUTO/CORPRODUTO_PRODUTO" />
       <nodes>
         <classShapeMoniker Id="ef61ffdd-b8be-43a2-9a36-2530546edca1" />
         <classShapeMoniker Id="f7b62cff-3d16-4222-a272-822c28b9fab8" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 12.9375025); (9.16666666666667 : 12.9375025 : JumpStart); (9.33333333333333 : 12.9375025 : JumpEnd); (9.875 : 12.9375025)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 12.9375025); (9.16666666666667 : 12.9375025 : JumpStart); (9.33333333333333 : 12.9375025 : JumpEnd); (9.875 : 12.9375025)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibraDataContext/USUARIO/USUARIO_PRODUTO" />
       <nodes>
         <classShapeMoniker Id="5f07d5c7-7a95-4072-87a2-a852c4a227ab" />
         <classShapeMoniker Id="f7b62cff-3d16-4222-a272-822c28b9fab8" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.59375 : 8.7131982421875); (8.59375 : 12.37499875); (9.16666666666667 : 12.37499875 : JumpStart); (9.33333333333333 : 12.37499875 : JumpEnd); (9.875 : 12.37499875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.59375 : 8.7131982421875); (8.59375 : 12.37499875); (9.16666666666667 : 12.37499875 : JumpStart); (9.33333333333333 : 12.37499875 : JumpEnd); (9.875 : 12.37499875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibraDataContext/DIMENSOESPRODUTO/DIMENSOESPRODUTO_PRODUTO" />
       <nodes>
         <classShapeMoniker Id="de70ee88-6cfd-481f-bd59-c276e7aff00b" />
@@ -247,14 +247,14 @@
         <classShapeMoniker Id="f7b62cff-3d16-4222-a272-822c28b9fab8" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.875 : 8.0744429077524); (12.0660744349011 : 8.26551734265352 : JumpStart); (12.1839255650989 : 8.38336847285128 : JumpEnd); (12.3125 : 8.5119429077524); (12.3125 : 11.4051923076923); (11.8426923076923 : 11.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(11.875 : 8.0744429077524); (12.3125 : 8.5119429077524); (12.3125 : 11.4051923076923); (11.8426923076923 : 11.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibraDataContext/MODELOPRODUTO/MODELOPRODUTO_PRODUTO" />
       <nodes>
         <classShapeMoniker Id="fda54fc2-1814-4fc1-9852-fd2ef3d925e7" />
         <classShapeMoniker Id="f7b62cff-3d16-4222-a272-822c28b9fab8" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(10.8588461538462 : 11.1362939453125); (10.8588461538462 : 11.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(10.8588461538462 : 11.1362939453125); (10.8588461538462 : 11.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibraDataContext/TIPOPRODUTO/TIPOPRODUTO_PRODUTO" />
       <nodes>
         <classShapeMoniker Id="41c39733-e688-4f24-a7e0-582b4ff65d19" />
@@ -267,14 +267,14 @@
         <elementListCompartment Id="161ec24f-c833-49be-abcc-89cbec098db6" absoluteBounds="12.765, 13.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.875 : 2.1362939453125); (9.25 : 2.5112939453125); (12.0416666666667 : 2.5112939453125 : JumpStart); (12.2083333333333 : 2.5112939453125 : JumpEnd); (13.75 : 2.5112939453125); (13.75 : 13.375)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.875 : 2.1362939453125); (9.25 : 2.5112939453125); (12.0416666666667 : 2.5112939453125 : JumpStart); (12.2083333333333 : 2.5112939453125 : JumpEnd); (13.75 : 2.5112939453125); (13.75 : 13.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibraDataContext/CARACTERISTICASDIVERSASPRODUTO/CARACTERISTICASDIVERSASPRODUTO_PRODUTOCARACTERISTICADIVERSA" />
       <nodes>
         <classShapeMoniker Id="9f3b5de2-ed75-4ad0-ab31-a659e86da5b5" />
         <classShapeMoniker Id="0c3d05df-70ec-4426-8550-cf882958c48b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.875 : 14.0681469726562); (12.75 : 14.0681469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.875 : 14.0681469726562); (12.75 : 14.0681469726562)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibraDataContext/PRODUTO/PRODUTO_PRODUTOCARACTERISTICADIVERSA" />
       <nodes>
         <classShapeMoniker Id="f7b62cff-3d16-4222-a272-822c28b9fab8" />

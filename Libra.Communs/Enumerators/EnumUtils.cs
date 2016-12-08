@@ -76,83 +76,83 @@ namespace Libra.Communs.Enumerators
             return output;
         }
 
-        //public static T ParseEnum<T>(string value)
-        //{
-        //    var type = typeof(T);
-        //    if (!type.IsEnum) throw new InvalidOperationException();
-        //    foreach (var field in type.GetFields())
-        //    {
-        //        var attribute = Attribute.GetCustomAttribute(field,
-        //            typeof(StringValue)) as StringValue;
-        //        if (attribute != null)
-        //        {
-        //            if (attribute.Value == value)
-        //                return (T)field.GetValue(null);
-        //        }
-        //        else
-        //        {
-        //            if (field.Name == value)
-        //                return (T)field.GetValue(null);
-        //        }
-        //    }
-        //    throw new ArgumentException("Not found.", "description");
-        //    //return default(T);
-        //}
+        public static T ParseEnum<T>(string value)
+        {
+            var type = typeof(T);
+            if (!type.IsEnum) throw new InvalidOperationException();
+            foreach (var field in type.GetFields())
+            {
+                var attribute = Attribute.GetCustomAttribute(field,
+                    typeof(StringValue)) as StringValue;
+                if (attribute != null)
+                {
+                    if (attribute.Value == value)
+                        return (T)field.GetValue(null);
+                }
+                else
+                {
+                    if (field.Name == value)
+                        return (T)field.GetValue(null);
+                }
+            }
+            throw new ArgumentException("Not found.", "description");
+            //return default(T);
+        }
 
-        //public static T ParseEnum<T>(Int16 value)
-        //{
-        //    var type = typeof(T);
-        //    if (!type.IsEnum) throw new InvalidOperationException();
-        //    foreach (var field in type.GetFields())
-        //    {
-        //        var attribute = Attribute.GetCustomAttribute(field,
-        //            typeof(IntValue)) as IntValue;
-        //        if (attribute != null)
-        //        {
-        //            if (attribute.Value == value)
-        //                return (T)field.GetValue(null);
-        //        }
-        //        else
-        //        {
-        //            if (field.Name == value.ToString())
-        //                return (T)field.GetValue(null);
-        //        }
-        //    }
-        //    throw new ArgumentException("Not found.", "description");
-        //    // or return default(T);
-        //}
+        public static T ParseEnum<T>(Int16 value)
+        {
+            var type = typeof(T);
+            if (!type.IsEnum) throw new InvalidOperationException();
+            foreach (var field in type.GetFields())
+            {
+                var attribute = Attribute.GetCustomAttribute(field,
+                    typeof(IntValue)) as IntValue;
+                if (attribute != null)
+                {
+                    if (attribute.Value == value)
+                        return (T)field.GetValue(null);
+                }
+                else
+                {
+                    if (field.Name == value.ToString())
+                        return (T)field.GetValue(null);
+                }
+            }
+            throw new ArgumentException("Not found.", "description");
+            // or return default(T);
+        }
 
-        //public static string stringValueOf(Enum value)
-        //{
-        //    FieldInfo fi = value.GetType().GetField(value.ToString());
-        //    DescriptionAttribute[] attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
+        public static string stringValueOf(Enum value)
+        {
+            FieldInfo fi = value.GetType().GetField(value.ToString());
+            DescriptionAttribute[] attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
 
-        //    if (attributes.Length > 0)
-        //        return attributes[0].Description;
-        //    else
-        //        return value.ToString();
-        //}
+            if (attributes.Length > 0)
+                return attributes[0].Description;
+            else
+                return value.ToString();
+        }
 
-        //public static object enumValueOf(string value, Type enumType)
-        //{
-        //    string[] names = Enum.GetNames(enumType);
+        public static object enumValueOf(string value, Type enumType)
+        {
+            string[] names = Enum.GetNames(enumType);
 
-        //    foreach (string name in names)
-        //    {
-        //        if (stringValueOf((Enum)Enum.Parse(enumType, name)).Equals(value))
-        //            return Enum.Parse(enumType, name);
-        //    }
+            foreach (string name in names)
+            {
+                if (stringValueOf((Enum)Enum.Parse(enumType, name)).Equals(value))
+                    return Enum.Parse(enumType, name);
+            }
 
-        //    throw new ArgumentException("A string não foi identificada como atributo de enumeração.");
-        //}
+            throw new ArgumentException("A string não foi identificada como atributo de enumeração.");
+        }
     }
 
-    //public static class Enum<T>
-    //{
-    //    public static string Description(T value)
-    //    {
-    //        DescriptionAttribute[] da = (DescriptionAttribute[])(typeof(T).GetField(value.ToString()).GetCustomAttributes(typeof(DescriptionAttribute), false));
-    //        return da.Length > 0 ? da[0].Description : value.ToString();
-    //    }
-    //}
+    public static class Enum<T>
+    {
+        public static string Description(T value)
+        {
+            DescriptionAttribute[] da = (DescriptionAttribute[])(typeof(T).GetField(value.ToString()).GetCustomAttributes(typeof(DescriptionAttribute), false));
+            return da.Length > 0 ? da[0].Description : value.ToString();
+        }
+    }
 }
