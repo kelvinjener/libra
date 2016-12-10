@@ -100,7 +100,7 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:Label runat="server" ID="lblCodigoProduto" Text="Gerado pelo sistema" CssClass="label-info" />
+                                        <asp:Label runat="server" ID="lblCodigoProduto" Text="Gerado pelo sistema" CssClass="labelInfo" />
 
                                     </div>
                                 </div>
@@ -207,7 +207,7 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:TextBox ID="txtPeso" runat="server" CssClass="form-control text-text-uppercase"></asp:TextBox>
+                                        <asp:TextBox ID="txtPeso" runat="server" CssClass="form-control text-text-uppercase" MaxLength="8"></asp:TextBox>
 
 
                                         <asp:RequiredFieldValidator ID="rfvPeso" ControlToValidate="txtPeso" SetFocusOnError="True" CssClass="requerid"
@@ -245,33 +245,33 @@
                                         <asp:CheckBox runat="server" ID="ckbDisponivel" />
                                     </div>
                                 </div>
-                            <div class="col-md-2 col-sm-2 col-xs-12">
-                                <div>
-                                    <label>
-                                        Ativo?
-                                    </label>
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div>
+                                        <label>
+                                            Ativo?
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <asp:CheckBox runat="server" ID="chkAtivo" />
+                                    </div>
                                 </div>
-                                <div>
-                                    <asp:CheckBox runat="server" ID="chkAtivo" />
+                            </div>
+                            <div class="row">&nbsp;</div>
+                            <div class="row">
+                                <div class="col-md-3 col-sm-3 col-xs-6">
+                                    <asp:Button ID="btnCancelar" runat="server" Width="100%"
+                                        CssClass="btn btn-default" Text="Cancelar" OnClick="btnCancelar_Click" />
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-6">
+                                    <asp:Button runat="server" ID="btnSalvar" ValidationGroup="G1" CssClass="btn btn-primary" Width="100%" Text="Salvar" OnClick="btnSalvar_Click" />
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                            <div class="col-md-3 col-sm-3 col-xs-6">
-                                <asp:Button ID="btnCancelar" runat="server" Width="100%"
-                                    CssClass="btn btn-default" Text="Cancelar" OnClick="btnCancelar_Click" />
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6">
-                                <asp:Button runat="server" ID="btnSalvar" ValidationGroup="G1" CssClass="btn btn-primary" Width="100%" Text="Salvar" OnClick="btnSalvar_Click" />
-                            </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
     <asp:ModalPopupExtender ID="mpeCadastroTipoProdutos" TargetControlID="lkAddTipoProduto" PopupControlID="pnlCadastroTipoProduto"
@@ -517,7 +517,7 @@
                                                 </label>
                                             </div>
                                             <div>
-                                                <asp:TextBox ID="txtLargura" runat="server" CssClass="form-control text-uppercase"></asp:TextBox>
+                                                <asp:TextBox ID="txtLargura" runat="server" CssClass="form-control text-uppercase" MaxLength="8"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-sm-12 col-xs-12">
@@ -527,7 +527,7 @@
                                                 </label>
                                             </div>
                                             <div>
-                                                <asp:TextBox ID="txtComprimento" runat="server" CssClass="form-control text-uppercase"></asp:TextBox>
+                                                <asp:TextBox ID="txtComprimento" runat="server" CssClass="form-control text-uppercase" MaxLength="8"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-sm-12 col-xs-12">
@@ -537,7 +537,7 @@
                                                 </label>
                                             </div>
                                             <div>
-                                                <asp:TextBox ID="txtAltura" runat="server" CssClass="form-control text-uppercase"></asp:TextBox>
+                                                <asp:TextBox ID="txtAltura" runat="server" CssClass="form-control text-uppercase" MaxLength="8"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -649,43 +649,114 @@
                                 </div>
                                 <div class="x_content">
                                     <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
                                             <div>
                                                 <label>
-                                                    Produto
+                                                    Código do Produto
                                                 </label>
                                             </div>
                                             <div>
-                                                <asp:TextBox ID="txtProdutoFiltro" runat="server" CssClass="form-control"></asp:TextBox>
+                                                <asp:TextBox ID="txtCodigoProdutoFiltro" runat="server" CssClass="form-control"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Descrição 
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:TextBox ID="txtDescricaoFiltro" runat="server" CssClass="form-control"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">&nbsp;</div>
 
                                     <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div>
                                                 <label>
-                                                    Tipo 
+                                                    Tipo Produto
                                                 </label>
                                             </div>
                                             <div>
                                                 <asp:DropDownList runat="server" ID="ddlTipoProdutoFiltro" CssClass="form-control" />
                                             </div>
                                         </div>
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Fabricante 
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:DropDownList runat="server" ID="ddlFabricanteFiltro" CssClass="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">&nbsp;</div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Marca
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:DropDownList runat="server" ID="ddlMarcaFiltro" CssClass="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Modelo 
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:DropDownList runat="server" ID="ddlModeloFiltro" CssClass="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">&nbsp;</div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Cor
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:DropDownList runat="server" ID="ddlCorFiltro" CssClass="form-control" />
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="row">&nbsp;</div>
 
                                     <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div>
-                                                <label>Ativa</label>
+                                                <label>Disponível Comércio</label>
+                                            </div>
+                                            <div>
+                                                <asp:CheckBox runat="server" ID="ckbDisponivelComercioFiltro" Style="vertical-align: middle" Checked="true" />
+                                                <span class="labelInfo fonteCinza">Disponível</span>&nbsp;
+                                        <asp:CheckBox runat="server" ID="ckbIndisponivelComercioFiltro" Style="vertical-align: middle" Checked="true" />
+                                                <span class="labelInfo fonteCinza">Indisponível</span>&nbsp;
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>Ativo</label>
                                             </div>
                                             <div>
                                                 <asp:CheckBox runat="server" ID="ckbAtivoFiltro" Style="vertical-align: middle" Checked="true" />
-                                                <span class="labelInfo fonteCinza">Ativa</span>&nbsp;
+                                                <span class="labelInfo fonteCinza">Ativo</span>&nbsp;
                                         <asp:CheckBox runat="server" ID="ckbInativoFiltro" Style="vertical-align: middle" Checked="true" />
-                                                <span class="labelInfo fonteCinza">Inativa</span>&nbsp;
+                                                <span class="labelInfo fonteCinza">Inativo</span>&nbsp;
                                             </div>
                                         </div>
                                     </div>
@@ -736,9 +807,9 @@
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div>
                                                 <label>
-                                                    Nome Produto:
+                                                    Código do Produto:
                                                 </label>
-                                                <asp:Label ID="lbNomeProduto" runat="server" CssClass="labelInfo"></asp:Label>
+                                                <asp:Label ID="lblCodigoProdutoVisualizar" runat="server" CssClass="labelInfo"></asp:Label>
                                             </div>
                                         </div>
                                     </div>
@@ -748,73 +819,95 @@
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div>
                                                 <label>
-                                                    Endereço:
+                                                    Produto:
                                                 </label>
-                                                <asp:Label ID="lbEnderecoProduto" runat="server" CssClass="labelInfo"></asp:Label>
+                                                <asp:Label ID="lblNomeProduto" runat="server" CssClass="labelInfo"></asp:Label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">&nbsp;</div>
 
                                     <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div>
-                                                <label>
-                                                    Telefone(s):
-                                                </label>
-                                                <asp:Label ID="lbTelefones" runat="server" CssClass="labelInfo"></asp:Label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">&nbsp;</div>
-
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div>
-                                                <label>
-                                                    E-mail(s):
-                                                </label>
-                                                <asp:Label ID="lbEmails" runat="server" CssClass="labelInfo"></asp:Label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">&nbsp;</div>
-
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div>
-                                                <label>
-                                                    Observação:
-                                                </label>
-                                                <asp:Label ID="lbObservacao" runat="server" CssClass="labelInfo"></asp:Label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">&nbsp;</div>
-
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div>
-                                                <label>
-                                                    Ativa?
-                                                </label>
-                                                <asp:Label ID="lbAtiva" runat="server" CssClass="labelInfo"></asp:Label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">&nbsp;</div>
-
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
                                             <div>
                                                 <label>
                                                     Tipo Produto:
                                                 </label>
-                                                <asp:Label ID="lbTipoProduto" runat="server" CssClass="labelInfo"></asp:Label>
+                                                <asp:Label ID="lblEnderecoProduto" runat="server" CssClass="labelInfo"></asp:Label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Dimensões:
+                                                </label>
+                                                <asp:Label ID="lblDimensoes" runat="server" CssClass="labelInfo"></asp:Label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Peso:
+                                                </label>
+                                                <asp:Label ID="lblPeso" runat="server" CssClass="labelInfo"></asp:Label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">&nbsp;</div>
+
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Fabricante:
+                                                </label>
+                                                <asp:Label ID="lblFabricante" runat="server" CssClass="labelInfo"></asp:Label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Marca:
+                                                </label>
+                                                <asp:Label ID="lblMarca" runat="server" CssClass="labelInfo"></asp:Label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Modelo:
+                                                </label>
+                                                <asp:Label ID="lblModelo" runat="server" CssClass="labelInfo"></asp:Label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">&nbsp;</div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Disponível Comeércio?
+                                                </label>
+                                                <asp:Label ID="lblDisponivelComercio" runat="server" CssClass="labelInfo"></asp:Label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">&nbsp;</div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Ativo?
+                                                </label>
+                                                <asp:Label ID="lblAtivo" runat="server" CssClass="labelInfo"></asp:Label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">&nbsp;</div>
+
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <asp:LinkButton ID="lnbFecharVisualizarProduto" runat="server"
@@ -960,7 +1053,7 @@
                 HeaderCheckBox.checked = true;
         }
 
-       
+
 
 
     </script>
