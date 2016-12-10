@@ -32,7 +32,6 @@ C:\github\libra\LibraUnitTest\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
 C:\github\libra\LibraUnitTest\bin\Debug\Microsoft.AspNet.FriendlyUrls.dll
 C:\github\libra\LibraUnitTest\bin\Debug\System.Web.Mvc.dll
 C:\github\libra\LibraUnitTest\bin\Debug\Microsoft.Web.Infrastructure.dll
-C:\github\libra\LibraUnitTest\bin\Debug\System.Web.Razor.dll
 C:\github\libra\LibraUnitTest\bin\Debug\System.Web.WebPages.Razor.dll
 C:\github\libra\LibraUnitTest\bin\Debug\System.Web.WebPages.dll
 C:\github\libra\LibraUnitTest\bin\Debug\System.Web.WebPages.Deployment.dll
@@ -51,7 +50,6 @@ C:\github\libra\LibraUnitTest\bin\Debug\Microsoft.AspNet.Identity.EntityFramewor
 C:\github\libra\LibraUnitTest\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
 C:\github\libra\LibraUnitTest\bin\Debug\Microsoft.AspNet.FriendlyUrls.xml
 C:\github\libra\LibraUnitTest\bin\Debug\System.Web.Mvc.xml
-C:\github\libra\LibraUnitTest\bin\Debug\System.Web.Razor.xml
 C:\github\libra\LibraUnitTest\bin\Debug\System.Web.WebPages.Razor.xml
 C:\github\libra\LibraUnitTest\bin\Debug\System.Web.WebPages.xml
 C:\github\libra\LibraUnitTest\bin\Debug\System.Web.WebPages.Deployment.xml
