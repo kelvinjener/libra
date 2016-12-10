@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Libra.Models
 {
-    public class FornecedoresModel
+    public class FornecedoresModel : BaseModels
     {
         public int Id { get; set; }
         public string Nome { get; set; }

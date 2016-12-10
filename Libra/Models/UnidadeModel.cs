@@ -8,7 +8,7 @@ using System.Web;
 namespace Libra.Models
 {
     [Table("Unidade")]
-    public class UnidadeModel
+    public class UnidadeModel : BaseModels
     {
         public int UnidadeId { get; set; }
         public string Nome { get; set; }
@@ -26,7 +26,6 @@ namespace Libra.Models
         public string Email1 { get; set; }
         public string Email2 { get; set; }
         public string Observacao { get; set; }
-        public bool Ativo { get; set; }
         public Int16 TipoUnidade { get; set; }
     }
 }

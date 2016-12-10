@@ -1,28 +1,6 @@
-C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\bin\Debug\Libra.Communs.dll
-C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\bin\Debug\Libra.Communs.pdb
-C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.csprojResolveAssemblyReference.cache
-C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.Resources.EnumLocalization.resources
-C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.csproj.GenerateResource.Cache
-C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.dll
-C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.pdb
-F:\Mesklar\JAF Colchões\Libra\Libra.Communs\bin\Debug\Libra.Communs.dll
-F:\Mesklar\JAF Colchões\Libra\Libra.Communs\bin\Debug\Libra.Communs.pdb
-F:\Mesklar\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.csprojResolveAssemblyReference.cache
-F:\Mesklar\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.Resources.EnumLocalization.resources
-F:\Mesklar\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.csproj.GenerateResource.Cache
-F:\Mesklar\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.dll
-F:\Mesklar\JAF Colchões\Libra\Libra.Communs\obj\Debug\Libra.Communs.pdb
-D:\personal-repo\libra\Libra.Communs\bin\Debug\Libra.Communs.dll
-D:\personal-repo\libra\Libra.Communs\bin\Debug\Libra.Communs.pdb
-D:\personal-repo\libra\Libra.Communs\obj\Debug\Libra.Communs.csprojResolveAssemblyReference.cache
-D:\personal-repo\libra\Libra.Communs\obj\Debug\Libra.Communs.Resources.EnumLocalization.resources
-D:\personal-repo\libra\Libra.Communs\obj\Debug\Libra.Communs.csproj.GenerateResource.Cache
-D:\personal-repo\libra\Libra.Communs\obj\Debug\Libra.Communs.dll
-D:\personal-repo\libra\Libra.Communs\obj\Debug\Libra.Communs.pdb
-C:\github\Libra\Libra.Communs\bin\Debug\Libra.Communs.dll
-C:\github\Libra\Libra.Communs\bin\Debug\Libra.Communs.pdb
-C:\github\Libra\Libra.Communs\obj\Debug\Libra.Communs.Resources.EnumLocalization.resources
-C:\github\Libra\Libra.Communs\obj\Debug\Libra.Communs.csproj.GenerateResource.Cache
-C:\github\Libra\Libra.Communs\obj\Debug\Libra.Communs.dll
-C:\github\Libra\Libra.Communs\obj\Debug\Libra.Communs.pdb
-C:\github\libra\Libra.Communs\obj\Debug\Libra.Communs.csprojResolveAssemblyReference.cache
+C:\github\libra\Libra.Communs\bin\Debug\Libra.Communs.dll
+C:\github\libra\Libra.Communs\bin\Debug\Libra.Communs.pdb
+C:\github\libra\Libra.Communs\obj\Debug\Libra.Communs.Resources.EnumLocalization.resources
+C:\github\libra\Libra.Communs\obj\Debug\Libra.Communs.csproj.GenerateResource.Cache
+C:\github\libra\Libra.Communs\obj\Debug\Libra.Communs.dll
+C:\github\libra\Libra.Communs\obj\Debug\Libra.Communs.pdb

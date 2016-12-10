@@ -10,7 +10,7 @@ using System.Web;
 namespace Libra.Models
 {
     [Table("Usuario")]
-    public class UsuarioModel
+    public class UsuarioModel : BaseModels
     {
         public UsuarioModel()
         {
