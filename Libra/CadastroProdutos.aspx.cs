@@ -60,10 +60,11 @@ namespace Libra
             {
                 Edicao(false);
 
-                this.txtTel1.Attributes.Add("onkeypress", "return formatarTelefone(event, this);");
-                this.txtTel2.Attributes.Add("onkeypress", "return formatarTelefone(event, this);");
-                this.txtFax.Attributes.Add("onkeypress", "return formatarTelefone(event, this);");
-                this.txtCEP.Attributes.Add("onkeypress", "return FormatMaskOnlyNumbers(event, this, '##.###-###');");
+
+                this.txtAltura.Attributes.Add("onkeypress", "return onlyNumbers(event);");
+                this.txtComprimento.Attributes.Add("onkeypress", "return onlyNumbers(event);");
+                this.txtLargura.Attributes.Add("onkeypress", "return onlyNumbers(event);");
+                this.txtPeso.Attributes.Add("onkeypress", "return onlyNumbers(event);");
             }
         }
 
@@ -87,13 +88,13 @@ namespace Libra
             {
                 if (e.Row.RowType == DataControlRowType.DataRow)
                 {
-                    Label lblAtiva = (Label)(e.Row.FindControl("lblAtiva"));
+                    Label lblAtivo = (Label)(e.Row.FindControl("lblAtivo"));
                     int ProdutoId = Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "ProdutoId"));
 
                     if (Convert.ToBoolean(DataBinder.Eval(e.Row.DataItem, "Ativo")))
-                        lblAtiva.Text = "Sim";
+                        lblAtivo.Text = "Sim";
                     else
-                        lblAtiva.Text = "Não";
+                        lblAtivo.Text = "Não";
 
                     //if (usuarioProdutoBll.VerificaProdutoAssociadas(ProdutoId))
                     //{
@@ -502,29 +503,120 @@ namespace Libra
         public void LimpaCampos()
         {
             //TODO: Informar campos para limpar.
-            txtNomeProduto.Text = string.Empty;
-            txtApelidoProduto.Text = string.Empty;
-            txtLogradouro.Text = string.Empty;
-            txtNumero.Text = string.Empty;
-            txtComplemento.Text = string.Empty;
-            txtBairro.Text = string.Empty;
-            txtCidade.Text = string.Empty;
-            ddlUF.SelectedIndex = 0;
-            txtCEP.Text = string.Empty;
-            txtTel1.Text = string.Empty;
-            txtTel2.Text = string.Empty;
-            txtFax.Text = string.Empty;
-            txtEmail1.Text = string.Empty;
-            txtEmail2.Text = string.Empty;
-            txtObservacao.Text = string.Empty;
-            ddlTipoProduto.SelectedIndex = 0;
-            chkAtiva.Checked = false;
-            hdnIdProduto.Value = "0";
+            //txtNomeProduto.Text = string.Empty;
+            //txtApelidoProduto.Text = string.Empty;
+            //txtLogradouro.Text = string.Empty;
+            //txtNumero.Text = string.Empty;
+            //txtComplemento.Text = string.Empty;
+            //txtBairro.Text = string.Empty;
+            //txtCidade.Text = string.Empty;
+            //ddlUF.SelectedIndex = 0;
+            //txtCEP.Text = string.Empty;
+            //txtTel1.Text = string.Empty;
+            //txtTel2.Text = string.Empty;
+            //txtFax.Text = string.Empty;
+            //txtEmail1.Text = string.Empty;
+            //txtEmail2.Text = string.Empty;
+            //txtObservacao.Text = string.Empty;
+            //ddlTipoProduto.SelectedIndex = 0;
+            //chkAtiva.Checked = false;
+            //hdnIdProduto.Value = "0";
 
         }
 
+
         #endregion
 
+        protected void lbCloseCadastroTipoProduto_Click(object sender, EventArgs e)
+        {
 
+            mpeCadastroTipoProdutos.Hide();
+
+        }
+
+        protected void btnSalvarTipoProduto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lbCloseCadastroFabricanteProduto_Click(object sender, EventArgs e)
+        {
+            mpeCadastroFabricanteProduto.Hide();
+        }
+
+        protected void btnSalvarMarca_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lbCloseCadastroMarcaProduto_Click(object sender, EventArgs e)
+        {
+            mpeCadastroMarcaProduto.Hide();
+        }
+
+        protected void btnSalvarFabricante_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lbCloseCadastroModeloProduto_Click(object sender, EventArgs e)
+        {
+            mpeCadastroModeloProduto.Hide();
+        }
+
+        protected void lbCloseCadastroDimensoesProduto_Click(object sender, EventArgs e)
+        {
+            mpeCadastroDimensoesProduto.Hide();
+        }
+
+        protected void btnSalvarDimensoesProduto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnSalvarModelo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnSalvarCor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lbCloseCadastroCorProduto_Click(object sender, EventArgs e)
+        {
+            mpeCadastroCorProduto.Hide();
+        }
+
+        protected void lkAddTipoProduto_Click(object sender, EventArgs e)
+        {
+            mpeCadastroTipoProdutos.Show();
+        }
+
+        protected void lkAddFabricante_Click(object sender, EventArgs e)
+        {
+            mpeCadastroFabricanteProduto.Show();
+        }
+
+        protected void lkAddMarca_Click(object sender, EventArgs e)
+        {
+            mpeCadastroMarcaProduto.Show();
+        }
+
+        protected void lkAddModelo_Click(object sender, EventArgs e)
+        {
+            mpeCadastroModeloProduto.Show();
+        }
+
+        protected void lkAddDimensoes_Click(object sender, EventArgs e)
+        {
+            mpeCadastroDimensoesProduto.Show();
+        }
+
+        protected void lkAddCor_Click(object sender, EventArgs e)
+        {
+            mpeCadastroCorProduto.Show();
+        }
     }
 }
