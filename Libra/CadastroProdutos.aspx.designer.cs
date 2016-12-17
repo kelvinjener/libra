@@ -787,13 +787,22 @@ namespace Libra {
         protected global::System.Web.UI.WebControls.LinkButton lkClose;
         
         /// <summary>
-        /// txtProdutoFiltro control.
+        /// txtCodigoProdutoFiltro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProdutoFiltro;
+        protected global::System.Web.UI.WebControls.TextBox txtCodigoProdutoFiltro;
+        
+        /// <summary>
+        /// txtDescricaoFiltro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDescricaoFiltro;
         
         /// <summary>
         /// ddlTipoProdutoFiltro control.
@@ -803,6 +812,60 @@ namespace Libra {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoProdutoFiltro;
+        
+        /// <summary>
+        /// ddlFabricanteFiltro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlFabricanteFiltro;
+        
+        /// <summary>
+        /// ddlMarcaFiltro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlMarcaFiltro;
+        
+        /// <summary>
+        /// ddlModeloFiltro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlModeloFiltro;
+        
+        /// <summary>
+        /// ddlCorFiltro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlCorFiltro;
+        
+        /// <summary>
+        /// ckbDisponivelComercioFiltro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox ckbDisponivelComercioFiltro;
+        
+        /// <summary>
+        /// ckbIndisponivelComercioFiltro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox ckbIndisponivelComercioFiltro;
         
         /// <summary>
         /// ckbAtivoFiltro control.
@@ -886,67 +949,94 @@ namespace Libra {
         protected global::System.Web.UI.WebControls.LinkButton lkCloseVisualizarProduto;
         
         /// <summary>
-        /// lbNomeProduto control.
+        /// lblCodigoProdutoVisualizar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbNomeProduto;
+        protected global::System.Web.UI.WebControls.Label lblCodigoProdutoVisualizar;
         
         /// <summary>
-        /// lbEnderecoProduto control.
+        /// lblNomeProduto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbEnderecoProduto;
+        protected global::System.Web.UI.WebControls.Label lblNomeProduto;
         
         /// <summary>
-        /// lbTelefones control.
+        /// lblEnderecoProduto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTelefones;
+        protected global::System.Web.UI.WebControls.Label lblEnderecoProduto;
         
         /// <summary>
-        /// lbEmails control.
+        /// lblDimensoes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbEmails;
+        protected global::System.Web.UI.WebControls.Label lblDimensoes;
         
         /// <summary>
-        /// lbObservacao control.
+        /// lblPeso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbObservacao;
+        protected global::System.Web.UI.WebControls.Label lblPeso;
         
         /// <summary>
-        /// lbAtiva control.
+        /// lblFabricante control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbAtiva;
+        protected global::System.Web.UI.WebControls.Label lblFabricante;
         
         /// <summary>
-        /// lbTipoProduto control.
+        /// lblMarca control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTipoProduto;
+        protected global::System.Web.UI.WebControls.Label lblMarca;
+        
+        /// <summary>
+        /// lblModelo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblModelo;
+        
+        /// <summary>
+        /// lblDisponivelComercio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDisponivelComercio;
+        
+        /// <summary>
+        /// lblAtivo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAtivo;
         
         /// <summary>
         /// lnbFecharVisualizarProduto control.

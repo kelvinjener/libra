@@ -61,10 +61,11 @@ namespace Libra
                 Edicao(false);
 
 
-                this.txtAltura.Attributes.Add("onkeypress", "return onlyNumbers(event);");
-                this.txtComprimento.Attributes.Add("onkeypress", "return onlyNumbers(event);");
-                this.txtLargura.Attributes.Add("onkeypress", "return onlyNumbers(event);");
-                this.txtPeso.Attributes.Add("onkeypress", "return onlyNumbers(event);");
+                this.txtPeso.Attributes.Add("onkeypress", "return FormatMaskOnlyNumbers(event, this, '#.###,##');");
+                this.txtLargura.Attributes.Add("onkeypress", "return FormatMaskOnlyNumbers(event, this, '#.###,##');");
+                this.txtComprimento.Attributes.Add("onkeypress", "return FormatMaskOnlyNumbers(event, this, '#.###,##');");
+                this.txtAltura.Attributes.Add("onkeypress", "return FormatMaskOnlyNumbers(event, this, '#.###,##');");
+
             }
         }
 
@@ -121,7 +122,7 @@ namespace Libra
                 if (ckbInativoFiltro.Checked)
                     situacao.Add(false);
 
-                String txtProduto = (!this.txtProdutoFiltro.Text.Equals(String.Empty)) ? this.txtProdutoFiltro.Text : String.Empty;
+                String txtProduto = String.Empty;
 
                 string tipoProduto = string.Empty;
                 if (this.ddlTipoProdutoFiltro.SelectedIndex > 0)
