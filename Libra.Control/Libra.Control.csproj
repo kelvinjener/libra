@@ -47,6 +47,7 @@
     <Compile Include="AspNetUserBll.cs" />
     <Compile Include="CaracteristicasDiversasBll.cs" />
     <Compile Include="CorProdutoBll.cs" />
+    <Compile Include="CRTBll.cs" />
     <Compile Include="DimensoesProdutoBll.cs" />
     <Compile Include="FabricanteProdutoBll.cs" />
     <Compile Include="FuncionalidadeBll.cs" />

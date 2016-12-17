@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using Libra.Models;
 
-namespace Libra.Controllers
+namespace Libra.Controllers.Negocio
 {
     public class FornecedoresController
     {
