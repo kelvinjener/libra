@@ -23,7 +23,6 @@ namespace Libra.Entity
             LogLoginUser logUser = new LogLoginUser();
 
             base.SubmitChanges(failureMode);
-
         }
     }
 }

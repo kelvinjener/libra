@@ -1,4 +1,4 @@
-﻿using Libra.Controllers;
+﻿using Libra.Controllers.Negocio;
 using Libra.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;

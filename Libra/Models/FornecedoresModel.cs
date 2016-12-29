@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Libra.Models.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
 namespace Libra.Models
 {
-    public class FornecedoresModel : BaseModels
+    public class FornecedoresModel : BaseModel
     {
         public int Id { get; set; }
         public string Nome { get; set; }
