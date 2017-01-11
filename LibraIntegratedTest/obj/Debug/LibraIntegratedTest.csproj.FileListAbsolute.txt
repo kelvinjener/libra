@@ -1,6 +1,5 @@
-C:\github\Libra\LibraIntegratedTest\bin\Debug\LibraIntegratedTest.dll
-C:\github\Libra\LibraIntegratedTest\bin\Debug\LibraIntegratedTest.pdb
-C:\github\Libra\LibraIntegratedTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\github\Libra\LibraIntegratedTest\obj\Debug\LibraIntegratedTest.csprojResolveAssemblyReference.cache
-C:\github\Libra\LibraIntegratedTest\obj\Debug\LibraIntegratedTest.dll
-C:\github\Libra\LibraIntegratedTest\obj\Debug\LibraIntegratedTest.pdb
+C:\github\libra\LibraIntegratedTest\bin\Debug\LibraIntegratedTest.dll
+C:\github\libra\LibraIntegratedTest\bin\Debug\LibraIntegratedTest.pdb
+C:\github\libra\LibraIntegratedTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\github\libra\LibraIntegratedTest\obj\Debug\LibraIntegratedTest.dll
+C:\github\libra\LibraIntegratedTest\obj\Debug\LibraIntegratedTest.pdb

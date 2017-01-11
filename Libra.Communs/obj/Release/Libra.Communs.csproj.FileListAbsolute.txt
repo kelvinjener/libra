@@ -1,7 +1,0 @@
-C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\bin\Release\Libra.Communs.dll
-C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\bin\Release\Libra.Communs.pdb
-C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\obj\Release\Libra.Communs.csprojResolveAssemblyReference.cache
-C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\obj\Release\Libra.Communs.Resources.EnumLocalization.resources
-C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\obj\Release\Libra.Communs.csproj.GenerateResource.Cache
-C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\obj\Release\Libra.Communs.dll
-C:\Users\aekli\Google Drive\Mesklar\04 - Desenvolvimento\Fontes\JAF Colchões\Libra\Libra.Communs\obj\Release\Libra.Communs.pdb

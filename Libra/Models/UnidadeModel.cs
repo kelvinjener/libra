@@ -1,4 +1,5 @@
 ﻿using Libra.Communs;
+using Libra.Models.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,7 +9,7 @@ using System.Web;
 namespace Libra.Models
 {
     [Table("Unidade")]
-    public class UnidadeModel : BaseModels
+    public class UnidadeModel : BaseModel
     {
         public int UnidadeId { get; set; }
         public string Nome { get; set; }

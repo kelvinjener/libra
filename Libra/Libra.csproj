@@ -839,7 +839,8 @@
     <Compile Include="Class\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controllers\FornecedoresController.cs" />
+    <Compile Include="Controllers\Core\CRTController.cs" />
+    <Compile Include="Controllers\Negocio\FornecedoresController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
     <Compile Include="Forgot.aspx.cs">
       <DependentUpon>Forgot.aspx</DependentUpon>
@@ -862,7 +863,8 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseModels.cs" />
+    <Compile Include="Models\Util\BaseModel.cs" />
+    <Compile Include="Models\Core\CRTModel.cs" />
     <Compile Include="Models\FornecedoresModel.cs" />
     <Compile Include="Models\ProdutoModels.cs" />
     <Compile Include="Models\UnidadeModel.cs" />

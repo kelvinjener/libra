@@ -1,4 +1,5 @@
 ﻿using Libra.Communs;
+using Libra.Models.Util;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Web;
 namespace Libra.Models
 {
     [Table("Usuario")]
-    public class UsuarioModel : BaseModels
+    public class UsuarioModel : BaseModel
     {
         public UsuarioModel()
         {

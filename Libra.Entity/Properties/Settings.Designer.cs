@@ -33,5 +33,16 @@ namespace Libra.Entity.Properties {
                 return ((string)(this["LibraDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=LibraDB;Integrated Security=True;Persist Se" +
+            "curity Info=False")]
+        public string LibraDBConnectionString1 {
+            get {
+                return ((string)(this["LibraDBConnectionString1"]));
+            }
+        }
     }
 }
