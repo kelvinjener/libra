@@ -226,6 +226,8 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="AutorizacaoVendas.aspx" />
+    <Content Include="CadastroEstoque.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\animate.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -368,6 +370,7 @@
     <Content Include="Content\icheck\flat\_all.css" />
     <Content Include="Content\ion.rangeSlider.css" />
     <Content Include="Content\ion.rangeSlider.skinFlat.css" />
+    <Content Include="FechamentoCaixa.aspx" />
     <Content Include="Forgot.aspx" />
     <Content Include="CadastroFornecedores.aspx" />
     <Content Include="images\logoMobile.png" />
@@ -816,8 +819,10 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="TrocaDevolucao.aspx" />
     <Content Include="Unidades.aspx" />
     <Content Include="Usuarios.aspx" />
+    <Content Include="Venda.aspx" />
     <Content Include="ViewSwitcherOLD.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -836,12 +841,33 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutorizacaoVendas.aspx.cs">
+      <DependentUpon>AutorizacaoVendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutorizacaoVendas.aspx.designer.cs">
+      <DependentUpon>AutorizacaoVendas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroEstoque.aspx.cs">
+      <DependentUpon>CadastroEstoque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroEstoque.aspx.designer.cs">
+      <DependentUpon>CadastroEstoque.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Class\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controllers\Core\CRTController.cs" />
     <Compile Include="Controllers\Negocio\FornecedoresController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
+    <Compile Include="FechamentoCaixa.aspx.cs">
+      <DependentUpon>FechamentoCaixa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FechamentoCaixa.aspx.designer.cs">
+      <DependentUpon>FechamentoCaixa.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forgot.aspx.cs">
       <DependentUpon>Forgot.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1081,6 +1107,13 @@
       <DependentUpon>Site.MobileOLD.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="TrocaDevolucao.aspx.cs">
+      <DependentUpon>TrocaDevolucao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrocaDevolucao.aspx.designer.cs">
+      <DependentUpon>TrocaDevolucao.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Unidades.aspx.cs">
       <DependentUpon>Unidades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1094,6 +1127,13 @@
     </Compile>
     <Compile Include="Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Venda.aspx.cs">
+      <DependentUpon>Venda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Venda.aspx.designer.cs">
+      <DependentUpon>Venda.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ProdutoViewModels.cs" />
     <Compile Include="ViewSwitcherOLD.ascx.cs">

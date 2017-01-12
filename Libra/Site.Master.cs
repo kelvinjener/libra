@@ -200,11 +200,28 @@ namespace Libra
             #region Produtos
             if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Cadastro de Produtos"))
                 MenuCadastroProdutos.Visible = true;
+
+            if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Cadastro de Estoque"))
+               MenuEstoque.Visible = true;
             #endregion
 
             #region Fornecedores
             if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Cadastro de Fornecedores"))
                 MenuFornecedores.Visible = true;
+            #endregion
+
+            #region Vendas
+            if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Venda"))
+                MenuVenda.Visible = true;
+
+            if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Troca e Devolução"))
+                MenuTrocaDecolucao.Visible = true;
+
+            if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Fechamento de Caixa"))
+                MenuFechamentoCaixa.Visible = true;
+
+            if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Autorização de Vendas"))
+                MenuAutorizacaoVendas.Visible = true;
             #endregion
 
             #endregion

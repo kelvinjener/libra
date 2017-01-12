@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CadastroFornecedores.aspx.cs" Inherits="Libra.CadastroFornecedores" %>
+﻿<%@ Page Title="Cadastro de Fornecedores" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CadastroFornecedores.aspx.cs" Inherits="Libra.CadastroFornecedores" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

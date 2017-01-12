@@ -49,6 +49,42 @@ namespace Libra {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Vendas;
         
         /// <summary>
+        /// MenuVenda control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuVenda;
+        
+        /// <summary>
+        /// MenuTrocaDecolucao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuTrocaDecolucao;
+        
+        /// <summary>
+        /// MenuFechamentoCaixa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuFechamentoCaixa;
+        
+        /// <summary>
+        /// MenuAutorizacaoVendas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuAutorizacaoVendas;
+        
+        /// <summary>
         /// Produtos control.
         /// </summary>
         /// <remarks>

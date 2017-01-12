@@ -54,16 +54,18 @@
                                     <li runat="server" id="Vendas" visible="false">
                                         <a><i class="fa fa-money"></i>Vendas <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none">
-                                            <li><a runat="server" href="~/">Home</a></li>
-                                            <li><a runat="server" href="~/About">About</a></li>
-                                            <li><a runat="server" href="~/Contact">Contact</a></li>
+                                            <li runat="server" id="MenuVenda" visible="false"><a runat="server" href="~/Venda">Venda</a></li>
+                                            <li runat="server" id="MenuTrocaDecolucao" visible="false"><a runat="server" href="~/TrocaDevolucao">Troca e Devolução</a></li>
+                                            <li runat="server" id="MenuFechamentoCaixa" visible="false"><a runat="server" href="~/FechamentoCaixa">Fechamento de Caixa</a></li>
+                                            <li runat="server" id="MenuAutorizacaoVendas" visible="false"><a runat="server" href="~/AutorizacaoVendas">Autorização de Vendas</a></li>
+
                                         </ul>
                                     </li>
                                     <li runat="server" id="Produtos" visible="false">
                                         <a><i class="fa fa-server"></i>Produtos <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none">
                                             <li runat="server" id="MenuCadastroProdutos" visible="false"><a runat="server" href="~/CadastroProdutos">Cadastro de Produtos</a></li>
-                                            <li runat="server" id="MenuEstoque" visible="false"><a runat="server" href="~/Estoque">Estoque</a></li>
+                                            <li runat="server" id="MenuEstoque" visible="false"><a runat="server" href="~/CadastroEstoque">Cadastro de Estoque</a></li>
 
                                         </ul>
                                     </li>
