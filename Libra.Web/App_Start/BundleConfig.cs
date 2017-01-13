@@ -23,8 +23,42 @@ namespace Libra.Web
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/scrollreveal").Include(
+                     "~/Scripts/scrollreveal.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/waypoints").Include(
+                     "~/Scripts/jquery.waypoints.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/counterup").Include(
+                     "~/Scripts/jquery.counterup.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/carousel").Include(
+                    "~/Scripts/owl.carousel.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/isotope").Include(
+                    "~/Scripts/isotope.pkgd.min.js",
+                    "~/Scripts/isotope_custom.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/masonry").Include(
+                   "~/Scripts/masonry.pkgd.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/prettyPhoto").Include(
+                   "~/Scripts/jquery.prettyPhoto.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/theme").Include(
+                   "~/Scripts/theme.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/font-awesome.min.css",
+                      "~/Content/owl.carousel.min.css",
+                      "~/Content/animate.min.css",
+                      "~/Content/prettyPhoto.css",
+                      "~/Content/default.css",
+                      "~/Content/typography.css",
+                      "~/Content/style.css",
+                      "~/Content/custom.css",
+                      "~/Content/responsive.css",
                       "~/Content/site.css"));
         }
     }
