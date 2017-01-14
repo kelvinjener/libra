@@ -1,4 +1,3 @@
-C:\github\libra\Libra\obj\Debug\Libra.csprojResolveAssemblyReference.cache
 C:\github\libra\Libra\bin\ApplicationInsights.config
 C:\github\libra\Libra\bin\roslyn\csc.exe
 C:\github\libra\Libra\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -91,5 +90,6 @@ C:\github\libra\Libra\bin\Microsoft.Owin.Security.Google.xml
 C:\github\libra\Libra\bin\Microsoft.Owin.Security.Twitter.xml
 C:\github\libra\Libra\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\github\libra\Libra\bin\Microsoft.Owin.Security.OAuth.xml
+C:\github\libra\Libra\obj\Debug\Libra.csprojResolveAssemblyReference.cache
 C:\github\libra\Libra\obj\Debug\Libra.dll
 C:\github\libra\Libra\obj\Debug\Libra.pdb

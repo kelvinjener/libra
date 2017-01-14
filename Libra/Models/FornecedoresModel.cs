@@ -9,7 +9,17 @@ namespace Libra.Models
     public class FornecedoresModel : BaseModel
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
+        public int TipoFornecedorId { get; set; }
+        public int OrigemFornecedorId { get; set; }
+        public string RazaoSocial { get; set; }
+        public string NomeFantasia { get; set; }
         public string CNPJ { get; set; }
+        public string InscricaoEstadual { get; set; }
+        public string InscricaoMunicipal { get; set; }
+        public string Responsavel { get; set; }
+        public bool IndicadorFabricante { get; set; }
+        public bool IndicadorReceberEmail { get; set; }
+        public string RamoAtividade { get; set; }
+        public string InfoAdicional { get; set; }
     }
 }

@@ -50,6 +50,7 @@
     <Compile Include="CRTBll.cs" />
     <Compile Include="DimensoesProdutoBll.cs" />
     <Compile Include="FabricanteProdutoBll.cs" />
+    <Compile Include="FornecedoresBll.cs" />
     <Compile Include="FuncionalidadeBll.cs" />
     <Compile Include="FuncionalidadePerfilBll.cs" />
     <Compile Include="LogBll.cs" />
