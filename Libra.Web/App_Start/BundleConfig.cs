@@ -58,8 +58,7 @@ namespace Libra.Web
                       "~/Content/typography.css",
                       "~/Content/style.css",
                       "~/Content/custom.css",
-                      "~/Content/responsive.css",
-                      "~/Content/site.css"));
+                      "~/Content/responsive.css"));
         }
     }
 }
