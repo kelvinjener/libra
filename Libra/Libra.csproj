@@ -237,7 +237,6 @@
     <Content Include="Content\calendar\fullcalendar.css" />
     <Content Include="Content\calendar\fullcalendar.min.css" />
     <Content Include="Content\calendar\fullcalendar.print.css" />
-    <Content Include="Content\colorpicker\bootstrap-colorpicker.min.css" />
     <Content Include="Content\colorpicker\img\bootstrap-colorpicker\alpha-horizontal.png" />
     <Content Include="Content\colorpicker\img\bootstrap-colorpicker\alpha.png" />
     <Content Include="Content\colorpicker\img\bootstrap-colorpicker\hue-horizontal.png" />
@@ -399,6 +398,11 @@
     <Content Include="images\desktop.ini" />
     <Content Include="images\logo.png" />
     <Content Include="images\Sorting icons.psd" />
+    <Content Include="js\Controllers\FornecedorController.js" />
+    <Content Include="js\libs\Libra.js" />
+    <Content Include="js\libs\Libra.UI.js" />
+    <Content Include="js\Util\DynamicTable.js" />
+    <Content Include="js\Util\ServicesUtility.js" />
     <Content Include="Login.aspx" />
     <Content Include="OpenAuthProviders.ascx" />
     <Content Include="ParametrosProdutos.aspx" />
@@ -595,7 +599,9 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="js\libs\bootbox-4.2.0.js" />
     <None Include="Properties\PublishProfiles\MesKLar.pubxml" />
+    <None Include="Properties\PublishProfiles\Publish Libra.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -667,7 +673,6 @@
     <Content Include="Scripts\datatables\tools\examples\alter_buttons.xml" />
     <Content Include="Scripts\datatables\tools\examples\bootstrap.xml" />
     <Content Include="Scripts\datatables\tools\examples\button_text.xml" />
-    <Content Include="Scripts\datatables\tools\examples\collection.xml" />
     <Content Include="Scripts\datatables\tools\examples\defaults.xml" />
     <Content Include="Scripts\datatables\tools\examples\index.xml" />
     <Content Include="Scripts\datatables\tools\examples\jqueryui.xml" />
@@ -859,6 +864,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controllers\Core\CRTController.cs" />
+    <Compile Include="Controllers\Core\Resultado.cs" />
     <Compile Include="Controllers\Negocio\FornecedoresController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
     <Compile Include="FechamentoCaixa.aspx.cs">
@@ -1145,6 +1151,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Ajax\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

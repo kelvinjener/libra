@@ -50,7 +50,35 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Controllers\FornecedorControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libra.Control\Libra.Control.csproj">
+      <Project>{e0b76615-86ec-47f5-957e-b8da19a20c98}</Project>
+      <Name>Libra.Control</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libra.Entity\Libra.Entity.csproj">
+      <Project>{6C5EAB5A-D3D7-4DA4-96E0-83250DC79116}</Project>
+      <Name>Libra.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libra\Libra.csproj">
+      <Project>{4a93439d-a373-44b6-917d-2bf302ddb83e}</Project>
+      <Name>Libra</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -1057,49 +1057,49 @@ namespace Libra {
         protected global::System.Web.UI.WebControls.LinkButton lkbOculto;
         
         /// <summary>
-        /// mpeVisualizarUsuario control.
+        /// mpeFornecedor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender mpeVisualizarUsuario;
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeFornecedor;
         
         /// <summary>
-        /// pnlVisualizarUsuario control.
+        /// pnlVisualizarFornecedor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlVisualizarUsuario;
+        protected global::System.Web.UI.WebControls.Panel pnlVisualizarFornecedor;
         
         /// <summary>
-        /// lbUsuario control.
+        /// lblFornecedor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbUsuario;
+        protected global::System.Web.UI.WebControls.Label lblFornecedor;
         
         /// <summary>
-        /// lkCloseVisualizarUsuario control.
+        /// lkCloseVisualizarFornecedor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkCloseVisualizarUsuario;
+        protected global::System.Web.UI.WebControls.LinkButton lkCloseVisualizarFornecedor;
         
         /// <summary>
-        /// lbNomeUsuario control.
+        /// lbNomeFornecedor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbNomeUsuario;
+        protected global::System.Web.UI.WebControls.Label lbNomeFornecedor;
         
         /// <summary>
         /// lbCPFUsuario control.
@@ -1183,13 +1183,13 @@ namespace Libra {
         protected global::System.Web.UI.WebControls.Label lbPerfis;
         
         /// <summary>
-        /// lnbFecharVisualizarUsuario control.
+        /// lnbFecharVisualizarFornecedor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnbFecharVisualizarUsuario;
+        protected global::System.Web.UI.WebControls.LinkButton lnbFecharVisualizarFornecedor;
         
         /// <summary>
         /// mpeExclusaoUsuario control.
