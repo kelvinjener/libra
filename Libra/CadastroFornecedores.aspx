@@ -38,12 +38,51 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
+                            <table class="table-fornecedor table table-striped responsive-utilities jambo_table gvResults table-bordered dt-responsive nowrap no-footer dtr-inline">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="">Ação</th>
+                                        <th>Nome Fantasia</th>
+                                        <th>Razao Social</th>
+                                        <th>Inscrição Estadual</th>
+                                        <th>Ramo Atividade</th>
+                                        <th>CNPJ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="template hide">
+                                        <td class="" style="width: 100px">
+                                            <div class="btn-group">
+                                                <a class="btn btn-default btn-remove" accesskey="r">
+                                                    <i class="fa fa-remove" title="Excluir Fornecedor"></i>
+                                                </a>
+                                            </div>
+                                            <div class="btn-group">
+                                                <a class="btn btn-default btn-edit" accesskey="e">
+                                                    <i class="fa fa-pencil-square-o" title="Editar Fornecedor"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td class="clicavel" data-property="NomeFantasia"></td>
+                                        <td class="clicavel" data-property="RazaoSocial"></td>
+                                        <td class="clicavel" data-property="InscricaoEstadual"></td>
+                                        <td class="clicavel" data-property="RamoAtividade"></td>
+                                        <td class="clicavel" data-property="CNPJ"></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot class="no-data">
+                                    <tr>
+                                        <td class="text-center" colspan="6">Nenhum registro encontrado
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+        <div class="hide" role="tabpanel" data-example-id="togglable-tabs">
             <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                 <li role="presentation" class="active" runat="server" id="tabFornecedor">
                     <a href="#tab_content_fornecedor" id="fornecedor-tab" role="tab" data-toggle="tab" aria-expanded="true">Fornecedor</a>
@@ -798,13 +837,51 @@
             </div>
         </div>
     </asp:Panel>
-    <asp:LinkButton ID="lkbOculto" runat="server" Text="" Style="display: none"></asp:LinkButton>
 
-    <asp:ModalPopupExtender ID="mpeVisualizarUsuario" TargetControlID="lkbOculto" PopupControlID="pnlVisualizarUsuario"
-        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lnbFecharVisualizarUsuario"
+    <div class="modal fade modal-fornecedor" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Fornecedor</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped table-bordered jambo_table">
+                        <thead>
+                            <tr role="row">
+                                <th>Campo
+                                </th>
+                                <th>Descrição
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="template hide">
+                                <td class="campo"></td>
+                                <td class="description"></td>
+                            </tr>
+                        </tbody>
+                        <tfoot class="no-data">
+                            <tr>
+                                <td class="text-center" colspan="2">Nenhum registro encontrado
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <asp:LinkButton ID="lkbOculto" runat="server" Text="" Style="display: none"></asp:LinkButton>
+    <asp:ModalPopupExtender ID="mpeFornecedor" TargetControlID="lkbOculto" PopupControlID="pnlVisualizarFornecedor"
+        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lnbFecharVisualizarFornecedor"
         ClientIDMode="AutoID">
     </asp:ModalPopupExtender>
-    <asp:Panel ID="pnlVisualizarUsuario" runat="server" Style="display: none">
+    <asp:Panel ID="pnlVisualizarFornecedor" runat="server" Style="display: none">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
@@ -814,11 +891,11 @@
                                 <div class="x_title">
                                     <div class="row">
                                         <div class="col-md-11 col-sm-11 col-xs-11">
-                                            <h2>Usuário
-                                        <asp:Label ID="lbUsuario" runat="server"></asp:Label></h2>
+                                            <h2>Fornecedor
+                                        <asp:Label ID="lblFornecedor" runat="server"></asp:Label></h2>
                                         </div>
                                         <div class="col-md-1 col-sm-1 col-xs-1">
-                                            <asp:LinkButton runat="server" ID="lkCloseVisualizarUsuario" CssClass="right"><i class="fa fa-close"></i></asp:LinkButton>
+                                            <asp:LinkButton runat="server" ID="lkCloseVisualizarFornecedor" CssClass="right"><i class="fa fa-close"></i></asp:LinkButton>
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
@@ -828,9 +905,9 @@
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div>
                                                 <label>
-                                                    Nome Usuário:
+                                                    Nome Fantasia:
                                                 </label>
-                                                <asp:Label ID="lbNomeUsuario" runat="server" CssClass="labelInfo"></asp:Label>
+                                                <asp:Label ID="lbNomeFornecedor" runat="server" CssClass="labelInfo"></asp:Label>
                                             </div>
                                         </div>
                                     </div>
@@ -840,7 +917,7 @@
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div>
                                                 <label>
-                                                    CPF:
+                                                    Razao Social:
                                                 </label>
                                                 <asp:Label ID="lbCPFUsuario" runat="server" CssClass="labelInfo"></asp:Label>
                                             </div>
@@ -852,7 +929,7 @@
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <div>
                                                 <label>
-                                                    Sexo:
+                                                    Inscrição Estadual:
                                                 </label>
                                                 <asp:Label ID="lbSexo" runat="server" CssClass="labelInfo"></asp:Label>
                                             </div>
@@ -861,7 +938,7 @@
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <div>
                                                 <label>
-                                                    Data Nascimento:
+                                                    Ramo Atividade:
                                                 </label>
                                                 <asp:Label ID="lbDataNascimento" runat="server" CssClass="labelInfo"></asp:Label>
                                             </div>
@@ -873,7 +950,7 @@
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <div>
                                                 <label>
-                                                    Telefone:
+                                                    CNPJ:
                                                 </label>
                                                 <asp:Label ID="lbTelefone" runat="server" CssClass="labelInfo"></asp:Label>
                                             </div>
@@ -937,7 +1014,7 @@
 
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <asp:LinkButton ID="lnbFecharVisualizarUsuario" runat="server"
+                                            <asp:LinkButton ID="lnbFecharVisualizarFornecedor" runat="server"
                                                 CssClass="btn btn-default" Text="Fechar">
                                             </asp:LinkButton>
                                         </div>
@@ -1025,11 +1102,11 @@
                         <asp:Button ID="btnCancelarExclusaoUsuario" runat="server"
                             Text="FECHAR" CausesValidation="false" class="btn btn-default pull-right" />
                     </div>
-
                 </div>
             </div>
         </div>
     </asp:Panel>
+    <script type="text/javascript" src="js/Controllers/FornecedorController.js"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScripts" runat="server">
 </asp:Content>

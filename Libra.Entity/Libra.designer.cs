@@ -99,6 +99,9 @@ namespace Libra.Entity
     partial void InsertCRT(CRT instance);
     partial void UpdateCRT(CRT instance);
     partial void DeleteCRT(CRT instance);
+    partial void InsertFORNECEDORE(FORNECEDORE instance);
+    partial void UpdateFORNECEDORE(FORNECEDORE instance);
+    partial void DeleteFORNECEDORE(FORNECEDORE instance);
     #endregion
 		
 		public LibraDataContext() : 
@@ -312,6 +315,14 @@ namespace Libra.Entity
 			get
 			{
 				return this.GetTable<CRT>();
+			}
+		}
+		
+		public System.Data.Linq.Table<FORNECEDORE> FORNECEDOREs
+		{
+			get
+			{
+				return this.GetTable<FORNECEDORE>();
 			}
 		}
 	}
@@ -1400,6 +1411,12 @@ namespace Libra.Entity
 		
 		private EntitySet<CRT> _CRTs2;
 		
+		private EntitySet<FORNECEDORE> _FORNECEDOREs;
+		
+		private EntitySet<FORNECEDORE> _FORNECEDOREs1;
+		
+		private EntitySet<FORNECEDORE> _FORNECEDOREs2;
+		
 		private EntityRef<AspNetUser> _AspNetUser;
 		
     #region Extensibility Method Definitions
@@ -1435,6 +1452,9 @@ namespace Libra.Entity
 			this._CRTs = new EntitySet<CRT>(new Action<CRT>(this.attach_CRTs), new Action<CRT>(this.detach_CRTs));
 			this._CRTs1 = new EntitySet<CRT>(new Action<CRT>(this.attach_CRTs1), new Action<CRT>(this.detach_CRTs1));
 			this._CRTs2 = new EntitySet<CRT>(new Action<CRT>(this.attach_CRTs2), new Action<CRT>(this.detach_CRTs2));
+			this._FORNECEDOREs = new EntitySet<FORNECEDORE>(new Action<FORNECEDORE>(this.attach_FORNECEDOREs), new Action<FORNECEDORE>(this.detach_FORNECEDOREs));
+			this._FORNECEDOREs1 = new EntitySet<FORNECEDORE>(new Action<FORNECEDORE>(this.attach_FORNECEDOREs1), new Action<FORNECEDORE>(this.detach_FORNECEDOREs1));
+			this._FORNECEDOREs2 = new EntitySet<FORNECEDORE>(new Action<FORNECEDORE>(this.attach_FORNECEDOREs2), new Action<FORNECEDORE>(this.detach_FORNECEDOREs2));
 			this._AspNetUser = default(EntityRef<AspNetUser>);
 			OnCreated();
 		}
@@ -1714,6 +1734,45 @@ namespace Libra.Entity
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_FORNECEDORE", Storage="_FORNECEDOREs", ThisKey="USUARIOID", OtherKey="ALTERADOPOR")]
+		public EntitySet<FORNECEDORE> FORNECEDOREs
+		{
+			get
+			{
+				return this._FORNECEDOREs;
+			}
+			set
+			{
+				this._FORNECEDOREs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_FORNECEDORE1", Storage="_FORNECEDOREs1", ThisKey="USUARIOID", OtherKey="CRIADOPOR")]
+		public EntitySet<FORNECEDORE> FORNECEDOREs1
+		{
+			get
+			{
+				return this._FORNECEDOREs1;
+			}
+			set
+			{
+				this._FORNECEDOREs1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_FORNECEDORE2", Storage="_FORNECEDOREs2", ThisKey="USUARIOID", OtherKey="EXCLUIDOPOR")]
+		public EntitySet<FORNECEDORE> FORNECEDOREs2
+		{
+			get
+			{
+				return this._FORNECEDOREs2;
+			}
+			set
+			{
+				this._FORNECEDOREs2.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AspNetUser_USUARIO", Storage="_AspNetUser", ThisKey="ASPNETUSERID", OtherKey="Id", IsForeignKey=true)]
 		public AspNetUser AspNetUser
 		{
@@ -1847,6 +1906,42 @@ namespace Libra.Entity
 		}
 		
 		private void detach_CRTs2(CRT entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO2 = null;
+		}
+		
+		private void attach_FORNECEDOREs(FORNECEDORE entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO = this;
+		}
+		
+		private void detach_FORNECEDOREs(FORNECEDORE entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO = null;
+		}
+		
+		private void attach_FORNECEDOREs1(FORNECEDORE entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO1 = this;
+		}
+		
+		private void detach_FORNECEDOREs1(FORNECEDORE entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO1 = null;
+		}
+		
+		private void attach_FORNECEDOREs2(FORNECEDORE entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO2 = this;
+		}
+		
+		private void detach_FORNECEDOREs2(FORNECEDORE entity)
 		{
 			this.SendPropertyChanging();
 			entity.USUARIO2 = null;
@@ -5838,6 +5933,647 @@ namespace Libra.Entity
 					if ((value != null))
 					{
 						value.CRTs2.Add(this);
+						this._EXCLUIDOPOR = value.USUARIOID;
+					}
+					else
+					{
+						this._EXCLUIDOPOR = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("USUARIO2");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.FORNECEDORES")]
+	public partial class FORNECEDORE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _FORNECEDORID;
+		
+		private int _TIPOFORNECEDORID;
+		
+		private int _ORIGEMFORNECEDORID;
+		
+		private string _RAZAOSOCIAL;
+		
+		private string _NOMEFANTASIA;
+		
+		private string _CNPJ;
+		
+		private string _INSCRICAOESTADUAL;
+		
+		private string _INSCRICAOMUNICIPAL;
+		
+		private string _RESPONSAVEL;
+		
+		private bool _INDICADORFABRICANTE;
+		
+		private bool _INDICADORRECEBEREMAIL;
+		
+		private string _RAMOATIVIDADE;
+		
+		private string _INFOADICIONAL;
+		
+		private bool _ATIVO;
+		
+		private int _CRIADOPOR;
+		
+		private System.Nullable<int> _ALTERADOPOR;
+		
+		private System.Nullable<int> _EXCLUIDOPOR;
+		
+		private System.DateTime _DATACRIACAO;
+		
+		private System.Nullable<System.DateTime> _DATAALTERACAO;
+		
+		private System.Nullable<System.DateTime> _DATAEXCLUSAO;
+		
+		private EntityRef<USUARIO> _USUARIO;
+		
+		private EntityRef<USUARIO> _USUARIO1;
+		
+		private EntityRef<USUARIO> _USUARIO2;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnFORNECEDORIDChanging(int value);
+    partial void OnFORNECEDORIDChanged();
+    partial void OnTIPOFORNECEDORIDChanging(int value);
+    partial void OnTIPOFORNECEDORIDChanged();
+    partial void OnORIGEMFORNECEDORIDChanging(int value);
+    partial void OnORIGEMFORNECEDORIDChanged();
+    partial void OnRAZAOSOCIALChanging(string value);
+    partial void OnRAZAOSOCIALChanged();
+    partial void OnNOMEFANTASIAChanging(string value);
+    partial void OnNOMEFANTASIAChanged();
+    partial void OnCNPJChanging(string value);
+    partial void OnCNPJChanged();
+    partial void OnINSCRICAOESTADUALChanging(string value);
+    partial void OnINSCRICAOESTADUALChanged();
+    partial void OnINSCRICAOMUNICIPALChanging(string value);
+    partial void OnINSCRICAOMUNICIPALChanged();
+    partial void OnRESPONSAVELChanging(string value);
+    partial void OnRESPONSAVELChanged();
+    partial void OnINDICADORFABRICANTEChanging(bool value);
+    partial void OnINDICADORFABRICANTEChanged();
+    partial void OnINDICADORRECEBEREMAILChanging(bool value);
+    partial void OnINDICADORRECEBEREMAILChanged();
+    partial void OnRAMOATIVIDADEChanging(string value);
+    partial void OnRAMOATIVIDADEChanged();
+    partial void OnINFOADICIONALChanging(string value);
+    partial void OnINFOADICIONALChanged();
+    partial void OnATIVOChanging(bool value);
+    partial void OnATIVOChanged();
+    partial void OnCRIADOPORChanging(int value);
+    partial void OnCRIADOPORChanged();
+    partial void OnALTERADOPORChanging(System.Nullable<int> value);
+    partial void OnALTERADOPORChanged();
+    partial void OnEXCLUIDOPORChanging(System.Nullable<int> value);
+    partial void OnEXCLUIDOPORChanged();
+    partial void OnDATACRIACAOChanging(System.DateTime value);
+    partial void OnDATACRIACAOChanged();
+    partial void OnDATAALTERACAOChanging(System.Nullable<System.DateTime> value);
+    partial void OnDATAALTERACAOChanged();
+    partial void OnDATAEXCLUSAOChanging(System.Nullable<System.DateTime> value);
+    partial void OnDATAEXCLUSAOChanged();
+    #endregion
+		
+		public FORNECEDORE()
+		{
+			this._USUARIO = default(EntityRef<USUARIO>);
+			this._USUARIO1 = default(EntityRef<USUARIO>);
+			this._USUARIO2 = default(EntityRef<USUARIO>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FORNECEDORID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int FORNECEDORID
+		{
+			get
+			{
+				return this._FORNECEDORID;
+			}
+			set
+			{
+				if ((this._FORNECEDORID != value))
+				{
+					this.OnFORNECEDORIDChanging(value);
+					this.SendPropertyChanging();
+					this._FORNECEDORID = value;
+					this.SendPropertyChanged("FORNECEDORID");
+					this.OnFORNECEDORIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIPOFORNECEDORID", DbType="Int NOT NULL")]
+		public int TIPOFORNECEDORID
+		{
+			get
+			{
+				return this._TIPOFORNECEDORID;
+			}
+			set
+			{
+				if ((this._TIPOFORNECEDORID != value))
+				{
+					this.OnTIPOFORNECEDORIDChanging(value);
+					this.SendPropertyChanging();
+					this._TIPOFORNECEDORID = value;
+					this.SendPropertyChanged("TIPOFORNECEDORID");
+					this.OnTIPOFORNECEDORIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ORIGEMFORNECEDORID", DbType="Int NOT NULL")]
+		public int ORIGEMFORNECEDORID
+		{
+			get
+			{
+				return this._ORIGEMFORNECEDORID;
+			}
+			set
+			{
+				if ((this._ORIGEMFORNECEDORID != value))
+				{
+					this.OnORIGEMFORNECEDORIDChanging(value);
+					this.SendPropertyChanging();
+					this._ORIGEMFORNECEDORID = value;
+					this.SendPropertyChanged("ORIGEMFORNECEDORID");
+					this.OnORIGEMFORNECEDORIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RAZAOSOCIAL", DbType="VarChar(40) NOT NULL", CanBeNull=false)]
+		public string RAZAOSOCIAL
+		{
+			get
+			{
+				return this._RAZAOSOCIAL;
+			}
+			set
+			{
+				if ((this._RAZAOSOCIAL != value))
+				{
+					this.OnRAZAOSOCIALChanging(value);
+					this.SendPropertyChanging();
+					this._RAZAOSOCIAL = value;
+					this.SendPropertyChanged("RAZAOSOCIAL");
+					this.OnRAZAOSOCIALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMEFANTASIA", DbType="VarChar(40)")]
+		public string NOMEFANTASIA
+		{
+			get
+			{
+				return this._NOMEFANTASIA;
+			}
+			set
+			{
+				if ((this._NOMEFANTASIA != value))
+				{
+					this.OnNOMEFANTASIAChanging(value);
+					this.SendPropertyChanging();
+					this._NOMEFANTASIA = value;
+					this.SendPropertyChanged("NOMEFANTASIA");
+					this.OnNOMEFANTASIAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CNPJ", DbType="VarChar(14)")]
+		public string CNPJ
+		{
+			get
+			{
+				return this._CNPJ;
+			}
+			set
+			{
+				if ((this._CNPJ != value))
+				{
+					this.OnCNPJChanging(value);
+					this.SendPropertyChanging();
+					this._CNPJ = value;
+					this.SendPropertyChanged("CNPJ");
+					this.OnCNPJChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_INSCRICAOESTADUAL", DbType="VarChar(15)")]
+		public string INSCRICAOESTADUAL
+		{
+			get
+			{
+				return this._INSCRICAOESTADUAL;
+			}
+			set
+			{
+				if ((this._INSCRICAOESTADUAL != value))
+				{
+					this.OnINSCRICAOESTADUALChanging(value);
+					this.SendPropertyChanging();
+					this._INSCRICAOESTADUAL = value;
+					this.SendPropertyChanged("INSCRICAOESTADUAL");
+					this.OnINSCRICAOESTADUALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_INSCRICAOMUNICIPAL", DbType="VarChar(15)")]
+		public string INSCRICAOMUNICIPAL
+		{
+			get
+			{
+				return this._INSCRICAOMUNICIPAL;
+			}
+			set
+			{
+				if ((this._INSCRICAOMUNICIPAL != value))
+				{
+					this.OnINSCRICAOMUNICIPALChanging(value);
+					this.SendPropertyChanging();
+					this._INSCRICAOMUNICIPAL = value;
+					this.SendPropertyChanged("INSCRICAOMUNICIPAL");
+					this.OnINSCRICAOMUNICIPALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RESPONSAVEL", DbType="VarChar(48)")]
+		public string RESPONSAVEL
+		{
+			get
+			{
+				return this._RESPONSAVEL;
+			}
+			set
+			{
+				if ((this._RESPONSAVEL != value))
+				{
+					this.OnRESPONSAVELChanging(value);
+					this.SendPropertyChanging();
+					this._RESPONSAVEL = value;
+					this.SendPropertyChanged("RESPONSAVEL");
+					this.OnRESPONSAVELChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_INDICADORFABRICANTE", DbType="Bit NOT NULL")]
+		public bool INDICADORFABRICANTE
+		{
+			get
+			{
+				return this._INDICADORFABRICANTE;
+			}
+			set
+			{
+				if ((this._INDICADORFABRICANTE != value))
+				{
+					this.OnINDICADORFABRICANTEChanging(value);
+					this.SendPropertyChanging();
+					this._INDICADORFABRICANTE = value;
+					this.SendPropertyChanged("INDICADORFABRICANTE");
+					this.OnINDICADORFABRICANTEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_INDICADORRECEBEREMAIL", DbType="Bit NOT NULL")]
+		public bool INDICADORRECEBEREMAIL
+		{
+			get
+			{
+				return this._INDICADORRECEBEREMAIL;
+			}
+			set
+			{
+				if ((this._INDICADORRECEBEREMAIL != value))
+				{
+					this.OnINDICADORRECEBEREMAILChanging(value);
+					this.SendPropertyChanging();
+					this._INDICADORRECEBEREMAIL = value;
+					this.SendPropertyChanged("INDICADORRECEBEREMAIL");
+					this.OnINDICADORRECEBEREMAILChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RAMOATIVIDADE", DbType="VarChar(255)")]
+		public string RAMOATIVIDADE
+		{
+			get
+			{
+				return this._RAMOATIVIDADE;
+			}
+			set
+			{
+				if ((this._RAMOATIVIDADE != value))
+				{
+					this.OnRAMOATIVIDADEChanging(value);
+					this.SendPropertyChanging();
+					this._RAMOATIVIDADE = value;
+					this.SendPropertyChanged("RAMOATIVIDADE");
+					this.OnRAMOATIVIDADEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_INFOADICIONAL", DbType="VarChar(60)")]
+		public string INFOADICIONAL
+		{
+			get
+			{
+				return this._INFOADICIONAL;
+			}
+			set
+			{
+				if ((this._INFOADICIONAL != value))
+				{
+					this.OnINFOADICIONALChanging(value);
+					this.SendPropertyChanging();
+					this._INFOADICIONAL = value;
+					this.SendPropertyChanged("INFOADICIONAL");
+					this.OnINFOADICIONALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ATIVO", DbType="Bit NOT NULL")]
+		public bool ATIVO
+		{
+			get
+			{
+				return this._ATIVO;
+			}
+			set
+			{
+				if ((this._ATIVO != value))
+				{
+					this.OnATIVOChanging(value);
+					this.SendPropertyChanging();
+					this._ATIVO = value;
+					this.SendPropertyChanged("ATIVO");
+					this.OnATIVOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRIADOPOR", DbType="Int NOT NULL")]
+		public int CRIADOPOR
+		{
+			get
+			{
+				return this._CRIADOPOR;
+			}
+			set
+			{
+				if ((this._CRIADOPOR != value))
+				{
+					if (this._USUARIO1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCRIADOPORChanging(value);
+					this.SendPropertyChanging();
+					this._CRIADOPOR = value;
+					this.SendPropertyChanged("CRIADOPOR");
+					this.OnCRIADOPORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ALTERADOPOR", DbType="Int")]
+		public System.Nullable<int> ALTERADOPOR
+		{
+			get
+			{
+				return this._ALTERADOPOR;
+			}
+			set
+			{
+				if ((this._ALTERADOPOR != value))
+				{
+					if (this._USUARIO.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnALTERADOPORChanging(value);
+					this.SendPropertyChanging();
+					this._ALTERADOPOR = value;
+					this.SendPropertyChanged("ALTERADOPOR");
+					this.OnALTERADOPORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EXCLUIDOPOR", DbType="Int")]
+		public System.Nullable<int> EXCLUIDOPOR
+		{
+			get
+			{
+				return this._EXCLUIDOPOR;
+			}
+			set
+			{
+				if ((this._EXCLUIDOPOR != value))
+				{
+					if (this._USUARIO2.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEXCLUIDOPORChanging(value);
+					this.SendPropertyChanging();
+					this._EXCLUIDOPOR = value;
+					this.SendPropertyChanged("EXCLUIDOPOR");
+					this.OnEXCLUIDOPORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATACRIACAO", DbType="DateTime NOT NULL")]
+		public System.DateTime DATACRIACAO
+		{
+			get
+			{
+				return this._DATACRIACAO;
+			}
+			set
+			{
+				if ((this._DATACRIACAO != value))
+				{
+					this.OnDATACRIACAOChanging(value);
+					this.SendPropertyChanging();
+					this._DATACRIACAO = value;
+					this.SendPropertyChanged("DATACRIACAO");
+					this.OnDATACRIACAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAALTERACAO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DATAALTERACAO
+		{
+			get
+			{
+				return this._DATAALTERACAO;
+			}
+			set
+			{
+				if ((this._DATAALTERACAO != value))
+				{
+					this.OnDATAALTERACAOChanging(value);
+					this.SendPropertyChanging();
+					this._DATAALTERACAO = value;
+					this.SendPropertyChanged("DATAALTERACAO");
+					this.OnDATAALTERACAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAEXCLUSAO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DATAEXCLUSAO
+		{
+			get
+			{
+				return this._DATAEXCLUSAO;
+			}
+			set
+			{
+				if ((this._DATAEXCLUSAO != value))
+				{
+					this.OnDATAEXCLUSAOChanging(value);
+					this.SendPropertyChanging();
+					this._DATAEXCLUSAO = value;
+					this.SendPropertyChanged("DATAEXCLUSAO");
+					this.OnDATAEXCLUSAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_FORNECEDORE", Storage="_USUARIO", ThisKey="ALTERADOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO
+		{
+			get
+			{
+				return this._USUARIO.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO.Entity = null;
+						previousValue.FORNECEDOREs.Remove(this);
+					}
+					this._USUARIO.Entity = value;
+					if ((value != null))
+					{
+						value.FORNECEDOREs.Add(this);
+						this._ALTERADOPOR = value.USUARIOID;
+					}
+					else
+					{
+						this._ALTERADOPOR = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("USUARIO");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_FORNECEDORE1", Storage="_USUARIO1", ThisKey="CRIADOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO1
+		{
+			get
+			{
+				return this._USUARIO1.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO1.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO1.Entity = null;
+						previousValue.FORNECEDOREs1.Remove(this);
+					}
+					this._USUARIO1.Entity = value;
+					if ((value != null))
+					{
+						value.FORNECEDOREs1.Add(this);
+						this._CRIADOPOR = value.USUARIOID;
+					}
+					else
+					{
+						this._CRIADOPOR = default(int);
+					}
+					this.SendPropertyChanged("USUARIO1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_FORNECEDORE2", Storage="_USUARIO2", ThisKey="EXCLUIDOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO2
+		{
+			get
+			{
+				return this._USUARIO2.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO2.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO2.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO2.Entity = null;
+						previousValue.FORNECEDOREs2.Remove(this);
+					}
+					this._USUARIO2.Entity = value;
+					if ((value != null))
+					{
+						value.FORNECEDOREs2.Add(this);
 						this._EXCLUIDOPOR = value.USUARIOID;
 					}
 					else

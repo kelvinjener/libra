@@ -13,20 +13,30 @@ namespace LibraUnitTest.Controllers
     public class FornecedoresControllerTest
     {
         [TestMethod]
-        public void DeveConterCNPJ()
+        public void DeveValidarCampos()
         {
             //arrange
-            var fornecedorModel = new FornecedoresModel();
-            fornecedorModel.Id = 1;
-            fornecedorModel.Nome = "jose";
-            fornecedorModel.CNPJ = null;
+            var entidade = new FornecedoresModel();
+            entidade.Id = 1;
+            //entidade.TipoFornecedorId = "";
+            //entidade.RazaoSocial = "jose";
+            //entidade.NomeFantasia = "jose";
+            //entidade.CNPJ = null;
+            //entidade.InscricaoEstadual = null;
+            //entidade.InscricaoMunicipal = null;
+            //entidade.Responsavel = null;
+            //entidade.CRTId = null;
+            //entidade.IndicadorFabricante = "";
+            //entidade.ReceberEmail = "";
+            //entidade.RamoAtividade = "";
+            //entidade.InformacaoAdicional = "";
+            //entidade.Ativo = "";
 
             //act
             var c = new FornecedoresController();
-            var resultado = c.ValidarFornecedor(fornecedorModel);
 
             //asert
-            Assert.AreEqual(resultado, false, "O fornecedor informado não possui CNPJ");
+            Assert.AreEqual(1, false, "O fornecedor informado não possui CNPJ");
         }
     }
 }

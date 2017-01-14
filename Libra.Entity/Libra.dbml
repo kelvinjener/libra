@@ -70,6 +70,9 @@
       <Association Name="USUARIO_CRT" Member="CRTs" ThisKey="USUARIOID" OtherKey="ALTERADOPOR" Type="CRT" />
       <Association Name="USUARIO_CRT1" Member="CRTs1" ThisKey="USUARIOID" OtherKey="CRIADOPOR" Type="CRT" />
       <Association Name="USUARIO_CRT2" Member="CRTs2" ThisKey="USUARIOID" OtherKey="EXCLUIDOPOR" Type="CRT" />
+      <Association Name="USUARIO_FORNECEDORE" Member="FORNECEDOREs" ThisKey="USUARIOID" OtherKey="ALTERADOPOR" Type="FORNECEDORE" />
+      <Association Name="USUARIO_FORNECEDORE1" Member="FORNECEDOREs1" ThisKey="USUARIOID" OtherKey="CRIADOPOR" Type="FORNECEDORE" />
+      <Association Name="USUARIO_FORNECEDORE2" Member="FORNECEDOREs2" ThisKey="USUARIOID" OtherKey="EXCLUIDOPOR" Type="FORNECEDORE" />
       <Association Name="AspNetUser_USUARIO" Member="AspNetUser" ThisKey="ASPNETUSERID" OtherKey="Id" Type="AspNetUser" IsForeignKey="true" />
     </Type>
   </Table>
@@ -264,6 +267,33 @@
       <Association Name="USUARIO_CRT" Member="USUARIO" ThisKey="ALTERADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
       <Association Name="USUARIO_CRT1" Member="USUARIO1" ThisKey="CRIADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
       <Association Name="USUARIO_CRT2" Member="USUARIO2" ThisKey="EXCLUIDOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FORNECEDORES" Member="FORNECEDOREs">
+    <Type Name="FORNECEDORE">
+      <Column Name="FORNECEDORID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TIPOFORNECEDORID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ORIGEMFORNECEDORID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RAZAOSOCIAL" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMEFANTASIA" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="CNPJ" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="INSCRICAOESTADUAL" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="INSCRICAOMUNICIPAL" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="RESPONSAVEL" Type="System.String" DbType="VarChar(48)" CanBeNull="true" />
+      <Column Name="INDICADORFABRICANTE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="INDICADORRECEBEREMAIL" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RAMOATIVIDADE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="INFOADICIONAL" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="ATIVO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CRIADOPOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ALTERADOPOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXCLUIDOPOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATACRIACAO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DATAALTERACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATAEXCLUSAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="USUARIO_FORNECEDORE" Member="USUARIO" ThisKey="ALTERADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="USUARIO_FORNECEDORE1" Member="USUARIO1" ThisKey="CRIADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="USUARIO_FORNECEDORE2" Member="USUARIO2" ThisKey="EXCLUIDOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
