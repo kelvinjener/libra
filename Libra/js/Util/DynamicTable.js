@@ -180,7 +180,7 @@
                     }
 
                 } else {
-                    outputWindow.error('There is no value to the property <b>' + property + '</b>');
+                    //outputWindow.error('There is no value to the property <b>' + property + '</b>');
                 }
             }
         });

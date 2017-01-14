@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Libra.SiteMaster" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Libra.SiteMaster" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,12 +19,15 @@
         <link href="fonts/css/font-awesome.min.css" rel="stylesheet" />
         <link href="Content/custom.css" rel="stylesheet" />
 
-
-        <script type="text/javascript" src="Scripts/jquery-3.1.0.js"></script>
+        <script src="Scripts/jquery-3.1.0.js"></script>
+        <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+        <script src="js/libs/bootbox.min.js"></script>
 
         <!-- JS UTILS-->
-        <script type="text/javascript" src="js/Util/ServicesUtility.js"></script>
-        <script type="text/javascript" src="js/Util/DynamicTable.js"></script>
+        <script src="js/libs/Libra.js"></script>
+        <script src="js/libs/Libra.UI.js"></script>
+        <script src="js/Util/ServicesUtility.js"></script>
+        <script src="js/Util/DynamicTable.js"></script>
 
         <%--<%: Styles.Render("~/Content/css.*") %>"></script>--%>
         
@@ -58,16 +61,18 @@
                                     <li runat="server" id="Vendas" visible="false">
                                         <a><i class="fa fa-money"></i>Vendas <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none">
-                                            <li><a runat="server" href="~/">Home</a></li>
-                                            <li><a runat="server" href="~/About">About</a></li>
-                                            <li><a runat="server" href="~/Contact">Contact</a></li>
+                                            <li runat="server" id="MenuVenda" visible="false"><a runat="server" href="~/Venda">Venda</a></li>
+                                            <li runat="server" id="MenuTrocaDecolucao" visible="false"><a runat="server" href="~/TrocaDevolucao">Troca e Devolução</a></li>
+                                            <li runat="server" id="MenuFechamentoCaixa" visible="false"><a runat="server" href="~/FechamentoCaixa">Fechamento de Caixa</a></li>
+                                            <li runat="server" id="MenuAutorizacaoVendas" visible="false"><a runat="server" href="~/AutorizacaoVendas">Autorização de Vendas</a></li>
+
                                         </ul>
                                     </li>
                                     <li runat="server" id="Produtos" visible="false">
                                         <a><i class="fa fa-server"></i>Produtos <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none">
                                             <li runat="server" id="MenuCadastroProdutos" visible="false"><a runat="server" href="~/CadastroProdutos">Cadastro de Produtos</a></li>
-                                            <li runat="server" id="MenuEstoque" visible="false"><a runat="server" href="~/Estoque">Estoque</a></li>
+                                            <li runat="server" id="MenuEstoque" visible="false"><a runat="server" href="~/CadastroEstoque">Cadastro de Estoque</a></li>
 
                                         </ul>
                                     </li>
@@ -291,6 +296,11 @@
                     <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group"></ul>
                     <div class="clearfix"></div>
                     <div id="notif-group" class="tabbed_notifications"></div>
+                </div>
+
+                <div style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; filter: alpha(opacity=50); -moz-opacity: 0.5; -khtml-opacity: 0.5; opacity: 0.5; z-index: 10000; text-align: center"
+                    id="OverlayLoading">
+                    <img src="/images/ajax-loader.gif" style="position: absolute; top: 50%; left: 50%;">
                 </div>
 
             </div>

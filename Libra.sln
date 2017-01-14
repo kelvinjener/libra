@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libra", "Libra\Libra.csproj", "{4A93439D-A373-44B6-917D-2BF302DDB83E}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraUnitTest", "LibraUnitTest\LibraUnitTest.csproj", "{302FFE96-BE70-4472-982C-37A3053AA098}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraIntegratedTest", "LibraIntegratedTest\LibraIntegratedTest.csproj", "{2C3EE61F-5CEC-4B58-814C-FFFEB92BC2D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libra.Web", "Libra.Web\Libra.Web.csproj", "{6617D9E0-6852-4CAA-97CE-4715E8F806EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{2C3EE61F-5CEC-4B58-814C-FFFEB92BC2D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C3EE61F-5CEC-4B58-814C-FFFEB92BC2D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C3EE61F-5CEC-4B58-814C-FFFEB92BC2D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6617D9E0-6852-4CAA-97CE-4715E8F806EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6617D9E0-6852-4CAA-97CE-4715E8F806EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6617D9E0-6852-4CAA-97CE-4715E8F806EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6617D9E0-6852-4CAA-97CE-4715E8F806EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

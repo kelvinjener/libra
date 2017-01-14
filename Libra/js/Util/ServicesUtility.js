@@ -9,6 +9,8 @@
     },
 
     runWebMethod: function (verb, url, params, fnCallBack) {
+        Libra.UI.showLoading();
+
         $.ajax({
             type: verb,
             url: url,
@@ -16,9 +18,11 @@
             contentType: 'application/json',
             data: params,
             success: function (r) {
+                Libra.UI.hideLoading();
                 fnCallBack(r.d);
             },
             error: function (error) {
+                Libra.UI.hideLoading();
                 fnCallBack(error);
             }
         });

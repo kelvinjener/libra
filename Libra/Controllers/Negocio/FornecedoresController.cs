@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Libra.Models;
 using Libra.Control;
+using Libra.Controllers.Core;
 
 namespace Libra.Controllers.Negocio
 {
@@ -54,9 +55,44 @@ namespace Libra.Controllers.Negocio
             return new FornecedoresModel()
             {
                 Id = r.FORNECEDORID,
+                TipoFornecedorId = r.TIPOFORNECEDORID,
+                OrigemFornecedorId = r.ORIGEMFORNECEDORID,
+                RazaoSocial = r.RAZAOSOCIAL,
+                NomeFantasia = r.NOMEFANTASIA,
                 CNPJ = r.CNPJ,
-                NomeFantasia = r.NOMEFANTASIA
+                InscricaoEstadual = r.INSCRICAOESTADUAL,
+                InscricaoMunicipal = r.INSCRICAOMUNICIPAL,
+                Responsavel = r.RESPONSAVEL,
+                IndicadorFabricante = r.INDICADORFABRICANTE,
+                IndicadorReceberEmail = r.INDICADORRECEBEREMAIL,
+                RamoAtividade = r.RAMOATIVIDADE,
+                InfoAdicional = r.INFOADICIONAL,
             };
+        }
+
+        public Resultado ExcluirFornecedor(int id)
+        {
+            try
+            {
+                var erros = new List<string>();
+                var fornecedor = RetornarPorId(id);
+
+                if (fornecedor == null)
+                {
+                    erros.Add("O fornecedor informado não existe.");
+                }
+
+                if (erros.Count == 0)
+                {
+                    this.MarcarComoExcluido(fornecedor);
+                }
+
+                return erros.Count == 0 ? Resultado.RetornaSuccesso(string.Format("O fornecedor {0} foi excluído com sucesso.", fornecedor.NOMEFANTASIA)) : Resultado.RetornaErro(erros);
+            }
+            catch (Exception ex)
+            {
+                return Resultado.RetornaErro("Ocorreu um erro enquanto um fornecedor era excluído.", ex);
+            }
         }
     }
 }

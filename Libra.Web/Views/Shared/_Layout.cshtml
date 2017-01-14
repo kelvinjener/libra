@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body data-spy="scroll" data-target="#scroll-menu" data-offset="65">
+    <!-- Preloader -->
+    <div class="preloader-wrap">
+        <div class="preloader-inside">
+            <div class="spinner spinner-1">
+                <img src="img/logo.png" alt="responsive img">
+            </div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+    <!-- Scroll Top Button -->
+    <a href="#home" class="smoothscroll">
+        <div class="scroll-top"><i class="fa fa-angle-up"></i></div>
+    </a>
+    <!-- End Scroll Top Button -->
+    <!-- Nav Section -->
+    <header>
+        <!-- Nav Section -->
+        <nav class="navbar navbar-default navbar-fixed-top nav-area" id="scroll-menu">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a class="navbar-brands" href="index.html"></a>
+
+                    </div>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#lojas">Lojas</a></li>
+                        <li><a href="#footer">Contatos</a></li>
+                        <li><a href="http://libra.jafcolchoes.com.br/" target="_blank">Acesso Restrito</a></li>
+                    </ul>
+
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+    </header>
+    <!-- End Nav Section -->
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+    @RenderBody()
+    <!-- Footer Section -->
+    <footer id="footer">
+        <div class="footer-area foo" data-sr='bottom'>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="footer-content">
+                            <img src="img/logo.png" alt="responsive img" class="logo">
+                            <ul class="address-list">
+                                <li>
+                                    <i class="fa fa-map-marker"></i>
+                                    <div class="address-content">
+                                        <p>8901 Marmora Raod, Glasgow, D04 89GR</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    <div class="address-content">
+                                        <p>Telephone : (801) 4256 9856</</p>
+                                        <p>Telephone : (801) 4256 9658</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fa fa-globe"></i>
+                                    <div class="address-content">
+                                        <p>Email : info@tricon.com</p>
+                                        <p>Web : www.tricon.com</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="footer-content">
+                            <h5>OUR FEATURES</h5>
+                            <ul class="feature-list">
+                                <li>
+                                    <a href="#">100 % Responsive design</a>
+                                </li>
+                                <li>
+                                    <a href="#">Retina Display</a>
+                                </li>
+                                <li>
+                                    <a href="#">PIxel Perfect</a>
+                                </li>
+                                <li>
+                                    <a href="#">Modern Design</a>
+                                </li>
+                                <li>
+                                    <a href="#">Clean Code</a>
+                                </li>
+                                <li>
+                                    <a href="#">Awesome Slider</a>
+                                </li>
+                                <li>
+                                    <a href="#">Multipurpose Theme</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-2">
+                        <div class="footer-content">
+                            <h5>FROM INSTAGRAM</h5>
+                            <ul class="instagram-list">
+                                <li>
+                                    <a href="#"><img src="img/instagram-img-1.png" alt="responsive img"></a>
+                                    <a class="instagram-link" href="#"><i class="fa fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/instagram-img-2.png" alt="responsive img">
+                                    </a>
+                                    <a class="instagram-link" href="#"><i class="fa fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/instagram-img-3.png" alt="responsive img">
+                                    </a>
+                                    <a class="instagram-link" href="#"><i class="fa fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/instagram-img-4.png" alt="responsive img">
+                                    </a>
+                                    <a class="instagram-link" href="#"><i class="fa fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/instagram-img-5.png" alt="responsive img">
+                                    </a>
+                                    <a class="instagram-link" href="#"><i class="fa fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/instagram-img-6.png" alt="responsive img">
+                                    </a>
+                                    <a class="instagram-link" href="#"><i class="fa fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-md-offset-1">
+                        <div class="footer-content">
+                            <h5>QUICK CONTACT</h5>
+                            <div class="footer-form">
+                                <p>Lorem ipsum dolor sit amet, consectetur acinglit sed do eiusmod tempor inciidunt ut labore</p>
+                                <form action="#" method="POST">
+                                    <div class="form-group">
+                                        <label for="fname">Your E-mail address ...</label>
+                                        <div class="input-group">
+                                            <input type="text" placeholder="Type your E-mail address ..." class="form-control" id="text-mail3">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="fname">Write here ...</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control form-message" placeholder="Write here ... " id="InputComment" rows="4"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-btn">
+                                        <button type="submit" class="btn btn-default btn-submit">SEND</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Ends Footer Section -->
+    <!-- Copyright Section -->
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="footer-copyright">Copyright © 2016. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ends Copyright Section -->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/scrollreveal")
+    @Scripts.Render("~/bundles/waypoints")
+    @Scripts.Render("~/bundles/counterup")
+    @Scripts.Render("~/bundles/carousel")
+    @Scripts.Render("~/bundles/isotope")
+    @Scripts.Render("~/bundles/masonry")
+    @Scripts.Render("~/bundles/prettyPhoto")
+    @Scripts.Render("~/bundles/theme")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

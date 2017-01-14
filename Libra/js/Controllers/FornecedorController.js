@@ -30,13 +30,18 @@
 
     carregarEventosLinha: function (row) {
         var _this = this;
+        var id = row.attr('data-id');
 
         row.find('.clicavel').click(function () {
-            var modal = $('.modal-fornecedor');
-            modal.modal('show');
+            _this.carregaFornecedorPorId(id);
         });
 
         row.find('.btn-remove').click(function () {
+            Libra.UI.showQuestion('Deseja realmente excluir o fornecedor?', function (r) {
+                if (r) {
+                    _this.excluirFornecedorPorId(id);
+                }
+            });
         });
 
         row.find('.btn-edit').click(function () {
@@ -47,7 +52,7 @@
         var parsedArray = {};
 
         $.each(array, function (key, value) {
-            if (parsedArray[value.Id] == null) {
+            if (parsedArray[value.Id] === null) {
                 parsedArray[value.Id] = value;
             }
         });
@@ -63,6 +68,32 @@
 
             row.find('td').attr('accesskey', counter);
             counter++;
+        });
+    },
+
+    carregaFornecedorPorId: function (fornecedorId) {
+        var _this = this;
+        var table = $('.modal-fornecedor').find('.table-view-fornecedor');
+        var array = [];
+
+        services.runWebMethod('GET', 'CadastroFornecedores.aspx/RetornaFornecedor', { id: fornecedorId }, function (data) {
+            array.push(JSON.parse(data));
+
+            DynamicTable.fillTable(table, array, function (row) {
+                $('.modal-fornecedor').modal('show');
+            });
+        });
+    },
+
+    excluirFornecedorPorId: function (fornecedorId) {
+        var _this = this;
+        var table = $('.modal-fornecedor').find('.table-view-fornecedor');
+
+        services.runWebMethod('GET', 'CadastroFornecedores.aspx/ExcluirFornecedor', { id: fornecedorId }, function (data) {
+            var retorno = JSON.parse(data);
+            Libra.UI.showSuccess(retorno.Message, function () {
+                _this.loadPage();
+            });
         });
     }
 }

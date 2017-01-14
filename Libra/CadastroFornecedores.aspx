@@ -52,14 +52,14 @@
                                 <tbody>
                                     <tr class="template hide">
                                         <td class="" style="width: 100px">
-                                            <div class="btn-group">
+                                            <div class="btn-group" title="Excluir Fornecedor">
                                                 <a class="btn btn-default btn-remove" accesskey="r">
-                                                    <i class="fa fa-remove" title="Excluir Fornecedor"></i>
+                                                    <i class="fa fa-remove"></i>
                                                 </a>
                                             </div>
-                                            <div class="btn-group">
+                                            <div class="btn-group" title="Editar Fornecedor">
                                                 <a class="btn btn-default btn-edit" accesskey="e">
-                                                    <i class="fa fa-pencil-square-o" title="Editar Fornecedor"></i>
+                                                    <i class="fa fa-pencil-square-o"></i>
                                                 </a>
                                             </div>
                                         </td>
@@ -846,19 +846,37 @@
                     <h4 class="modal-title">Fornecedor</h4>
                 </div>
                 <div class="modal-body">
-                    <table class="table table-striped table-bordered jambo_table">
+                    <table class="table table-view-fornecedor table-striped table-bordered jambo_table">
                         <thead>
                             <tr role="row">
-                                <th>Campo
-                                </th>
-                                <th>Descrição
-                                </th>
+                                <th>Campo</th>
+                                <th>Descrição</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="template hide">
-                                <td class="campo"></td>
-                                <td class="description"></td>
+                                <td>Código</td>
+                                <td data-property="Id"></td>
+                            </tr>
+                            <tr class="template hide">
+                                <td>Nome Fantasia</td>
+                                <td data-property="NomeFantasia"></td>
+                            </tr>
+                            <tr class="template hide">
+                                <td>Razão Social</td>
+                                <td data-property="RazaoSocial"></td>
+                            </tr>
+                            <tr class="template hide">
+                                <td>Inscrição Estadual</td>
+                                <td data-property="InscricaoEstadual"></td>
+                            </tr>
+                            <tr class="template hide">
+                                <td>Ramo Atividade</td>
+                                <td data-property="RamoAtividade"></td>
+                            </tr>
+                            <tr class="template hide">
+                                <td>CNPJ</td>
+                                <td data-property="CNPJ"></td>
                             </tr>
                         </tbody>
                         <tfoot class="no-data">

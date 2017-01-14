@@ -51,5 +51,27 @@ namespace Libra
             var serializer = new JavaScriptSerializer();
             return serializer.Serialize(r);
         }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json, UseHttpGet = true)]
+        public static string RetornaFornecedor(int id)
+        {
+            var c = new FornecedoresController();
+            FornecedoresModel r = c.RetornaFornecedor(id);
+
+            var serializer = new JavaScriptSerializer();
+            return serializer.Serialize(r);
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json, UseHttpGet = true)]
+        public static string ExcluirFornecedor(int id)
+        {
+            var c = new FornecedoresController();
+            Resultado r = c.ExcluirFornecedor(id);
+
+            var serializer = new JavaScriptSerializer();
+            return serializer.Serialize(r);
+        }
     }
 }
