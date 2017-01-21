@@ -1,4 +1,5 @@
-﻿using Libra.Class;
+﻿using AjaxControlToolkit;
+using Libra.Class;
 using Libra.Control;
 using Libra.Entity;
 using System;
@@ -12,6 +13,26 @@ namespace Libra.Parametros
 {
     public partial class ParametrosProdutos : BasePage
     {
+        #region Properties
+        public String FabricanteProdutoHidden
+        {
+            set { this.hdnFabricanteProdutoId.Value = value; }
+            get { return this.hdnFabricanteProdutoId.Value; }
+        }
+
+        public ModalPopupExtender ModalFabricanteProduto
+        {
+            set { this.mpeFabricanteProduto = value; }
+            get { return this.mpeFabricanteProduto; }
+        }
+
+        public GridView GridFabricanteProduto
+        {
+            set { this.gvResultsFabricanteProduto = value; }
+            get { return this.gvResultsFabricanteProduto; }
+        }
+        #endregion
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -420,7 +441,7 @@ namespace Libra.Parametros
             {
                 lbTituloModalEditAddFabricanteProduto.Text = "Editar Fabricante de Produto";
                 int FabricanteProdutoId = Convert.ToInt32(this.gvResultsFabricanteProduto.DataKeys[gvResultsFabricanteProduto.SelectedIndex].Values["FabricanteProdutoId"]);
-                CarregaDadosFabricantesProdutos(FabricanteProdutoId);
+                cucCadastroFabricante.CarregaDadosFabricantesProdutos(FabricanteProdutoId);
                 mpeFabricanteProduto.Show();
             }
             catch (Exception ex)
@@ -480,9 +501,15 @@ namespace Libra.Parametros
 
         protected void lbAddFabricanteProduto_Click(object sender, EventArgs e)
         {
-            LimparCamposFabricantesProdutos();
+            cucCadastroFabricante.LimparCamposFabricantesProdutos();
             lbTituloModalEditAddFabricanteProduto.Text = "Adicionar novo Fabricante de Produto";
             mpeFabricanteProduto.Show();
+        }
+
+        protected void lkCloseFabricanteProduto_Click(object sender, EventArgs e)
+        {
+            ModalFabricanteProduto.Hide();
+            cucCadastroFabricante.LimparCamposFabricantesProdutos();
         }
 
         protected void lbEditFabricanteProduto_Click(object sender, EventArgs e)
@@ -495,7 +522,7 @@ namespace Libra.Parametros
                 int i = 0;
                 foreach (GridViewRow row in this.gvResultsFabricanteProduto.Rows)
                 {
-                    if (((CheckBox)row.FindControl("chkBxSelect")).Checked)
+                    if (((CheckBox)row.FindControl("chkBxSelectFabricanteProduto")).Checked)
                         i++;
                 }
                 if (i > 1)
@@ -510,11 +537,11 @@ namespace Libra.Parametros
                 {
                     foreach (GridViewRow row in this.gvResultsFabricanteProduto.Rows)
                     {
-                        if (((CheckBox)row.FindControl("chkBxSelect")).Checked)
+                        if (((CheckBox)row.FindControl("chkBxSelectFabricanteProduto")).Checked)
                         {
                             DataKey keys = this.gvResultsFabricanteProduto.DataKeys[row.RowIndex];
                             int FabricanteProdutoId = Convert.ToInt32(keys.Values["FabricanteProdutoId"]);
-                            CarregaDadosFabricantesProdutos(FabricanteProdutoId);
+                            cucCadastroFabricante.CarregaDadosFabricantesProdutos(FabricanteProdutoId);
                             mpeFabricanteProduto.Show();
                         }
                     }
@@ -626,32 +653,7 @@ namespace Libra.Parametros
             }
         }
 
-        protected void lbCancelFabricanteProduto_Click(object sender, EventArgs e)
-        {
-            mpeFabricanteProduto.Hide();
-            LimparCamposFabricantesProdutos();
-        }
-
-        protected void btnSalvarFabricanteProduto_Click(object sender, EventArgs e)
-        {
-            if (Page.IsValid)
-            {
-                int fabricanteProdutoId = SalvarFabricanteProduto();
-
-                if (fabricanteProdutoId > 0)
-                    this.MessageBoxSucesso(this.Page, "Fabricante de Produto salvo com sucesso!");
-                else
-                    this.MessageBoxError(this.Page, "Não foi possível salvar o Fabricante de Produto! Verifique os campos informados.");
-
-                gvResultsFabricanteProduto.DataBind();
-            }
-        }
-
-        protected void lkCloseFabricanteProduto_Click(object sender, EventArgs e)
-        {
-            mpeFabricanteProduto.Hide();
-            LimparCamposFabricantesProdutos();
-        }
+       
 
         protected void btnExcluirFabricanteProduto_Click(object sender, EventArgs e)
         {
@@ -676,58 +678,9 @@ namespace Libra.Parametros
 
         #region Methods
 
-        public void LimparCamposFabricantesProdutos()
-        {
-            txtFabricanteProduto.Text = string.Empty;
-            chkFabricanteProdutoAtivo.Checked = true;
-            hdnFabricanteProdutoId.Value = string.Empty;
-        }
 
-        public void CarregaDadosFabricantesProdutos(int FabricanteProdutoId)
-        {
-            FABRICANTEPRODUTO fp = fabricanteProdutoBll.GetFabricanteProdutoById(FabricanteProdutoId);
 
-            hdnFabricanteProdutoId.Value = FabricanteProdutoId.ToString();
 
-            if (fp != null)
-            {
-                //TODO: Informar campos para Editar.
-                txtFabricanteProduto.Text = fp.NOME;
-                chkFabricanteProdutoAtivo.Checked = fp.ATIVO;
-            }
-            else
-            {
-                MessageBoxError(this.Page, "Fabricante de Produto não localizado!");
-            }
-        }
-
-        public int SalvarFabricanteProduto()
-        {
-            try
-            {
-                FABRICANTEPRODUTO fp;
-
-                if (!String.IsNullOrEmpty(hdnFabricanteProdutoId.Value) && Convert.ToInt32(hdnFabricanteProdutoId.Value) > 0)
-                    fp = fabricanteProdutoBll.GetFabricanteProdutoById(Convert.ToInt32(hdnFabricanteProdutoId.Value));
-                else
-                    fp = new FABRICANTEPRODUTO();
-
-                //TODO: informa campos para SalvarFabricanteProduto.
-                fp.NOME = txtFabricanteProduto.Text;
-                fp.ATIVO = chkFabricanteProdutoAtivo.Checked;
-
-                fabricanteProdutoBll.Salvar(fp);
-
-                return fp.FABRICANTEPRODUTOID;
-
-            }
-            catch (Exception ex)
-            {
-                HandlerException(ex);
-            }
-
-            return 0;
-        }
 
         #endregion
 

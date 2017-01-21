@@ -55,8 +55,8 @@
       <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.3.6\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="AspNet.ScriptManager.jQuery, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.1.0\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.1.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -116,9 +116,6 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ScriptManager.MSAjax">
-      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ScriptManager.WebForms">
       <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
@@ -226,6 +223,18 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="UserControl\Parametros\CadastroCaracteristicaDiversa.ascx" />
+    <Content Include="UserControl\Parametros\CadastroCor.ascx" />
+    <Content Include="UserControl\Parametros\CadastroDimensoes.ascx" />
+    <Content Include="UserControl\Parametros\CadastroFabricante.ascx" />
+    <Content Include="UserControl\Parametros\CadastroMarca.ascx" />
+    <Content Include="UserControl\Parametros\CadastroModelo.ascx" />
+    <Content Include="UserControl\Parametros\CadastroTipoProduto.ascx" />
     <Content Include="Vendas\AutorizacaoVendas.aspx" />
     <Content Include="Clientes\CadastroClientes.aspx" />
     <Content Include="Produtos\CadastroEstoque.aspx" />
@@ -761,6 +770,8 @@
     <Content Include="Scripts\ion_range\ion.rangeSlider.min.js" />
     <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.0.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -799,27 +810,6 @@
     <Content Include="Scripts\tags\jquery.tagsinput.min.js" />
     <Content Include="Scripts\textarea\autosize.min.js" />
     <Content Include="Scripts\validator\validator.js" />
-    <Content Include="Scripts\WebForms\DetailsView.js" />
-    <Content Include="Scripts\WebForms\Focus.js" />
-    <Content Include="Scripts\WebForms\GridView.js" />
-    <Content Include="Scripts\WebForms\Menu.js" />
-    <Content Include="Scripts\WebForms\MenuStandards.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
-    <Content Include="Scripts\WebForms\SmartNav.js" />
-    <Content Include="Scripts\WebForms\TreeView.js" />
-    <Content Include="Scripts\WebForms\WebForms.js" />
-    <Content Include="Scripts\WebForms\WebParts.js" />
-    <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Scripts\wizard\jquery.smartWizard.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Default.aspx" />
@@ -847,6 +837,58 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\BaseUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Parametros\CadastroCaracteristicaDiversa.ascx.cs">
+      <DependentUpon>CadastroCaracteristicaDiversa.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Parametros\CadastroCaracteristicaDiversa.ascx.designer.cs">
+      <DependentUpon>CadastroCaracteristicaDiversa.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Parametros\CadastroCor.ascx.cs">
+      <DependentUpon>CadastroCor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Parametros\CadastroCor.ascx.designer.cs">
+      <DependentUpon>CadastroCor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Parametros\CadastroDimensoes.ascx.cs">
+      <DependentUpon>CadastroDimensoes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Parametros\CadastroDimensoes.ascx.designer.cs">
+      <DependentUpon>CadastroDimensoes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Parametros\CadastroFabricante.ascx.cs">
+      <DependentUpon>CadastroFabricante.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Parametros\CadastroFabricante.ascx.designer.cs">
+      <DependentUpon>CadastroFabricante.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Parametros\CadastroMarca.ascx.cs">
+      <DependentUpon>CadastroMarca.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Parametros\CadastroMarca.ascx.designer.cs">
+      <DependentUpon>CadastroMarca.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Parametros\CadastroModelo.ascx.cs">
+      <DependentUpon>CadastroModelo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Parametros\CadastroModelo.ascx.designer.cs">
+      <DependentUpon>CadastroModelo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Parametros\CadastroTipoProduto.ascx.cs">
+      <DependentUpon>CadastroTipoProduto.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Parametros\CadastroTipoProduto.ascx.designer.cs">
+      <DependentUpon>CadastroTipoProduto.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Vendas\AutorizacaoVendas.aspx.cs">
       <DependentUpon>AutorizacaoVendas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1161,7 +1203,11 @@
   <ItemGroup>
     <Folder Include="Ajax\" />
     <Folder Include="App_Data\" />
-    <Folder Include="UserControl\" />
+    <Folder Include="UserControl\Clientes\" />
+    <Folder Include="UserControl\Fornecedores\" />
+    <Folder Include="UserControl\Produtos\" />
+    <Folder Include="UserControl\Seguranca\" />
+    <Folder Include="UserControl\Vendas\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Libra.Communs\Libra.Communs.csproj">

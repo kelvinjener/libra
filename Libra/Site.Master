@@ -20,14 +20,7 @@
         <link href="../Content/custom.css" rel="stylesheet" />
 
         <script src="../Scripts/jquery-3.1.0.js"></script>
-        <script type="text/javascript" src="../Scripts/bootstrap.min.js"></script>
-        <script src="../js/libs/bootbox.min.js"></script>
 
-        <!-- JS UTILS-->
-        <script src="../js/libs/Libra.js"></script>
-        <script src="../js/libs/Libra.UI.js"></script>
-        <script src="../js/Util/ServicesUtility.js"></script>
-        <script src="../js/Util/DynamicTable.js"></script>
 
         <%--<%: Styles.Render("~/Content/css.*") %>"></script>--%>
         
@@ -107,7 +100,7 @@
                                         <ul class="nav child_menu" style="display: none">
                                             <li runat="server" id="MenuUsuarios" visible="false"><a runat="server" href="~/Seguranca/Usuarios">Usuários</a></li>
                                             <li runat="server" id="MenuUnidades" visible="false"><a runat="server" href="~/Seguranca/Unidades">Unidades</a></li>
-                                            <li runat="server" id="MenuPerfis" visible="false"><a runat="server" href="~/Perfis/Perfis">Perfis</a></li>
+                                            <li runat="server" id="MenuPerfis" visible="false"><a runat="server" href="~/Seguranca/Perfis">Perfis</a></li>
                                         </ul>
                                     </li>
                                     <li runat="server" id="Parametros" visible="false">
@@ -308,6 +301,9 @@
     </form>
     <!-- /footer content -->
     <script type="text/javascript" src="../Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/libs/bootbox-4.2.0.js"></script>
+
+    
     <%--<script type="text/javascript" src="Scripts/progressbar/bootstrap-progressbar.min.js"></script>--%>
     <script type="text/javascript" src="../Scripts/nicescroll/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../Scripts/icheck/icheck.min.js"></script>
@@ -327,6 +323,12 @@
     <script type="text/javascript" src="../Scripts/datatables/js/responsive.bootstrap.min.js"></script>
     <script type="text/javascript" src="../Scripts/datatables/tools/js/dataTables.tableTools.js"></script>
     <script type="text/javascript" src="../Scripts/custom.js"></script>
+
+    <!-- JS UTILS-->
+    <script type="text/javascript" src="../js/libs/Libra.js"></script>
+    <script type="text/javascript" src="../js/libs/Libra.UI.js"></script>
+    <script type="text/javascript" src="../js/Util/ServicesUtility.js"></script>
+    <script type="text/javascript" src="../js/Util/DynamicTable.js"></script>
 
     <asp:ContentPlaceHolder ID="ContentPlaceHolderScripts" runat="server">
     </asp:ContentPlaceHolder>
@@ -379,7 +381,7 @@
                 "sPaginationType": "full_numbers",
                 "dom": 'T<"clear">lfrtip',
                 "tableTools": {
-                    "sSwfPath": "Scripts/datatables/tools/swf/copy_csv_xls_pdf.swf"
+                    "sSwfPath": "../Scripts/datatables/tools/swf/copy_csv_xls_pdf.swf"
                 }
             });
             $("tfoot input").keyup(function () {

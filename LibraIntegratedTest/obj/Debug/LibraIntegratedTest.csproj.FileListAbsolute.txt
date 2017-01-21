@@ -11,6 +11,7 @@ C:\github\Libra\LibraIntegratedTest\bin\Debug\roslyn\System.Reflection.Metadata.
 C:\github\Libra\LibraIntegratedTest\bin\Debug\roslyn\vbc.exe
 C:\github\Libra\LibraIntegratedTest\bin\Debug\roslyn\VBCSCompiler.exe
 C:\github\Libra\LibraIntegratedTest\bin\Debug\roslyn\VBCSCompiler.exe.config
+C:\github\Libra\LibraIntegratedTest\bin\Debug\LibraIntegratedTest.dll.config
 C:\github\Libra\LibraIntegratedTest\bin\Debug\LibraIntegratedTest.dll
 C:\github\Libra\LibraIntegratedTest\bin\Debug\LibraIntegratedTest.pdb
 C:\github\Libra\LibraIntegratedTest\bin\Debug\Libra.Control.dll
@@ -19,7 +20,6 @@ C:\github\Libra\LibraIntegratedTest\bin\Debug\Libra.Entity.dll
 C:\github\Libra\LibraIntegratedTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\github\Libra\LibraIntegratedTest\bin\Debug\Libra.Communs.dll
 C:\github\Libra\LibraIntegratedTest\bin\Debug\Microsoft.Owin.dll
-C:\github\Libra\LibraIntegratedTest\bin\Debug\AjaxControlToolkit.dll
 C:\github\Libra\LibraIntegratedTest\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
 C:\github\Libra\LibraIntegratedTest\bin\Debug\Microsoft.AspNet.Identity.Core.dll
 C:\github\Libra\LibraIntegratedTest\bin\Debug\System.Web.Optimization.dll
@@ -27,6 +27,7 @@ C:\github\Libra\LibraIntegratedTest\bin\Debug\Microsoft.Owin.Security.dll
 C:\github\Libra\LibraIntegratedTest\bin\Debug\Owin.dll
 C:\github\Libra\LibraIntegratedTest\bin\Debug\Microsoft.Owin.Security.Cookies.dll
 C:\github\Libra\LibraIntegratedTest\bin\Debug\EntityFramework.dll
+C:\github\Libra\LibraIntegratedTest\bin\Debug\AjaxControlToolkit.dll
 C:\github\Libra\LibraIntegratedTest\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\github\Libra\LibraIntegratedTest\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
 C:\github\Libra\LibraIntegratedTest\bin\Debug\Microsoft.AspNet.FriendlyUrls.dll

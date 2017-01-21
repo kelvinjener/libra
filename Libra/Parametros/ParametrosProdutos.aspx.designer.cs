@@ -472,58 +472,13 @@ namespace Libra.Parametros {
         protected global::System.Web.UI.WebControls.LinkButton lkCloseFabricanteProduto;
         
         /// <summary>
-        /// lblFabricanteProdutoReq control.
+        /// cucCadastroFabricante control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFabricanteProdutoReq;
-        
-        /// <summary>
-        /// txtFabricanteProduto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFabricanteProduto;
-        
-        /// <summary>
-        /// rfvFabricanteProduto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFabricanteProduto;
-        
-        /// <summary>
-        /// chkFabricanteProdutoAtivo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkFabricanteProdutoAtivo;
-        
-        /// <summary>
-        /// lbCancelFabricanteProduto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbCancelFabricanteProduto;
-        
-        /// <summary>
-        /// btnSalvarFabricanteProduto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalvarFabricanteProduto;
+        protected global::Libra.UserControl.Parametros.CadastroFabricante cucCadastroFabricante;
         
         /// <summary>
         /// mpeExclusaoFabricanteProduto control.

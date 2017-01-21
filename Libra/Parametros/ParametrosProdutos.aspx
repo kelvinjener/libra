@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="Parâmetros de Produtos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ParametrosProdutos.aspx.cs" Inherits="Libra.Parametros.ParametrosProdutos" %>
 
+<%@ Register Src="~/UserControl/Parametros/CadastroFabricante.ascx" TagName="CadastroFabricante"
+    TagPrefix="cuc" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -328,7 +331,7 @@
                                         </div>
 
                                         <asp:ModalPopupExtender ID="mpeFabricanteProduto" TargetControlID="lkbOculto" PopupControlID="pnlFabricanteProduto"
-                                            BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lbCancelFabricanteProduto"
+                                            BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lkCloseFabricanteProduto"
                                             ClientIDMode="AutoID">
                                         </asp:ModalPopupExtender>
                                         <asp:Panel ID="pnlFabricanteProduto" runat="server" Style="display: none">
@@ -351,43 +354,7 @@
                                                                         <div class="clearfix"></div>
                                                                     </div>
                                                                     <div class="x_content">
-                                                                        <div class="row">
-                                                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                                                <div>
-                                                                                    <label>
-                                                                                        Fabricante de Produto
-                                                                                        <asp:Label runat="server" ID="lblFabricanteProdutoReq" Text="*" CssClass="requerid" />
-                                                                                    </label>
-                                                                                </div>
-                                                                                <div>
-                                                                                    <asp:TextBox ID="txtFabricanteProduto" runat="server" CssClass="form-control" MaxLength="100"></asp:TextBox>
-                                                                                    <asp:RequiredFieldValidator ID="rfvFabricanteProduto" ControlToValidate="txtFabricanteProduto" SetFocusOnError="True" CssClass="requerid"
-                                                                                        ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row">&nbsp;</div>
-
-                                                                        <div class="row">
-                                                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                                                <div>
-                                                                                    <label>Ativo?</label>
-                                                                                </div>
-                                                                                <div>
-                                                                                    <asp:CheckBox runat="server" ID="chkFabricanteProdutoAtivo" />
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row">&nbsp;</div>
-                                                                        <div class="row">
-                                                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                                                <asp:LinkButton ID="lbCancelFabricanteProduto" runat="server"
-                                                                                    CssClass="btn btn-default" Text="Fechar" OnClick="lbCancelFabricanteProduto_Click">
-                                                                                </asp:LinkButton>
-                                                                                <asp:Button runat="server" ID="btnSalvarFabricanteProduto" ValidationGroup="G1" CausesValidation="true"
-                                                                                    CssClass="btn btn-primary" Text="Salvar" OnClick="btnSalvarFabricanteProduto_Click" />
-                                                                            </div>
-                                                                        </div>
+                                                                        <cuc:CadastroFabricante ID="cucCadastroFabricante" runat="server" />
                                                                     </div>
                                                                 </div>
                                                             </div>

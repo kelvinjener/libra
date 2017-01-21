@@ -45,7 +45,6 @@ C:\github\Libra\Libra\bin\Microsoft.Owin.Security.Google.dll
 C:\github\Libra\Libra\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
 C:\github\Libra\Libra\bin\Microsoft.Owin.Security.OAuth.dll
 C:\github\Libra\Libra\bin\Microsoft.Owin.Security.Twitter.dll
-C:\github\Libra\Libra\bin\Microsoft.ScriptManager.MSAjax.dll
 C:\github\Libra\Libra\bin\Microsoft.ScriptManager.WebForms.dll
 C:\github\Libra\Libra\bin\Microsoft.Web.Infrastructure.dll
 C:\github\Libra\Libra\bin\Newtonsoft.Json.dll
