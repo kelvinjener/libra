@@ -68,7 +68,7 @@
             <label>Ativo?</label>
         </div>
         <div>
-            <asp:CheckBox runat="server" ID="chkDimensoesProdutoAtivo" />
+            <asp:CheckBox runat="server" ID="chkDimensoesProdutoAtivo" Checked="true" />
         </div>
     </div>
 </div>

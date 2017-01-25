@@ -2,8 +2,10 @@
 using Libra.Control;
 using Libra.Entity;
 using Libra.Parametros;
+using Libra.Produtos;
 using System;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace Libra.UserControl.Parametros
 {
@@ -14,7 +16,11 @@ namespace Libra.UserControl.Parametros
         #endregion
 
         #region Properties
-
+        public CheckBox chkAtivo
+        {
+            set { this.chkCorProdutoAtivo = value; }
+            get { return this.chkCorProdutoAtivo; }
+        }
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
@@ -94,8 +100,20 @@ namespace Libra.UserControl.Parametros
                 else
                     this.MessageBoxError(this.Page, "Não foi possível salvar o Cor de Produto! Verifique os campos informados.");
 
-                //ParametrosProdutos cad = (ParametrosProdutos)Page;
-                //cad.GridCorProduto.DataBind();
+
+                if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("CadastroProdutos"))
+                {
+                    CadastroProdutos cad = (CadastroProdutos)Page;
+                    cad.HiddenIdCor = corProdutoId;
+                    cad.AutoSelectCor(corProdutoId);
+
+                }
+
+                if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("ParametrosProdutos"))
+                {
+                    //ParametrosProdutos cad = (ParametrosProdutos)Page;
+                    //cad.GridCorProduto.DataBind();
+                }
             }
         }
 

@@ -17,13 +17,13 @@
 </div>
 <div class="row">&nbsp;</div>
 
-<div class="row">
+<div class="row" runat="server">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div>
             <label>Ativo?</label>
         </div>
         <div>
-            <asp:CheckBox runat="server" ID="chkCaracteristicasDiversasProdutoAtivo" />
+            <asp:CheckBox runat="server" ID="chkCaracteristicasDiversasProdutoAtivo" Checked="true" />
         </div>
     </div>
 </div>

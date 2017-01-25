@@ -2,8 +2,10 @@
 using Libra.Control;
 using Libra.Entity;
 using Libra.Parametros;
+using Libra.Produtos;
 using System;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace Libra.UserControl.Parametros
 {
@@ -14,7 +16,11 @@ namespace Libra.UserControl.Parametros
         #endregion
 
         #region Properties
-
+        public CheckBox chkAtivo
+        {
+            set { this.chkModeloProdutoAtivo = value; }
+            get { return this.chkModeloProdutoAtivo; }
+        }
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
@@ -94,6 +100,13 @@ namespace Libra.UserControl.Parametros
                 else
                     this.MessageBoxError(this.Page, "Não foi possível salvar o Modelo de Produto! Verifique os campos informados.");
 
+
+                if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("CadastroProdutos"))
+                {
+                    CadastroProdutos cad = (CadastroProdutos)Page;
+                    cad.HiddenIdModelo = modeloProdutoId;
+                    cad.AutoSelectModelo(modeloProdutoId);
+                }
                 //ParametrosProdutos cad = (ParametrosProdutos)Page;
                 //cad.GridModeloProduto.DataBind();
             }

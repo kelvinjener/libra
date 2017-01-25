@@ -1,6 +1,18 @@
 ﻿<%@ Page Title="Parâmetros de Produtos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ParametrosProdutos.aspx.cs" Inherits="Libra.Parametros.ParametrosProdutos" %>
 
+<%@ Register Src="~/UserControl/Parametros/CadastroTipoProduto.ascx" TagName="CadastroTipoProduto"
+    TagPrefix="cuc" %>
 <%@ Register Src="~/UserControl/Parametros/CadastroFabricante.ascx" TagName="CadastroFabricante"
+    TagPrefix="cuc" %>
+<%@ Register Src="~/UserControl/Parametros/CadastroMarca.ascx" TagName="CadastroMarca"
+    TagPrefix="cuc" %>
+<%@ Register Src="~/UserControl/Parametros/CadastroModelo.ascx" TagName="CadastroModelo"
+    TagPrefix="cuc" %>
+<%@ Register Src="~/UserControl/Parametros/CadastroDimensoes.ascx" TagName="CadastroDimensoes"
+    TagPrefix="cuc" %>
+<%@ Register Src="~/UserControl/Parametros/CadastroCor.ascx" TagName="CadastroCor"
+    TagPrefix="cuc" %>
+<%@ Register Src="~/UserControl/Parametros/CadastroCaracteristicaDiversa.ascx" TagName="CadastroCaracteristicaDiversa"
     TagPrefix="cuc" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

@@ -51,6 +51,42 @@ namespace Libra.Produtos
             }
         }
 
+        public int HiddenIdTipoProduto
+        {
+            get { return string.IsNullOrEmpty(this.hdnIdTipoProduto.Value) ? 0 : Convert.ToInt32(this.hdnIdTipoProduto.Value); }
+            set { this.hdnIdTipoProduto.Value = value.ToString(); }
+        }
+
+        public int HiddenIdFabricante
+        {
+            get { return string.IsNullOrEmpty(this.hdnIdFabricante.Value) ? 0 : Convert.ToInt32(this.hdnIdFabricante.Value); }
+            set { this.hdnIdFabricante.Value = value.ToString(); }
+        }
+
+        public int HiddenIdMarca
+        {
+            get { return string.IsNullOrEmpty(this.hdnIdMarca.Value) ? 0 : Convert.ToInt32(this.hdnIdMarca.Value); }
+            set { this.hdnIdMarca.Value = value.ToString(); }
+        }
+
+        public int HiddenIdModelo
+        {
+            get { return string.IsNullOrEmpty(this.hdnIdModelo.Value) ? 0 : Convert.ToInt32(this.hdnIdModelo.Value); }
+            set { this.hdnIdModelo.Value = value.ToString(); }
+        }
+
+        public int HiddenIdDimensoes
+        {
+            get { return string.IsNullOrEmpty(this.hdnIdDimensoes.Value) ? 0 : Convert.ToInt32(this.hdnIdDimensoes.Value); }
+            set { this.hdnIdDimensoes.Value = value.ToString(); }
+        }
+
+        public int HiddenIdCor
+        {
+            get { return string.IsNullOrEmpty(this.hdnIdCor.Value) ? 0 : Convert.ToInt32(this.hdnIdCor.Value); }
+            set { this.hdnIdCor.Value = value.ToString(); }
+        }
+
         #endregion
 
         #region Page Actions
@@ -59,12 +95,15 @@ namespace Libra.Produtos
             if (!Page.IsPostBack)
             {
                 Edicao(false);
-
+                CarregaTipoProduto();
+                CarregaFabricante();
+                CarregaMarca();
+                CarregaModelo();
+                CarregaDimensoes();
+                CarregaCor();
 
                 this.txtPeso.Attributes.Add("onkeypress", "return FormatMaskOnlyNumbers(event, this, '#.###,##');");
-                this.txtLargura.Attributes.Add("onkeypress", "return FormatMaskOnlyNumbers(event, this, '#.###,##');");
-                this.txtComprimento.Attributes.Add("onkeypress", "return FormatMaskOnlyNumbers(event, this, '#.###,##');");
-                this.txtAltura.Attributes.Add("onkeypress", "return FormatMaskOnlyNumbers(event, this, '#.###,##');");
+
 
             }
         }
@@ -188,8 +227,6 @@ namespace Libra.Produtos
                 HandlerException(ex);
             }
         }
-
-
 
         protected void lbFiltroProdutos_Click(object sender, EventArgs e)
         {
@@ -389,6 +426,84 @@ namespace Libra.Produtos
             mpeExclusaoProduto.Hide();
         }
 
+        #region Parametros
+
+        protected void lbCloseCadastroTipoProduto_Click(object sender, EventArgs e)
+        {
+
+            mpeCadastroTipoProdutos.Hide();
+
+        }
+
+        protected void lbCloseCadastroFabricanteProduto_Click(object sender, EventArgs e)
+        {
+            mpeCadastroFabricanteProduto.Hide();
+        }
+
+        protected void lbCloseCadastroMarcaProduto_Click(object sender, EventArgs e)
+        {
+            mpeCadastroMarcaProduto.Hide();
+        }
+
+        protected void lbCloseCadastroModeloProduto_Click(object sender, EventArgs e)
+        {
+            mpeCadastroModeloProduto.Hide();
+        }
+
+        protected void lbCloseCadastroDimensoesProduto_Click(object sender, EventArgs e)
+        {
+            mpeCadastroDimensoesProduto.Hide();
+        }
+
+        protected void lbCloseCadastroCorProduto_Click(object sender, EventArgs e)
+        {
+            mpeCadastroCorProduto.Hide();
+        }
+
+        protected void lkAddTipoProduto_Click(object sender, EventArgs e)
+        {
+            mpeCadastroTipoProdutos.Show();
+            cucCadastroTipoProduto.LimparCamposTiposProdutos();
+            cucCadastroTipoProduto.chkAtivo.Enabled = false;
+        }
+
+        protected void lkAddFabricante_Click(object sender, EventArgs e)
+        {
+            mpeCadastroFabricanteProduto.Show();
+            cucCadastroTipoProduto.LimparCamposTiposProdutos();
+            cucCadastroTipoProduto.chkAtivo.Enabled = false;
+        }
+
+        protected void lkAddMarca_Click(object sender, EventArgs e)
+        {
+            mpeCadastroMarcaProduto.Show();
+            cucCadastroMarca.LimparCamposMarcasProdutos();
+            cucCadastroMarca.chkAtivo.Enabled = false;
+        }
+
+        protected void lkAddModelo_Click(object sender, EventArgs e)
+        {
+            mpeCadastroModeloProduto.Show();
+            cucCadastroModelo.LimparCamposModelosProdutos();
+            cucCadastroModelo.chkAtivo.Enabled = false;
+        }
+
+        protected void lkAddDimensoes_Click(object sender, EventArgs e)
+        {
+            mpeCadastroDimensoesProduto.Show();
+            cucCadastroDimensoes.LimparCamposDimensoessProdutos();
+            cucCadastroDimensoes.chkAtivo.Enabled = false;
+        }
+
+        protected void lkAddCor_Click(object sender, EventArgs e)
+        {
+            mpeCadastroCorProduto.Show();
+            cucCadastroCor.LimparCamposCorsProdutos();
+            cucCadastroCor.chkAtivo.Enabled = false;
+        }
+
+        #endregion Parametros
+
         #endregion
 
         #region Métodos
@@ -521,103 +636,187 @@ namespace Libra.Produtos
             //txtObservacao.Text = string.Empty;
             //ddlTipoProduto.SelectedIndex = 0;
             //chkAtiva.Checked = false;
-            //hdnIdProduto.Value = "0";
+            hdnIdProduto.Value = "0";
+            hdnIdTipoProduto.Value = "0";
+            hdnIdFabricante.Value = "0";
+            hdnIdMarca.Value = "0";
+            hdnIdModelo.Value = "0";
+            hdnIdDimensoes.Value = "0";
+            hdnIdCor.Value = "0";
+        }
+
+        public void CarregaTipoProduto()
+        {
+            ddlTipoProduto.Items.Clear();
+            ddlTipoProdutoFiltro.Items.Clear();
+            ddlTipoProduto.Items.Add(new ListItem("Selecione...", ""));
+            ddlTipoProdutoFiltro.Items.Add(new ListItem("Selecione...", ""));
+
+            foreach (var item in new TipoProdutoBll().GetAllAtivos())
+                ddlTipoProduto.Items.Add(new ListItem(item.NOME, item.TIPOPRODUTOID.ToString()));
+
+            foreach (var item in new TipoProdutoBll().GetAllTiposProdutos())
+                ddlTipoProdutoFiltro.Items.Add(new ListItem(item.NOME, item.TIPOPRODUTOID.ToString()));
+        }
+
+        public void CarregaFabricante()
+        {
+            ddlFabricante.Items.Clear();
+            ddlFabricanteFiltro.Items.Clear();
+
+            ddlFabricante.Items.Add(new ListItem("Selecione...", ""));
+            ddlFabricanteFiltro.Items.Add(new ListItem("Selecione...", ""));
+
+
+            foreach (var item in new FabricanteProdutoBll().GetAllAtivos())
+                ddlFabricante.Items.Add(new ListItem(item.NOME, item.FABRICANTEPRODUTOID.ToString()));
+
+            foreach (var item in new FabricanteProdutoBll().GetAllFabricantesProdutos())
+                ddlFabricanteFiltro.Items.Add(new ListItem(item.NOME, item.FABRICANTEPRODUTOID.ToString()));
+        }
+
+        public void CarregaMarca()
+        {
+            ddlMarca.Items.Clear();
+            ddlMarcaFiltro.Items.Clear();
+            ddlMarca.Items.Add(new ListItem("Selecione...", ""));
+            ddlMarcaFiltro.Items.Add(new ListItem("Selecione...", ""));
+
+
+            foreach (var item in new MarcaProdutoBll().GetAllAtivos())
+                ddlMarca.Items.Add(new ListItem(item.NOME, item.MARCAPRODUTOID.ToString()));
+
+            foreach (var item in new MarcaProdutoBll().GetAllMarcasProdutos())
+                ddlMarcaFiltro.Items.Add(new ListItem(item.NOME, item.MARCAPRODUTOID.ToString()));
+        }
+
+        public void CarregaModelo()
+        {
+            ddlModelo.Items.Clear();
+            ddlModeloFiltro.Items.Clear();
+            ddlModelo.Items.Add(new ListItem("Selecione...", ""));
+            ddlModeloFiltro.Items.Add(new ListItem("Selecione...", ""));
+
+            foreach (var item in new ModeloProdutoBll().GetAllAtivos())
+                ddlModelo.Items.Add(new ListItem(item.NOME, item.MODELOPRODUTOID.ToString()));
+
+            foreach (var item in new ModeloProdutoBll().GetAllModeloProdutos())
+                ddlModeloFiltro.Items.Add(new ListItem(item.NOME, item.MODELOPRODUTOID.ToString()));
+        }
+
+        public void CarregaDimensoes()
+        {
+            ddlDimensoes.Items.Clear();
+            ddlDimensoes.Items.Add(new ListItem("Selecione...", ""));
+
+            foreach (var item in new DimensoesProdutoBll().GetAllAtivos())
+                ddlDimensoes.Items.Add(new ListItem(item.DESCRICAO, item.DIMENSOESPRODUTOID.ToString()));
 
         }
 
+        public void CarregaCor()
+        {
+            ddlCor.Items.Clear();
+            ddlCorFiltro.Items.Clear();
+            ddlCor.Items.Add(new ListItem("Selecione...", ""));
+            ddlCorFiltro.Items.Add(new ListItem("Selecione...", ""));
+
+            foreach (var item in new CorProdutoBll().GetAllAtivos())
+                ddlCor.Items.Add(new ListItem(item.NOME, item.CORPRODUTOID.ToString()));
+
+            foreach (var item in new CorProdutoBll().GetAllCoresProdutos())
+                ddlCorFiltro.Items.Add(new ListItem(item.NOME, item.CORPRODUTOID.ToString()));
+        }
+
+        public void AutoSelectTipoProduto(int idTipoProduto)
+        {
+
+            var TipoProduto = new TipoProdutoBll().GetTipoProdutoById(idTipoProduto);
+
+            if (TipoProduto != null)
+            {
+                ddlTipoProduto.Items.Add(new ListItem(TipoProduto.NOME, TipoProduto.TIPOPRODUTOID.ToString()));
+                ddlTipoProduto.DataBind();
+
+                ddlTipoProduto.Items.FindByValue(TipoProduto.TIPOPRODUTOID.ToString()).Selected = true;
+            }
+        }
+
+        public void AutoSelectFabricante(int idFabricante)
+        {
+
+            var Fabricante = new FabricanteProdutoBll().GetFabricanteProdutoById(idFabricante);
+
+            if (Fabricante != null)
+            {
+                ddlFabricante.Items.Add(new ListItem(Fabricante.NOME, Fabricante.FABRICANTEPRODUTOID.ToString()));
+                ddlFabricante.DataBind();
+
+                ddlFabricante.Items.FindByValue(Fabricante.FABRICANTEPRODUTOID.ToString()).Selected = true;
+
+            }
+        }
+
+        public void AutoSelectMarca(int idMarca)
+        {
+
+            var Marca = new MarcaProdutoBll().GetMarcaProdutoById(idMarca);
+
+            if (Marca != null)
+            {
+                ddlMarca.Items.Add(new ListItem(Marca.NOME, Marca.MARCAPRODUTOID.ToString()));
+                ddlMarca.DataBind();
+
+                ddlMarca.Items.FindByValue(Marca.MARCAPRODUTOID.ToString()).Selected = true;
+
+            }
+        }
+
+        public void AutoSelectModelo(int idModelo)
+        {
+
+            var Modelo = new ModeloProdutoBll().GetModeloProdutoById(idModelo);
+
+            if (Modelo != null)
+            {
+                ddlModelo.Items.Add(new ListItem(Modelo.NOME, Modelo.MODELOPRODUTOID.ToString()));
+                ddlModelo.DataBind();
+
+                ddlModelo.Items.FindByValue(Modelo.MODELOPRODUTOID.ToString()).Selected = true;
+
+            }
+        }
+
+        public void AutoSelectDimensoes(int idDimensoes)
+        {
+
+            var Dimensoes = new DimensoesProdutoBll().GetDimensoesProdutoById(idDimensoes);
+
+            if (Dimensoes != null)
+            {
+                ddlDimensoes.Items.Add(new ListItem(Dimensoes.DESCRICAO, Dimensoes.DIMENSOESPRODUTOID.ToString()));
+                ddlDimensoes.DataBind();
+
+                ddlDimensoes.Items.FindByValue(Dimensoes.DIMENSOESPRODUTOID.ToString()).Selected = true;
+            }
+        }
+
+        public void AutoSelectCor(int idCor)
+        {
+
+            var Cor = new CorProdutoBll().GetCorProdutoById(idCor);
+
+            if (Cor != null)
+            {
+                ddlCor.Items.Add(new ListItem(Cor.NOME, Cor.CORPRODUTOID.ToString()));
+                ddlCor.DataBind();
+
+                ddlCor.Items.FindByValue(Cor.CORPRODUTOID.ToString()).Selected = true;
+            }
+        }
 
         #endregion
 
-        protected void lbCloseCadastroTipoProduto_Click(object sender, EventArgs e)
-        {
 
-            mpeCadastroTipoProdutos.Hide();
-
-        }
-
-        protected void btnSalvarTipoProduto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void lbCloseCadastroFabricanteProduto_Click(object sender, EventArgs e)
-        {
-            mpeCadastroFabricanteProduto.Hide();
-        }
-
-        protected void btnSalvarMarca_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void lbCloseCadastroMarcaProduto_Click(object sender, EventArgs e)
-        {
-            mpeCadastroMarcaProduto.Hide();
-        }
-
-        protected void btnSalvarFabricante_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void lbCloseCadastroModeloProduto_Click(object sender, EventArgs e)
-        {
-            mpeCadastroModeloProduto.Hide();
-        }
-
-        protected void lbCloseCadastroDimensoesProduto_Click(object sender, EventArgs e)
-        {
-            mpeCadastroDimensoesProduto.Hide();
-        }
-
-        protected void btnSalvarDimensoesProduto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnSalvarModelo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnSalvarCor_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void lbCloseCadastroCorProduto_Click(object sender, EventArgs e)
-        {
-            mpeCadastroCorProduto.Hide();
-        }
-
-        protected void lkAddTipoProduto_Click(object sender, EventArgs e)
-        {
-            mpeCadastroTipoProdutos.Show();
-        }
-
-        protected void lkAddFabricante_Click(object sender, EventArgs e)
-        {
-            mpeCadastroFabricanteProduto.Show();
-        }
-
-        protected void lkAddMarca_Click(object sender, EventArgs e)
-        {
-            mpeCadastroMarcaProduto.Show();
-        }
-
-        protected void lkAddModelo_Click(object sender, EventArgs e)
-        {
-            mpeCadastroModeloProduto.Show();
-        }
-
-        protected void lkAddDimensoes_Click(object sender, EventArgs e)
-        {
-            mpeCadastroDimensoesProduto.Show();
-        }
-
-        protected void lkAddCor_Click(object sender, EventArgs e)
-        {
-            mpeCadastroCorProduto.Show();
-        }
     }
 }

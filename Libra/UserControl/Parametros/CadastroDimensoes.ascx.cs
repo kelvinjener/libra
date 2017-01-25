@@ -2,8 +2,10 @@
 using Libra.Control;
 using Libra.Entity;
 using Libra.Parametros;
+using Libra.Produtos;
 using System;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace Libra.UserControl.Parametros
 {
@@ -14,7 +16,11 @@ namespace Libra.UserControl.Parametros
         #endregion
 
         #region Properties
-
+        public CheckBox chkAtivo
+        {
+            set { this.chkDimensoesProdutoAtivo = value; }
+            get { return this.chkDimensoesProdutoAtivo; }
+        }
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
@@ -104,12 +110,24 @@ namespace Libra.UserControl.Parametros
                 int dimensoesProdutoId = SalvarDimensoesProduto();
 
                 if (dimensoesProdutoId > 0)
-                    this.MessageBoxSucesso(this.Page, "Dimensoes de Produto salvo com sucesso!");
+                    this.MessageBoxSucesso(this.Page, "Dimensões de Produto salvo com sucesso!");
                 else
-                    this.MessageBoxError(this.Page, "Não foi possível salvar o Dimensoes de Produto! Verifique os campos informados.");
+                    this.MessageBoxError(this.Page, "Não foi possível salvar o Dimensões de Produto! Verifique os campos informados.");
 
-                //ParametrosProdutos cad = (ParametrosProdutos)Page;
-                //cad.GridDimensoesProduto.DataBind();
+
+                if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("CadastroProdutos"))
+                {
+                    CadastroProdutos cad = (CadastroProdutos)Page;
+                    cad.HiddenIdDimensoes = dimensoesProdutoId;
+                    cad.AutoSelectDimensoes(dimensoesProdutoId);
+
+                }
+
+                if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("ParametrosProdutos"))
+                {
+                    //ParametrosProdutos cad = (ParametrosProdutos)Page;
+                    //cad.GridDimensoesProduto.DataBind();
+                }
             }
         }
 

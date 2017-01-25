@@ -2,8 +2,10 @@
 using Libra.Control;
 using Libra.Entity;
 using Libra.Parametros;
+using Libra.Produtos;
 using System;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace Libra.UserControl.Parametros
 {
@@ -14,7 +16,11 @@ namespace Libra.UserControl.Parametros
         #endregion
 
         #region Properties
-
+        public CheckBox chkAtivo
+        {
+            set { this.chkFabricanteProdutoAtivo = value; }
+            get { return this.chkFabricanteProdutoAtivo; }
+        }
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
@@ -94,11 +100,22 @@ namespace Libra.UserControl.Parametros
                 else
                     this.MessageBoxError(this.Page, "Não foi possível salvar o Fabricante de Produto! Verifique os campos informados.");
 
-                ParametrosProdutos cad = (ParametrosProdutos)Page;
-                cad.GridFabricanteProduto.DataBind();
+                if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("CadastroProdutos"))
+                {
+                    CadastroProdutos cad = (CadastroProdutos)Page;
+                    cad.HiddenIdFabricante = fabricanteProdutoId;
+                    cad.AutoSelectFabricante(fabricanteProdutoId);
+
+                }
+
+                if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("ParametrosProdutos"))
+                {
+                    ParametrosProdutos cad = (ParametrosProdutos)Page;
+                    cad.GridFabricanteProduto.DataBind();
+                }
             }
         }
 
-       
+
     }
 }

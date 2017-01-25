@@ -24,7 +24,7 @@
             <label>Ativo?</label>
         </div>
         <div>
-            <asp:CheckBox runat="server" ID="chkCorProdutoAtivo" />
+            <asp:CheckBox runat="server" ID="chkCorProdutoAtivo" Checked="true" />
         </div>
     </div>
 </div>

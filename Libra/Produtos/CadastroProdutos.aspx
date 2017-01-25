@@ -1,9 +1,32 @@
 ﻿<%@ Page Title="Cadastro de Produtos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CadastroProdutos.aspx.cs" Inherits="Libra.Produtos.CadastroProdutos" %>
 
+<%@ Register Src="~/UserControl/Parametros/CadastroTipoProduto.ascx" TagName="CadastroTipoProduto"
+    TagPrefix="cuc" %>
+<%@ Register Src="~/UserControl/Parametros/CadastroFabricante.ascx" TagName="CadastroFabricante"
+    TagPrefix="cuc" %>
+<%@ Register Src="~/UserControl/Parametros/CadastroMarca.ascx" TagName="CadastroMarca"
+    TagPrefix="cuc" %>
+<%@ Register Src="~/UserControl/Parametros/CadastroModelo.ascx" TagName="CadastroModelo"
+    TagPrefix="cuc" %>
+<%@ Register Src="~/UserControl/Parametros/CadastroDimensoes.ascx" TagName="CadastroDimensoes"
+    TagPrefix="cuc" %>
+<%@ Register Src="~/UserControl/Parametros/CadastroCor.ascx" TagName="CadastroCor"
+    TagPrefix="cuc" %>
+<%@ Register Src="~/UserControl/Parametros/CadastroCaracteristicaDiversa.ascx" TagName="CadastroCaracteristicaDiversa"
+    TagPrefix="cuc" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:HiddenField runat="server" ID="hdnIdProduto" />
+    <asp:HiddenField ID="hdnIdProjeto" runat="server" />
+    <asp:HiddenField ID="hdnIdTipoProduto" runat="server" />
+    <asp:HiddenField ID="hdnIdFabricante" runat="server" />
+    <asp:HiddenField ID="hdnIdMarca" runat="server" />
+    <asp:HiddenField ID="hdnIdModelo" runat="server" />
+    <asp:HiddenField ID="hdnIdCor" runat="server" />
+    <asp:HiddenField ID="hdnIdDimensoes" runat="server" />
+
     <div class="">
         <div class="page-title">
             <div class="title_left">
@@ -274,8 +297,8 @@
         </div>
     </div>
 
-    <asp:ModalPopupExtender ID="mpeCadastroTipoProdutos" TargetControlID="lkAddTipoProduto" PopupControlID="pnlCadastroTipoProduto"
-        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lbCancelCadastroTipoProduto"
+    <asp:ModalPopupExtender ID="mpeCadastroTipoProdutos" TargetControlID="lkbOculto" PopupControlID="pnlCadastroTipoProduto"
+        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lbCloseCadastroTipoProduto"
         ClientIDMode="AutoID">
     </asp:ModalPopupExtender>
     <asp:Panel ID="pnlCadastroTipoProduto" runat="server" Style="display: none">
@@ -297,27 +320,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div>
-                                                <label>
-                                                    Tipo Produto
-                                                </label>
-                                            </div>
-                                            <div>
-                                                <asp:TextBox ID="txtTipoProduto" runat="server" CssClass="form-control text-uppercase" MaxLength="100"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">&nbsp;</div>
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <asp:LinkButton ID="lbCancelCadastroTipoProduto" runat="server"
-                                                CssClass="btn btn-default" Text="Fechar">
-                                            </asp:LinkButton>
-                                            <asp:Button runat="server" ID="btnSalvarTipoProduto" CssClass="btn btn-primary" Text="Salvar" OnClick="btnSalvarTipoProduto_Click" />
-                                        </div>
-                                    </div>
+                                    <cuc:CadastroTipoProduto ID="cucCadastroTipoProduto" runat="server" />
                                 </div>
                             </div>
                         </div>
@@ -327,8 +330,8 @@
         </div>
     </asp:Panel>
 
-    <asp:ModalPopupExtender ID="mpeCadastroFabricanteProduto" TargetControlID="lkAddFabricante" PopupControlID="pnlCadastroFabricateProduto"
-        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lbCancelCadastroFabricanteProduto"
+    <asp:ModalPopupExtender ID="mpeCadastroFabricanteProduto" TargetControlID="lkbOculto" PopupControlID="pnlCadastroFabricateProduto"
+        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lbCloseCadastroFabricanteProduto"
         ClientIDMode="AutoID">
     </asp:ModalPopupExtender>
     <asp:Panel ID="pnlCadastroFabricateProduto" runat="server" Style="display: none">
@@ -350,27 +353,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div>
-                                                <label>
-                                                    Fabricante
-                                                </label>
-                                            </div>
-                                            <div>
-                                                <asp:TextBox ID="txtFabricante" runat="server" CssClass="form-control text-uppercase" MaxLength="100"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">&nbsp;</div>
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <asp:LinkButton ID="lbCancelCadastroFabricanteProduto" runat="server"
-                                                CssClass="btn btn-default" Text="Fechar">
-                                            </asp:LinkButton>
-                                            <asp:Button runat="server" ID="btnSalvarFabricante" CssClass="btn btn-primary" Text="Salvar" OnClick="btnSalvarFabricante_Click" />
-                                        </div>
-                                    </div>
+                                    <cuc:CadastroFabricante ID="cucCadastroFabricante" runat="server" />
                                 </div>
                             </div>
                         </div>
@@ -380,8 +363,8 @@
         </div>
     </asp:Panel>
 
-    <asp:ModalPopupExtender ID="mpeCadastroMarcaProduto" TargetControlID="lkAddMarca" PopupControlID="pnlCadastroMarcaProduto"
-        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lbCancelCadastroMarcaProduto"
+    <asp:ModalPopupExtender ID="mpeCadastroMarcaProduto" TargetControlID="lkbOculto" PopupControlID="pnlCadastroMarcaProduto"
+        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lbCloseCadastroMarcaProduto"
         ClientIDMode="AutoID">
     </asp:ModalPopupExtender>
     <asp:Panel ID="pnlCadastroMarcaProduto" runat="server" Style="display: none">
@@ -403,27 +386,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div>
-                                                <label>
-                                                    Marca
-                                                </label>
-                                            </div>
-                                            <div>
-                                                <asp:TextBox ID="txtMarca" runat="server" CssClass="form-control text-uppercase" MaxLength="100"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">&nbsp;</div>
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <asp:LinkButton ID="lbCancelCadastroMarcaProduto" runat="server"
-                                                CssClass="btn btn-default" Text="Fechar">
-                                            </asp:LinkButton>
-                                            <asp:Button runat="server" ID="btnSalvarMarca" CssClass="btn btn-primary" Text="Salvar" OnClick="btnSalvarMarca_Click" />
-                                        </div>
-                                    </div>
+                                    <cuc:CadastroMarca ID="cucCadastroMarca" runat="server" />
                                 </div>
                             </div>
                         </div>
@@ -433,8 +396,8 @@
         </div>
     </asp:Panel>
 
-    <asp:ModalPopupExtender ID="mpeCadastroModeloProduto" TargetControlID="lkAddModelo" PopupControlID="pnlCadastroModeloProduto"
-        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lbCancelCadastroModeloProduto"
+    <asp:ModalPopupExtender ID="mpeCadastroModeloProduto" TargetControlID="lkbOculto" PopupControlID="pnlCadastroModeloProduto"
+        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lbCloseCadastroModeloProduto"
         ClientIDMode="AutoID">
     </asp:ModalPopupExtender>
     <asp:Panel ID="pnlCadastroModeloProduto" runat="server" Style="display: none">
@@ -456,27 +419,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div>
-                                                <label>
-                                                    Modelo
-                                                </label>
-                                            </div>
-                                            <div>
-                                                <asp:TextBox ID="txtModelo" runat="server" CssClass="form-control text-uppercase" MaxLength="100"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">&nbsp;</div>
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <asp:LinkButton ID="lbCancelCadastroModeloProduto" runat="server"
-                                                CssClass="btn btn-default" Text="Fechar">
-                                            </asp:LinkButton>
-                                            <asp:Button runat="server" ID="btnSalvarModelo" CssClass="btn btn-primary" Text="Salvar" OnClick="btnSalvarModelo_Click" />
-                                        </div>
-                                    </div>
+                                    <cuc:CadastroModelo ID="cucCadastroModelo" runat="server" />
                                 </div>
                             </div>
                         </div>
@@ -486,8 +429,8 @@
         </div>
     </asp:Panel>
 
-    <asp:ModalPopupExtender ID="mpeCadastroDimensoesProduto" TargetControlID="lkAddDimensoes" PopupControlID="pnlCadastroDimensoesProduto"
-        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lbCancelCadastroDimensoesProduto"
+    <asp:ModalPopupExtender ID="mpeCadastroDimensoesProduto" TargetControlID="lkbOculto" PopupControlID="pnlCadastroDimensoesProduto"
+        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lbCloseCadastroDimensoesProduto"
         ClientIDMode="AutoID">
     </asp:ModalPopupExtender>
     <asp:Panel ID="pnlCadastroDimensoesProduto" runat="server" Style="display: none">
@@ -509,60 +452,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-12 col-xs-12">
-                                            <div>
-                                                <label>
-                                                    Largura (metros)
-                                                </label>
-                                            </div>
-                                            <div>
-                                                <asp:TextBox ID="txtLargura" runat="server" CssClass="form-control text-uppercase" MaxLength="8"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-12 col-xs-12">
-                                            <div>
-                                                <label>
-                                                    Comprimento (metros)
-                                                </label>
-                                            </div>
-                                            <div>
-                                                <asp:TextBox ID="txtComprimento" runat="server" CssClass="form-control text-uppercase" MaxLength="8"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-12 col-xs-12">
-                                            <div>
-                                                <label>
-                                                    Altura (metros)
-                                                </label>
-                                            </div>
-                                            <div>
-                                                <asp:TextBox ID="txtAltura" runat="server" CssClass="form-control text-uppercase" MaxLength="8"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">&nbsp;</div>
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div>
-                                                <label>
-                                                    Descrição
-                                                </label>
-                                            </div>
-                                            <div>
-                                                <asp:TextBox ID="txtDescricao" runat="server" CssClass="form-control text-uppercase" MaxLength="100"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">&nbsp;</div>
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <asp:LinkButton ID="lbCancelCadastroDimensoesProduto" runat="server"
-                                                CssClass="btn btn-default" Text="Fechar">
-                                            </asp:LinkButton>
-                                            <asp:Button runat="server" ID="btnSalvarDimensoesProduto" CssClass="btn btn-primary" Text="Salvar" OnClick="btnSalvarDimensoesProduto_Click" />
-                                        </div>
-                                    </div>
+                                    <cuc:CadastroDimensoes ID="cucCadastroDimensoes" runat="server" />
                                 </div>
                             </div>
                         </div>
@@ -572,8 +462,8 @@
         </div>
     </asp:Panel>
 
-    <asp:ModalPopupExtender ID="mpeCadastroCorProduto" TargetControlID="lkAddCor" PopupControlID="pnlCadastroCorProduto"
-        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lbCancelCadastroCorProduto"
+    <asp:ModalPopupExtender ID="mpeCadastroCorProduto" TargetControlID="lkbOculto" PopupControlID="pnlCadastroCorProduto"
+        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lbCloseCadastroCorProduto"
         ClientIDMode="AutoID">
     </asp:ModalPopupExtender>
     <asp:Panel ID="pnlCadastroCorProduto" runat="server" Style="display: none">
@@ -595,27 +485,8 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div>
-                                                <label>
-                                                    Cor
-                                                </label>
-                                            </div>
-                                            <div>
-                                                <asp:TextBox ID="txtCor" runat="server" CssClass="form-control text-uppercase" MaxLength="100"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">&nbsp;</div>
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <asp:LinkButton ID="lbCancelCadastroCorProduto" runat="server"
-                                                CssClass="btn btn-default" Text="Fechar">
-                                            </asp:LinkButton>
-                                            <asp:Button runat="server" ID="btnSalvarCor" CssClass="btn btn-primary" Text="Salvar" OnClick="btnSalvarCor_Click" />
-                                        </div>
-                                    </div>
+                                    <cuc:CadastroCor ID="cucCadastroCor" runat="server" />
+
                                 </div>
                             </div>
                         </div>

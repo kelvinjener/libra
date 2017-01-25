@@ -22,6 +22,69 @@ namespace Libra.Produtos {
         protected global::System.Web.UI.WebControls.HiddenField hdnIdProduto;
         
         /// <summary>
+        /// hdnIdProjeto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnIdProjeto;
+        
+        /// <summary>
+        /// hdnIdTipoProduto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnIdTipoProduto;
+        
+        /// <summary>
+        /// hdnIdFabricante control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnIdFabricante;
+        
+        /// <summary>
+        /// hdnIdMarca control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnIdMarca;
+        
+        /// <summary>
+        /// hdnIdModelo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnIdModelo;
+        
+        /// <summary>
+        /// hdnIdCor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnIdCor;
+        
+        /// <summary>
+        /// hdnIdDimensoes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnIdDimensoes;
+        
+        /// <summary>
         /// divFiltroETabela control.
         /// </summary>
         /// <remarks>
@@ -436,31 +499,13 @@ namespace Libra.Produtos {
         protected global::System.Web.UI.WebControls.LinkButton lbCloseCadastroTipoProduto;
         
         /// <summary>
-        /// txtTipoProduto control.
+        /// cucCadastroTipoProduto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTipoProduto;
-        
-        /// <summary>
-        /// lbCancelCadastroTipoProduto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbCancelCadastroTipoProduto;
-        
-        /// <summary>
-        /// btnSalvarTipoProduto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalvarTipoProduto;
+        protected global::Libra.UserControl.Parametros.CadastroTipoProduto cucCadastroTipoProduto;
         
         /// <summary>
         /// mpeCadastroFabricanteProduto control.
@@ -490,31 +535,13 @@ namespace Libra.Produtos {
         protected global::System.Web.UI.WebControls.LinkButton lbCloseCadastroFabricanteProduto;
         
         /// <summary>
-        /// txtFabricante control.
+        /// cucCadastroFabricante control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFabricante;
-        
-        /// <summary>
-        /// lbCancelCadastroFabricanteProduto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbCancelCadastroFabricanteProduto;
-        
-        /// <summary>
-        /// btnSalvarFabricante control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalvarFabricante;
+        protected global::Libra.UserControl.Parametros.CadastroFabricante cucCadastroFabricante;
         
         /// <summary>
         /// mpeCadastroMarcaProduto control.
@@ -544,31 +571,13 @@ namespace Libra.Produtos {
         protected global::System.Web.UI.WebControls.LinkButton lbCloseCadastroMarcaProduto;
         
         /// <summary>
-        /// txtMarca control.
+        /// cucCadastroMarca control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMarca;
-        
-        /// <summary>
-        /// lbCancelCadastroMarcaProduto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbCancelCadastroMarcaProduto;
-        
-        /// <summary>
-        /// btnSalvarMarca control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalvarMarca;
+        protected global::Libra.UserControl.Parametros.CadastroMarca cucCadastroMarca;
         
         /// <summary>
         /// mpeCadastroModeloProduto control.
@@ -598,31 +607,13 @@ namespace Libra.Produtos {
         protected global::System.Web.UI.WebControls.LinkButton lbCloseCadastroModeloProduto;
         
         /// <summary>
-        /// txtModelo control.
+        /// cucCadastroModelo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtModelo;
-        
-        /// <summary>
-        /// lbCancelCadastroModeloProduto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbCancelCadastroModeloProduto;
-        
-        /// <summary>
-        /// btnSalvarModelo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalvarModelo;
+        protected global::Libra.UserControl.Parametros.CadastroModelo cucCadastroModelo;
         
         /// <summary>
         /// mpeCadastroDimensoesProduto control.
@@ -652,58 +643,13 @@ namespace Libra.Produtos {
         protected global::System.Web.UI.WebControls.LinkButton lbCloseCadastroDimensoesProduto;
         
         /// <summary>
-        /// txtLargura control.
+        /// cucCadastroDimensoes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLargura;
-        
-        /// <summary>
-        /// txtComprimento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtComprimento;
-        
-        /// <summary>
-        /// txtAltura control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAltura;
-        
-        /// <summary>
-        /// txtDescricao control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescricao;
-        
-        /// <summary>
-        /// lbCancelCadastroDimensoesProduto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbCancelCadastroDimensoesProduto;
-        
-        /// <summary>
-        /// btnSalvarDimensoesProduto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalvarDimensoesProduto;
+        protected global::Libra.UserControl.Parametros.CadastroDimensoes cucCadastroDimensoes;
         
         /// <summary>
         /// mpeCadastroCorProduto control.
@@ -733,31 +679,13 @@ namespace Libra.Produtos {
         protected global::System.Web.UI.WebControls.LinkButton lbCloseCadastroCorProduto;
         
         /// <summary>
-        /// txtCor control.
+        /// cucCadastroCor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCor;
-        
-        /// <summary>
-        /// lbCancelCadastroCorProduto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbCancelCadastroCorProduto;
-        
-        /// <summary>
-        /// btnSalvarCor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalvarCor;
+        protected global::Libra.UserControl.Parametros.CadastroCor cucCadastroCor;
         
         /// <summary>
         /// mpeFiltroProdutos control.

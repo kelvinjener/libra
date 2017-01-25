@@ -4,6 +4,7 @@ using Libra.Entity;
 using Libra.Parametros;
 using System;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace Libra.UserControl.Parametros
 {
@@ -14,7 +15,11 @@ namespace Libra.UserControl.Parametros
         #endregion
 
         #region Properties
-
+        public CheckBox chkAtivo
+        {
+            set { this.chkCaracteristicasDiversasProdutoAtivo = value; }
+            get { return this.chkCaracteristicasDiversasProdutoAtivo; }
+        }
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)

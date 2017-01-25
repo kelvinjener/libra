@@ -4,3 +4,4 @@ C:\github\Libra\Libra.Communs\obj\Debug\Libra.Communs.Resources.EnumLocalization
 C:\github\Libra\Libra.Communs\obj\Debug\Libra.Communs.csproj.GenerateResource.Cache
 C:\github\Libra\Libra.Communs\obj\Debug\Libra.Communs.dll
 C:\github\Libra\Libra.Communs\obj\Debug\Libra.Communs.pdb
+C:\github\Libra\Libra.Communs\obj\Debug\Libra.Communs.csprojResolveAssemblyReference.cache
