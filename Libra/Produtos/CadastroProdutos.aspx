@@ -18,8 +18,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:HiddenField runat="server" ID="hdnIdProduto" />
-    <asp:HiddenField ID="hdnIdProjeto" runat="server" />
+    <asp:HiddenField ID="hdnIdProduto" runat="server" />
     <asp:HiddenField ID="hdnIdTipoProduto" runat="server" />
     <asp:HiddenField ID="hdnIdFabricante" runat="server" />
     <asp:HiddenField ID="hdnIdMarca" runat="server" />
@@ -85,7 +84,7 @@
                                         </ItemTemplate>
                                         <ItemStyle Width="10%" />
                                     </asp:TemplateField>
-                                   <asp:TemplateField HeaderText="Descrição" SortExpression="Descricao">
+                                    <asp:TemplateField HeaderText="Descrição" SortExpression="Descricao">
                                         <ItemTemplate>
                                             <asp:Label ID="lblDescricaoProduto" runat="server" Text='<%# Eval("Descricao")%>'>
                                             </asp:Label>
@@ -103,7 +102,7 @@
                                     <asp:Label runat="server" ID="lblNoResults" Text="Nenhuma produto encontrado!" />
                                 </EmptyDataTemplate>
                             </asp:GridView>
-                            <asp:LinqDataSource ID="ldsFiltro" runat="server" ContextTypeName="RM.Cst.Sebrae.SGCTEC.Entity.SGCTECDataContext"
+                            <asp:LinqDataSource ID="ldsFiltro" runat="server" ContextTypeName="Libra.Entity.LibraDataContext"
                                 OnSelecting="ldsFiltro_Selecting" AutoSort="true" AutoGenerateWhereClause="true">
                             </asp:LinqDataSource>
                         </div>
@@ -275,7 +274,7 @@
                                         <asp:CheckBox runat="server" ID="ckbDisponivel" />
                                     </div>
                                 </div>
-                               <%-- <div class="col-md-2 col-sm-2 col-xs-12">
+                                <%-- <div class="col-md-2 col-sm-2 col-xs-12">
                                     <div>
                                         <label>
                                             Ativo?
@@ -626,7 +625,7 @@
                                                 <span class="labelInfo fonteCinza">Indisponível</span>&nbsp;
                                             </div>
                                         </div>
-                                       <%-- <div class="col-md-6 col-sm-12 col-xs-12">
+                                        <%-- <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div>
                                                 <label>Ativo</label>
                                             </div>

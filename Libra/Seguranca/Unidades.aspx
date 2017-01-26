@@ -78,7 +78,7 @@
                                     <asp:Label runat="server" ID="lblNoResults" Text="Nenhuma unidade encontrada!" />
                                 </EmptyDataTemplate>
                             </asp:GridView>
-                            <asp:LinqDataSource ID="ldsFiltro" runat="server" ContextTypeName="RM.Cst.Sebrae.SGCTEC.Entity.SGCTECDataContext"
+                            <asp:LinqDataSource ID="ldsFiltro" runat="server" ContextTypeName="Libra.Entity.LibraDataContext"
                                 OnSelecting="ldsFiltro_Selecting" AutoSort="true" AutoGenerateWhereClause="true">
                             </asp:LinqDataSource>
                         </div>

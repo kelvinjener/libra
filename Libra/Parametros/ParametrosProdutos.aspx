@@ -114,7 +114,7 @@
                                                                         <asp:Label runat="server" ID="lblNoResults" Text="Nenhum tipo de produto encontrado!" />
                                                                     </EmptyDataTemplate>
                                                                 </asp:GridView>
-                                                                <asp:LinqDataSource ID="ldsFiltroTipoProduto" runat="server" ContextTypeName="RM.Cst.Sebrae.SGCTEC.Entity.SGCTECDataContext"
+                                                                <asp:LinqDataSource ID="ldsFiltroTipoProduto" runat="server" ContextTypeName="Libra.Entity.LibraDataContext"
                                                                     OnSelecting="ldsFiltroTipoProduto_Selecting" AutoSort="true" AutoGenerateWhereClause="true">
                                                                 </asp:LinqDataSource>
                                                             </div>
@@ -332,7 +332,7 @@
                                                                         <asp:Label runat="server" ID="lblNoResults" Text="Nenhum fabricante de produto encontrado!" />
                                                                     </EmptyDataTemplate>
                                                                 </asp:GridView>
-                                                                <asp:LinqDataSource ID="ldsFiltroFabricanteProduto" runat="server" ContextTypeName="RM.Cst.Sebrae.SGCTEC.Entity.SGCTECDataContext"
+                                                                <asp:LinqDataSource ID="ldsFiltroFabricanteProduto" runat="server" ContextTypeName="Libra.Entity.LibraDataContext"
                                                                     OnSelecting="ldsFiltroFabricanteProduto_Selecting" AutoSort="true" AutoGenerateWhereClause="true">
                                                                 </asp:LinqDataSource>
                                                             </div>
