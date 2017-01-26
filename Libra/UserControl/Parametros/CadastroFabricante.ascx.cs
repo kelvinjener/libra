@@ -59,12 +59,20 @@ namespace Libra.UserControl.Parametros
         {
             try
             {
-                FABRICANTEPRODUTO fp;
-                ParametrosProdutos cad = (ParametrosProdutos)Page;
-                if (!String.IsNullOrEmpty(cad.FabricanteProdutoHidden) && Convert.ToInt32(cad.FabricanteProdutoHidden) > 0)
-                    fp = fabricanteProdutoBll.GetFabricanteProdutoById(Convert.ToInt32(cad.FabricanteProdutoHidden));
-                else
+                FABRICANTEPRODUTO fp = null;
+
+                if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("parametrosprodutos"))
+                {
+                    ParametrosProdutos cad = (ParametrosProdutos)Page;
+                    if (!String.IsNullOrEmpty(cad.FabricanteProdutoHidden) && Convert.ToInt32(cad.FabricanteProdutoHidden) > 0)
+                        fp = fabricanteProdutoBll.GetFabricanteProdutoById(Convert.ToInt32(cad.FabricanteProdutoHidden));
+                    else
+                        fp = new FABRICANTEPRODUTO();
+                }
+                else if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("cadastroprodutos"))
+                {
                     fp = new FABRICANTEPRODUTO();
+                }
 
                 //TODO: informa campos para SalvarFabricanteProduto.
                 fp.NOME = txtFabricanteProduto.Text;
@@ -84,8 +92,14 @@ namespace Libra.UserControl.Parametros
         }
         protected void lbCancelFabricanteProduto_Click(object sender, EventArgs e)
         {
-            ParametrosProdutos cad = (ParametrosProdutos)Page;
-            cad.ModalFabricanteProduto.Hide();
+            if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("parametrosprodutos"))
+            {
+                ParametrosProdutos cad = (ParametrosProdutos)Page;
+                cad.ModalFabricanteProduto.Hide();
+            }
+            else if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("cadastroprodutos"))
+            {
+            }
             LimparCamposFabricantesProdutos();
         }
 
@@ -100,7 +114,7 @@ namespace Libra.UserControl.Parametros
                 else
                     this.MessageBoxError(this.Page, "Não foi possível salvar o Fabricante de Produto! Verifique os campos informados.");
 
-                if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("CadastroProdutos"))
+                if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("cadastroprodutos"))
                 {
                     CadastroProdutos cad = (CadastroProdutos)Page;
                     cad.HiddenIdFabricante = fabricanteProdutoId;

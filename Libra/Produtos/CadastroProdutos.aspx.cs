@@ -102,7 +102,7 @@ namespace Libra.Produtos
                 CarregaDimensoes();
                 CarregaCor();
 
-                this.txtPeso.Attributes.Add("onkeypress", "return FormatMaskOnlyNumbers(event, this, '#.###,##');");
+                this.txtPeso.Attributes.Add("onkeypress", "return MascaraMoeda(this, '.', ',', event);");
 
 
             }
@@ -128,13 +128,13 @@ namespace Libra.Produtos
             {
                 if (e.Row.RowType == DataControlRowType.DataRow)
                 {
-                    Label lblAtivo = (Label)(e.Row.FindControl("lblAtivo"));
+                    Label lblDisponivelComercio = (Label)(e.Row.FindControl("lblDisponivelComercio"));
                     int ProdutoId = Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "ProdutoId"));
 
-                    if (Convert.ToBoolean(DataBinder.Eval(e.Row.DataItem, "Ativo")))
-                        lblAtivo.Text = "Sim";
+                    if (Convert.ToBoolean(DataBinder.Eval(e.Row.DataItem, "DisponivelComercio")))
+                        lblDisponivelComercio.Text = "Sim";
                     else
-                        lblAtivo.Text = "Não";
+                        lblDisponivelComercio.Text = "Não";
 
                     //if (usuarioProdutoBll.VerificaProdutoAssociadas(ProdutoId))
                     //{
@@ -153,21 +153,39 @@ namespace Libra.Produtos
         {
             try
             {
-                List<bool> situacao = new List<bool>();
+                List<bool> disponivel = new List<bool>();
 
-                if (ckbAtivoFiltro.Checked)
-                    situacao.Add(true);
+                if (ckbDisponivelComercioFiltro.Checked)
+                    disponivel.Add(true);
 
-                if (ckbInativoFiltro.Checked)
-                    situacao.Add(false);
+                if (ckbIndisponivelComercioFiltro.Checked)
+                    disponivel.Add(false);
 
-                String txtProduto = String.Empty;
+                string codigoProduto = (!this.txtCodigoProdutoFiltro.Text.Equals(String.Empty)) ? this.txtCodigoProdutoFiltro.Text : String.Empty;
 
-                string tipoProduto = string.Empty;
+                string descricao = (!this.txtDescricaoFiltro.Text.Equals(String.Empty)) ? this.txtDescricaoFiltro.Text : String.Empty;
+
+                int tipoProduto = 0;
                 if (this.ddlTipoProdutoFiltro.SelectedIndex > 0)
-                    tipoProduto = this.ddlTipoProdutoFiltro.SelectedValue;
+                    tipoProduto = Convert.ToInt32(this.ddlTipoProdutoFiltro.SelectedValue);
 
-                e.Result = produtoBll.GetAllProdutosGridFiltro(txtProduto);
+                int fabricante = 0;
+                if (this.ddlFabricanteFiltro.SelectedIndex > 0)
+                    fabricante = Convert.ToInt32(this.ddlFabricanteFiltro.SelectedValue);
+
+                int marca = 0;
+                if (this.ddlMarcaFiltro.SelectedIndex > 0)
+                    marca = Convert.ToInt32(this.ddlMarcaFiltro.SelectedValue);
+
+                int modelo = 0;
+                if (this.ddlModeloFiltro.SelectedIndex > 0)
+                    modelo = Convert.ToInt32(this.ddlModeloFiltro.SelectedValue);
+
+                int cor = 0;
+                if (this.ddlCorFiltro.SelectedIndex > 0)
+                    cor = Convert.ToInt32(this.ddlCorFiltro.SelectedValue);
+
+                e.Result = produtoBll.GetAllProdutosGridFiltro(codigoProduto, descricao, disponivel, tipoProduto, fabricante, marca, modelo, cor);
             }
             catch (Exception ex)
             {
@@ -178,6 +196,7 @@ namespace Libra.Produtos
         protected void lbAddProdutos_Click(object sender, EventArgs e)
         {
             LimpaCampos();
+            lblCodigoProduto.Text = "Gerado pelo sistema";
             lbAddEditProduto.Text = "Nova Produto";
             Edicao(true);
         }
@@ -502,6 +521,60 @@ namespace Libra.Produtos
             cucCadastroCor.chkAtivo.Enabled = false;
         }
 
+        protected void ddlTipoProduto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlTipoProduto.SelectedIndex > 0)
+            {
+                var TipoProduto = new TipoProdutoBll().GetTipoProdutoById(Convert.ToInt32(this.ddlTipoProduto.SelectedValue));
+                txtDescricao.Text = txtDescricao.Text + " " + TipoProduto.NOME.ToUpper();
+            }
+        }
+
+        protected void ddlFabricante_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlFabricante.SelectedIndex > 0)
+            {
+                var Fabricante = new FabricanteProdutoBll().GetFabricanteProdutoById(Convert.ToInt32(this.ddlFabricante.SelectedValue));
+                txtDescricao.Text = txtDescricao.Text + " " + Fabricante.NOME.ToUpper();
+            }
+        }
+
+        protected void ddlMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlMarca.SelectedIndex > 0)
+            {
+                var MarcaProduto = new MarcaProdutoBll().GetMarcaProdutoById(Convert.ToInt32(this.ddlMarca.SelectedValue));
+                txtDescricao.Text = txtDescricao.Text + " " + MarcaProduto.NOME.ToUpper();
+            }
+        }
+
+        protected void ddlModelo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlModelo.SelectedIndex > 0)
+            {
+                var ModeloProduto = new ModeloProdutoBll().GetModeloProdutoById(Convert.ToInt32(this.ddlModelo.SelectedValue));
+                txtDescricao.Text = txtDescricao.Text + " " + ModeloProduto.NOME.ToUpper();
+            }
+        }
+
+        protected void ddlDimensoes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlDimensoes.SelectedIndex > 0)
+            {
+                var DimensoesProduto = new DimensoesProdutoBll().GetDimensoesProdutoById(Convert.ToInt32(this.ddlDimensoes.SelectedValue));
+                txtDescricao.Text = txtDescricao.Text + " " + DimensoesProduto.DESCRICAO.ToUpper();
+            }
+        }
+
+        protected void ddlCor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlCor.SelectedIndex > 0)
+            {
+                var CorProduto = new CorProdutoBll().GetCorProdutoById(Convert.ToInt32(this.ddlCor.SelectedValue));
+                txtDescricao.Text = txtDescricao.Text + " " + CorProduto.NOME.ToUpper();
+            }
+        }
+
         #endregion Parametros
 
         #endregion
@@ -517,25 +590,28 @@ namespace Libra.Produtos
         public void CarregarDadosVisualizacao(int idProduto)
         {
 
-            //PRODUTO produto = produtoBll.GetProdutoById(idProduto);
+            PRODUTO produto = produtoBll.GetProdutoById(idProduto);
 
-            //if (produto != null)
-            //{
-            //    lbProduto.Text = produto.APELIDO;
-            //    lbNomeProduto.Text = produto.NOME;
-            //    lbEnderecoProduto.Text = GetEnderecoProduto(produto);
-            //    lbTelefones.Text = GetTelefonesProduto(produto);
-            //    lbEmails.Text = GetEmailsProduto(produto);
-            //    lbObservacao.Text = produto.OBSERVACAO == null ? "---" : produto.OBSERVACAO;
-            //    lbAtiva.Text = produto.ATIVO ? "Sim" : "Não";
-            //    lbTipoProduto.Text = Enum<TipoProduto>.Description((TipoProduto)Enum.Parse(typeof(TipoProduto), produto.TIPOPRODUTO.ToString()));
+            if (produto != null)
+            {
+                lbProduto.Text = produto.DESCRICAO;
+                lblVisualizarCodigoProduto.Text = produto.CODIGOPRODUTO;
+                lblVisualizarNomeProduto.Text = produto.DESCRICAO;
+                lblVisualizarDimensoes.Text = produto.DIMENSOESPRODUTO.DESCRICAO;
+                lblVisualizarDimensoes.ToolTip = produto.DIMENSOESPRODUTO.ALTURA + " x " + produto.DIMENSOESPRODUTO.LARGURA + " x " + produto.DIMENSOESPRODUTO.COMPRIMENTO;
+                lblVisualizarDisponivelComercio.Text = produto.DISPONIVELCOMERCIO ? "Sim" : "Não";
+                lblVisualizarFabricante.Text = produto.FABRICANTEPRODUTO.NOME;
+                lblVisualizarMarca.Text = produto.MARCAPRODUTO.NOME;
+                lblVisualizarModelo.Text = produto.MODELOPRODUTO.NOME;
+                lblVisualizarPeso.Text = produto.PESO.ToString();
+                lblVisualizarTipoProduto.Text = produto.TIPOPRODUTO.NOME;
 
-            //    mpeVisualizarProduto.Show();
-            //}
-            //else
-            //{
-            //    MessageBoxError(this.Page, "Produto não localizada!");
-            //}
+                mpeVisualizarProduto.Show();
+            }
+            else
+            {
+                MessageBoxError(this.Page, "Produto não localizada!");
+            }
 
         }
 
@@ -545,32 +621,23 @@ namespace Libra.Produtos
 
             hdnIdProduto.Value = idProduto.ToString();
 
-            //if (produto != null)
-            //{
-            //    //TODO: Informar campos para Editar.
-            //    txtNomeProduto.Text = produto.NOME;
-            //    txtApelidoProduto.Text = produto.APELIDO;
-            //    txtLogradouro.Text = produto.LOGRADOURO;
-            //    txtNumero.Text = produto.NUMERO;
-            //    txtComplemento.Text = produto.COMPLEMENTO;
-            //    txtBairro.Text = produto.BAIRRO;
-            //    txtCidade.Text = produto.CIDADE;
-            //    if (!String.IsNullOrEmpty(produto.UF))
-            //        ddlUF.SelectedValue = produto.UF;
-            //    txtCEP.Text = FormatarCep(produto.CEP);
-            //    txtTel1.Text = FormatarTelefone(produto.TEL1);
-            //    txtTel2.Text = FormatarTelefone(produto.TEL2);
-            //    txtFax.Text = FormatarTelefone(produto.FAX);
-            //    txtEmail1.Text = produto.EMAIL1;
-            //    txtEmail2.Text = produto.EMAIL2;
-            //    txtObservacao.Text = produto.OBSERVACAO;
-            //    ddlTipoProduto.SelectedValue = Convert.ToInt16(Enum.Parse(typeof(TipoProduto), produto.TIPOPRODUTO.ToString())).ToString();
-            //    chkAtiva.Checked = produto.ATIVO;
-            //}
-            //else
-            //{
-            //    MessageBoxError(this.Page, "Produto não localizada!");
-            //}
+            if (produto != null)
+            {
+                ddlTipoProduto.SelectedValue = produto.TIPOPRODUTOID.ToString();
+                ddlFabricante.SelectedValue = produto.FABRICANTEID.ToString();
+                ddlMarca.SelectedValue = produto.MARCAID.ToString();
+                ddlModelo.SelectedValue = produto.MODELOID.ToString();
+                ddlDimensoes.SelectedValue = produto.DIMENSOESID.ToString();
+                ddlCor.SelectedValue = produto.CORID.ToString();
+                txtPeso.Text = produto.PESO.ToString();
+                lblCodigoProduto.Text = produto.CODIGOPRODUTO.ToString();
+                txtDescricao.Text = produto.DESCRICAO.ToString();
+                ckbDisponivel.Checked = produto.DISPONIVELCOMERCIO;
+            }
+            else
+            {
+                MessageBoxError(this.Page, "Produto não localizado!");
+            }
         }
 
         public int Salvar()
@@ -581,29 +648,57 @@ namespace Libra.Produtos
 
                 if (!String.IsNullOrEmpty(hdnIdProduto.Value) && Convert.ToInt32(hdnIdProduto.Value) > 0)
                     produto = produtoBll.GetProdutoById(Convert.ToInt32(hdnIdProduto.Value));
-                else
+                else {
                     produto = new PRODUTO();
 
-                //TODO: informa campos para SalvarTipoProduto.
-                //produto.NOME = txtNomeProduto.Text;
-                //produto.APELIDO = txtApelidoProduto.Text;
-                //produto.LOGRADOURO = txtLogradouro.Text;
-                //produto.NUMERO = txtNumero.Text;
-                //produto.COMPLEMENTO = txtComplemento.Text;
-                //produto.BAIRRO = txtBairro.Text;
-                //produto.CIDADE = txtCidade.Text;
-                //produto.UF = ddlUF.SelectedValue;
-                //produto.CEP = this.ClearCaracter(txtCEP.Text, ".-");
-                //produto.TEL1 = this.ClearCaracter(txtTel1.Text, ".-()");
-                //produto.TEL2 = this.ClearCaracter(txtTel2.Text, ".-()");
-                //produto.FAX = this.ClearCaracter(txtFax.Text, ".-()");
-                //produto.EMAIL1 = txtEmail1.Text;
-                //produto.EMAIL2 = txtEmail2.Text;
-                //produto.OBSERVACAO = txtObservacao.Text;
-                //produto.TIPOPRODUTO = (TipoProduto)Enum.Parse(typeof(TipoProduto), ddlTipoProduto.SelectedValue);
-                //produto.ATIVO = chkAtiva.Checked;
+                    string tipoProdutoAux = ddlTipoProduto.SelectedValue.Length == 1 ? ("0" + ddlTipoProduto.SelectedValue) : ddlTipoProduto.SelectedValue;
+                    string fabricanteAux = ddlFabricante.SelectedValue.Length == 1 ? ("0" + ddlFabricante.SelectedValue) : ddlFabricante.SelectedValue;
+                    string marcaAux = ddlMarca.SelectedValue.Length == 1 ? ("0" + ddlMarca.SelectedValue) : ddlMarca.SelectedValue;
+                    string modeloAux = ddlModelo.SelectedValue.Length == 1 ? ("0" + ddlModelo.SelectedValue) : ddlModelo.SelectedValue;
+                    string dimensoesAux = ddlDimensoes.SelectedValue.Length == 1 ? ("0" + ddlDimensoes.SelectedValue) : ddlDimensoes.SelectedValue;
+                    string corAux = ddlCor.SelectedValue.Length == 1 ? ("0" + ddlCor.SelectedValue) : ddlCor.SelectedValue;
 
-                //produtoBll.Salvar(produto);
+                    produto.CODIGOPRODUTO = (tipoProdutoAux
+                      + fabricanteAux
+                      + marcaAux
+                      + modeloAux
+                      + dimensoesAux
+                      + corAux
+                      );
+                }
+
+
+                produto.TIPOPRODUTOID = Convert.ToInt32(ddlTipoProduto.SelectedValue);
+                produto.FABRICANTEID = Convert.ToInt32(ddlFabricante.SelectedValue);
+                produto.MARCAID = Convert.ToInt32(ddlMarca.SelectedValue);
+                produto.MODELOID = Convert.ToInt32(ddlModelo.SelectedValue);
+                produto.DIMENSOESID = Convert.ToInt32(ddlDimensoes.SelectedValue);
+                produto.CORID = Convert.ToInt32(ddlCor.SelectedValue);
+                produto.PESO = Convert.ToDecimal(ClearCaracter(txtPeso.Text, ".").Trim());
+                produto.DESCRICAO = txtDescricao.Text;
+                produto.DISPONIVELCOMERCIO = ckbDisponivel.Checked;
+
+                //TODO: Temporário
+                produto.CRIADOPOR = UsuarioInfo.IdUsuario;
+                produto.DATACRIACAO = DateTime.Now;
+
+
+                produtoBll.Salvar(produto);
+
+                if (produto.PRODUTOID > 0 && produto.CODIGOPRODUTO.Length == 12)
+                {
+
+                    var produtoId = produto.PRODUTOID.ToString().Length == 1 ? ("000" + produto.PRODUTOID.ToString()) :
+                                    produto.PRODUTOID.ToString().Length == 2 ? ("00" + produto.PRODUTOID.ToString()) :
+                                    produto.PRODUTOID.ToString().Length == 3 ? ("0" + produto.PRODUTOID.ToString()) :
+                                    produto.PRODUTOID.ToString();
+
+                    produto.CODIGOPRODUTO = produto.CODIGOPRODUTO + produtoId;
+                    produtoBll.Salvar(produto);
+
+                }
+
+                CarregarDadosEdicao(produto.PRODUTOID);
 
                 return produto.PRODUTOID;
 
@@ -618,24 +713,10 @@ namespace Libra.Produtos
 
         public void LimpaCampos()
         {
-            //TODO: Informar campos para limpar.
-            //txtNomeProduto.Text = string.Empty;
-            //txtApelidoProduto.Text = string.Empty;
-            //txtLogradouro.Text = string.Empty;
-            //txtNumero.Text = string.Empty;
-            //txtComplemento.Text = string.Empty;
-            //txtBairro.Text = string.Empty;
-            //txtCidade.Text = string.Empty;
-            //ddlUF.SelectedIndex = 0;
-            //txtCEP.Text = string.Empty;
-            //txtTel1.Text = string.Empty;
-            //txtTel2.Text = string.Empty;
-            //txtFax.Text = string.Empty;
-            //txtEmail1.Text = string.Empty;
-            //txtEmail2.Text = string.Empty;
-            //txtObservacao.Text = string.Empty;
-            //ddlTipoProduto.SelectedIndex = 0;
-            //chkAtiva.Checked = false;
+            txtDescricao.Text = string.Empty;
+            txtPeso.Text = string.Empty;
+            ckbDisponivel.Checked = true;
+            //chkAtivo.Checked = true;
             hdnIdProduto.Value = "0";
             hdnIdTipoProduto.Value = "0";
             hdnIdFabricante.Value = "0";
@@ -643,6 +724,13 @@ namespace Libra.Produtos
             hdnIdModelo.Value = "0";
             hdnIdDimensoes.Value = "0";
             hdnIdCor.Value = "0";
+
+            ddlTipoProduto.SelectedIndex = 0;
+            ddlFabricante.SelectedIndex = 0;
+            ddlMarca.SelectedIndex = 0;
+            ddlModelo.SelectedIndex = 0;
+            ddlDimensoes.SelectedIndex = 0;
+            ddlCor.SelectedIndex = 0;
         }
 
         public void CarregaTipoProduto()
@@ -730,44 +818,33 @@ namespace Libra.Produtos
 
         public void AutoSelectTipoProduto(int idTipoProduto)
         {
-
-            var TipoProduto = new TipoProdutoBll().GetTipoProdutoById(idTipoProduto);
-
-            if (TipoProduto != null)
+            if (idTipoProduto > 0)
             {
-                ddlTipoProduto.Items.Add(new ListItem(TipoProduto.NOME, TipoProduto.TIPOPRODUTOID.ToString()));
-                ddlTipoProduto.DataBind();
-
-                ddlTipoProduto.Items.FindByValue(TipoProduto.TIPOPRODUTOID.ToString()).Selected = true;
+                CarregaTipoProduto();
+                ddlTipoProduto.SelectedValue = idTipoProduto.ToString();
+                ddlTipoProduto_SelectedIndexChanged(this, null);
             }
         }
 
         public void AutoSelectFabricante(int idFabricante)
         {
 
-            var Fabricante = new FabricanteProdutoBll().GetFabricanteProdutoById(idFabricante);
-
-            if (Fabricante != null)
+            if (idFabricante > 0)
             {
-                ddlFabricante.Items.Add(new ListItem(Fabricante.NOME, Fabricante.FABRICANTEPRODUTOID.ToString()));
-                ddlFabricante.DataBind();
-
-                ddlFabricante.Items.FindByValue(Fabricante.FABRICANTEPRODUTOID.ToString()).Selected = true;
-
+                CarregaFabricante();
+                ddlFabricante.SelectedValue = idFabricante.ToString();
+                ddlFabricante_SelectedIndexChanged(this, null);
             }
         }
 
         public void AutoSelectMarca(int idMarca)
         {
 
-            var Marca = new MarcaProdutoBll().GetMarcaProdutoById(idMarca);
-
-            if (Marca != null)
+            if (idMarca > 0)
             {
-                ddlMarca.Items.Add(new ListItem(Marca.NOME, Marca.MARCAPRODUTOID.ToString()));
-                ddlMarca.DataBind();
-
-                ddlMarca.Items.FindByValue(Marca.MARCAPRODUTOID.ToString()).Selected = true;
+                CarregaMarca();
+                ddlMarca.SelectedValue = idMarca.ToString();
+                ddlMarca_SelectedIndexChanged(this, null);
 
             }
         }
@@ -775,45 +852,37 @@ namespace Libra.Produtos
         public void AutoSelectModelo(int idModelo)
         {
 
-            var Modelo = new ModeloProdutoBll().GetModeloProdutoById(idModelo);
-
-            if (Modelo != null)
+            if (idModelo > 0)
             {
-                ddlModelo.Items.Add(new ListItem(Modelo.NOME, Modelo.MODELOPRODUTOID.ToString()));
-                ddlModelo.DataBind();
-
-                ddlModelo.Items.FindByValue(Modelo.MODELOPRODUTOID.ToString()).Selected = true;
-
+                CarregaModelo();
+                ddlModelo.SelectedValue = idModelo.ToString();
+                ddlModelo_SelectedIndexChanged(this, null);
             }
         }
 
         public void AutoSelectDimensoes(int idDimensoes)
         {
 
-            var Dimensoes = new DimensoesProdutoBll().GetDimensoesProdutoById(idDimensoes);
-
-            if (Dimensoes != null)
+            if (idDimensoes > 0)
             {
-                ddlDimensoes.Items.Add(new ListItem(Dimensoes.DESCRICAO, Dimensoes.DIMENSOESPRODUTOID.ToString()));
-                ddlDimensoes.DataBind();
-
-                ddlDimensoes.Items.FindByValue(Dimensoes.DIMENSOESPRODUTOID.ToString()).Selected = true;
+                CarregaDimensoes();
+                ddlDimensoes.SelectedValue = idDimensoes.ToString();
+                ddlDimensoes_SelectedIndexChanged(this, null);
             }
         }
 
         public void AutoSelectCor(int idCor)
         {
 
-            var Cor = new CorProdutoBll().GetCorProdutoById(idCor);
-
-            if (Cor != null)
+            if (idCor > 0)
             {
-                ddlCor.Items.Add(new ListItem(Cor.NOME, Cor.CORPRODUTOID.ToString()));
-                ddlCor.DataBind();
+                CarregaCor();
+                ddlCor.SelectedValue = idCor.ToString();
+                ddlCor_SelectedIndexChanged(this, null);
 
-                ddlCor.Items.FindByValue(Cor.CORPRODUTOID.ToString()).Selected = true;
             }
         }
+
 
         #endregion
 

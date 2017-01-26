@@ -101,7 +101,7 @@ namespace Libra.UserControl.Parametros
                     this.MessageBoxError(this.Page, "Não foi possível salvar o Modelo de Produto! Verifique os campos informados.");
 
 
-                if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("CadastroProdutos"))
+                if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("cadastroprodutos"))
                 {
                     CadastroProdutos cad = (CadastroProdutos)Page;
                     cad.HiddenIdModelo = modeloProdutoId;

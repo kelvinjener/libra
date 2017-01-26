@@ -9,7 +9,7 @@
             </label>
         </div>
         <div>
-            <asp:TextBox ID="txtLarguraProduto" runat="server" CssClass="form-control" ></asp:TextBox>
+            <asp:TextBox ID="txtLarguraProduto" runat="server" CssClass="form-control" MaxLength="9"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvLarguraProduto" ControlToValidate="txtLarguraProduto" SetFocusOnError="True" CssClass="requerid"
                 ValidationGroup="G1Dimensoes" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
         </div>
@@ -22,7 +22,7 @@
             </label>
         </div>
         <div>
-            <asp:TextBox ID="txtAlturaProduto" runat="server" CssClass="form-control" ></asp:TextBox>
+            <asp:TextBox ID="txtAlturaProduto" runat="server" CssClass="form-control" MaxLength="9"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvAlturaProduto" ControlToValidate="txtAlturaProduto" SetFocusOnError="True" CssClass="requerid"
                 ValidationGroup="G1Dimensoes" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
         </div>
@@ -38,8 +38,8 @@
             </label>
         </div>
         <div>
-            <asp:TextBox ID="txtComprimentoProduto" runat="server" CssClass="form-control" ></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rfvComprimentoProduto" ControlToValidate="txtLarguraProduto" SetFocusOnError="True" CssClass="requerid"
+            <asp:TextBox ID="txtComprimentoProduto" runat="server" CssClass="form-control" MaxLength="9"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvComprimentoProduto" ControlToValidate="txtComprimentoProduto" SetFocusOnError="True" CssClass="requerid"
                 ValidationGroup="G1Dimensoes" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
         </div>
     </div>

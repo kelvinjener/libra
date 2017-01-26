@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LibraDB" Class="LibraDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=LibraDB;Integrated Security=True;Persist Security Info=False" SettingsObjectName="Libra.Entity.Properties.Settings" SettingsPropertyName="LibraDBConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DOSLIMAS\MESKLARSOLUTIONS;Initial Catalog=LibraDB;Persist Security Info=True;User ID=sa" SettingsObjectName="Libra.Entity.Properties.Settings" SettingsPropertyName="LibraDBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.AspNetRoles" Member="AspNetRoles">
     <Type Name="AspNetRole">
       <Column Name="Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -66,13 +66,15 @@
       <Association Name="USUARIO_LOG" Member="LOGs" ThisKey="USUARIOID" OtherKey="IDUSUARIO" Type="LOG" />
       <Association Name="USUARIO_USUARIOPERFI" Member="USUARIOPERFIs" ThisKey="USUARIOID" OtherKey="USUARIOID" Type="USUARIOPERFI" />
       <Association Name="USUARIO_USUARIOUNIDADE" Member="USUARIOUNIDADEs" ThisKey="USUARIOID" OtherKey="USUARIOID" Type="USUARIOUNIDADE" />
-      <Association Name="USUARIO_PRODUTO" Member="PRODUTOs" ThisKey="USUARIOID" OtherKey="CRIADOPOR" Type="PRODUTO" />
       <Association Name="USUARIO_CRT" Member="CRTs" ThisKey="USUARIOID" OtherKey="ALTERADOPOR" Type="CRT" />
       <Association Name="USUARIO_CRT1" Member="CRTs1" ThisKey="USUARIOID" OtherKey="CRIADOPOR" Type="CRT" />
       <Association Name="USUARIO_CRT2" Member="CRTs2" ThisKey="USUARIOID" OtherKey="EXCLUIDOPOR" Type="CRT" />
       <Association Name="USUARIO_FORNECEDORE" Member="FORNECEDOREs" ThisKey="USUARIOID" OtherKey="ALTERADOPOR" Type="FORNECEDORE" />
       <Association Name="USUARIO_FORNECEDORE1" Member="FORNECEDOREs1" ThisKey="USUARIOID" OtherKey="CRIADOPOR" Type="FORNECEDORE" />
       <Association Name="USUARIO_FORNECEDORE2" Member="FORNECEDOREs2" ThisKey="USUARIOID" OtherKey="EXCLUIDOPOR" Type="FORNECEDORE" />
+      <Association Name="USUARIO_PRODUTO" Member="PRODUTOs" ThisKey="USUARIOID" OtherKey="ALTERADOPOR" Type="PRODUTO" />
+      <Association Name="USUARIO_PRODUTO1" Member="PRODUTOs1" ThisKey="USUARIOID" OtherKey="CRIADOPOR" Type="PRODUTO" />
+      <Association Name="USUARIO_PRODUTO2" Member="PRODUTOs2" ThisKey="USUARIOID" OtherKey="EXCLUIDOPOR" Type="PRODUTO" />
       <Association Name="AspNetUser_USUARIO" Member="AspNetUser" ThisKey="ASPNETUSERID" OtherKey="Id" Type="AspNetUser" IsForeignKey="true" />
     </Type>
   </Table>
@@ -220,30 +222,6 @@
       <Association Name="TIPOPRODUTO_PRODUTO" Member="PRODUTOs" ThisKey="TIPOPRODUTOID" OtherKey="TIPOPRODUTOID" Type="PRODUTO" />
     </Type>
   </Table>
-  <Table Name="dbo.PRODUTOS" Member="PRODUTOs">
-    <Type Name="PRODUTO">
-      <Column Name="PRODUTOID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TIPOPRODUTOID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FABRICANTEID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MARCAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MODELOID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DIMENSOESID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CORID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DESCRICAO" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="PESO" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
-      <Column Name="DISPONIVELCOMERCIO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="DATACRIACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="CRIADOPOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="PRODUTO_PRODUTOCARACTERISTICADIVERSA" Member="PRODUTOCARACTERISTICADIVERSAs" ThisKey="PRODUTOID" OtherKey="PRODUTOID" Type="PRODUTOCARACTERISTICADIVERSA" />
-      <Association Name="CORPRODUTO_PRODUTO" Member="CORPRODUTO" ThisKey="CORID" OtherKey="CORPRODUTOID" Type="CORPRODUTO" IsForeignKey="true" />
-      <Association Name="USUARIO_PRODUTO" Member="USUARIO" ThisKey="CRIADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
-      <Association Name="DIMENSOESPRODUTO_PRODUTO" Member="DIMENSOESPRODUTO" ThisKey="DIMENSOESID" OtherKey="DIMENSOESPRODUTOID" Type="DIMENSOESPRODUTO" IsForeignKey="true" />
-      <Association Name="FABRICANTEPRODUTO_PRODUTO" Member="FABRICANTEPRODUTO" ThisKey="FABRICANTEID" OtherKey="FABRICANTEPRODUTOID" Type="FABRICANTEPRODUTO" IsForeignKey="true" />
-      <Association Name="MARCAPRODUTO_PRODUTO" Member="MARCAPRODUTO" ThisKey="MARCAID" OtherKey="MARCAPRODUTOID" Type="MARCAPRODUTO" IsForeignKey="true" />
-      <Association Name="MODELOPRODUTO_PRODUTO" Member="MODELOPRODUTO" ThisKey="MODELOID" OtherKey="MODELOPRODUTOID" Type="MODELOPRODUTO" IsForeignKey="true" />
-      <Association Name="TIPOPRODUTO_PRODUTO" Member="TIPOPRODUTO" ThisKey="TIPOPRODUTOID" OtherKey="TIPOPRODUTOID" Type="TIPOPRODUTO" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.PRODUTOCARACTERISTICADIVERSAS" Member="PRODUTOCARACTERISTICADIVERSAs">
     <Type Name="PRODUTOCARACTERISTICADIVERSA">
       <Column Name="PRODUTOCARACTERISTICADIVERSAID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -294,6 +272,37 @@
       <Association Name="USUARIO_FORNECEDORE" Member="USUARIO" ThisKey="ALTERADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
       <Association Name="USUARIO_FORNECEDORE1" Member="USUARIO1" ThisKey="CRIADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
       <Association Name="USUARIO_FORNECEDORE2" Member="USUARIO2" ThisKey="EXCLUIDOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRODUTOS" Member="PRODUTOs">
+    <Type Name="PRODUTO">
+      <Column Name="PRODUTOID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TIPOPRODUTOID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FABRICANTEID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MARCAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MODELOID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DIMENSOESID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CORID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESCRICAO" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="PESO" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="DISPONIVELCOMERCIO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DATACRIACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CRIADOPOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CODIGOPRODUTO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ALTERADOPOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXCLUIDOPOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATAALTERACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATAEXCLUSAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="PRODUTO_PRODUTOCARACTERISTICADIVERSA" Member="PRODUTOCARACTERISTICADIVERSAs" ThisKey="PRODUTOID" OtherKey="PRODUTOID" Type="PRODUTOCARACTERISTICADIVERSA" />
+      <Association Name="USUARIO_PRODUTO" Member="USUARIO" ThisKey="ALTERADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="CORPRODUTO_PRODUTO" Member="CORPRODUTO" ThisKey="CORID" OtherKey="CORPRODUTOID" Type="CORPRODUTO" IsForeignKey="true" />
+      <Association Name="USUARIO_PRODUTO1" Member="USUARIO1" ThisKey="CRIADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="DIMENSOESPRODUTO_PRODUTO" Member="DIMENSOESPRODUTO" ThisKey="DIMENSOESID" OtherKey="DIMENSOESPRODUTOID" Type="DIMENSOESPRODUTO" IsForeignKey="true" />
+      <Association Name="USUARIO_PRODUTO2" Member="USUARIO2" ThisKey="EXCLUIDOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="FABRICANTEPRODUTO_PRODUTO" Member="FABRICANTEPRODUTO" ThisKey="FABRICANTEID" OtherKey="FABRICANTEPRODUTOID" Type="FABRICANTEPRODUTO" IsForeignKey="true" />
+      <Association Name="MARCAPRODUTO_PRODUTO" Member="MARCAPRODUTO" ThisKey="MARCAID" OtherKey="MARCAPRODUTOID" Type="MARCAPRODUTO" IsForeignKey="true" />
+      <Association Name="MODELOPRODUTO_PRODUTO" Member="MODELOPRODUTO" ThisKey="MODELOID" OtherKey="MODELOPRODUTOID" Type="MODELOPRODUTO" IsForeignKey="true" />
+      <Association Name="TIPOPRODUTO_PRODUTO" Member="TIPOPRODUTO" ThisKey="TIPOPRODUTOID" OtherKey="TIPOPRODUTOID" Type="TIPOPRODUTO" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

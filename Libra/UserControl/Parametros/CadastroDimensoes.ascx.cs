@@ -27,9 +27,9 @@ namespace Libra.UserControl.Parametros
         {
             if (!Page.IsPostBack)
             {
-                this.txtAlturaProduto.Attributes.Add("onkeypress", "return FormatMaskOnlyNumbers(event, this, '#####,##');");
-                this.txtComprimentoProduto.Attributes.Add("onkeypress", "return FormatMaskOnlyNumbers(event, this, '#####,##');");
-                this.txtLarguraProduto.Attributes.Add("onkeypress", "return FormatMaskOnlyNumbers(event, this, '#####,##');");
+                this.txtAlturaProduto.Attributes.Add("onkeypress", "return MascaraMoeda(this, '.', ',', event);");
+                this.txtComprimentoProduto.Attributes.Add("onkeypress", "return MascaraMoeda(this, '.', ',', event);");
+                this.txtLarguraProduto.Attributes.Add("onkeypress", "return MascaraMoeda(this, '.', ',', event);");
             }
         }
 
@@ -78,9 +78,9 @@ namespace Libra.UserControl.Parametros
                 fp = new DIMENSOESPRODUTO();
 
                 //TODO: informa campos para SalvarDimensoesProduto.
-                fp.ALTURA = Convert.ToDecimal(txtAlturaProduto.Text);
-                fp.LARGURA = Convert.ToDecimal(txtLarguraProduto.Text);
-                fp.COMPRIMENTO = Convert.ToDecimal(txtComprimentoProduto.Text);
+                fp.ALTURA = Convert.ToDecimal(ClearCaracter(txtAlturaProduto.Text, ".").Trim());
+                fp.LARGURA = Convert.ToDecimal(ClearCaracter(txtLarguraProduto.Text, ".").Trim());
+                fp.COMPRIMENTO = Convert.ToDecimal(ClearCaracter(txtComprimentoProduto.Text, ".").Trim());
                 fp.DESCRICAO = txtDescricaoProduto.Text;
                 fp.ATIVO = chkDimensoesProdutoAtivo.Checked;
 
@@ -115,7 +115,7 @@ namespace Libra.UserControl.Parametros
                     this.MessageBoxError(this.Page, "Não foi possível salvar o Dimensões de Produto! Verifique os campos informados.");
 
 
-                if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("CadastroProdutos"))
+                if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("cadastroprodutos"))
                 {
                     CadastroProdutos cad = (CadastroProdutos)Page;
                     cad.HiddenIdDimensoes = dimensoesProdutoId;

@@ -77,17 +77,24 @@
                                         </ItemTemplate>
                                         <ItemStyle Width="5%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Descrição" SortExpression="Descricao">
+                                    <asp:TemplateField HeaderText="Código do Produto" SortExpression="CodigoProduto">
                                         <ItemTemplate>
-                                            <asp:LinkButton ID="lkbDescricaoProduto" runat="server" CommandName="Select" Text='<%# Eval("Descricao")%>'
+                                            <asp:LinkButton ID="lkbCodigoProduto" runat="server" CommandName="Select" Text='<%# Eval("CodigoProduto")%>'
                                                 CssClass="gridLink">
                                             </asp:LinkButton>
                                         </ItemTemplate>
-                                        <ItemStyle Width="80%" />
+                                        <ItemStyle Width="10%" />
+                                    </asp:TemplateField>
+                                   <asp:TemplateField HeaderText="Descrição" SortExpression="Descricao">
+                                        <ItemTemplate>
+                                            <asp:Label ID="lblDescricaoProduto" runat="server" Text='<%# Eval("Descricao")%>'>
+                                            </asp:Label>
+                                        </ItemTemplate>
+                                        <ItemStyle Width="70%" />
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Disponível para Comércio" SortExpression="DisponivelComercio">
                                         <ItemTemplate>
-                                            <asp:Label runat="server" ID="lblDisponivelComercio" Text="Indisponível" />
+                                            <asp:Label runat="server" ID="lblDisponivelComercio" />
                                         </ItemTemplate>
                                         <ItemStyle Width="15%" />
                                     </asp:TemplateField>
@@ -135,7 +142,7 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:DropDownList ID="ddlTipoProduto" runat="server" CssClass="form-control"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlTipoProduto" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlTipoProduto_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                         <asp:LinkButton runat="server" ID="lkAddTipoProduto" CssClass="fa fa-plus" OnClick="lkAddTipoProduto_Click" ToolTip="Adicionar Tipo Produto"></asp:LinkButton>
                                         <asp:RequiredFieldValidator ID="rfvTipoProduto" ControlToValidate="ddlTipoProduto" SetFocusOnError="True" CssClass="requerid"
                                             ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
@@ -153,7 +160,7 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:DropDownList ID="ddlFabricante" runat="server" CssClass="form-control"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlFabricante" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlFabricante_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                         <asp:LinkButton runat="server" ID="lkAddFabricante" CssClass="fa fa-plus" OnClick="lkAddFabricante_Click" ToolTip="Adicionar Fabricante"></asp:LinkButton>
                                         <asp:RequiredFieldValidator ID="rfvFabricante" ControlToValidate="ddlFabricante" SetFocusOnError="True" CssClass="requerid"
                                             ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
@@ -167,7 +174,7 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:DropDownList ID="ddlMarca" runat="server" CssClass="form-control"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlMarca" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlMarca_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                         <asp:LinkButton runat="server" ID="lkAddMarca" CssClass="fa fa-plus" OnClick="lkAddMarca_Click" ToolTip="Adicionar Marca"></asp:LinkButton>
                                         <asp:RequiredFieldValidator ID="rfvMarca" ControlToValidate="ddlMarca" SetFocusOnError="True" CssClass="requerid"
                                             ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
@@ -181,7 +188,7 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:DropDownList ID="ddlModelo" runat="server" CssClass="form-control"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlModelo" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlModelo_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                         <asp:LinkButton runat="server" ID="lkAddModelo" CssClass="fa fa-plus" OnClick="lkAddModelo_Click" ToolTip="Adicionar Modelo"></asp:LinkButton>
 
                                         <asp:RequiredFieldValidator ID="rfvModelo" ControlToValidate="ddlModelo" SetFocusOnError="True" CssClass="requerid"
@@ -200,7 +207,7 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:DropDownList ID="ddlDimensoes" runat="server" CssClass="form-control"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlDimensoes" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlDimensoes_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                         <asp:LinkButton runat="server" ID="lkAddDimensoes" CssClass="fa fa-plus" OnClick="lkAddDimensoes_Click" ToolTip="Adicionar Dimensões"></asp:LinkButton>
 
                                         <asp:RequiredFieldValidator ID="rfvDimensoes" ControlToValidate="ddlDimensoes" SetFocusOnError="True" CssClass="requerid"
@@ -215,7 +222,7 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:DropDownList ID="ddlCor" runat="server" CssClass="form-control"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlCor" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlCor_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                         <asp:LinkButton runat="server" ID="lkAddCor" CssClass="fa fa-plus" OnClick="lkAddCor_Click" ToolTip="Adicionar Cor"></asp:LinkButton>
 
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="ddlMarca" SetFocusOnError="True" CssClass="requerid"
@@ -249,7 +256,7 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:TextBox ID="txtDescrição" runat="server" CssClass="form-control text-uppercase" MaxLength="255"></asp:TextBox>
+                                        <asp:TextBox ID="txtDescricao" runat="server" CssClass="form-control text-uppercase" MaxLength="255"></asp:TextBox>
                                     </div>
                                 </div>
 
@@ -268,7 +275,7 @@
                                         <asp:CheckBox runat="server" ID="ckbDisponivel" />
                                     </div>
                                 </div>
-                                <div class="col-md-2 col-sm-2 col-xs-12">
+                               <%-- <div class="col-md-2 col-sm-2 col-xs-12">
                                     <div>
                                         <label>
                                             Ativo?
@@ -277,7 +284,7 @@
                                     <div>
                                         <asp:CheckBox runat="server" ID="chkAtivo" />
                                     </div>
-                                </div>
+                                </div>--%>
                             </div>
                             <div class="row">&nbsp;</div>
                             <div class="row">
@@ -510,7 +517,7 @@
                                 <div class="x_title">
                                     <div class="row">
                                         <div class="col-md-11 col-sm-11 col-xs-11">
-                                            <h2>FILTRO UNIDADES</h2>
+                                            <h2>FILTRO PRODUTOS</h2>
                                         </div>
                                         <div class="col-md-1 col-sm-1 col-xs-1">
                                             <asp:LinkButton runat="server" ID="lkClose" OnClick="lkClose_Click"><i class="fa fa-close"></i></asp:LinkButton>
@@ -619,7 +626,7 @@
                                                 <span class="labelInfo fonteCinza">Indisponível</span>&nbsp;
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                       <%-- <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div>
                                                 <label>Ativo</label>
                                             </div>
@@ -629,7 +636,7 @@
                                         <asp:CheckBox runat="server" ID="ckbInativoFiltro" Style="vertical-align: middle" Checked="true" />
                                                 <span class="labelInfo fonteCinza">Inativo</span>&nbsp;
                                             </div>
-                                        </div>
+                                        </div>--%>
                                     </div>
                                     <div class="row">&nbsp;</div>
                                     <div class="row">
@@ -680,7 +687,7 @@
                                                 <label>
                                                     Código do Produto:
                                                 </label>
-                                                <asp:Label ID="lblCodigoProdutoVisualizar" runat="server" CssClass="labelInfo"></asp:Label>
+                                                <asp:Label ID="lblVisualizarCodigoProduto" runat="server" CssClass="labelInfo"></asp:Label>
                                             </div>
                                         </div>
                                     </div>
@@ -692,7 +699,7 @@
                                                 <label>
                                                     Produto:
                                                 </label>
-                                                <asp:Label ID="lblNomeProduto" runat="server" CssClass="labelInfo"></asp:Label>
+                                                <asp:Label ID="lblVisualizarNomeProduto" runat="server" CssClass="labelInfo"></asp:Label>
                                             </div>
                                         </div>
                                     </div>
@@ -704,7 +711,7 @@
                                                 <label>
                                                     Tipo Produto:
                                                 </label>
-                                                <asp:Label ID="lblEnderecoProduto" runat="server" CssClass="labelInfo"></asp:Label>
+                                                <asp:Label ID="lblVisualizarTipoProduto" runat="server" CssClass="labelInfo"></asp:Label>
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-sm-12 col-xs-12">
@@ -712,7 +719,7 @@
                                                 <label>
                                                     Dimensões:
                                                 </label>
-                                                <asp:Label ID="lblDimensoes" runat="server" CssClass="labelInfo"></asp:Label>
+                                                <asp:Label ID="lblVisualizarDimensoes" runat="server" CssClass="labelInfo"></asp:Label>
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-sm-12 col-xs-12">
@@ -720,7 +727,7 @@
                                                 <label>
                                                     Peso:
                                                 </label>
-                                                <asp:Label ID="lblPeso" runat="server" CssClass="labelInfo"></asp:Label>
+                                                <asp:Label ID="lblVisualizarPeso" runat="server" CssClass="labelInfo"></asp:Label>
                                             </div>
                                         </div>
                                     </div>
@@ -732,7 +739,7 @@
                                                 <label>
                                                     Fabricante:
                                                 </label>
-                                                <asp:Label ID="lblFabricante" runat="server" CssClass="labelInfo"></asp:Label>
+                                                <asp:Label ID="lblVisualizarFabricante" runat="server" CssClass="labelInfo"></asp:Label>
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-sm-12 col-xs-12">
@@ -740,7 +747,7 @@
                                                 <label>
                                                     Marca:
                                                 </label>
-                                                <asp:Label ID="lblMarca" runat="server" CssClass="labelInfo"></asp:Label>
+                                                <asp:Label ID="lblVisualizarMarca" runat="server" CssClass="labelInfo"></asp:Label>
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-sm-12 col-xs-12">
@@ -748,7 +755,7 @@
                                                 <label>
                                                     Modelo:
                                                 </label>
-                                                <asp:Label ID="lblModelo" runat="server" CssClass="labelInfo"></asp:Label>
+                                                <asp:Label ID="lblVisualizarModelo" runat="server" CssClass="labelInfo"></asp:Label>
                                             </div>
                                         </div>
                                     </div>
@@ -758,16 +765,16 @@
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div>
                                                 <label>
-                                                    Disponível Comeércio?
+                                                    Disponível Comércio?
                                                 </label>
-                                                <asp:Label ID="lblDisponivelComercio" runat="server" CssClass="labelInfo"></asp:Label>
+                                                <asp:Label ID="lblVisualizarDisponivelComercio" runat="server" CssClass="labelInfo"></asp:Label>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">&nbsp;</div>
 
-                                    <div class="row">
+                                    <%--<div class="row">
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div>
                                                 <label>
@@ -777,7 +784,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">&nbsp;</div>
+                                    <div class="row">&nbsp;</div>--%>
 
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12 col-xs-12">

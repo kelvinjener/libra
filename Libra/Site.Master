@@ -322,7 +322,7 @@
     <script type="text/javascript" src="../Scripts/datatables/js/dataTables.responsive.min.js"></script>
     <script type="text/javascript" src="../Scripts/datatables/js/responsive.bootstrap.min.js"></script>
     <script type="text/javascript" src="../Scripts/datatables/tools/js/dataTables.tableTools.js"></script>
-    <script type="text/javascript" src="../Scripts/custom.js"></script>
+    <script type="text/javascript" src="../Scripts/custom.js?version=1"></script>
 
     <!-- JS UTILS-->
     <script type="text/javascript" src="../js/libs/Libra.js"></script>

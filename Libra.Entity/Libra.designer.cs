@@ -90,9 +90,6 @@ namespace Libra.Entity
     partial void InsertTIPOPRODUTO(TIPOPRODUTO instance);
     partial void UpdateTIPOPRODUTO(TIPOPRODUTO instance);
     partial void DeleteTIPOPRODUTO(TIPOPRODUTO instance);
-    partial void InsertPRODUTO(PRODUTO instance);
-    partial void UpdatePRODUTO(PRODUTO instance);
-    partial void DeletePRODUTO(PRODUTO instance);
     partial void InsertPRODUTOCARACTERISTICADIVERSA(PRODUTOCARACTERISTICADIVERSA instance);
     partial void UpdatePRODUTOCARACTERISTICADIVERSA(PRODUTOCARACTERISTICADIVERSA instance);
     partial void DeletePRODUTOCARACTERISTICADIVERSA(PRODUTOCARACTERISTICADIVERSA instance);
@@ -102,10 +99,13 @@ namespace Libra.Entity
     partial void InsertFORNECEDORE(FORNECEDORE instance);
     partial void UpdateFORNECEDORE(FORNECEDORE instance);
     partial void DeleteFORNECEDORE(FORNECEDORE instance);
+    partial void InsertPRODUTO(PRODUTO instance);
+    partial void UpdatePRODUTO(PRODUTO instance);
+    partial void DeletePRODUTO(PRODUTO instance);
     #endregion
 		
 		public LibraDataContext() : 
-				base(global::Libra.Entity.Properties.Settings.Default.LibraDBConnectionString1, mappingSource)
+				base(global::Libra.Entity.Properties.Settings.Default.LibraDBConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -294,14 +294,6 @@ namespace Libra.Entity
 			}
 		}
 		
-		public System.Data.Linq.Table<PRODUTO> PRODUTOs
-		{
-			get
-			{
-				return this.GetTable<PRODUTO>();
-			}
-		}
-		
 		public System.Data.Linq.Table<PRODUTOCARACTERISTICADIVERSA> PRODUTOCARACTERISTICADIVERSAs
 		{
 			get
@@ -323,6 +315,14 @@ namespace Libra.Entity
 			get
 			{
 				return this.GetTable<FORNECEDORE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<PRODUTO> PRODUTOs
+		{
+			get
+			{
+				return this.GetTable<PRODUTO>();
 			}
 		}
 	}
@@ -1403,8 +1403,6 @@ namespace Libra.Entity
 		
 		private EntitySet<USUARIOUNIDADE> _USUARIOUNIDADEs;
 		
-		private EntitySet<PRODUTO> _PRODUTOs;
-		
 		private EntitySet<CRT> _CRTs;
 		
 		private EntitySet<CRT> _CRTs1;
@@ -1416,6 +1414,12 @@ namespace Libra.Entity
 		private EntitySet<FORNECEDORE> _FORNECEDOREs1;
 		
 		private EntitySet<FORNECEDORE> _FORNECEDOREs2;
+		
+		private EntitySet<PRODUTO> _PRODUTOs;
+		
+		private EntitySet<PRODUTO> _PRODUTOs1;
+		
+		private EntitySet<PRODUTO> _PRODUTOs2;
 		
 		private EntityRef<AspNetUser> _AspNetUser;
 		
@@ -1448,13 +1452,15 @@ namespace Libra.Entity
 			this._LOGs = new EntitySet<LOG>(new Action<LOG>(this.attach_LOGs), new Action<LOG>(this.detach_LOGs));
 			this._USUARIOPERFIs = new EntitySet<USUARIOPERFI>(new Action<USUARIOPERFI>(this.attach_USUARIOPERFIs), new Action<USUARIOPERFI>(this.detach_USUARIOPERFIs));
 			this._USUARIOUNIDADEs = new EntitySet<USUARIOUNIDADE>(new Action<USUARIOUNIDADE>(this.attach_USUARIOUNIDADEs), new Action<USUARIOUNIDADE>(this.detach_USUARIOUNIDADEs));
-			this._PRODUTOs = new EntitySet<PRODUTO>(new Action<PRODUTO>(this.attach_PRODUTOs), new Action<PRODUTO>(this.detach_PRODUTOs));
 			this._CRTs = new EntitySet<CRT>(new Action<CRT>(this.attach_CRTs), new Action<CRT>(this.detach_CRTs));
 			this._CRTs1 = new EntitySet<CRT>(new Action<CRT>(this.attach_CRTs1), new Action<CRT>(this.detach_CRTs1));
 			this._CRTs2 = new EntitySet<CRT>(new Action<CRT>(this.attach_CRTs2), new Action<CRT>(this.detach_CRTs2));
 			this._FORNECEDOREs = new EntitySet<FORNECEDORE>(new Action<FORNECEDORE>(this.attach_FORNECEDOREs), new Action<FORNECEDORE>(this.detach_FORNECEDOREs));
 			this._FORNECEDOREs1 = new EntitySet<FORNECEDORE>(new Action<FORNECEDORE>(this.attach_FORNECEDOREs1), new Action<FORNECEDORE>(this.detach_FORNECEDOREs1));
 			this._FORNECEDOREs2 = new EntitySet<FORNECEDORE>(new Action<FORNECEDORE>(this.attach_FORNECEDOREs2), new Action<FORNECEDORE>(this.detach_FORNECEDOREs2));
+			this._PRODUTOs = new EntitySet<PRODUTO>(new Action<PRODUTO>(this.attach_PRODUTOs), new Action<PRODUTO>(this.detach_PRODUTOs));
+			this._PRODUTOs1 = new EntitySet<PRODUTO>(new Action<PRODUTO>(this.attach_PRODUTOs1), new Action<PRODUTO>(this.detach_PRODUTOs1));
+			this._PRODUTOs2 = new EntitySet<PRODUTO>(new Action<PRODUTO>(this.attach_PRODUTOs2), new Action<PRODUTO>(this.detach_PRODUTOs2));
 			this._AspNetUser = default(EntityRef<AspNetUser>);
 			OnCreated();
 		}
@@ -1682,19 +1688,6 @@ namespace Libra.Entity
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_PRODUTO", Storage="_PRODUTOs", ThisKey="USUARIOID", OtherKey="CRIADOPOR")]
-		public EntitySet<PRODUTO> PRODUTOs
-		{
-			get
-			{
-				return this._PRODUTOs;
-			}
-			set
-			{
-				this._PRODUTOs.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_CRT", Storage="_CRTs", ThisKey="USUARIOID", OtherKey="ALTERADOPOR")]
 		public EntitySet<CRT> CRTs
 		{
@@ -1770,6 +1763,45 @@ namespace Libra.Entity
 			set
 			{
 				this._FORNECEDOREs2.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_PRODUTO", Storage="_PRODUTOs", ThisKey="USUARIOID", OtherKey="ALTERADOPOR")]
+		public EntitySet<PRODUTO> PRODUTOs
+		{
+			get
+			{
+				return this._PRODUTOs;
+			}
+			set
+			{
+				this._PRODUTOs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_PRODUTO1", Storage="_PRODUTOs1", ThisKey="USUARIOID", OtherKey="CRIADOPOR")]
+		public EntitySet<PRODUTO> PRODUTOs1
+		{
+			get
+			{
+				return this._PRODUTOs1;
+			}
+			set
+			{
+				this._PRODUTOs1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_PRODUTO2", Storage="_PRODUTOs2", ThisKey="USUARIOID", OtherKey="EXCLUIDOPOR")]
+		public EntitySet<PRODUTO> PRODUTOs2
+		{
+			get
+			{
+				return this._PRODUTOs2;
+			}
+			set
+			{
+				this._PRODUTOs2.Assign(value);
 			}
 		}
 		
@@ -1863,18 +1895,6 @@ namespace Libra.Entity
 			entity.USUARIO = null;
 		}
 		
-		private void attach_PRODUTOs(PRODUTO entity)
-		{
-			this.SendPropertyChanging();
-			entity.USUARIO = this;
-		}
-		
-		private void detach_PRODUTOs(PRODUTO entity)
-		{
-			this.SendPropertyChanging();
-			entity.USUARIO = null;
-		}
-		
 		private void attach_CRTs(CRT entity)
 		{
 			this.SendPropertyChanging();
@@ -1942,6 +1962,42 @@ namespace Libra.Entity
 		}
 		
 		private void detach_FORNECEDOREs2(FORNECEDORE entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO2 = null;
+		}
+		
+		private void attach_PRODUTOs(PRODUTO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO = this;
+		}
+		
+		private void detach_PRODUTOs(PRODUTO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO = null;
+		}
+		
+		private void attach_PRODUTOs1(PRODUTO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO1 = this;
+		}
+		
+		private void detach_PRODUTOs1(PRODUTO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO1 = null;
+		}
+		
+		private void attach_PRODUTOs2(PRODUTO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO2 = this;
+		}
+		
+		private void detach_PRODUTOs2(PRODUTO entity)
 		{
 			this.SendPropertyChanging();
 			entity.USUARIO2 = null;
@@ -4755,647 +4811,6 @@ namespace Libra.Entity
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PRODUTOS")]
-	public partial class PRODUTO : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _PRODUTOID;
-		
-		private System.Nullable<int> _TIPOPRODUTOID;
-		
-		private System.Nullable<int> _FABRICANTEID;
-		
-		private System.Nullable<int> _MARCAID;
-		
-		private System.Nullable<int> _MODELOID;
-		
-		private System.Nullable<int> _DIMENSOESID;
-		
-		private System.Nullable<int> _CORID;
-		
-		private string _DESCRICAO;
-		
-		private System.Nullable<decimal> _PESO;
-		
-		private bool _DISPONIVELCOMERCIO;
-		
-		private System.Nullable<System.DateTime> _DATACRIACAO;
-		
-		private int _CRIADOPOR;
-		
-		private EntitySet<PRODUTOCARACTERISTICADIVERSA> _PRODUTOCARACTERISTICADIVERSAs;
-		
-		private EntityRef<CORPRODUTO> _CORPRODUTO;
-		
-		private EntityRef<USUARIO> _USUARIO;
-		
-		private EntityRef<DIMENSOESPRODUTO> _DIMENSOESPRODUTO;
-		
-		private EntityRef<FABRICANTEPRODUTO> _FABRICANTEPRODUTO;
-		
-		private EntityRef<MARCAPRODUTO> _MARCAPRODUTO;
-		
-		private EntityRef<MODELOPRODUTO> _MODELOPRODUTO;
-		
-		private EntityRef<TIPOPRODUTO> _TIPOPRODUTO;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnPRODUTOIDChanging(int value);
-    partial void OnPRODUTOIDChanged();
-    partial void OnTIPOPRODUTOIDChanging(System.Nullable<int> value);
-    partial void OnTIPOPRODUTOIDChanged();
-    partial void OnFABRICANTEIDChanging(System.Nullable<int> value);
-    partial void OnFABRICANTEIDChanged();
-    partial void OnMARCAIDChanging(System.Nullable<int> value);
-    partial void OnMARCAIDChanged();
-    partial void OnMODELOIDChanging(System.Nullable<int> value);
-    partial void OnMODELOIDChanged();
-    partial void OnDIMENSOESIDChanging(System.Nullable<int> value);
-    partial void OnDIMENSOESIDChanged();
-    partial void OnCORIDChanging(System.Nullable<int> value);
-    partial void OnCORIDChanged();
-    partial void OnDESCRICAOChanging(string value);
-    partial void OnDESCRICAOChanged();
-    partial void OnPESOChanging(System.Nullable<decimal> value);
-    partial void OnPESOChanged();
-    partial void OnDISPONIVELCOMERCIOChanging(bool value);
-    partial void OnDISPONIVELCOMERCIOChanged();
-    partial void OnDATACRIACAOChanging(System.Nullable<System.DateTime> value);
-    partial void OnDATACRIACAOChanged();
-    partial void OnCRIADOPORChanging(int value);
-    partial void OnCRIADOPORChanged();
-    #endregion
-		
-		public PRODUTO()
-		{
-			this._PRODUTOCARACTERISTICADIVERSAs = new EntitySet<PRODUTOCARACTERISTICADIVERSA>(new Action<PRODUTOCARACTERISTICADIVERSA>(this.attach_PRODUTOCARACTERISTICADIVERSAs), new Action<PRODUTOCARACTERISTICADIVERSA>(this.detach_PRODUTOCARACTERISTICADIVERSAs));
-			this._CORPRODUTO = default(EntityRef<CORPRODUTO>);
-			this._USUARIO = default(EntityRef<USUARIO>);
-			this._DIMENSOESPRODUTO = default(EntityRef<DIMENSOESPRODUTO>);
-			this._FABRICANTEPRODUTO = default(EntityRef<FABRICANTEPRODUTO>);
-			this._MARCAPRODUTO = default(EntityRef<MARCAPRODUTO>);
-			this._MODELOPRODUTO = default(EntityRef<MODELOPRODUTO>);
-			this._TIPOPRODUTO = default(EntityRef<TIPOPRODUTO>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRODUTOID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int PRODUTOID
-		{
-			get
-			{
-				return this._PRODUTOID;
-			}
-			set
-			{
-				if ((this._PRODUTOID != value))
-				{
-					this.OnPRODUTOIDChanging(value);
-					this.SendPropertyChanging();
-					this._PRODUTOID = value;
-					this.SendPropertyChanged("PRODUTOID");
-					this.OnPRODUTOIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIPOPRODUTOID", DbType="Int")]
-		public System.Nullable<int> TIPOPRODUTOID
-		{
-			get
-			{
-				return this._TIPOPRODUTOID;
-			}
-			set
-			{
-				if ((this._TIPOPRODUTOID != value))
-				{
-					if (this._TIPOPRODUTO.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnTIPOPRODUTOIDChanging(value);
-					this.SendPropertyChanging();
-					this._TIPOPRODUTOID = value;
-					this.SendPropertyChanged("TIPOPRODUTOID");
-					this.OnTIPOPRODUTOIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FABRICANTEID", DbType="Int")]
-		public System.Nullable<int> FABRICANTEID
-		{
-			get
-			{
-				return this._FABRICANTEID;
-			}
-			set
-			{
-				if ((this._FABRICANTEID != value))
-				{
-					if (this._FABRICANTEPRODUTO.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnFABRICANTEIDChanging(value);
-					this.SendPropertyChanging();
-					this._FABRICANTEID = value;
-					this.SendPropertyChanged("FABRICANTEID");
-					this.OnFABRICANTEIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MARCAID", DbType="Int")]
-		public System.Nullable<int> MARCAID
-		{
-			get
-			{
-				return this._MARCAID;
-			}
-			set
-			{
-				if ((this._MARCAID != value))
-				{
-					if (this._MARCAPRODUTO.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMARCAIDChanging(value);
-					this.SendPropertyChanging();
-					this._MARCAID = value;
-					this.SendPropertyChanged("MARCAID");
-					this.OnMARCAIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODELOID", DbType="Int")]
-		public System.Nullable<int> MODELOID
-		{
-			get
-			{
-				return this._MODELOID;
-			}
-			set
-			{
-				if ((this._MODELOID != value))
-				{
-					if (this._MODELOPRODUTO.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMODELOIDChanging(value);
-					this.SendPropertyChanging();
-					this._MODELOID = value;
-					this.SendPropertyChanged("MODELOID");
-					this.OnMODELOIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIMENSOESID", DbType="Int")]
-		public System.Nullable<int> DIMENSOESID
-		{
-			get
-			{
-				return this._DIMENSOESID;
-			}
-			set
-			{
-				if ((this._DIMENSOESID != value))
-				{
-					if (this._DIMENSOESPRODUTO.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnDIMENSOESIDChanging(value);
-					this.SendPropertyChanging();
-					this._DIMENSOESID = value;
-					this.SendPropertyChanged("DIMENSOESID");
-					this.OnDIMENSOESIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CORID", DbType="Int")]
-		public System.Nullable<int> CORID
-		{
-			get
-			{
-				return this._CORID;
-			}
-			set
-			{
-				if ((this._CORID != value))
-				{
-					if (this._CORPRODUTO.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCORIDChanging(value);
-					this.SendPropertyChanging();
-					this._CORID = value;
-					this.SendPropertyChanged("CORID");
-					this.OnCORIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESCRICAO", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-		public string DESCRICAO
-		{
-			get
-			{
-				return this._DESCRICAO;
-			}
-			set
-			{
-				if ((this._DESCRICAO != value))
-				{
-					this.OnDESCRICAOChanging(value);
-					this.SendPropertyChanging();
-					this._DESCRICAO = value;
-					this.SendPropertyChanged("DESCRICAO");
-					this.OnDESCRICAOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PESO", DbType="Decimal(5,2)")]
-		public System.Nullable<decimal> PESO
-		{
-			get
-			{
-				return this._PESO;
-			}
-			set
-			{
-				if ((this._PESO != value))
-				{
-					this.OnPESOChanging(value);
-					this.SendPropertyChanging();
-					this._PESO = value;
-					this.SendPropertyChanged("PESO");
-					this.OnPESOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DISPONIVELCOMERCIO", DbType="Bit NOT NULL")]
-		public bool DISPONIVELCOMERCIO
-		{
-			get
-			{
-				return this._DISPONIVELCOMERCIO;
-			}
-			set
-			{
-				if ((this._DISPONIVELCOMERCIO != value))
-				{
-					this.OnDISPONIVELCOMERCIOChanging(value);
-					this.SendPropertyChanging();
-					this._DISPONIVELCOMERCIO = value;
-					this.SendPropertyChanged("DISPONIVELCOMERCIO");
-					this.OnDISPONIVELCOMERCIOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATACRIACAO", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DATACRIACAO
-		{
-			get
-			{
-				return this._DATACRIACAO;
-			}
-			set
-			{
-				if ((this._DATACRIACAO != value))
-				{
-					this.OnDATACRIACAOChanging(value);
-					this.SendPropertyChanging();
-					this._DATACRIACAO = value;
-					this.SendPropertyChanged("DATACRIACAO");
-					this.OnDATACRIACAOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRIADOPOR", DbType="Int NOT NULL")]
-		public int CRIADOPOR
-		{
-			get
-			{
-				return this._CRIADOPOR;
-			}
-			set
-			{
-				if ((this._CRIADOPOR != value))
-				{
-					if (this._USUARIO.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCRIADOPORChanging(value);
-					this.SendPropertyChanging();
-					this._CRIADOPOR = value;
-					this.SendPropertyChanged("CRIADOPOR");
-					this.OnCRIADOPORChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PRODUTO_PRODUTOCARACTERISTICADIVERSA", Storage="_PRODUTOCARACTERISTICADIVERSAs", ThisKey="PRODUTOID", OtherKey="PRODUTOID")]
-		public EntitySet<PRODUTOCARACTERISTICADIVERSA> PRODUTOCARACTERISTICADIVERSAs
-		{
-			get
-			{
-				return this._PRODUTOCARACTERISTICADIVERSAs;
-			}
-			set
-			{
-				this._PRODUTOCARACTERISTICADIVERSAs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CORPRODUTO_PRODUTO", Storage="_CORPRODUTO", ThisKey="CORID", OtherKey="CORPRODUTOID", IsForeignKey=true)]
-		public CORPRODUTO CORPRODUTO
-		{
-			get
-			{
-				return this._CORPRODUTO.Entity;
-			}
-			set
-			{
-				CORPRODUTO previousValue = this._CORPRODUTO.Entity;
-				if (((previousValue != value) 
-							|| (this._CORPRODUTO.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CORPRODUTO.Entity = null;
-						previousValue.PRODUTOs.Remove(this);
-					}
-					this._CORPRODUTO.Entity = value;
-					if ((value != null))
-					{
-						value.PRODUTOs.Add(this);
-						this._CORID = value.CORPRODUTOID;
-					}
-					else
-					{
-						this._CORID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("CORPRODUTO");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_PRODUTO", Storage="_USUARIO", ThisKey="CRIADOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
-		public USUARIO USUARIO
-		{
-			get
-			{
-				return this._USUARIO.Entity;
-			}
-			set
-			{
-				USUARIO previousValue = this._USUARIO.Entity;
-				if (((previousValue != value) 
-							|| (this._USUARIO.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._USUARIO.Entity = null;
-						previousValue.PRODUTOs.Remove(this);
-					}
-					this._USUARIO.Entity = value;
-					if ((value != null))
-					{
-						value.PRODUTOs.Add(this);
-						this._CRIADOPOR = value.USUARIOID;
-					}
-					else
-					{
-						this._CRIADOPOR = default(int);
-					}
-					this.SendPropertyChanged("USUARIO");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DIMENSOESPRODUTO_PRODUTO", Storage="_DIMENSOESPRODUTO", ThisKey="DIMENSOESID", OtherKey="DIMENSOESPRODUTOID", IsForeignKey=true)]
-		public DIMENSOESPRODUTO DIMENSOESPRODUTO
-		{
-			get
-			{
-				return this._DIMENSOESPRODUTO.Entity;
-			}
-			set
-			{
-				DIMENSOESPRODUTO previousValue = this._DIMENSOESPRODUTO.Entity;
-				if (((previousValue != value) 
-							|| (this._DIMENSOESPRODUTO.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._DIMENSOESPRODUTO.Entity = null;
-						previousValue.PRODUTOs.Remove(this);
-					}
-					this._DIMENSOESPRODUTO.Entity = value;
-					if ((value != null))
-					{
-						value.PRODUTOs.Add(this);
-						this._DIMENSOESID = value.DIMENSOESPRODUTOID;
-					}
-					else
-					{
-						this._DIMENSOESID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("DIMENSOESPRODUTO");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FABRICANTEPRODUTO_PRODUTO", Storage="_FABRICANTEPRODUTO", ThisKey="FABRICANTEID", OtherKey="FABRICANTEPRODUTOID", IsForeignKey=true)]
-		public FABRICANTEPRODUTO FABRICANTEPRODUTO
-		{
-			get
-			{
-				return this._FABRICANTEPRODUTO.Entity;
-			}
-			set
-			{
-				FABRICANTEPRODUTO previousValue = this._FABRICANTEPRODUTO.Entity;
-				if (((previousValue != value) 
-							|| (this._FABRICANTEPRODUTO.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._FABRICANTEPRODUTO.Entity = null;
-						previousValue.PRODUTOs.Remove(this);
-					}
-					this._FABRICANTEPRODUTO.Entity = value;
-					if ((value != null))
-					{
-						value.PRODUTOs.Add(this);
-						this._FABRICANTEID = value.FABRICANTEPRODUTOID;
-					}
-					else
-					{
-						this._FABRICANTEID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("FABRICANTEPRODUTO");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MARCAPRODUTO_PRODUTO", Storage="_MARCAPRODUTO", ThisKey="MARCAID", OtherKey="MARCAPRODUTOID", IsForeignKey=true)]
-		public MARCAPRODUTO MARCAPRODUTO
-		{
-			get
-			{
-				return this._MARCAPRODUTO.Entity;
-			}
-			set
-			{
-				MARCAPRODUTO previousValue = this._MARCAPRODUTO.Entity;
-				if (((previousValue != value) 
-							|| (this._MARCAPRODUTO.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._MARCAPRODUTO.Entity = null;
-						previousValue.PRODUTOs.Remove(this);
-					}
-					this._MARCAPRODUTO.Entity = value;
-					if ((value != null))
-					{
-						value.PRODUTOs.Add(this);
-						this._MARCAID = value.MARCAPRODUTOID;
-					}
-					else
-					{
-						this._MARCAID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("MARCAPRODUTO");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MODELOPRODUTO_PRODUTO", Storage="_MODELOPRODUTO", ThisKey="MODELOID", OtherKey="MODELOPRODUTOID", IsForeignKey=true)]
-		public MODELOPRODUTO MODELOPRODUTO
-		{
-			get
-			{
-				return this._MODELOPRODUTO.Entity;
-			}
-			set
-			{
-				MODELOPRODUTO previousValue = this._MODELOPRODUTO.Entity;
-				if (((previousValue != value) 
-							|| (this._MODELOPRODUTO.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._MODELOPRODUTO.Entity = null;
-						previousValue.PRODUTOs.Remove(this);
-					}
-					this._MODELOPRODUTO.Entity = value;
-					if ((value != null))
-					{
-						value.PRODUTOs.Add(this);
-						this._MODELOID = value.MODELOPRODUTOID;
-					}
-					else
-					{
-						this._MODELOID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("MODELOPRODUTO");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TIPOPRODUTO_PRODUTO", Storage="_TIPOPRODUTO", ThisKey="TIPOPRODUTOID", OtherKey="TIPOPRODUTOID", IsForeignKey=true)]
-		public TIPOPRODUTO TIPOPRODUTO
-		{
-			get
-			{
-				return this._TIPOPRODUTO.Entity;
-			}
-			set
-			{
-				TIPOPRODUTO previousValue = this._TIPOPRODUTO.Entity;
-				if (((previousValue != value) 
-							|| (this._TIPOPRODUTO.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TIPOPRODUTO.Entity = null;
-						previousValue.PRODUTOs.Remove(this);
-					}
-					this._TIPOPRODUTO.Entity = value;
-					if ((value != null))
-					{
-						value.PRODUTOs.Add(this);
-						this._TIPOPRODUTOID = value.TIPOPRODUTOID;
-					}
-					else
-					{
-						this._TIPOPRODUTOID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TIPOPRODUTO");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_PRODUTOCARACTERISTICADIVERSAs(PRODUTOCARACTERISTICADIVERSA entity)
-		{
-			this.SendPropertyChanging();
-			entity.PRODUTO = this;
-		}
-		
-		private void detach_PRODUTOCARACTERISTICADIVERSAs(PRODUTOCARACTERISTICADIVERSA entity)
-		{
-			this.SendPropertyChanging();
-			entity.PRODUTO = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PRODUTOCARACTERISTICADIVERSAS")]
 	public partial class PRODUTOCARACTERISTICADIVERSA : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -6603,6 +6018,849 @@ namespace Libra.Entity
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PRODUTOS")]
+	public partial class PRODUTO : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _PRODUTOID;
+		
+		private System.Nullable<int> _TIPOPRODUTOID;
+		
+		private System.Nullable<int> _FABRICANTEID;
+		
+		private System.Nullable<int> _MARCAID;
+		
+		private System.Nullable<int> _MODELOID;
+		
+		private System.Nullable<int> _DIMENSOESID;
+		
+		private System.Nullable<int> _CORID;
+		
+		private string _DESCRICAO;
+		
+		private System.Nullable<decimal> _PESO;
+		
+		private bool _DISPONIVELCOMERCIO;
+		
+		private System.Nullable<System.DateTime> _DATACRIACAO;
+		
+		private int _CRIADOPOR;
+		
+		private string _CODIGOPRODUTO;
+		
+		private System.Nullable<int> _ALTERADOPOR;
+		
+		private System.Nullable<int> _EXCLUIDOPOR;
+		
+		private System.Nullable<System.DateTime> _DATAALTERACAO;
+		
+		private System.Nullable<System.DateTime> _DATAEXCLUSAO;
+		
+		private EntitySet<PRODUTOCARACTERISTICADIVERSA> _PRODUTOCARACTERISTICADIVERSAs;
+		
+		private EntityRef<USUARIO> _USUARIO;
+		
+		private EntityRef<CORPRODUTO> _CORPRODUTO;
+		
+		private EntityRef<USUARIO> _USUARIO1;
+		
+		private EntityRef<DIMENSOESPRODUTO> _DIMENSOESPRODUTO;
+		
+		private EntityRef<USUARIO> _USUARIO2;
+		
+		private EntityRef<FABRICANTEPRODUTO> _FABRICANTEPRODUTO;
+		
+		private EntityRef<MARCAPRODUTO> _MARCAPRODUTO;
+		
+		private EntityRef<MODELOPRODUTO> _MODELOPRODUTO;
+		
+		private EntityRef<TIPOPRODUTO> _TIPOPRODUTO;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPRODUTOIDChanging(int value);
+    partial void OnPRODUTOIDChanged();
+    partial void OnTIPOPRODUTOIDChanging(System.Nullable<int> value);
+    partial void OnTIPOPRODUTOIDChanged();
+    partial void OnFABRICANTEIDChanging(System.Nullable<int> value);
+    partial void OnFABRICANTEIDChanged();
+    partial void OnMARCAIDChanging(System.Nullable<int> value);
+    partial void OnMARCAIDChanged();
+    partial void OnMODELOIDChanging(System.Nullable<int> value);
+    partial void OnMODELOIDChanged();
+    partial void OnDIMENSOESIDChanging(System.Nullable<int> value);
+    partial void OnDIMENSOESIDChanged();
+    partial void OnCORIDChanging(System.Nullable<int> value);
+    partial void OnCORIDChanged();
+    partial void OnDESCRICAOChanging(string value);
+    partial void OnDESCRICAOChanged();
+    partial void OnPESOChanging(System.Nullable<decimal> value);
+    partial void OnPESOChanged();
+    partial void OnDISPONIVELCOMERCIOChanging(bool value);
+    partial void OnDISPONIVELCOMERCIOChanged();
+    partial void OnDATACRIACAOChanging(System.Nullable<System.DateTime> value);
+    partial void OnDATACRIACAOChanged();
+    partial void OnCRIADOPORChanging(int value);
+    partial void OnCRIADOPORChanged();
+    partial void OnCODIGOPRODUTOChanging(string value);
+    partial void OnCODIGOPRODUTOChanged();
+    partial void OnALTERADOPORChanging(System.Nullable<int> value);
+    partial void OnALTERADOPORChanged();
+    partial void OnEXCLUIDOPORChanging(System.Nullable<int> value);
+    partial void OnEXCLUIDOPORChanged();
+    partial void OnDATAALTERACAOChanging(System.Nullable<System.DateTime> value);
+    partial void OnDATAALTERACAOChanged();
+    partial void OnDATAEXCLUSAOChanging(System.Nullable<System.DateTime> value);
+    partial void OnDATAEXCLUSAOChanged();
+    #endregion
+		
+		public PRODUTO()
+		{
+			this._PRODUTOCARACTERISTICADIVERSAs = new EntitySet<PRODUTOCARACTERISTICADIVERSA>(new Action<PRODUTOCARACTERISTICADIVERSA>(this.attach_PRODUTOCARACTERISTICADIVERSAs), new Action<PRODUTOCARACTERISTICADIVERSA>(this.detach_PRODUTOCARACTERISTICADIVERSAs));
+			this._USUARIO = default(EntityRef<USUARIO>);
+			this._CORPRODUTO = default(EntityRef<CORPRODUTO>);
+			this._USUARIO1 = default(EntityRef<USUARIO>);
+			this._DIMENSOESPRODUTO = default(EntityRef<DIMENSOESPRODUTO>);
+			this._USUARIO2 = default(EntityRef<USUARIO>);
+			this._FABRICANTEPRODUTO = default(EntityRef<FABRICANTEPRODUTO>);
+			this._MARCAPRODUTO = default(EntityRef<MARCAPRODUTO>);
+			this._MODELOPRODUTO = default(EntityRef<MODELOPRODUTO>);
+			this._TIPOPRODUTO = default(EntityRef<TIPOPRODUTO>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRODUTOID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int PRODUTOID
+		{
+			get
+			{
+				return this._PRODUTOID;
+			}
+			set
+			{
+				if ((this._PRODUTOID != value))
+				{
+					this.OnPRODUTOIDChanging(value);
+					this.SendPropertyChanging();
+					this._PRODUTOID = value;
+					this.SendPropertyChanged("PRODUTOID");
+					this.OnPRODUTOIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIPOPRODUTOID", DbType="Int")]
+		public System.Nullable<int> TIPOPRODUTOID
+		{
+			get
+			{
+				return this._TIPOPRODUTOID;
+			}
+			set
+			{
+				if ((this._TIPOPRODUTOID != value))
+				{
+					if (this._TIPOPRODUTO.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTIPOPRODUTOIDChanging(value);
+					this.SendPropertyChanging();
+					this._TIPOPRODUTOID = value;
+					this.SendPropertyChanged("TIPOPRODUTOID");
+					this.OnTIPOPRODUTOIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FABRICANTEID", DbType="Int")]
+		public System.Nullable<int> FABRICANTEID
+		{
+			get
+			{
+				return this._FABRICANTEID;
+			}
+			set
+			{
+				if ((this._FABRICANTEID != value))
+				{
+					if (this._FABRICANTEPRODUTO.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnFABRICANTEIDChanging(value);
+					this.SendPropertyChanging();
+					this._FABRICANTEID = value;
+					this.SendPropertyChanged("FABRICANTEID");
+					this.OnFABRICANTEIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MARCAID", DbType="Int")]
+		public System.Nullable<int> MARCAID
+		{
+			get
+			{
+				return this._MARCAID;
+			}
+			set
+			{
+				if ((this._MARCAID != value))
+				{
+					if (this._MARCAPRODUTO.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMARCAIDChanging(value);
+					this.SendPropertyChanging();
+					this._MARCAID = value;
+					this.SendPropertyChanged("MARCAID");
+					this.OnMARCAIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODELOID", DbType="Int")]
+		public System.Nullable<int> MODELOID
+		{
+			get
+			{
+				return this._MODELOID;
+			}
+			set
+			{
+				if ((this._MODELOID != value))
+				{
+					if (this._MODELOPRODUTO.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMODELOIDChanging(value);
+					this.SendPropertyChanging();
+					this._MODELOID = value;
+					this.SendPropertyChanged("MODELOID");
+					this.OnMODELOIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIMENSOESID", DbType="Int")]
+		public System.Nullable<int> DIMENSOESID
+		{
+			get
+			{
+				return this._DIMENSOESID;
+			}
+			set
+			{
+				if ((this._DIMENSOESID != value))
+				{
+					if (this._DIMENSOESPRODUTO.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnDIMENSOESIDChanging(value);
+					this.SendPropertyChanging();
+					this._DIMENSOESID = value;
+					this.SendPropertyChanged("DIMENSOESID");
+					this.OnDIMENSOESIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CORID", DbType="Int")]
+		public System.Nullable<int> CORID
+		{
+			get
+			{
+				return this._CORID;
+			}
+			set
+			{
+				if ((this._CORID != value))
+				{
+					if (this._CORPRODUTO.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCORIDChanging(value);
+					this.SendPropertyChanging();
+					this._CORID = value;
+					this.SendPropertyChanged("CORID");
+					this.OnCORIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESCRICAO", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string DESCRICAO
+		{
+			get
+			{
+				return this._DESCRICAO;
+			}
+			set
+			{
+				if ((this._DESCRICAO != value))
+				{
+					this.OnDESCRICAOChanging(value);
+					this.SendPropertyChanging();
+					this._DESCRICAO = value;
+					this.SendPropertyChanged("DESCRICAO");
+					this.OnDESCRICAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PESO", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> PESO
+		{
+			get
+			{
+				return this._PESO;
+			}
+			set
+			{
+				if ((this._PESO != value))
+				{
+					this.OnPESOChanging(value);
+					this.SendPropertyChanging();
+					this._PESO = value;
+					this.SendPropertyChanged("PESO");
+					this.OnPESOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DISPONIVELCOMERCIO", DbType="Bit NOT NULL")]
+		public bool DISPONIVELCOMERCIO
+		{
+			get
+			{
+				return this._DISPONIVELCOMERCIO;
+			}
+			set
+			{
+				if ((this._DISPONIVELCOMERCIO != value))
+				{
+					this.OnDISPONIVELCOMERCIOChanging(value);
+					this.SendPropertyChanging();
+					this._DISPONIVELCOMERCIO = value;
+					this.SendPropertyChanged("DISPONIVELCOMERCIO");
+					this.OnDISPONIVELCOMERCIOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATACRIACAO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DATACRIACAO
+		{
+			get
+			{
+				return this._DATACRIACAO;
+			}
+			set
+			{
+				if ((this._DATACRIACAO != value))
+				{
+					this.OnDATACRIACAOChanging(value);
+					this.SendPropertyChanging();
+					this._DATACRIACAO = value;
+					this.SendPropertyChanged("DATACRIACAO");
+					this.OnDATACRIACAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRIADOPOR", DbType="Int NOT NULL")]
+		public int CRIADOPOR
+		{
+			get
+			{
+				return this._CRIADOPOR;
+			}
+			set
+			{
+				if ((this._CRIADOPOR != value))
+				{
+					if (this._USUARIO1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCRIADOPORChanging(value);
+					this.SendPropertyChanging();
+					this._CRIADOPOR = value;
+					this.SendPropertyChanged("CRIADOPOR");
+					this.OnCRIADOPORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODIGOPRODUTO", DbType="VarChar(50)")]
+		public string CODIGOPRODUTO
+		{
+			get
+			{
+				return this._CODIGOPRODUTO;
+			}
+			set
+			{
+				if ((this._CODIGOPRODUTO != value))
+				{
+					this.OnCODIGOPRODUTOChanging(value);
+					this.SendPropertyChanging();
+					this._CODIGOPRODUTO = value;
+					this.SendPropertyChanged("CODIGOPRODUTO");
+					this.OnCODIGOPRODUTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ALTERADOPOR", DbType="Int")]
+		public System.Nullable<int> ALTERADOPOR
+		{
+			get
+			{
+				return this._ALTERADOPOR;
+			}
+			set
+			{
+				if ((this._ALTERADOPOR != value))
+				{
+					if (this._USUARIO.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnALTERADOPORChanging(value);
+					this.SendPropertyChanging();
+					this._ALTERADOPOR = value;
+					this.SendPropertyChanged("ALTERADOPOR");
+					this.OnALTERADOPORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EXCLUIDOPOR", DbType="Int")]
+		public System.Nullable<int> EXCLUIDOPOR
+		{
+			get
+			{
+				return this._EXCLUIDOPOR;
+			}
+			set
+			{
+				if ((this._EXCLUIDOPOR != value))
+				{
+					if (this._USUARIO2.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEXCLUIDOPORChanging(value);
+					this.SendPropertyChanging();
+					this._EXCLUIDOPOR = value;
+					this.SendPropertyChanged("EXCLUIDOPOR");
+					this.OnEXCLUIDOPORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAALTERACAO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DATAALTERACAO
+		{
+			get
+			{
+				return this._DATAALTERACAO;
+			}
+			set
+			{
+				if ((this._DATAALTERACAO != value))
+				{
+					this.OnDATAALTERACAOChanging(value);
+					this.SendPropertyChanging();
+					this._DATAALTERACAO = value;
+					this.SendPropertyChanged("DATAALTERACAO");
+					this.OnDATAALTERACAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAEXCLUSAO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DATAEXCLUSAO
+		{
+			get
+			{
+				return this._DATAEXCLUSAO;
+			}
+			set
+			{
+				if ((this._DATAEXCLUSAO != value))
+				{
+					this.OnDATAEXCLUSAOChanging(value);
+					this.SendPropertyChanging();
+					this._DATAEXCLUSAO = value;
+					this.SendPropertyChanged("DATAEXCLUSAO");
+					this.OnDATAEXCLUSAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PRODUTO_PRODUTOCARACTERISTICADIVERSA", Storage="_PRODUTOCARACTERISTICADIVERSAs", ThisKey="PRODUTOID", OtherKey="PRODUTOID")]
+		public EntitySet<PRODUTOCARACTERISTICADIVERSA> PRODUTOCARACTERISTICADIVERSAs
+		{
+			get
+			{
+				return this._PRODUTOCARACTERISTICADIVERSAs;
+			}
+			set
+			{
+				this._PRODUTOCARACTERISTICADIVERSAs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_PRODUTO", Storage="_USUARIO", ThisKey="ALTERADOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO
+		{
+			get
+			{
+				return this._USUARIO.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO.Entity = null;
+						previousValue.PRODUTOs.Remove(this);
+					}
+					this._USUARIO.Entity = value;
+					if ((value != null))
+					{
+						value.PRODUTOs.Add(this);
+						this._ALTERADOPOR = value.USUARIOID;
+					}
+					else
+					{
+						this._ALTERADOPOR = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("USUARIO");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CORPRODUTO_PRODUTO", Storage="_CORPRODUTO", ThisKey="CORID", OtherKey="CORPRODUTOID", IsForeignKey=true)]
+		public CORPRODUTO CORPRODUTO
+		{
+			get
+			{
+				return this._CORPRODUTO.Entity;
+			}
+			set
+			{
+				CORPRODUTO previousValue = this._CORPRODUTO.Entity;
+				if (((previousValue != value) 
+							|| (this._CORPRODUTO.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CORPRODUTO.Entity = null;
+						previousValue.PRODUTOs.Remove(this);
+					}
+					this._CORPRODUTO.Entity = value;
+					if ((value != null))
+					{
+						value.PRODUTOs.Add(this);
+						this._CORID = value.CORPRODUTOID;
+					}
+					else
+					{
+						this._CORID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("CORPRODUTO");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_PRODUTO1", Storage="_USUARIO1", ThisKey="CRIADOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO1
+		{
+			get
+			{
+				return this._USUARIO1.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO1.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO1.Entity = null;
+						previousValue.PRODUTOs1.Remove(this);
+					}
+					this._USUARIO1.Entity = value;
+					if ((value != null))
+					{
+						value.PRODUTOs1.Add(this);
+						this._CRIADOPOR = value.USUARIOID;
+					}
+					else
+					{
+						this._CRIADOPOR = default(int);
+					}
+					this.SendPropertyChanged("USUARIO1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DIMENSOESPRODUTO_PRODUTO", Storage="_DIMENSOESPRODUTO", ThisKey="DIMENSOESID", OtherKey="DIMENSOESPRODUTOID", IsForeignKey=true)]
+		public DIMENSOESPRODUTO DIMENSOESPRODUTO
+		{
+			get
+			{
+				return this._DIMENSOESPRODUTO.Entity;
+			}
+			set
+			{
+				DIMENSOESPRODUTO previousValue = this._DIMENSOESPRODUTO.Entity;
+				if (((previousValue != value) 
+							|| (this._DIMENSOESPRODUTO.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DIMENSOESPRODUTO.Entity = null;
+						previousValue.PRODUTOs.Remove(this);
+					}
+					this._DIMENSOESPRODUTO.Entity = value;
+					if ((value != null))
+					{
+						value.PRODUTOs.Add(this);
+						this._DIMENSOESID = value.DIMENSOESPRODUTOID;
+					}
+					else
+					{
+						this._DIMENSOESID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("DIMENSOESPRODUTO");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_PRODUTO2", Storage="_USUARIO2", ThisKey="EXCLUIDOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO2
+		{
+			get
+			{
+				return this._USUARIO2.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO2.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO2.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO2.Entity = null;
+						previousValue.PRODUTOs2.Remove(this);
+					}
+					this._USUARIO2.Entity = value;
+					if ((value != null))
+					{
+						value.PRODUTOs2.Add(this);
+						this._EXCLUIDOPOR = value.USUARIOID;
+					}
+					else
+					{
+						this._EXCLUIDOPOR = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("USUARIO2");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FABRICANTEPRODUTO_PRODUTO", Storage="_FABRICANTEPRODUTO", ThisKey="FABRICANTEID", OtherKey="FABRICANTEPRODUTOID", IsForeignKey=true)]
+		public FABRICANTEPRODUTO FABRICANTEPRODUTO
+		{
+			get
+			{
+				return this._FABRICANTEPRODUTO.Entity;
+			}
+			set
+			{
+				FABRICANTEPRODUTO previousValue = this._FABRICANTEPRODUTO.Entity;
+				if (((previousValue != value) 
+							|| (this._FABRICANTEPRODUTO.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._FABRICANTEPRODUTO.Entity = null;
+						previousValue.PRODUTOs.Remove(this);
+					}
+					this._FABRICANTEPRODUTO.Entity = value;
+					if ((value != null))
+					{
+						value.PRODUTOs.Add(this);
+						this._FABRICANTEID = value.FABRICANTEPRODUTOID;
+					}
+					else
+					{
+						this._FABRICANTEID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("FABRICANTEPRODUTO");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MARCAPRODUTO_PRODUTO", Storage="_MARCAPRODUTO", ThisKey="MARCAID", OtherKey="MARCAPRODUTOID", IsForeignKey=true)]
+		public MARCAPRODUTO MARCAPRODUTO
+		{
+			get
+			{
+				return this._MARCAPRODUTO.Entity;
+			}
+			set
+			{
+				MARCAPRODUTO previousValue = this._MARCAPRODUTO.Entity;
+				if (((previousValue != value) 
+							|| (this._MARCAPRODUTO.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._MARCAPRODUTO.Entity = null;
+						previousValue.PRODUTOs.Remove(this);
+					}
+					this._MARCAPRODUTO.Entity = value;
+					if ((value != null))
+					{
+						value.PRODUTOs.Add(this);
+						this._MARCAID = value.MARCAPRODUTOID;
+					}
+					else
+					{
+						this._MARCAID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("MARCAPRODUTO");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MODELOPRODUTO_PRODUTO", Storage="_MODELOPRODUTO", ThisKey="MODELOID", OtherKey="MODELOPRODUTOID", IsForeignKey=true)]
+		public MODELOPRODUTO MODELOPRODUTO
+		{
+			get
+			{
+				return this._MODELOPRODUTO.Entity;
+			}
+			set
+			{
+				MODELOPRODUTO previousValue = this._MODELOPRODUTO.Entity;
+				if (((previousValue != value) 
+							|| (this._MODELOPRODUTO.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._MODELOPRODUTO.Entity = null;
+						previousValue.PRODUTOs.Remove(this);
+					}
+					this._MODELOPRODUTO.Entity = value;
+					if ((value != null))
+					{
+						value.PRODUTOs.Add(this);
+						this._MODELOID = value.MODELOPRODUTOID;
+					}
+					else
+					{
+						this._MODELOID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("MODELOPRODUTO");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TIPOPRODUTO_PRODUTO", Storage="_TIPOPRODUTO", ThisKey="TIPOPRODUTOID", OtherKey="TIPOPRODUTOID", IsForeignKey=true)]
+		public TIPOPRODUTO TIPOPRODUTO
+		{
+			get
+			{
+				return this._TIPOPRODUTO.Entity;
+			}
+			set
+			{
+				TIPOPRODUTO previousValue = this._TIPOPRODUTO.Entity;
+				if (((previousValue != value) 
+							|| (this._TIPOPRODUTO.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TIPOPRODUTO.Entity = null;
+						previousValue.PRODUTOs.Remove(this);
+					}
+					this._TIPOPRODUTO.Entity = value;
+					if ((value != null))
+					{
+						value.PRODUTOs.Add(this);
+						this._TIPOPRODUTOID = value.TIPOPRODUTOID;
+					}
+					else
+					{
+						this._TIPOPRODUTOID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TIPOPRODUTO");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_PRODUTOCARACTERISTICADIVERSAs(PRODUTOCARACTERISTICADIVERSA entity)
+		{
+			this.SendPropertyChanging();
+			entity.PRODUTO = this;
+		}
+		
+		private void detach_PRODUTOCARACTERISTICADIVERSAs(PRODUTOCARACTERISTICADIVERSA entity)
+		{
+			this.SendPropertyChanging();
+			entity.PRODUTO = null;
 		}
 	}
 }
