@@ -111,7 +111,7 @@
                                                                         </asp:TemplateField>
                                                                     </Columns>
                                                                     <EmptyDataTemplate>
-                                                                        <asp:Label runat="server" ID="lblNoResults" Text="Nenhum tipo de produto encontrado!" />
+                                                                        <asp:Label runat="server" ID="lblNoResults" Text="Nenhuma informação encontrada!" />
                                                                     </EmptyDataTemplate>
                                                                 </asp:GridView>
                                                                 <asp:LinqDataSource ID="ldsFiltroTipoProduto" runat="server" ContextTypeName="Libra.Entity.LibraDataContext"
@@ -329,7 +329,7 @@
                                                                         </asp:TemplateField>
                                                                     </Columns>
                                                                     <EmptyDataTemplate>
-                                                                        <asp:Label runat="server" ID="lblNoResults" Text="Nenhum fabricante de produto encontrado!" />
+                                                                        <asp:Label runat="server" ID="lblNoResults" Text="Nenhuma informação encontrada!" />
                                                                     </EmptyDataTemplate>
                                                                 </asp:GridView>
                                                                 <asp:LinqDataSource ID="ldsFiltroFabricanteProduto" runat="server" ContextTypeName="Libra.Entity.LibraDataContext"

@@ -49,6 +49,7 @@
     <Compile Include="CorProdutoBll.cs" />
     <Compile Include="CRTBll.cs" />
     <Compile Include="DimensoesProdutoBll.cs" />
+    <Compile Include="EstoqueProdutoBll.cs" />
     <Compile Include="FabricanteProdutoBll.cs" />
     <Compile Include="FornecedoresBll.cs" />
     <Compile Include="FuncionalidadeBll.cs" />

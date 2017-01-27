@@ -75,7 +75,7 @@
                                     <asp:BoundField DataField="TipoUnidade" HeaderText="Tipo de Unidade" SortExpression="TipoUnidade" ItemStyle-Width="13%" HeaderStyle-CssClass="headings" ItemStyle-CssClass="even pointer" />
                                 </Columns>
                                 <EmptyDataTemplate>
-                                    <asp:Label runat="server" ID="lblNoResults" Text="Nenhuma unidade encontrada!" />
+                                    <asp:Label runat="server" ID="lblNoResults" Text="Nenhuma informação encontrada!" />
                                 </EmptyDataTemplate>
                             </asp:GridView>
                             <asp:LinqDataSource ID="ldsFiltro" runat="server" ContextTypeName="Libra.Entity.LibraDataContext"

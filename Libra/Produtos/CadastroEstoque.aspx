@@ -33,15 +33,15 @@
                                 <li>
                                     <asp:LinkButton runat="server" ID="lbEditEstoque" CssClass="fa fa-pencil" OnClick="lbEditEstoque_Click" ToolTip="Editar Estoque de Produto"></asp:LinkButton>
                                 </li>
-                                <li>
+                                <%-- <li>
                                     <asp:LinkButton runat="server" ID="lbDelEstoque" CssClass="fa fa-trash-o" OnClick="lbDelEstoque_Click" ToolTip="Deletar Estoque de Produto"></asp:LinkButton>
-                                </li>
+                                </li>--%>
                             </ul>
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
 
-                            <asp:GridView ID="gvResults" runat="server" AutoGenerateColumns="false" DataKeyNames="EstoqueId, ProdutoId"
+                            <asp:GridView ID="gvResults" runat="server" AutoGenerateColumns="false" DataKeyNames="EstoqueId, ProdutoId, UnidadeId"
                                 AllowPaging="true" AllowSorting="true" Width="100%" DataSourceID="ldsFiltro" CssClass="table table-striped responsive-utilities jambo_table gvResults table-bordered dt-responsive nowrap"
                                 OnSelectedIndexChanged="gvResults_SelectedIndexChanged" OnRowDataBound="gvResults_RowDataBound">
                                 <Columns>
@@ -71,33 +71,33 @@
                                         </ItemTemplate>
                                         <ItemStyle Width="50%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Valor Compra" SortExpression="valorCompra">
+                                    <asp:TemplateField HeaderText="Valor Compra" SortExpression="ValorCompra">
                                         <ItemTemplate>
-                                            <asp:Label runat="server" ID="lblValorCompra" Text='<%# Eval("valorCompra")%>'/>
+                                            <asp:Label runat="server" ID="lblValorCompra" Text='<%# Eval("ValorCompra")%>' />
                                         </ItemTemplate>
                                         <ItemStyle Width="10%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Valor Venda" SortExpression="valorVenda">
+                                    <asp:TemplateField HeaderText="Valor Venda" SortExpression="ValorVenda">
                                         <ItemTemplate>
-                                            <asp:Label runat="server" ID="lblValorVenda" Text='<%# Eval("valorCompra")%>'/>
+                                            <asp:Label runat="server" ID="lblValorVenda" Text='<%# Eval("ValorVenda")%>' />
                                         </ItemTemplate>
                                         <ItemStyle Width="10%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Unidade" SortExpression="unidade">
+                                    <asp:TemplateField HeaderText="Unidade" SortExpression="Unidade">
                                         <ItemTemplate>
-                                            <asp:Label runat="server" ID="lblUnidade" Text='<%# Eval("unidade")%>'/>
+                                            <asp:Label runat="server" ID="lblUnidade" Text='<%# Eval("Unidade")%>' />
                                         </ItemTemplate>
                                         <ItemStyle Width="10%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Qtd. Disponível" SortExpression="qtdDisponivel">
+                                    <asp:TemplateField HeaderText="Qtd. Disponível" SortExpression="QtdDisponivel">
                                         <ItemTemplate>
-                                            <asp:Label runat="server" ID="lblQtdDisponivel" Text='<%# Eval("qtdDisponivel")%>'/>
+                                            <asp:Label runat="server" ID="lblQtdDisponivel" Text='<%# Eval("QtdDisponivel")%>' />
                                         </ItemTemplate>
                                         <ItemStyle Width="10%" />
                                     </asp:TemplateField>
                                 </Columns>
                                 <EmptyDataTemplate>
-                                    <asp:Label runat="server" ID="lblNoResults" Text="Nenhuma produto encontrado!" />
+                                    <asp:Label runat="server" ID="lblNoResults" Text="Nenhuma informação encontrada!" />
                                 </EmptyDataTemplate>
                             </asp:GridView>
                             <asp:LinqDataSource ID="ldsFiltro" runat="server" ContextTypeName="Libra.Entity.LibraDataContext"
@@ -109,12 +109,12 @@
             </div>
         </div>
         <div id="divEdicao" runat="server">
-             <div class="row">
+            <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="x_panel">
                         <div class="x_title">
                             <h2>
-                                <asp:Label ID="lbAddEditProduto" runat="server" Text="Novo Produto"></asp:Label>
+                                <asp:Label ID="lbAddEditEstoqueProduto" runat="server" Text="Adicionar Produto ao Estoque"></asp:Label>
                             </h2>
                             <div class="clearfix"></div>
                         </div>
@@ -123,174 +123,221 @@
                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div>
                                         <label>
-                                            Código do Produto
+                                            Código do Estoque
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:Label runat="server" ID="lblCodigoProduto" Text="Gerado pelo sistema" CssClass="labelInfo" />
+                                        <asp:Label runat="server" ID="lblCodigoEstoque" Text="Gerado pelo sistema" CssClass="labelInfo" />
 
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div>
                                         <label>
-                                            Tipo de Produto
-                                            <asp:Label runat="server" ID="lblTipoProdutoReq" Text="*" CssClass="requerid" />
+                                            Unidade
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:DropDownList ID="ddlTipoProduto" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlTipoProduto_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
-                                        <asp:LinkButton runat="server" ID="lkAddTipoProduto" CssClass="fa fa-plus" OnClick="lkAddTipoProduto_Click" ToolTip="Adicionar Tipo Produto"></asp:LinkButton>
-                                        <asp:RequiredFieldValidator ID="rfvTipoProduto" ControlToValidate="ddlTipoProduto" SetFocusOnError="True" CssClass="requerid"
-                                            ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
+                                        <asp:DropDownList runat="server" ID="ddlUnidade" CssClass="form-control" />
+
                                     </div>
                                 </div>
                             </div>
                             <div class="row">&nbsp;</div>
-
                             <div class="row">
-                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div>
                                         <label>
-                                            Fabricante
-                                            <asp:Label runat="server" ID="lblFabricanteReq" Text="*" CssClass="requerid" />
+                                            Produto
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:DropDownList ID="ddlFabricante" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlFabricante_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
-                                        <asp:LinkButton runat="server" ID="lkAddFabricante" CssClass="fa fa-plus" OnClick="lkAddFabricante_Click" ToolTip="Adicionar Fabricante"></asp:LinkButton>
-                                        <asp:RequiredFieldValidator ID="rfvFabricante" ControlToValidate="ddlFabricante" SetFocusOnError="True" CssClass="requerid"
-                                            ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
+                                        <asp:DropDownList runat="server" ID="ddlProduto" CssClass="form-control"
+                                            OnSelectedIndexChanged="ddlProduto_SelectedIndexChanged" AutoPostBack="true" />
                                     </div>
-                                </div>
-                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                    <div>
-                                        <label>
-                                            Marca
-                                            <asp:Label runat="server" ID="lblMarcaReq" Text="*" CssClass="requerid" />
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <asp:DropDownList ID="ddlMarca" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlMarca_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
-                                        <asp:LinkButton runat="server" ID="lkAddMarca" CssClass="fa fa-plus" OnClick="lkAddMarca_Click" ToolTip="Adicionar Marca"></asp:LinkButton>
-                                        <asp:RequiredFieldValidator ID="rfvMarca" ControlToValidate="ddlMarca" SetFocusOnError="True" CssClass="requerid"
-                                            ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                    <div>
-                                        <label>
-                                            Modelo
-                                            <asp:Label runat="server" ID="lblModeloReq" Text="*" CssClass="requerid" />
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <asp:DropDownList ID="ddlModelo" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlModelo_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
-                                        <asp:LinkButton runat="server" ID="lkAddModelo" CssClass="fa fa-plus" OnClick="lkAddModelo_Click" ToolTip="Adicionar Modelo"></asp:LinkButton>
+                                    <div class="row">&nbsp;</div>
 
-                                        <asp:RequiredFieldValidator ID="rfvModelo" ControlToValidate="ddlModelo" SetFocusOnError="True" CssClass="requerid"
-                                            ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
+                                    <div>
+                                        <div class="x_panel">
+                                            <div class="x_title">
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <label>Informações do Produto</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="x_content">
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div>
+                                                            <label>
+                                                                Código do produto: 
+                                                            </label>
+
+                                                            <asp:Label runat="server" ID="lblCodigoProduto" CssClass="labelInfo" Text="---" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div>
+                                                            <label>
+                                                                Produto: 
+                                                            </label>
+
+                                                            <asp:Label runat="server" ID="lblProduto" CssClass="labelInfo" Text="---" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div>
+                                                            <label>
+                                                                Tipo produto: 
+                                                            </label>
+
+                                                            <asp:Label runat="server" ID="lblTipoProduto" CssClass="labelInfo" Text="---" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div>
+                                                            <label>
+                                                                Fabricante: 
+                                                            </label>
+
+                                                            <asp:Label runat="server" ID="lblFabricante" CssClass="labelInfo" Text="---" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div>
+                                                            <label>
+                                                                Marca: 
+                                                            </label>
+
+                                                            <asp:Label runat="server" ID="lblMarca" CssClass="labelInfo" Text="---" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div>
+                                                            <label>
+                                                                Modelo: 
+                                                            </label>
+
+                                                            <asp:Label runat="server" ID="lblModelo" CssClass="labelInfo" Text="---" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div>
+                                                            <label>
+                                                                Dimensões: 
+                                                            </label>
+
+                                                            <asp:Label runat="server" ID="lblDimensoes" CssClass="labelInfo" Text="---" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div>
+                                                            <label>
+                                                                Cor: 
+                                                            </label>
+
+                                                            <asp:Label runat="server" ID="lblCor" CssClass="labelInfo" Text="---" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>Valor Custo</label>
+                                            </div>
+                                            <div>
+                                                <asp:TextBox ID="txtValorCusto" runat="server" CssClass="form-control"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">&nbsp;</div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>Margem de Lucro</label>
+                                            </div>
+                                            <div>
+                                                <asp:TextBox ID="txtMargemLucro" runat="server" CssClass="form-control"
+                                                    OnTextChanged="txtMargemLucro_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">&nbsp;</div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>Valor Venda</label>
+                                            </div>
+                                            <div>
+                                                <asp:TextBox ID="txtValorVenda" runat="server" CssClass="form-control" 
+                                                    OnTextChanged="txtValorVenda_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">&nbsp;</div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>Quantidade Atual em Estoque</label>
+                                            </div>
+                                            <div>
+                                                <asp:Label runat="server" ID="lblQtdAtualEstoque" CssClass="labelInfo" Text="0" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>Quantidade Adicionada ao Estoque</label>
+                                            </div>
+                                            <div>
+                                                <asp:TextBox ID="txtQuatidadeAddEstoque" runat="server" CssClass="form-control"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">&nbsp;</div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>Data da Última Alteração do Estoque</label>
+                                            </div>
+                                            <div>
+                                                <asp:Label runat="server" ID="lblDataUltimaAlteracaoEstoque" CssClass="labelInfo" Text="---" />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">&nbsp;</div>
 
-                            <div class="row">
-                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                    <div>
-                                        <label>
-                                            Dimensões
-                                            <asp:Label runat="server" ID="lblDimensoesReq" Text="*" CssClass="requerid" />
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <asp:DropDownList ID="ddlDimensoes" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlDimensoes_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
-                                        <asp:LinkButton runat="server" ID="lkAddDimensoes" CssClass="fa fa-plus" OnClick="lkAddDimensoes_Click" ToolTip="Adicionar Dimensões"></asp:LinkButton>
-
-                                        <asp:RequiredFieldValidator ID="rfvDimensoes" ControlToValidate="ddlDimensoes" SetFocusOnError="True" CssClass="requerid"
-                                            ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                    <div>
-                                        <label>
-                                            Cor
-                                            <asp:Label runat="server" ID="lblCorReq" Text="*" CssClass="requerid" />
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <asp:DropDownList ID="ddlCor" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlCor_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
-                                        <asp:LinkButton runat="server" ID="lkAddCor" CssClass="fa fa-plus" OnClick="lkAddCor_Click" ToolTip="Adicionar Cor"></asp:LinkButton>
-
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="ddlMarca" SetFocusOnError="True" CssClass="requerid"
-                                            ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                    <div>
-                                        <label>
-                                            Peso (Kg)
-                                            <asp:Label runat="server" ID="lblPesoReq" Text="*" CssClass="requerid" />
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <asp:TextBox ID="txtPeso" runat="server" CssClass="form-control text-text-uppercase" MaxLength="8"></asp:TextBox>
-
-
-                                        <asp:RequiredFieldValidator ID="rfvPeso" ControlToValidate="txtPeso" SetFocusOnError="True" CssClass="requerid"
-                                            ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">&nbsp;</div>
-
-
-                            <div class="row">
-                                <div class="col-md-8 col-sm-12 col-xs-12">
-                                    <div>
-                                        <label>
-                                            Descrição
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <asp:TextBox ID="txtDescricao" runat="server" CssClass="form-control text-uppercase" MaxLength="255"></asp:TextBox>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="row">&nbsp;</div>
-
-
-                            <div class="row">
-                                <div class="col-md-2 col-sm-2 col-xs-12">
-                                    <div>
-                                        <label>
-                                            Disponível Comércio?
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <asp:CheckBox runat="server" ID="ckbDisponivel" />
-                                    </div>
-                                </div>
-                                <%-- <div class="col-md-2 col-sm-2 col-xs-12">
-                                    <div>
-                                        <label>
-                                            Ativo?
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <asp:CheckBox runat="server" ID="chkAtivo" />
-                                    </div>
-                                </div>--%>
-                            </div>
-                            <div class="row">&nbsp;</div>
                             <div class="row">
                                 <div class="col-md-3 col-sm-3 col-xs-6">
                                     <asp:Button ID="btnCancelar" runat="server" Width="100%"
                                         CssClass="btn btn-default" Text="Cancelar" OnClick="btnCancelar_Click" />
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-6">
-                                    <asp:Button runat="server" ID="btnSalvar" ValidationGroup="G1" CssClass="btn btn-primary" Width="100%" Text="Salvar" OnClick="btnSalvar_Click" />
+                                    <asp:Button runat="server" ID="btnSalvar" ValidationGroup="G1"
+                                        CssClass="btn btn-primary" Width="100%" Text="Salvar" OnClick="btnSalvar_Click" />
                                 </div>
                             </div>
 
@@ -300,10 +347,410 @@
             </div>
         </div>
     </div>
+    <asp:LinkButton ID="lkbOculto" runat="server" Text="" Style="display: none"></asp:LinkButton>
 
+    <asp:ModalPopupExtender ID="mpeVisualizarEstoqueProduto" TargetControlID="lkbOculto" PopupControlID="pnlVisualizarEstoqueProduto"
+        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lnbFecharVisualizarProduto"
+        ClientIDMode="AutoID">
+    </asp:ModalPopupExtender>
+    <asp:Panel ID="pnlVisualizarEstoqueProduto" runat="server" Style="display: none">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <h2>Estoque do Produto
+                                        <asp:Label ID="lbEstoqueProduto" runat="server"></asp:Label></h2>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1">
+                                            <asp:LinkButton runat="server" ID="lkCloseVisualizarEstoqueProduto" OnClick="lkCloseVisualizarEstoqueProduto_Click" CssClass="right"><i class="fa fa-close"></i></asp:LinkButton>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Código do Estoque
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:Label runat="server" ID="lblVisualizarCodigoEstoque" Text="Gerado pelo sistema" CssClass="labelInfo" />
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Unidade
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:Label runat="server" ID="lblVisualizarUnidade" CssClass="labelInfo" />
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">&nbsp;</div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Produto
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:Label runat="server" ID="lblVisualizarProduto" CssClass="labelInfo" />
+                                            </div>
+                                            <div class="row">&nbsp;</div>
+
+                                            <div>
+                                                <div class="x_panel">
+                                                    <div class="x_title">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                <label>Informações do Produto</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="x_content">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                <div>
+                                                                    <label>
+                                                                        Código do produto: 
+                                                                    </label>
+
+                                                                    <asp:Label runat="server" ID="lblVisualizarCodigoProduto" CssClass="labelInfo" Text="---" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                <div>
+                                                                    <label>
+                                                                        Produto: 
+                                                                    </label>
+
+                                                                    <asp:Label runat="server" ID="Label1" CssClass="labelInfo" Text="---" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                <div>
+                                                                    <label>
+                                                                        Tipo produto: 
+                                                                    </label>
+
+                                                                    <asp:Label runat="server" ID="lblVisualizarTipoProduto" CssClass="labelInfo" Text="---" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                <div>
+                                                                    <label>
+                                                                        Fabricante: 
+                                                                    </label>
+
+                                                                    <asp:Label runat="server" ID="lblVisualizarFabricante" CssClass="labelInfo" Text="---" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                <div>
+                                                                    <label>
+                                                                        Marca: 
+                                                                    </label>
+
+                                                                    <asp:Label runat="server" ID="lblVisualizarMarca" CssClass="labelInfo" Text="---" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                <div>
+                                                                    <label>
+                                                                        Modelo: 
+                                                                    </label>
+
+                                                                    <asp:Label runat="server" ID="lblVisualizarModelo" CssClass="labelInfo" Text="---" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                <div>
+                                                                    <label>
+                                                                        Dimensões: 
+                                                                    </label>
+
+                                                                    <asp:Label runat="server" ID="lblVisualizarDimensoes" CssClass="labelInfo" Text="---" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                <div>
+                                                                    <label>
+                                                                        Cor: 
+                                                                    </label>
+
+                                                                    <asp:Label runat="server" ID="lblVisualizarCor" CssClass="labelInfo" Text="---" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <div>
+                                                        <label>Valor Custo</label>
+                                                    </div>
+                                                    <div>
+                                                        <asp:Label runat="server" ID="lblVisualizarValorCusto" CssClass="labelInfo" Text="---" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">&nbsp;</div>
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <div>
+                                                        <label>Margem de Lucro</label>
+                                                    </div>
+                                                    <div>
+                                                        <asp:Label runat="server" ID="lblVisualizarMargemLucro" CssClass="labelInfo" Text="---" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">&nbsp;</div>
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <div>
+                                                        <label>Valor Venda</label>
+                                                    </div>
+                                                    <div>
+                                                        <asp:Label runat="server" ID="lblVisualizarValorVenda" CssClass="labelInfo" Text="---" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">&nbsp;</div>
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                    <div>
+                                                        <label>Quantidade Atual em Estoque</label>
+                                                    </div>
+                                                    <div>
+                                                        <asp:Label runat="server" ID="lblVisualizarQtdAtualEstoque" CssClass="labelInfo" Text="0" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                    <div>
+                                                        <label>Quantidade Adicionada ao Estoque</label>
+                                                    </div>
+                                                    <div>
+                                                        <asp:Label runat="server" ID="lblVisualizarQtdAddEstoque" CssClass="labelInfo" Text="0" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">&nbsp;</div>
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <div>
+                                                        <label>Data da Última Alteração do Estoque</label>
+                                                    </div>
+                                                    <div>
+                                                        <asp:Label runat="server" ID="lblVisualizarDataUltimaAlteracaoEstoque" CssClass="labelInfo" Text="---" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">&nbsp;</div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <asp:LinkButton ID="lnbFecharVisualizarProduto" runat="server"
+                                                CssClass="btn btn-default" Text="Fechar">
+                                            </asp:LinkButton>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
+
+    <asp:ModalPopupExtender ID="mpeFiltroEstoqueProdutos" TargetControlID="lbFiltroEstoque" PopupControlID="pnlFiltroEstoqueProdutos"
+        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lbCancelFiltroEstoqueProdutos"
+        ClientIDMode="AutoID">
+    </asp:ModalPopupExtender>
+    <asp:Panel ID="pnlFiltroEstoqueProdutos" runat="server" Style="display: none">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <h2>FILTRO ESTOQUE DE PRODUTOS</h2>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1">
+                                            <asp:LinkButton runat="server" ID="lkClose" OnClick="lkClose_Click"><i class="fa fa-close"></i></asp:LinkButton>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Código do Estoque Produto
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:TextBox ID="txtCodigoEstoqueProdutoFiltro" runat="server" CssClass="form-control"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Código do Produto
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:TextBox ID="txtCodigoProdutoFiltro" runat="server" CssClass="form-control"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">&nbsp;</div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Descrição Produto 
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:TextBox ID="txtDescricaoProdutoFiltro" runat="server" CssClass="form-control"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">&nbsp;</div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Tipo Produto
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:DropDownList runat="server" ID="ddlTipoProdutoFiltro" CssClass="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Fabricante 
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:DropDownList runat="server" ID="ddlFabricanteFiltro" CssClass="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">&nbsp;</div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Marca
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:DropDownList runat="server" ID="ddlMarcaFiltro" CssClass="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Modelo 
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:DropDownList runat="server" ID="ddlModeloFiltro" CssClass="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">&nbsp;</div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Tamanho
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:DropDownList runat="server" ID="ddlTamanhoFiltro" CssClass="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Cor
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:DropDownList runat="server" ID="ddlCorFiltro" CssClass="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">&nbsp;</div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <asp:LinkButton ID="lbCancelFiltroEstoqueProdutos" runat="server"
+                                                CssClass="btn btn-default" Text="Fechar">
+                                            </asp:LinkButton>
+                                            <asp:Button runat="server" ID="btnFiltrar" CssClass="btn btn-primary" Text="Filtrar" OnClick="btnFiltrar_Click" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScripts" runat="server">
-     <script type="text/javascript" charset="utf-8">
+    <script type="text/javascript" charset="utf-8">
         var TotalChkBx;
         var Counter;
 

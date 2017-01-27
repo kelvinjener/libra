@@ -75,6 +75,9 @@
       <Association Name="USUARIO_PRODUTO" Member="PRODUTOs" ThisKey="USUARIOID" OtherKey="ALTERADOPOR" Type="PRODUTO" />
       <Association Name="USUARIO_PRODUTO1" Member="PRODUTOs1" ThisKey="USUARIOID" OtherKey="CRIADOPOR" Type="PRODUTO" />
       <Association Name="USUARIO_PRODUTO2" Member="PRODUTOs2" ThisKey="USUARIOID" OtherKey="EXCLUIDOPOR" Type="PRODUTO" />
+      <Association Name="USUARIO_ESTOQUEPRODUTO" Member="ESTOQUEPRODUTOs" ThisKey="USUARIOID" OtherKey="ALTERADOPOR" Type="ESTOQUEPRODUTO" />
+      <Association Name="USUARIO_ESTOQUEPRODUTO1" Member="ESTOQUEPRODUTOs1" ThisKey="USUARIOID" OtherKey="CRIADOPOR" Type="ESTOQUEPRODUTO" />
+      <Association Name="USUARIO_ESTOQUEPRODUTO2" Member="ESTOQUEPRODUTOs2" ThisKey="USUARIOID" OtherKey="EXCLUIDOPOR" Type="ESTOQUEPRODUTO" />
       <Association Name="AspNetUser_USUARIO" Member="AspNetUser" ThisKey="ASPNETUSERID" OtherKey="Id" Type="AspNetUser" IsForeignKey="true" />
     </Type>
   </Table>
@@ -112,6 +115,7 @@
       <Column Name="ATIVO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="TIPOUNIDADE" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Association Name="UNIDADE_USUARIOUNIDADE" Member="USUARIOUNIDADEs" ThisKey="UNIDADEID" OtherKey="UNIDADEID" Type="USUARIOUNIDADE" />
+      <Association Name="UNIDADE_ESTOQUEPRODUTO" Member="ESTOQUEPRODUTOs" ThisKey="UNIDADEID" OtherKey="UNIDADEID" Type="ESTOQUEPRODUTO" />
     </Type>
   </Table>
   <Table Name="dbo.USUARIOPERFIS" Member="USUARIOPERFIs">
@@ -294,6 +298,7 @@
       <Column Name="DATAALTERACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="DATAEXCLUSAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="PRODUTO_PRODUTOCARACTERISTICADIVERSA" Member="PRODUTOCARACTERISTICADIVERSAs" ThisKey="PRODUTOID" OtherKey="PRODUTOID" Type="PRODUTOCARACTERISTICADIVERSA" />
+      <Association Name="PRODUTO_ESTOQUEPRODUTO" Member="ESTOQUEPRODUTOs" ThisKey="PRODUTOID" OtherKey="PRODUTOID" Type="ESTOQUEPRODUTO" />
       <Association Name="USUARIO_PRODUTO" Member="USUARIO" ThisKey="ALTERADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
       <Association Name="CORPRODUTO_PRODUTO" Member="CORPRODUTO" ThisKey="CORID" OtherKey="CORPRODUTOID" Type="CORPRODUTO" IsForeignKey="true" />
       <Association Name="USUARIO_PRODUTO1" Member="USUARIO1" ThisKey="CRIADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
@@ -303,6 +308,31 @@
       <Association Name="MARCAPRODUTO_PRODUTO" Member="MARCAPRODUTO" ThisKey="MARCAID" OtherKey="MARCAPRODUTOID" Type="MARCAPRODUTO" IsForeignKey="true" />
       <Association Name="MODELOPRODUTO_PRODUTO" Member="MODELOPRODUTO" ThisKey="MODELOID" OtherKey="MODELOPRODUTOID" Type="MODELOPRODUTO" IsForeignKey="true" />
       <Association Name="TIPOPRODUTO_PRODUTO" Member="TIPOPRODUTO" ThisKey="TIPOPRODUTOID" OtherKey="TIPOPRODUTOID" Type="TIPOPRODUTO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ESTOQUEPRODUTOS" Member="ESTOQUEPRODUTOs">
+    <Type Name="ESTOQUEPRODUTO">
+      <Column Name="ESTOQUEID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CODIGOESTOQUE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PRODUTOID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UNIDADEID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QTDENTRADA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DATAENTRADA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="QTDESTOQUE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VALORCUSTO" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="MARGEMLUCRO" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="VALORVENDA" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="CRIADOPOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ALTERADOPOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXCLUIDOPOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATACRIACAO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DATAALTERACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATAEXCLUSAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="USUARIO_ESTOQUEPRODUTO" Member="USUARIO" ThisKey="ALTERADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="USUARIO_ESTOQUEPRODUTO1" Member="USUARIO1" ThisKey="CRIADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="USUARIO_ESTOQUEPRODUTO2" Member="USUARIO2" ThisKey="EXCLUIDOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="PRODUTO_ESTOQUEPRODUTO" Member="PRODUTO" ThisKey="PRODUTOID" OtherKey="PRODUTOID" Type="PRODUTO" IsForeignKey="true" />
+      <Association Name="UNIDADE_ESTOQUEPRODUTO" Member="UNIDADE" ThisKey="UNIDADEID" OtherKey="UNIDADEID" Type="UNIDADE" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

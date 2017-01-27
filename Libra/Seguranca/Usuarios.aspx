@@ -85,7 +85,7 @@
                                     </asp:TemplateField>
                                 </Columns>
                                 <EmptyDataTemplate>
-                                    <asp:Label runat="server" ID="lblNoResults" Text="Nenhuma usuario encontrado!" />
+                                    <asp:Label runat="server" ID="lblNoResults" Text="Nenhuma informação encontrada!" />
                                 </EmptyDataTemplate>
                             </asp:GridView>
                             <asp:LinqDataSource ID="ldsFiltro" runat="server" ContextTypeName="Libra.Entity.LibraDataContext"

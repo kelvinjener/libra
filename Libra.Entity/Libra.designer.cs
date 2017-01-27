@@ -102,6 +102,9 @@ namespace Libra.Entity
     partial void InsertPRODUTO(PRODUTO instance);
     partial void UpdatePRODUTO(PRODUTO instance);
     partial void DeletePRODUTO(PRODUTO instance);
+    partial void InsertESTOQUEPRODUTO(ESTOQUEPRODUTO instance);
+    partial void UpdateESTOQUEPRODUTO(ESTOQUEPRODUTO instance);
+    partial void DeleteESTOQUEPRODUTO(ESTOQUEPRODUTO instance);
     #endregion
 		
 		public LibraDataContext() : 
@@ -323,6 +326,14 @@ namespace Libra.Entity
 			get
 			{
 				return this.GetTable<PRODUTO>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ESTOQUEPRODUTO> ESTOQUEPRODUTOs
+		{
+			get
+			{
+				return this.GetTable<ESTOQUEPRODUTO>();
 			}
 		}
 	}
@@ -1421,6 +1432,12 @@ namespace Libra.Entity
 		
 		private EntitySet<PRODUTO> _PRODUTOs2;
 		
+		private EntitySet<ESTOQUEPRODUTO> _ESTOQUEPRODUTOs;
+		
+		private EntitySet<ESTOQUEPRODUTO> _ESTOQUEPRODUTOs1;
+		
+		private EntitySet<ESTOQUEPRODUTO> _ESTOQUEPRODUTOs2;
+		
 		private EntityRef<AspNetUser> _AspNetUser;
 		
     #region Extensibility Method Definitions
@@ -1461,6 +1478,9 @@ namespace Libra.Entity
 			this._PRODUTOs = new EntitySet<PRODUTO>(new Action<PRODUTO>(this.attach_PRODUTOs), new Action<PRODUTO>(this.detach_PRODUTOs));
 			this._PRODUTOs1 = new EntitySet<PRODUTO>(new Action<PRODUTO>(this.attach_PRODUTOs1), new Action<PRODUTO>(this.detach_PRODUTOs1));
 			this._PRODUTOs2 = new EntitySet<PRODUTO>(new Action<PRODUTO>(this.attach_PRODUTOs2), new Action<PRODUTO>(this.detach_PRODUTOs2));
+			this._ESTOQUEPRODUTOs = new EntitySet<ESTOQUEPRODUTO>(new Action<ESTOQUEPRODUTO>(this.attach_ESTOQUEPRODUTOs), new Action<ESTOQUEPRODUTO>(this.detach_ESTOQUEPRODUTOs));
+			this._ESTOQUEPRODUTOs1 = new EntitySet<ESTOQUEPRODUTO>(new Action<ESTOQUEPRODUTO>(this.attach_ESTOQUEPRODUTOs1), new Action<ESTOQUEPRODUTO>(this.detach_ESTOQUEPRODUTOs1));
+			this._ESTOQUEPRODUTOs2 = new EntitySet<ESTOQUEPRODUTO>(new Action<ESTOQUEPRODUTO>(this.attach_ESTOQUEPRODUTOs2), new Action<ESTOQUEPRODUTO>(this.detach_ESTOQUEPRODUTOs2));
 			this._AspNetUser = default(EntityRef<AspNetUser>);
 			OnCreated();
 		}
@@ -1805,6 +1825,45 @@ namespace Libra.Entity
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_ESTOQUEPRODUTO", Storage="_ESTOQUEPRODUTOs", ThisKey="USUARIOID", OtherKey="ALTERADOPOR")]
+		public EntitySet<ESTOQUEPRODUTO> ESTOQUEPRODUTOs
+		{
+			get
+			{
+				return this._ESTOQUEPRODUTOs;
+			}
+			set
+			{
+				this._ESTOQUEPRODUTOs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_ESTOQUEPRODUTO1", Storage="_ESTOQUEPRODUTOs1", ThisKey="USUARIOID", OtherKey="CRIADOPOR")]
+		public EntitySet<ESTOQUEPRODUTO> ESTOQUEPRODUTOs1
+		{
+			get
+			{
+				return this._ESTOQUEPRODUTOs1;
+			}
+			set
+			{
+				this._ESTOQUEPRODUTOs1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_ESTOQUEPRODUTO2", Storage="_ESTOQUEPRODUTOs2", ThisKey="USUARIOID", OtherKey="EXCLUIDOPOR")]
+		public EntitySet<ESTOQUEPRODUTO> ESTOQUEPRODUTOs2
+		{
+			get
+			{
+				return this._ESTOQUEPRODUTOs2;
+			}
+			set
+			{
+				this._ESTOQUEPRODUTOs2.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AspNetUser_USUARIO", Storage="_AspNetUser", ThisKey="ASPNETUSERID", OtherKey="Id", IsForeignKey=true)]
 		public AspNetUser AspNetUser
 		{
@@ -1998,6 +2057,42 @@ namespace Libra.Entity
 		}
 		
 		private void detach_PRODUTOs2(PRODUTO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO2 = null;
+		}
+		
+		private void attach_ESTOQUEPRODUTOs(ESTOQUEPRODUTO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO = this;
+		}
+		
+		private void detach_ESTOQUEPRODUTOs(ESTOQUEPRODUTO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO = null;
+		}
+		
+		private void attach_ESTOQUEPRODUTOs1(ESTOQUEPRODUTO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO1 = this;
+		}
+		
+		private void detach_ESTOQUEPRODUTOs1(ESTOQUEPRODUTO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO1 = null;
+		}
+		
+		private void attach_ESTOQUEPRODUTOs2(ESTOQUEPRODUTO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO2 = this;
+		}
+		
+		private void detach_ESTOQUEPRODUTOs2(ESTOQUEPRODUTO entity)
 		{
 			this.SendPropertyChanging();
 			entity.USUARIO2 = null;
@@ -2319,6 +2414,8 @@ namespace Libra.Entity
 		
 		private EntitySet<USUARIOUNIDADE> _USUARIOUNIDADEs;
 		
+		private EntitySet<ESTOQUEPRODUTO> _ESTOQUEPRODUTOs;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2364,6 +2461,7 @@ namespace Libra.Entity
 		public UNIDADE()
 		{
 			this._USUARIOUNIDADEs = new EntitySet<USUARIOUNIDADE>(new Action<USUARIOUNIDADE>(this.attach_USUARIOUNIDADEs), new Action<USUARIOUNIDADE>(this.detach_USUARIOUNIDADEs));
+			this._ESTOQUEPRODUTOs = new EntitySet<ESTOQUEPRODUTO>(new Action<ESTOQUEPRODUTO>(this.attach_ESTOQUEPRODUTOs), new Action<ESTOQUEPRODUTO>(this.detach_ESTOQUEPRODUTOs));
 			OnCreated();
 		}
 		
@@ -2740,6 +2838,19 @@ namespace Libra.Entity
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UNIDADE_ESTOQUEPRODUTO", Storage="_ESTOQUEPRODUTOs", ThisKey="UNIDADEID", OtherKey="UNIDADEID")]
+		public EntitySet<ESTOQUEPRODUTO> ESTOQUEPRODUTOs
+		{
+			get
+			{
+				return this._ESTOQUEPRODUTOs;
+			}
+			set
+			{
+				this._ESTOQUEPRODUTOs.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2767,6 +2878,18 @@ namespace Libra.Entity
 		}
 		
 		private void detach_USUARIOUNIDADEs(USUARIOUNIDADE entity)
+		{
+			this.SendPropertyChanging();
+			entity.UNIDADE = null;
+		}
+		
+		private void attach_ESTOQUEPRODUTOs(ESTOQUEPRODUTO entity)
+		{
+			this.SendPropertyChanging();
+			entity.UNIDADE = this;
+		}
+		
+		private void detach_ESTOQUEPRODUTOs(ESTOQUEPRODUTO entity)
 		{
 			this.SendPropertyChanging();
 			entity.UNIDADE = null;
@@ -6063,6 +6186,8 @@ namespace Libra.Entity
 		
 		private EntitySet<PRODUTOCARACTERISTICADIVERSA> _PRODUTOCARACTERISTICADIVERSAs;
 		
+		private EntitySet<ESTOQUEPRODUTO> _ESTOQUEPRODUTOs;
+		
 		private EntityRef<USUARIO> _USUARIO;
 		
 		private EntityRef<CORPRODUTO> _CORPRODUTO;
@@ -6124,6 +6249,7 @@ namespace Libra.Entity
 		public PRODUTO()
 		{
 			this._PRODUTOCARACTERISTICADIVERSAs = new EntitySet<PRODUTOCARACTERISTICADIVERSA>(new Action<PRODUTOCARACTERISTICADIVERSA>(this.attach_PRODUTOCARACTERISTICADIVERSAs), new Action<PRODUTOCARACTERISTICADIVERSA>(this.detach_PRODUTOCARACTERISTICADIVERSAs));
+			this._ESTOQUEPRODUTOs = new EntitySet<ESTOQUEPRODUTO>(new Action<ESTOQUEPRODUTO>(this.attach_ESTOQUEPRODUTOs), new Action<ESTOQUEPRODUTO>(this.detach_ESTOQUEPRODUTOs));
 			this._USUARIO = default(EntityRef<USUARIO>);
 			this._CORPRODUTO = default(EntityRef<CORPRODUTO>);
 			this._USUARIO1 = default(EntityRef<USUARIO>);
@@ -6525,6 +6651,19 @@ namespace Libra.Entity
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PRODUTO_ESTOQUEPRODUTO", Storage="_ESTOQUEPRODUTOs", ThisKey="PRODUTOID", OtherKey="PRODUTOID")]
+		public EntitySet<ESTOQUEPRODUTO> ESTOQUEPRODUTOs
+		{
+			get
+			{
+				return this._ESTOQUEPRODUTOs;
+			}
+			set
+			{
+				this._ESTOQUEPRODUTOs.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_PRODUTO", Storage="_USUARIO", ThisKey="ALTERADOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
 		public USUARIO USUARIO
 		{
@@ -6861,6 +7000,645 @@ namespace Libra.Entity
 		{
 			this.SendPropertyChanging();
 			entity.PRODUTO = null;
+		}
+		
+		private void attach_ESTOQUEPRODUTOs(ESTOQUEPRODUTO entity)
+		{
+			this.SendPropertyChanging();
+			entity.PRODUTO = this;
+		}
+		
+		private void detach_ESTOQUEPRODUTOs(ESTOQUEPRODUTO entity)
+		{
+			this.SendPropertyChanging();
+			entity.PRODUTO = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ESTOQUEPRODUTOS")]
+	public partial class ESTOQUEPRODUTO : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ESTOQUEID;
+		
+		private string _CODIGOESTOQUE;
+		
+		private int _PRODUTOID;
+		
+		private int _UNIDADEID;
+		
+		private int _QTDENTRADA;
+		
+		private System.DateTime _DATAENTRADA;
+		
+		private System.Nullable<int> _QTDESTOQUE;
+		
+		private System.Nullable<decimal> _VALORCUSTO;
+		
+		private System.Nullable<decimal> _MARGEMLUCRO;
+		
+		private System.Nullable<decimal> _VALORVENDA;
+		
+		private int _CRIADOPOR;
+		
+		private System.Nullable<int> _ALTERADOPOR;
+		
+		private System.Nullable<int> _EXCLUIDOPOR;
+		
+		private System.DateTime _DATACRIACAO;
+		
+		private System.Nullable<System.DateTime> _DATAALTERACAO;
+		
+		private System.Nullable<System.DateTime> _DATAEXCLUSAO;
+		
+		private EntityRef<USUARIO> _USUARIO;
+		
+		private EntityRef<USUARIO> _USUARIO1;
+		
+		private EntityRef<USUARIO> _USUARIO2;
+		
+		private EntityRef<PRODUTO> _PRODUTO;
+		
+		private EntityRef<UNIDADE> _UNIDADE;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnESTOQUEIDChanging(int value);
+    partial void OnESTOQUEIDChanged();
+    partial void OnCODIGOESTOQUEChanging(string value);
+    partial void OnCODIGOESTOQUEChanged();
+    partial void OnPRODUTOIDChanging(int value);
+    partial void OnPRODUTOIDChanged();
+    partial void OnUNIDADEIDChanging(int value);
+    partial void OnUNIDADEIDChanged();
+    partial void OnQTDENTRADAChanging(int value);
+    partial void OnQTDENTRADAChanged();
+    partial void OnDATAENTRADAChanging(System.DateTime value);
+    partial void OnDATAENTRADAChanged();
+    partial void OnQTDESTOQUEChanging(System.Nullable<int> value);
+    partial void OnQTDESTOQUEChanged();
+    partial void OnVALORCUSTOChanging(System.Nullable<decimal> value);
+    partial void OnVALORCUSTOChanged();
+    partial void OnMARGEMLUCROChanging(System.Nullable<decimal> value);
+    partial void OnMARGEMLUCROChanged();
+    partial void OnVALORVENDAChanging(System.Nullable<decimal> value);
+    partial void OnVALORVENDAChanged();
+    partial void OnCRIADOPORChanging(int value);
+    partial void OnCRIADOPORChanged();
+    partial void OnALTERADOPORChanging(System.Nullable<int> value);
+    partial void OnALTERADOPORChanged();
+    partial void OnEXCLUIDOPORChanging(System.Nullable<int> value);
+    partial void OnEXCLUIDOPORChanged();
+    partial void OnDATACRIACAOChanging(System.DateTime value);
+    partial void OnDATACRIACAOChanged();
+    partial void OnDATAALTERACAOChanging(System.Nullable<System.DateTime> value);
+    partial void OnDATAALTERACAOChanged();
+    partial void OnDATAEXCLUSAOChanging(System.Nullable<System.DateTime> value);
+    partial void OnDATAEXCLUSAOChanged();
+    #endregion
+		
+		public ESTOQUEPRODUTO()
+		{
+			this._USUARIO = default(EntityRef<USUARIO>);
+			this._USUARIO1 = default(EntityRef<USUARIO>);
+			this._USUARIO2 = default(EntityRef<USUARIO>);
+			this._PRODUTO = default(EntityRef<PRODUTO>);
+			this._UNIDADE = default(EntityRef<UNIDADE>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTOQUEID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ESTOQUEID
+		{
+			get
+			{
+				return this._ESTOQUEID;
+			}
+			set
+			{
+				if ((this._ESTOQUEID != value))
+				{
+					this.OnESTOQUEIDChanging(value);
+					this.SendPropertyChanging();
+					this._ESTOQUEID = value;
+					this.SendPropertyChanged("ESTOQUEID");
+					this.OnESTOQUEIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODIGOESTOQUE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string CODIGOESTOQUE
+		{
+			get
+			{
+				return this._CODIGOESTOQUE;
+			}
+			set
+			{
+				if ((this._CODIGOESTOQUE != value))
+				{
+					this.OnCODIGOESTOQUEChanging(value);
+					this.SendPropertyChanging();
+					this._CODIGOESTOQUE = value;
+					this.SendPropertyChanged("CODIGOESTOQUE");
+					this.OnCODIGOESTOQUEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRODUTOID", DbType="Int NOT NULL")]
+		public int PRODUTOID
+		{
+			get
+			{
+				return this._PRODUTOID;
+			}
+			set
+			{
+				if ((this._PRODUTOID != value))
+				{
+					if (this._PRODUTO.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPRODUTOIDChanging(value);
+					this.SendPropertyChanging();
+					this._PRODUTOID = value;
+					this.SendPropertyChanged("PRODUTOID");
+					this.OnPRODUTOIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UNIDADEID", DbType="Int NOT NULL")]
+		public int UNIDADEID
+		{
+			get
+			{
+				return this._UNIDADEID;
+			}
+			set
+			{
+				if ((this._UNIDADEID != value))
+				{
+					if (this._UNIDADE.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUNIDADEIDChanging(value);
+					this.SendPropertyChanging();
+					this._UNIDADEID = value;
+					this.SendPropertyChanged("UNIDADEID");
+					this.OnUNIDADEIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QTDENTRADA", DbType="Int NOT NULL")]
+		public int QTDENTRADA
+		{
+			get
+			{
+				return this._QTDENTRADA;
+			}
+			set
+			{
+				if ((this._QTDENTRADA != value))
+				{
+					this.OnQTDENTRADAChanging(value);
+					this.SendPropertyChanging();
+					this._QTDENTRADA = value;
+					this.SendPropertyChanged("QTDENTRADA");
+					this.OnQTDENTRADAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAENTRADA", DbType="DateTime NOT NULL")]
+		public System.DateTime DATAENTRADA
+		{
+			get
+			{
+				return this._DATAENTRADA;
+			}
+			set
+			{
+				if ((this._DATAENTRADA != value))
+				{
+					this.OnDATAENTRADAChanging(value);
+					this.SendPropertyChanging();
+					this._DATAENTRADA = value;
+					this.SendPropertyChanged("DATAENTRADA");
+					this.OnDATAENTRADAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QTDESTOQUE", DbType="Int")]
+		public System.Nullable<int> QTDESTOQUE
+		{
+			get
+			{
+				return this._QTDESTOQUE;
+			}
+			set
+			{
+				if ((this._QTDESTOQUE != value))
+				{
+					this.OnQTDESTOQUEChanging(value);
+					this.SendPropertyChanging();
+					this._QTDESTOQUE = value;
+					this.SendPropertyChanged("QTDESTOQUE");
+					this.OnQTDESTOQUEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALORCUSTO", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> VALORCUSTO
+		{
+			get
+			{
+				return this._VALORCUSTO;
+			}
+			set
+			{
+				if ((this._VALORCUSTO != value))
+				{
+					this.OnVALORCUSTOChanging(value);
+					this.SendPropertyChanging();
+					this._VALORCUSTO = value;
+					this.SendPropertyChanged("VALORCUSTO");
+					this.OnVALORCUSTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MARGEMLUCRO", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> MARGEMLUCRO
+		{
+			get
+			{
+				return this._MARGEMLUCRO;
+			}
+			set
+			{
+				if ((this._MARGEMLUCRO != value))
+				{
+					this.OnMARGEMLUCROChanging(value);
+					this.SendPropertyChanging();
+					this._MARGEMLUCRO = value;
+					this.SendPropertyChanged("MARGEMLUCRO");
+					this.OnMARGEMLUCROChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALORVENDA", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> VALORVENDA
+		{
+			get
+			{
+				return this._VALORVENDA;
+			}
+			set
+			{
+				if ((this._VALORVENDA != value))
+				{
+					this.OnVALORVENDAChanging(value);
+					this.SendPropertyChanging();
+					this._VALORVENDA = value;
+					this.SendPropertyChanged("VALORVENDA");
+					this.OnVALORVENDAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRIADOPOR", DbType="Int NOT NULL")]
+		public int CRIADOPOR
+		{
+			get
+			{
+				return this._CRIADOPOR;
+			}
+			set
+			{
+				if ((this._CRIADOPOR != value))
+				{
+					if (this._USUARIO1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCRIADOPORChanging(value);
+					this.SendPropertyChanging();
+					this._CRIADOPOR = value;
+					this.SendPropertyChanged("CRIADOPOR");
+					this.OnCRIADOPORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ALTERADOPOR", DbType="Int")]
+		public System.Nullable<int> ALTERADOPOR
+		{
+			get
+			{
+				return this._ALTERADOPOR;
+			}
+			set
+			{
+				if ((this._ALTERADOPOR != value))
+				{
+					if (this._USUARIO.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnALTERADOPORChanging(value);
+					this.SendPropertyChanging();
+					this._ALTERADOPOR = value;
+					this.SendPropertyChanged("ALTERADOPOR");
+					this.OnALTERADOPORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EXCLUIDOPOR", DbType="Int")]
+		public System.Nullable<int> EXCLUIDOPOR
+		{
+			get
+			{
+				return this._EXCLUIDOPOR;
+			}
+			set
+			{
+				if ((this._EXCLUIDOPOR != value))
+				{
+					if (this._USUARIO2.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEXCLUIDOPORChanging(value);
+					this.SendPropertyChanging();
+					this._EXCLUIDOPOR = value;
+					this.SendPropertyChanged("EXCLUIDOPOR");
+					this.OnEXCLUIDOPORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATACRIACAO", DbType="DateTime NOT NULL")]
+		public System.DateTime DATACRIACAO
+		{
+			get
+			{
+				return this._DATACRIACAO;
+			}
+			set
+			{
+				if ((this._DATACRIACAO != value))
+				{
+					this.OnDATACRIACAOChanging(value);
+					this.SendPropertyChanging();
+					this._DATACRIACAO = value;
+					this.SendPropertyChanged("DATACRIACAO");
+					this.OnDATACRIACAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAALTERACAO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DATAALTERACAO
+		{
+			get
+			{
+				return this._DATAALTERACAO;
+			}
+			set
+			{
+				if ((this._DATAALTERACAO != value))
+				{
+					this.OnDATAALTERACAOChanging(value);
+					this.SendPropertyChanging();
+					this._DATAALTERACAO = value;
+					this.SendPropertyChanged("DATAALTERACAO");
+					this.OnDATAALTERACAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAEXCLUSAO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DATAEXCLUSAO
+		{
+			get
+			{
+				return this._DATAEXCLUSAO;
+			}
+			set
+			{
+				if ((this._DATAEXCLUSAO != value))
+				{
+					this.OnDATAEXCLUSAOChanging(value);
+					this.SendPropertyChanging();
+					this._DATAEXCLUSAO = value;
+					this.SendPropertyChanged("DATAEXCLUSAO");
+					this.OnDATAEXCLUSAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_ESTOQUEPRODUTO", Storage="_USUARIO", ThisKey="ALTERADOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO
+		{
+			get
+			{
+				return this._USUARIO.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO.Entity = null;
+						previousValue.ESTOQUEPRODUTOs.Remove(this);
+					}
+					this._USUARIO.Entity = value;
+					if ((value != null))
+					{
+						value.ESTOQUEPRODUTOs.Add(this);
+						this._ALTERADOPOR = value.USUARIOID;
+					}
+					else
+					{
+						this._ALTERADOPOR = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("USUARIO");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_ESTOQUEPRODUTO1", Storage="_USUARIO1", ThisKey="CRIADOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO1
+		{
+			get
+			{
+				return this._USUARIO1.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO1.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO1.Entity = null;
+						previousValue.ESTOQUEPRODUTOs1.Remove(this);
+					}
+					this._USUARIO1.Entity = value;
+					if ((value != null))
+					{
+						value.ESTOQUEPRODUTOs1.Add(this);
+						this._CRIADOPOR = value.USUARIOID;
+					}
+					else
+					{
+						this._CRIADOPOR = default(int);
+					}
+					this.SendPropertyChanged("USUARIO1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_ESTOQUEPRODUTO2", Storage="_USUARIO2", ThisKey="EXCLUIDOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO2
+		{
+			get
+			{
+				return this._USUARIO2.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO2.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO2.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO2.Entity = null;
+						previousValue.ESTOQUEPRODUTOs2.Remove(this);
+					}
+					this._USUARIO2.Entity = value;
+					if ((value != null))
+					{
+						value.ESTOQUEPRODUTOs2.Add(this);
+						this._EXCLUIDOPOR = value.USUARIOID;
+					}
+					else
+					{
+						this._EXCLUIDOPOR = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("USUARIO2");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PRODUTO_ESTOQUEPRODUTO", Storage="_PRODUTO", ThisKey="PRODUTOID", OtherKey="PRODUTOID", IsForeignKey=true)]
+		public PRODUTO PRODUTO
+		{
+			get
+			{
+				return this._PRODUTO.Entity;
+			}
+			set
+			{
+				PRODUTO previousValue = this._PRODUTO.Entity;
+				if (((previousValue != value) 
+							|| (this._PRODUTO.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._PRODUTO.Entity = null;
+						previousValue.ESTOQUEPRODUTOs.Remove(this);
+					}
+					this._PRODUTO.Entity = value;
+					if ((value != null))
+					{
+						value.ESTOQUEPRODUTOs.Add(this);
+						this._PRODUTOID = value.PRODUTOID;
+					}
+					else
+					{
+						this._PRODUTOID = default(int);
+					}
+					this.SendPropertyChanged("PRODUTO");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UNIDADE_ESTOQUEPRODUTO", Storage="_UNIDADE", ThisKey="UNIDADEID", OtherKey="UNIDADEID", IsForeignKey=true)]
+		public UNIDADE UNIDADE
+		{
+			get
+			{
+				return this._UNIDADE.Entity;
+			}
+			set
+			{
+				UNIDADE previousValue = this._UNIDADE.Entity;
+				if (((previousValue != value) 
+							|| (this._UNIDADE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UNIDADE.Entity = null;
+						previousValue.ESTOQUEPRODUTOs.Remove(this);
+					}
+					this._UNIDADE.Entity = value;
+					if ((value != null))
+					{
+						value.ESTOQUEPRODUTOs.Add(this);
+						this._UNIDADEID = value.UNIDADEID;
+					}
+					else
+					{
+						this._UNIDADEID = default(int);
+					}
+					this.SendPropertyChanged("UNIDADE");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

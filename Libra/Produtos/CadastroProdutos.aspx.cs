@@ -197,7 +197,7 @@ namespace Libra.Produtos
         {
             LimpaCampos();
             lblCodigoProduto.Text = "Gerado pelo sistema";
-            lbAddEditProduto.Text = "Nova Produto";
+            lbAddEditProduto.Text = "Novo Produto";
             Edicao(true);
         }
 
