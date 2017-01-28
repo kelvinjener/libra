@@ -23,7 +23,7 @@
         <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
         <script src="js/libs/bootbox.min.js"></script>
 
-        <!-- JS UTILS-->
+        <!-- JS UTILS -->
         <script src="js/libs/Libra.js"></script>
         <script src="js/libs/Libra.UI.js"></script>
         <script src="js/Util/ServicesUtility.js"></script>
