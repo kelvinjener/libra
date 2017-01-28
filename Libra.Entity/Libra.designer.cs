@@ -105,6 +105,9 @@ namespace Libra.Entity
     partial void InsertESTOQUEPRODUTO(ESTOQUEPRODUTO instance);
     partial void UpdateESTOQUEPRODUTO(ESTOQUEPRODUTO instance);
     partial void DeleteESTOQUEPRODUTO(ESTOQUEPRODUTO instance);
+    partial void InsertESTOQUEPRODUTOSHISTORICO(ESTOQUEPRODUTOSHISTORICO instance);
+    partial void UpdateESTOQUEPRODUTOSHISTORICO(ESTOQUEPRODUTOSHISTORICO instance);
+    partial void DeleteESTOQUEPRODUTOSHISTORICO(ESTOQUEPRODUTOSHISTORICO instance);
     #endregion
 		
 		public LibraDataContext() : 
@@ -334,6 +337,14 @@ namespace Libra.Entity
 			get
 			{
 				return this.GetTable<ESTOQUEPRODUTO>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ESTOQUEPRODUTOSHISTORICO> ESTOQUEPRODUTOSHISTORICOs
+		{
+			get
+			{
+				return this.GetTable<ESTOQUEPRODUTOSHISTORICO>();
 			}
 		}
 	}
@@ -1438,6 +1449,8 @@ namespace Libra.Entity
 		
 		private EntitySet<ESTOQUEPRODUTO> _ESTOQUEPRODUTOs2;
 		
+		private EntitySet<ESTOQUEPRODUTOSHISTORICO> _ESTOQUEPRODUTOSHISTORICOs;
+		
 		private EntityRef<AspNetUser> _AspNetUser;
 		
     #region Extensibility Method Definitions
@@ -1481,6 +1494,7 @@ namespace Libra.Entity
 			this._ESTOQUEPRODUTOs = new EntitySet<ESTOQUEPRODUTO>(new Action<ESTOQUEPRODUTO>(this.attach_ESTOQUEPRODUTOs), new Action<ESTOQUEPRODUTO>(this.detach_ESTOQUEPRODUTOs));
 			this._ESTOQUEPRODUTOs1 = new EntitySet<ESTOQUEPRODUTO>(new Action<ESTOQUEPRODUTO>(this.attach_ESTOQUEPRODUTOs1), new Action<ESTOQUEPRODUTO>(this.detach_ESTOQUEPRODUTOs1));
 			this._ESTOQUEPRODUTOs2 = new EntitySet<ESTOQUEPRODUTO>(new Action<ESTOQUEPRODUTO>(this.attach_ESTOQUEPRODUTOs2), new Action<ESTOQUEPRODUTO>(this.detach_ESTOQUEPRODUTOs2));
+			this._ESTOQUEPRODUTOSHISTORICOs = new EntitySet<ESTOQUEPRODUTOSHISTORICO>(new Action<ESTOQUEPRODUTOSHISTORICO>(this.attach_ESTOQUEPRODUTOSHISTORICOs), new Action<ESTOQUEPRODUTOSHISTORICO>(this.detach_ESTOQUEPRODUTOSHISTORICOs));
 			this._AspNetUser = default(EntityRef<AspNetUser>);
 			OnCreated();
 		}
@@ -1864,6 +1878,19 @@ namespace Libra.Entity
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_ESTOQUEPRODUTOSHISTORICO", Storage="_ESTOQUEPRODUTOSHISTORICOs", ThisKey="USUARIOID", OtherKey="ALTERADOPOR")]
+		public EntitySet<ESTOQUEPRODUTOSHISTORICO> ESTOQUEPRODUTOSHISTORICOs
+		{
+			get
+			{
+				return this._ESTOQUEPRODUTOSHISTORICOs;
+			}
+			set
+			{
+				this._ESTOQUEPRODUTOSHISTORICOs.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AspNetUser_USUARIO", Storage="_AspNetUser", ThisKey="ASPNETUSERID", OtherKey="Id", IsForeignKey=true)]
 		public AspNetUser AspNetUser
 		{
@@ -2096,6 +2123,18 @@ namespace Libra.Entity
 		{
 			this.SendPropertyChanging();
 			entity.USUARIO2 = null;
+		}
+		
+		private void attach_ESTOQUEPRODUTOSHISTORICOs(ESTOQUEPRODUTOSHISTORICO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO = this;
+		}
+		
+		private void detach_ESTOQUEPRODUTOSHISTORICOs(ESTOQUEPRODUTOSHISTORICO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO = null;
 		}
 	}
 	
@@ -7053,6 +7092,8 @@ namespace Libra.Entity
 		
 		private System.Nullable<System.DateTime> _DATAEXCLUSAO;
 		
+		private EntitySet<ESTOQUEPRODUTOSHISTORICO> _ESTOQUEPRODUTOSHISTORICOs;
+		
 		private EntityRef<USUARIO> _USUARIO;
 		
 		private EntityRef<USUARIO> _USUARIO1;
@@ -7103,6 +7144,7 @@ namespace Libra.Entity
 		
 		public ESTOQUEPRODUTO()
 		{
+			this._ESTOQUEPRODUTOSHISTORICOs = new EntitySet<ESTOQUEPRODUTOSHISTORICO>(new Action<ESTOQUEPRODUTOSHISTORICO>(this.attach_ESTOQUEPRODUTOSHISTORICOs), new Action<ESTOQUEPRODUTOSHISTORICO>(this.detach_ESTOQUEPRODUTOSHISTORICOs));
 			this._USUARIO = default(EntityRef<USUARIO>);
 			this._USUARIO1 = default(EntityRef<USUARIO>);
 			this._USUARIO2 = default(EntityRef<USUARIO>);
@@ -7259,7 +7301,7 @@ namespace Libra.Entity
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALORCUSTO", DbType="Decimal(5,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALORCUSTO", DbType="Decimal(15,2)")]
 		public System.Nullable<decimal> VALORCUSTO
 		{
 			get
@@ -7279,7 +7321,7 @@ namespace Libra.Entity
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MARGEMLUCRO", DbType="Decimal(5,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MARGEMLUCRO", DbType="Decimal(15,2)")]
 		public System.Nullable<decimal> MARGEMLUCRO
 		{
 			get
@@ -7299,7 +7341,7 @@ namespace Libra.Entity
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALORVENDA", DbType="Decimal(5,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALORVENDA", DbType="Decimal(15,2)")]
 		public System.Nullable<decimal> VALORVENDA
 		{
 			get
@@ -7448,6 +7490,19 @@ namespace Libra.Entity
 					this.SendPropertyChanged("DATAEXCLUSAO");
 					this.OnDATAEXCLUSAOChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ESTOQUEPRODUTO_ESTOQUEPRODUTOSHISTORICO", Storage="_ESTOQUEPRODUTOSHISTORICOs", ThisKey="ESTOQUEID", OtherKey="ESTOQUEID")]
+		public EntitySet<ESTOQUEPRODUTOSHISTORICO> ESTOQUEPRODUTOSHISTORICOs
+		{
+			get
+			{
+				return this._ESTOQUEPRODUTOSHISTORICOs;
+			}
+			set
+			{
+				this._ESTOQUEPRODUTOSHISTORICOs.Assign(value);
 			}
 		}
 		
@@ -7617,6 +7672,354 @@ namespace Libra.Entity
 						this._UNIDADEID = default(int);
 					}
 					this.SendPropertyChanged("UNIDADE");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_ESTOQUEPRODUTOSHISTORICOs(ESTOQUEPRODUTOSHISTORICO entity)
+		{
+			this.SendPropertyChanging();
+			entity.ESTOQUEPRODUTO = this;
+		}
+		
+		private void detach_ESTOQUEPRODUTOSHISTORICOs(ESTOQUEPRODUTOSHISTORICO entity)
+		{
+			this.SendPropertyChanging();
+			entity.ESTOQUEPRODUTO = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ESTOQUEPRODUTOSHISTORICOS")]
+	public partial class ESTOQUEPRODUTOSHISTORICO : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _HISTORICOID;
+		
+		private int _ESTOQUEID;
+		
+		private int _QTDENTRADA;
+		
+		private System.Nullable<int> _QTDESTOQUE;
+		
+		private System.Nullable<decimal> _VALORCUSTO;
+		
+		private System.Nullable<decimal> _MARGEMLUCRO;
+		
+		private System.Nullable<decimal> _VALORVENDA;
+		
+		private System.Nullable<int> _ALTERADOPOR;
+		
+		private System.DateTime _DATAALTERACAO;
+		
+		private EntityRef<USUARIO> _USUARIO;
+		
+		private EntityRef<ESTOQUEPRODUTO> _ESTOQUEPRODUTO;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnHISTORICOIDChanging(int value);
+    partial void OnHISTORICOIDChanged();
+    partial void OnESTOQUEIDChanging(int value);
+    partial void OnESTOQUEIDChanged();
+    partial void OnQTDENTRADAChanging(int value);
+    partial void OnQTDENTRADAChanged();
+    partial void OnQTDESTOQUEChanging(System.Nullable<int> value);
+    partial void OnQTDESTOQUEChanged();
+    partial void OnVALORCUSTOChanging(System.Nullable<decimal> value);
+    partial void OnVALORCUSTOChanged();
+    partial void OnMARGEMLUCROChanging(System.Nullable<decimal> value);
+    partial void OnMARGEMLUCROChanged();
+    partial void OnVALORVENDAChanging(System.Nullable<decimal> value);
+    partial void OnVALORVENDAChanged();
+    partial void OnALTERADOPORChanging(System.Nullable<int> value);
+    partial void OnALTERADOPORChanged();
+    partial void OnDATAALTERACAOChanging(System.DateTime value);
+    partial void OnDATAALTERACAOChanged();
+    #endregion
+		
+		public ESTOQUEPRODUTOSHISTORICO()
+		{
+			this._USUARIO = default(EntityRef<USUARIO>);
+			this._ESTOQUEPRODUTO = default(EntityRef<ESTOQUEPRODUTO>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HISTORICOID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int HISTORICOID
+		{
+			get
+			{
+				return this._HISTORICOID;
+			}
+			set
+			{
+				if ((this._HISTORICOID != value))
+				{
+					this.OnHISTORICOIDChanging(value);
+					this.SendPropertyChanging();
+					this._HISTORICOID = value;
+					this.SendPropertyChanged("HISTORICOID");
+					this.OnHISTORICOIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTOQUEID", DbType="Int NOT NULL")]
+		public int ESTOQUEID
+		{
+			get
+			{
+				return this._ESTOQUEID;
+			}
+			set
+			{
+				if ((this._ESTOQUEID != value))
+				{
+					if (this._ESTOQUEPRODUTO.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnESTOQUEIDChanging(value);
+					this.SendPropertyChanging();
+					this._ESTOQUEID = value;
+					this.SendPropertyChanged("ESTOQUEID");
+					this.OnESTOQUEIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QTDENTRADA", DbType="Int NOT NULL")]
+		public int QTDENTRADA
+		{
+			get
+			{
+				return this._QTDENTRADA;
+			}
+			set
+			{
+				if ((this._QTDENTRADA != value))
+				{
+					this.OnQTDENTRADAChanging(value);
+					this.SendPropertyChanging();
+					this._QTDENTRADA = value;
+					this.SendPropertyChanged("QTDENTRADA");
+					this.OnQTDENTRADAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QTDESTOQUE", DbType="Int")]
+		public System.Nullable<int> QTDESTOQUE
+		{
+			get
+			{
+				return this._QTDESTOQUE;
+			}
+			set
+			{
+				if ((this._QTDESTOQUE != value))
+				{
+					this.OnQTDESTOQUEChanging(value);
+					this.SendPropertyChanging();
+					this._QTDESTOQUE = value;
+					this.SendPropertyChanged("QTDESTOQUE");
+					this.OnQTDESTOQUEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALORCUSTO", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> VALORCUSTO
+		{
+			get
+			{
+				return this._VALORCUSTO;
+			}
+			set
+			{
+				if ((this._VALORCUSTO != value))
+				{
+					this.OnVALORCUSTOChanging(value);
+					this.SendPropertyChanging();
+					this._VALORCUSTO = value;
+					this.SendPropertyChanged("VALORCUSTO");
+					this.OnVALORCUSTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MARGEMLUCRO", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> MARGEMLUCRO
+		{
+			get
+			{
+				return this._MARGEMLUCRO;
+			}
+			set
+			{
+				if ((this._MARGEMLUCRO != value))
+				{
+					this.OnMARGEMLUCROChanging(value);
+					this.SendPropertyChanging();
+					this._MARGEMLUCRO = value;
+					this.SendPropertyChanged("MARGEMLUCRO");
+					this.OnMARGEMLUCROChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALORVENDA", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> VALORVENDA
+		{
+			get
+			{
+				return this._VALORVENDA;
+			}
+			set
+			{
+				if ((this._VALORVENDA != value))
+				{
+					this.OnVALORVENDAChanging(value);
+					this.SendPropertyChanging();
+					this._VALORVENDA = value;
+					this.SendPropertyChanged("VALORVENDA");
+					this.OnVALORVENDAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ALTERADOPOR", DbType="Int")]
+		public System.Nullable<int> ALTERADOPOR
+		{
+			get
+			{
+				return this._ALTERADOPOR;
+			}
+			set
+			{
+				if ((this._ALTERADOPOR != value))
+				{
+					if (this._USUARIO.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnALTERADOPORChanging(value);
+					this.SendPropertyChanging();
+					this._ALTERADOPOR = value;
+					this.SendPropertyChanged("ALTERADOPOR");
+					this.OnALTERADOPORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAALTERACAO", DbType="DateTime NOT NULL")]
+		public System.DateTime DATAALTERACAO
+		{
+			get
+			{
+				return this._DATAALTERACAO;
+			}
+			set
+			{
+				if ((this._DATAALTERACAO != value))
+				{
+					this.OnDATAALTERACAOChanging(value);
+					this.SendPropertyChanging();
+					this._DATAALTERACAO = value;
+					this.SendPropertyChanged("DATAALTERACAO");
+					this.OnDATAALTERACAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_ESTOQUEPRODUTOSHISTORICO", Storage="_USUARIO", ThisKey="ALTERADOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO
+		{
+			get
+			{
+				return this._USUARIO.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO.Entity = null;
+						previousValue.ESTOQUEPRODUTOSHISTORICOs.Remove(this);
+					}
+					this._USUARIO.Entity = value;
+					if ((value != null))
+					{
+						value.ESTOQUEPRODUTOSHISTORICOs.Add(this);
+						this._ALTERADOPOR = value.USUARIOID;
+					}
+					else
+					{
+						this._ALTERADOPOR = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("USUARIO");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ESTOQUEPRODUTO_ESTOQUEPRODUTOSHISTORICO", Storage="_ESTOQUEPRODUTO", ThisKey="ESTOQUEID", OtherKey="ESTOQUEID", IsForeignKey=true)]
+		public ESTOQUEPRODUTO ESTOQUEPRODUTO
+		{
+			get
+			{
+				return this._ESTOQUEPRODUTO.Entity;
+			}
+			set
+			{
+				ESTOQUEPRODUTO previousValue = this._ESTOQUEPRODUTO.Entity;
+				if (((previousValue != value) 
+							|| (this._ESTOQUEPRODUTO.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ESTOQUEPRODUTO.Entity = null;
+						previousValue.ESTOQUEPRODUTOSHISTORICOs.Remove(this);
+					}
+					this._ESTOQUEPRODUTO.Entity = value;
+					if ((value != null))
+					{
+						value.ESTOQUEPRODUTOSHISTORICOs.Add(this);
+						this._ESTOQUEID = value.ESTOQUEID;
+					}
+					else
+					{
+						this._ESTOQUEID = default(int);
+					}
+					this.SendPropertyChanged("ESTOQUEPRODUTO");
 				}
 			}
 		}

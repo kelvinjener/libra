@@ -211,6 +211,15 @@ namespace Libra.Produtos {
         protected global::System.Web.UI.WebControls.Label lblCor;
         
         /// <summary>
+        /// lblPeso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPeso;
+        
+        /// <summary>
         /// txtValorCusto control.
         /// </summary>
         /// <remarks>
@@ -283,6 +292,15 @@ namespace Libra.Produtos {
         protected global::System.Web.UI.WebControls.Button btnSalvar;
         
         /// <summary>
+        /// btnVisualizarHistorico control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVisualizarHistorico;
+        
+        /// <summary>
         /// lkbOculto control.
         /// </summary>
         /// <remarks>
@@ -290,6 +308,114 @@ namespace Libra.Produtos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lkbOculto;
+        
+        /// <summary>
+        /// mpeHistorico control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeHistorico;
+        
+        /// <summary>
+        /// pnlHistorico control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlHistorico;
+        
+        /// <summary>
+        /// lkCloseHistoricoX control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkCloseHistoricoX;
+        
+        /// <summary>
+        /// lblEstoqueProdutoHistorico control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEstoqueProdutoHistorico;
+        
+        /// <summary>
+        /// lblEstoqueUnidadeProdutoHistorico control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEstoqueUnidadeProdutoHistorico;
+        
+        /// <summary>
+        /// gvResult_Historico control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvResult_Historico;
+        
+        /// <summary>
+        /// ldsHistorico control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource ldsHistorico;
+        
+        /// <summary>
+        /// lkCloseHistorico control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkCloseHistorico;
+        
+        /// <summary>
+        /// mpeConfirmarEdicaoRegistro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeConfirmarEdicaoRegistro;
+        
+        /// <summary>
+        /// pnlConfirmarEdicaoRegistro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlConfirmarEdicaoRegistro;
+        
+        /// <summary>
+        /// lkNao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkNao;
+        
+        /// <summary>
+        /// btnSim control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSim;
         
         /// <summary>
         /// mpeVisualizarEstoqueProduto control.
@@ -346,15 +472,6 @@ namespace Libra.Produtos {
         protected global::System.Web.UI.WebControls.Label lblVisualizarUnidade;
         
         /// <summary>
-        /// lblVisualizarProduto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVisualizarProduto;
-        
-        /// <summary>
         /// lblVisualizarCodigoProduto control.
         /// </summary>
         /// <remarks>
@@ -364,13 +481,13 @@ namespace Libra.Produtos {
         protected global::System.Web.UI.WebControls.Label lblVisualizarCodigoProduto;
         
         /// <summary>
-        /// Label1 control.
+        /// lblVisualizarProduto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblVisualizarProduto;
         
         /// <summary>
         /// lblVisualizarTipoProduto control.
@@ -427,6 +544,15 @@ namespace Libra.Produtos {
         protected global::System.Web.UI.WebControls.Label lblVisualizarCor;
         
         /// <summary>
+        /// lblVisualizarPeso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVisualizarPeso;
+        
+        /// <summary>
         /// lblVisualizarValorCusto control.
         /// </summary>
         /// <remarks>
@@ -461,15 +587,6 @@ namespace Libra.Produtos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblVisualizarQtdAtualEstoque;
-        
-        /// <summary>
-        /// lblVisualizarQtdAddEstoque control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVisualizarQtdAddEstoque;
         
         /// <summary>
         /// lblVisualizarDataUltimaAlteracaoEstoque control.

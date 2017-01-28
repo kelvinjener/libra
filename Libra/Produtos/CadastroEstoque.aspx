@@ -64,37 +64,18 @@
                                         </ItemTemplate>
                                         <ItemStyle Width="10%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Descrição" SortExpression="Descricao">
+                                    <asp:TemplateField HeaderText="Produto" SortExpression="DescricaoProduto">
                                         <ItemTemplate>
-                                            <asp:Label ID="lblDescricaoProduto" runat="server" Text='<%# Eval("Descricao")%>'>
+                                            <asp:Label ID="lblDescricaoProduto" runat="server" Text='<%# Eval("DescricaoProduto")%>'>
                                             </asp:Label>
                                         </ItemTemplate>
                                         <ItemStyle Width="50%" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Valor Compra" SortExpression="ValorCompra">
-                                        <ItemTemplate>
-                                            <asp:Label runat="server" ID="lblValorCompra" Text='<%# Eval("ValorCompra")%>' />
-                                        </ItemTemplate>
-                                        <ItemStyle Width="10%" />
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Valor Venda" SortExpression="ValorVenda">
-                                        <ItemTemplate>
-                                            <asp:Label runat="server" ID="lblValorVenda" Text='<%# Eval("ValorVenda")%>' />
-                                        </ItemTemplate>
-                                        <ItemStyle Width="10%" />
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Unidade" SortExpression="Unidade">
-                                        <ItemTemplate>
-                                            <asp:Label runat="server" ID="lblUnidade" Text='<%# Eval("Unidade")%>' />
-                                        </ItemTemplate>
-                                        <ItemStyle Width="10%" />
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Qtd. Disponível" SortExpression="QtdDisponivel">
-                                        <ItemTemplate>
-                                            <asp:Label runat="server" ID="lblQtdDisponivel" Text='<%# Eval("QtdDisponivel")%>' />
-                                        </ItemTemplate>
-                                        <ItemStyle Width="10%" />
-                                    </asp:TemplateField>
+                                    <asp:BoundField DataField="ValorCompra" HeaderText="Valor Compra" SortExpression="ValorCompra" DataFormatString="{0:C}" ItemStyle-Width="10%" />
+                                    <asp:BoundField DataField="ValorVenda" HeaderText="Valor Venda" SortExpression="ValorVenda" DataFormatString="{0:C}" ItemStyle-Width="10%" />
+                                    <asp:BoundField DataField="DescricaoUnidade" HeaderText="Local" SortExpression="DescricaoUnidade" ItemStyle-Width="10%" />
+                                    <asp:BoundField DataField="QtdDisponivel" HeaderText="Qtd. Disponível" SortExpression="QtdDisponivel" ItemStyle-Width="10%" />
+
                                 </Columns>
                                 <EmptyDataTemplate>
                                     <asp:Label runat="server" ID="lblNoResults" Text="Nenhuma informação encontrada!" />
@@ -138,7 +119,7 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:DropDownList runat="server" ID="ddlUnidade" CssClass="form-control" />
+                                        <asp:DropDownList runat="server" ID="ddlUnidade" CssClass="form-control" ValidationGroup="G1" />
 
                                     </div>
                                 </div>
@@ -153,7 +134,7 @@
                                     </div>
                                     <div>
                                         <asp:DropDownList runat="server" ID="ddlProduto" CssClass="form-control"
-                                            OnSelectedIndexChanged="ddlProduto_SelectedIndexChanged" AutoPostBack="true" />
+                                            OnSelectedIndexChanged="ddlProduto_SelectedIndexChanged" AutoPostBack="true" ValidationGroup="G1" />
                                     </div>
                                     <div class="row">&nbsp;</div>
 
@@ -256,6 +237,17 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div>
+                                                            <label>
+                                                                Peso (Kg): 
+                                                            </label>
+
+                                                            <asp:Label runat="server" ID="lblPeso" CssClass="labelInfo" Text="---" />
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -267,7 +259,7 @@
                                                 <label>Valor Custo</label>
                                             </div>
                                             <div>
-                                                <asp:TextBox ID="txtValorCusto" runat="server" CssClass="form-control"></asp:TextBox>
+                                                <asp:TextBox ID="txtValorCusto" runat="server" CssClass="form-control" ValidationGroup="G1"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -279,7 +271,7 @@
                                             </div>
                                             <div>
                                                 <asp:TextBox ID="txtMargemLucro" runat="server" CssClass="form-control"
-                                                    OnTextChanged="txtMargemLucro_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                                    OnTextChanged="txtMargemLucro_TextChanged" AutoPostBack="true" ValidationGroup="G1"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -290,8 +282,8 @@
                                                 <label>Valor Venda</label>
                                             </div>
                                             <div>
-                                                <asp:TextBox ID="txtValorVenda" runat="server" CssClass="form-control" 
-                                                    OnTextChanged="txtValorVenda_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                                <asp:TextBox ID="txtValorVenda" runat="server" CssClass="form-control"
+                                                    OnTextChanged="txtValorVenda_TextChanged" AutoPostBack="true" ValidationGroup="G1"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -311,7 +303,7 @@
                                                 <label>Quantidade Adicionada ao Estoque</label>
                                             </div>
                                             <div>
-                                                <asp:TextBox ID="txtQuatidadeAddEstoque" runat="server" CssClass="form-control"></asp:TextBox>
+                                                <asp:TextBox ID="txtQuatidadeAddEstoque" runat="server" CssClass="form-control" ValidationGroup="G1"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -331,13 +323,18 @@
                             <div class="row">&nbsp;</div>
 
                             <div class="row">
-                                <div class="col-md-3 col-sm-3 col-xs-6">
+                                <div class="col-md-3 col-sm-12 col-xs-12">
                                     <asp:Button ID="btnCancelar" runat="server" Width="100%"
                                         CssClass="btn btn-default" Text="Cancelar" OnClick="btnCancelar_Click" />
                                 </div>
-                                <div class="col-md-3 col-sm-3 col-xs-6">
+                                <div class="col-md-3 col-sm-12 col-xs-12">
                                     <asp:Button runat="server" ID="btnSalvar" ValidationGroup="G1"
                                         CssClass="btn btn-primary" Width="100%" Text="Salvar" OnClick="btnSalvar_Click" />
+                                </div>
+
+                                <div class="col-md-2 col-md-offset-4 col-sm-12 col-xs-12">
+                                    <asp:Button runat="server" ID="btnVisualizarHistorico"
+                                        CssClass="btn btn-default" Width="100%" Text="Histórico" OnClick="btnVisualizarHistorico_Click" />
                                 </div>
                             </div>
 
@@ -348,6 +345,145 @@
         </div>
     </div>
     <asp:LinkButton ID="lkbOculto" runat="server" Text="" Style="display: none"></asp:LinkButton>
+
+    <asp:ModalPopupExtender ID="mpeHistorico" TargetControlID="lkbOculto" PopupControlID="pnlHistorico"
+        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lkCloseHistorico"
+        ClientIDMode="AutoID">
+    </asp:ModalPopupExtender>
+    <asp:Panel ID="pnlHistorico" runat="server" Style="display: none">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <h2>Histórico de Alterações no Estoque
+                                            </h2>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1">
+                                            <asp:LinkButton runat="server" ID="lkCloseHistoricoX" OnClick="lkCloseHistoricoX_Click" CssClass="right"><i class="fa fa-close"></i></asp:LinkButton>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Produto
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:Label runat="server" ID="lblEstoqueProdutoHistorico" CssClass="labelInfo" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>
+                                                    Unidade
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <asp:Label runat="server" ID="lblEstoqueUnidadeProdutoHistorico" CssClass="labelInfo" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">&nbsp;</div>
+
+                                    <div class="row" style="max-height: 50px !important;">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <asp:GridView ID="gvResult_Historico" runat="server" AutoGenerateColumns="false" DataKeyNames="HistoricoId, EstoqueId"
+                                                AllowPaging="true" AllowSorting="true" Width="100%" DataSourceID="ldsHistorico" CssClass="table table-striped responsive-utilities jambo_table gvResults table-bordered dt-responsive nowrap">
+                                                <Columns>
+                                                    <asp:BoundField DataField="ValorCompra" HeaderText="Valor Compra" SortExpression="ValorCompra" DataFormatString="{0:C}" ItemStyle-Width="15%" />
+                                                    <asp:BoundField DataField="MargemLucro" HeaderText="Margem Lucro" SortExpression="MargemLucro" ItemStyle-Width="10%" />
+                                                    <asp:BoundField DataField="ValorVenda" HeaderText="Valor Venda" SortExpression="ValorVenda" DataFormatString="{0:C}" ItemStyle-Width="15%" />
+                                                    <asp:BoundField DataField="QtdEntrada" HeaderText="Qtd. Entrada" SortExpression="QtdEntrada" ItemStyle-Width="10%" />
+                                                    <asp:BoundField DataField="QtdDisponivel" HeaderText="Qtd. Disponível" SortExpression="QtdDisponivel" ItemStyle-Width="10%" />
+                                                    <asp:BoundField DataField="AlteradoPor" HeaderText="Alterado Por" SortExpression="AlteradoPor" ItemStyle-Width="30%" />
+                                                    <asp:BoundField DataField="DataAlteracao" HeaderText="Data Alteração" SortExpression="DataAlteracao" ItemStyle-Width="10%" />
+                                                </Columns>
+                                                <EmptyDataTemplate>
+                                                    <asp:Label runat="server" ID="lblNoResults" Text="Nenhuma informação encontrada!" />
+                                                </EmptyDataTemplate>
+                                            </asp:GridView>
+                                            <asp:LinqDataSource ID="ldsHistorico" runat="server" ContextTypeName="Libra.Entity.LibraDataContext"
+                                                OnSelecting="ldsHistorico_Selecting" AutoSort="true" AutoGenerateWhereClause="true">
+                                            </asp:LinqDataSource>
+                                        </div>
+                                    </div>
+                                    <div class="row">&nbsp;</div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <asp:LinkButton ID="lkCloseHistorico" runat="server"
+                                                CssClass="btn btn-default" Text="Fechar">
+                                            </asp:LinkButton>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
+
+    <asp:ModalPopupExtender ID="mpeConfirmarEdicaoRegistro" TargetControlID="lkbOculto" PopupControlID="pnlConfirmarEdicaoRegistro"
+        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lkNao"
+        ClientIDMode="AutoID">
+    </asp:ModalPopupExtender>
+    <asp:Panel ID="pnlConfirmarEdicaoRegistro" runat="server" Style="display: none">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <h2>Opa!&nbsp;
+                                            </h2>
+                                        </div>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label class="small">
+                                                    Já existe registro de estoque para esta relação de Produto/Unidade.
+                                            <br />
+                                                    Deseja visualizar/editar o registro?</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">&nbsp;</div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <asp:LinkButton ID="lkNao" runat="server"
+                                                CssClass="btn btn-default" Text="Não!">
+                                            </asp:LinkButton>
+                                            <asp:Button runat="server" ID="btnSim" CssClass="btn btn-primary" Text="Sim" OnClick="btnSim_Click" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
 
     <asp:ModalPopupExtender ID="mpeVisualizarEstoqueProduto" TargetControlID="lkbOculto" PopupControlID="pnlVisualizarEstoqueProduto"
         BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lnbFecharVisualizarProduto"
@@ -364,7 +500,7 @@
                                     <div class="row">
                                         <div class="col-md-11 col-sm-11 col-xs-11">
                                             <h2>Estoque do Produto
-                                        <asp:Label ID="lbEstoqueProduto" runat="server"></asp:Label></h2>
+                                        <asp:Label ID="lbEstoqueProduto" runat="server" CssClass="small"></asp:Label></h2>
                                         </div>
                                         <div class="col-md-1 col-sm-1 col-xs-1">
                                             <asp:LinkButton runat="server" ID="lkCloseVisualizarEstoqueProduto" OnClick="lkCloseVisualizarEstoqueProduto_Click" CssClass="right"><i class="fa fa-close"></i></asp:LinkButton>
@@ -401,16 +537,6 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div>
-                                                <label>
-                                                    Produto
-                                                </label>
-                                            </div>
-                                            <div>
-                                                <asp:Label runat="server" ID="lblVisualizarProduto" CssClass="labelInfo" />
-                                            </div>
-                                            <div class="row">&nbsp;</div>
-
-                                            <div>
                                                 <div class="x_panel">
                                                     <div class="x_title">
                                                         <div class="row">
@@ -439,7 +565,7 @@
                                                                         Produto: 
                                                                     </label>
 
-                                                                    <asp:Label runat="server" ID="Label1" CssClass="labelInfo" Text="---" />
+                                                                    <asp:Label runat="server" ID="lblVisualizarProduto" CssClass="labelInfo" Text="---" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -509,6 +635,17 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                <div>
+                                                                    <label>
+                                                                        Peso (Kg): 
+                                                                    </label>
+
+                                                                    <asp:Label runat="server" ID="lblVisualizarPeso" CssClass="labelInfo" Text="---" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -550,19 +687,10 @@
                                             <div class="row">
                                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                                     <div>
-                                                        <label>Quantidade Atual em Estoque</label>
+                                                        <label>Quantidade em Estoque</label>
                                                     </div>
                                                     <div>
                                                         <asp:Label runat="server" ID="lblVisualizarQtdAtualEstoque" CssClass="labelInfo" Text="0" />
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                                    <div>
-                                                        <label>Quantidade Adicionada ao Estoque</label>
-                                                    </div>
-                                                    <div>
-                                                        <asp:Label runat="server" ID="lblVisualizarQtdAddEstoque" CssClass="labelInfo" Text="0" />
                                                     </div>
                                                 </div>
                                             </div>

@@ -665,6 +665,10 @@ namespace Libra.Produtos
                       + dimensoesAux
                       + corAux
                       );
+
+                    //TODO: Temporário
+                    produto.CRIADOPOR = UsuarioInfo.IdUsuario;
+                    produto.DATACRIACAO = DateTime.Now;
                 }
 
 
@@ -677,11 +681,6 @@ namespace Libra.Produtos
                 produto.PESO = Convert.ToDecimal(ClearCaracter(txtPeso.Text, ".").Trim());
                 produto.DESCRICAO = txtDescricao.Text;
                 produto.DISPONIVELCOMERCIO = ckbDisponivel.Checked;
-
-                //TODO: Temporário
-                produto.CRIADOPOR = UsuarioInfo.IdUsuario;
-                produto.DATACRIACAO = DateTime.Now;
-
 
                 produtoBll.Salvar(produto);
 
