@@ -130,6 +130,15 @@ namespace Libra {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Clientes;
         
         /// <summary>
+        /// MenuCliente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuCliente;
+        
+        /// <summary>
         /// Fornecedores control.
         /// </summary>
         /// <remarks>

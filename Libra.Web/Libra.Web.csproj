@@ -197,6 +197,7 @@
     <Content Include="fonts\Montserrat-Light.eot" />
     <Content Include="fonts\Montserrat-Light.ttf" />
     <Content Include="fonts\Montserrat-Light.woff" />
+    <Content Include="fonts\Montserrat-Light.woff2" />
     <None Include="Properties\PublishProfiles\WebSite.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\isotope.pkgd.min.js" />

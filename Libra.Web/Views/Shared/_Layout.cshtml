@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - JAF Colchões</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -23,12 +23,11 @@
     </a>
     <!-- End Scroll Top Button -->
     <!-- Nav Section -->
-    <header>
-        <!-- Nav Section -->
-        <nav class="navbar navbar-default navbar-fixed-top nav-area" id="scroll-menu">
+    <!-- Nav Section -->
+    @*<div class="navbar navbar-default navbar-fixed-top nav-area" id="scroll-menu">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -47,30 +46,33 @@
                     </ul>
 
                 </div>
-                <!--/.nav-collapse -->
+                /.nav-collapse
             </div>
-        </nav>
-    </header>
+        </div>*@
     <!-- End Nav Section -->
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
+    <header>
+        <div class="navbar navbar-inverse navbar-fixed-top nav-area" id="scroll-menu">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                   
+                    @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
                 </div>
-                <div class="navbar-collapse collapse">
+                <div id="navbar" class="navbar-collapse collapse nav navbar-nav navbar-right">
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li><a href="#lojas">Lojas</a></li>
+                        <li><a href="#footer">Contatos</a></li>
+                        <li><a href="http://libra.jafcolchoes.com.br/" target="_blank">Acesso Restrito</a></li>
                     </ul>
                 </div>
             </div>
-        </div>*@
+        </div>
+    </header>
     @RenderBody()
     <!-- Footer Section -->
     <footer id="footer">
@@ -84,13 +86,15 @@
                                 <li>
                                     <i class="fa fa-map-marker"></i>
                                     <div class="address-content">
-                                        <p>Av. Afonso Vaz de Melo, 172 - Barreiro, Belo Horizonte - MG, 30640-070</p>
+                                        <p>
+                                            Av. Afonso Vaz de Melo, 249, Barreiro de Baixo - Belo Horizonte/MG, CEP: 30.640-070
+                                        </p>
                                     </div>
                                 </li>
                                 <li>
                                     <i class="fa fa-phone"></i>
                                     <div class="address-content">
-                                        <p>Telefone : (31) 3322-7230</p>
+                                        <p>Telefone : (31) 2555-5747</p>
                                     </div>
                                 </li>
                                 <li>
@@ -134,14 +138,6 @@
                             <ul class="feature-list">
                                 <li>
                                     <div id="fb-root"></div>
-                                    <script>
-                                        (function (d, s, id) {
-                                            var js, fjs = d.getElementsByTagName(s)[0];
-                                            if (d.getElementById(id)) return;
-                                            js = d.createElement(s); js.id = id;
-                                            js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8";
-                                            fjs.parentNode.insertBefore(js, fjs);
-                                        }(document, 'script', 'facebook-jssdk'));</script>
 
                                     <div class="fb-page" data-href="https://www.facebook.com/Jafcolchoes" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Jafcolchoes" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Jafcolchoes">Jaf colchões</a></blockquote></div>
                                 </li>
@@ -178,5 +174,14 @@
     @Scripts.Render("~/bundles/prettyPhoto")
     @Scripts.Render("~/bundles/theme")
     @RenderSection("scripts", required: false)
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
 </body>
 </html>
