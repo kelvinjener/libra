@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="AspNetUserBll.cs" />
     <Compile Include="CaracteristicasDiversasBll.cs" />
+    <Compile Include="ClienteBll.cs" />
     <Compile Include="CorProdutoBll.cs" />
     <Compile Include="CRTBll.cs" />
     <Compile Include="DimensoesProdutoBll.cs" />
@@ -67,6 +68,10 @@
     <Compile Include="UsuarioBll.cs" />
     <Compile Include="UsuarioPerfilBll.cs" />
     <Compile Include="UsuarioUnidadeBll.cs" />
+    <Compile Include="VendaBll.cs" />
+    <Compile Include="VendaFormaPagamentoBll.cs" />
+    <Compile Include="VendaPagamentoBll.cs" />
+    <Compile Include="VendaProdutoBll.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Libra.Communs\Libra.Communs.csproj">
