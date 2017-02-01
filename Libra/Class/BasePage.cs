@@ -1,6 +1,7 @@
 ﻿using Libra.Communs;
 using Libra.Communs.Enumerators;
 using Libra.Control;
+using Libra.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,16 @@ namespace Libra.Class
 {
     public class BasePage : Page
     {
-
+        public UNIDADE GetUnidadeLogada()
+        {
+            if (UsuarioInfo != null)
+            {
+                UNIDADE unidadeLogada = new UnidadeBll().GetUnidadeById(this.UsuarioInfo.UnidadeLogada);
+                if (unidadeLogada != null)
+                    return unidadeLogada;
+            }
+            return null;
+        }
 
 
         public UsuarioInfo UsuarioInfo

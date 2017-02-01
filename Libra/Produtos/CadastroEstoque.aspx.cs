@@ -272,6 +272,18 @@ namespace Libra.Produtos
                         lblPeso.Text = produto.PESO.ToString();
                     }
                 }
+                else
+                {
+                    lblCodigoProduto.Text = "---";
+                    lblProduto.Text = "---";
+                    lblTipoProduto.Text = "---";
+                    lblFabricante.Text = "---";
+                    lblMarca.Text = "---";
+                    lblModelo.Text = "---";
+                    lblDimensoes.Text = "---";
+                    lblCor.Text = "---";
+                    lblPeso.Text = "---";
+                }
             }
             catch (Exception ex)
             {
@@ -383,17 +395,28 @@ namespace Libra.Produtos
             lblQtdAtualEstoque.Text = "0";
             txtQuatidadeAddEstoque.Text = string.Empty;
             lblDataUltimaAlteracaoEstoque.Text = "---";
+
+
+            ddlProduto.SelectedValue = "";
+            ddlProduto_SelectedIndexChanged(this, null);
+            ddlUnidade.SelectedValue = "";
+            ddlProduto.Attributes["tabindex"] = "-1";
+            ddlUnidade.Attributes["tabindex"] = "-1";
+
         }
 
         public void CarregaProdutos()
         {
             ddlProduto.Items.Clear();
+
             ddlProduto.Items.Add(new ListItem("Selecione...", ""));
 
             var produtos = produtoBll.GetAllProdutos().Where(p => p.DISPONIVELCOMERCIO);
 
             foreach (var item in produtos)
                 ddlProduto.Items.Add(new ListItem(item.DESCRICAO, item.PRODUTOID.ToString()));
+
+
         }
 
         public void CarregaUnidades()
@@ -405,6 +428,8 @@ namespace Libra.Produtos
 
             foreach (var item in unidades)
                 ddlUnidade.Items.Add(new ListItem(item.APELIDO, item.UNIDADEID.ToString()));
+
+
         }
 
         public void CarregaTipoProduto()

@@ -17,7 +17,8 @@
         <link href="../Content/switchery/switchery.min.css" rel="stylesheet" />
         <link href="../Content/datatables/tools/css/dataTables.tableTools.css" rel="stylesheet" />
         <link href="../fonts/css/font-awesome.min.css" rel="stylesheet" />
-        <link href="../Content/custom.css" rel="stylesheet" />
+        <link href="../Content/custom.css?Version=1.1" rel="stylesheet" />
+        <link href="../Content/select/select2.min.css" rel="stylesheet">
 
         <script src="../Scripts/jquery-3.1.0.js"></script>
 
@@ -54,9 +55,11 @@
                                     <li runat="server" id="Vendas" visible="false">
                                         <a><i class="fa fa-money"></i>Vendas <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none">
-                                            <li runat="server" id="MenuVenda" visible="false"><a runat="server" href="~/Vendas/Venda">Venda</a></li>
+                                            <li runat="server" id="MenuVenda" visible="false"><a runat="server" href="~/Vendas/Venda">Nova Venda</a></li>
+                                            <li runat="server" id="MenuVendasAberto" visible="false"><a runat="server" href="~/Vendas/VendasAberto">Vendas em Aberto</a></li>
+                                            <li runat="server" id="MenuVendasRealizadas" visible="false"><a runat="server" href="~/Vendas/VendasRealizadas">Vendas Realizadas</a></li>
                                             <li runat="server" id="MenuTrocaDecolucao" visible="false"><a runat="server" href="~/Vendas/TrocaDevolucao">Troca e Devolução</a></li>
-                                            <li runat="server" id="MenuFechamentoCaixa" visible="false"><a runat="server" href="~/Vendas/FechamentoCaixa">Fechamento de Caixa</a></li>
+                                            <li runat="server" id="MenuFechamentoCaixa" visible="false"><a runat="server" href="~/Vendas/FechamentoCaixa">Abertura/Fechamento de Caixa</a></li>
                                             <li runat="server" id="MenuAutorizacaoVendas" visible="false"><a runat="server" href="~/Vendas/AutorizacaoVendas">Autorização de Vendas</a></li>
                                         </ul>
                                     </li>
@@ -88,6 +91,8 @@
                                     <li runat="server" id="Relatorios" visible="false">
                                         <a><i class="fa fa-bar-chart-o"></i>Relatórios <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none">
+                                            <li runat="server" id="MenuRelatorioVendas" visible="false"><a runat="server" href="~/Relatorios/RelatorioConsolidadoVendas">Relatório Consolidado de Vendas</a></li>
+
                                         </ul>
                                     </li>
                                 </ul>
@@ -303,8 +308,10 @@
     <script type="text/javascript" src="../Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/libs/bootbox-4.2.0.js"></script>
 
-    
+
     <%--<script type="text/javascript" src="Scripts/progressbar/bootstrap-progressbar.min.js"></script>--%>
+    <script type="text/javascript" src="../Scripts/select/select2.full.js"></script>
+    <script type="text/javascript" src="../Scripts/select/i18n/pt-BR.js" ></script>
     <script type="text/javascript" src="../Scripts/nicescroll/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="../Scripts/icheck/icheck.min.js"></script>
     <script type="text/javascript" src="../Scripts/moment/moment.min.js"></script>
@@ -323,7 +330,6 @@
     <script type="text/javascript" src="../Scripts/datatables/js/responsive.bootstrap.min.js"></script>
     <script type="text/javascript" src="../Scripts/datatables/tools/js/dataTables.tableTools.js"></script>
     <script type="text/javascript" src="../Scripts/custom.js?version=1"></script>
-
     <!-- JS UTILS-->
     <script type="text/javascript" src="../js/libs/Libra.js"></script>
     <script type="text/javascript" src="../js/libs/Libra.UI.js"></script>
@@ -339,6 +345,12 @@
             $('input.tableflat').iCheck({
                 checkboxClass: 'icheckbox_flat-green',
                 radioClass: 'iradio_flat-green'
+            });
+
+            $(".select2_single").select2({
+                placeholder: "Selecione...",
+                allowClear: true,
+                language: 'pt-BR'
             });
         });
 

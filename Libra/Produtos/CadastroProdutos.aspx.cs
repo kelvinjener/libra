@@ -534,8 +534,22 @@ namespace Libra.Produtos
         {
             if (ddlFabricante.SelectedIndex > 0)
             {
+                MARCAPRODUTO Marca = null;
+
+                if (ddlMarca.SelectedIndex > 0)
+                {
+                    Marca = new MarcaProdutoBll().GetMarcaProdutoById(Convert.ToInt32(ddlMarca.SelectedValue));
+                }
+
                 var Fabricante = new FabricanteProdutoBll().GetFabricanteProdutoById(Convert.ToInt32(this.ddlFabricante.SelectedValue));
-                txtDescricao.Text = txtDescricao.Text + " " + Fabricante.NOME.ToUpper();
+                if (Marca != null)
+                {
+                    if (Marca.NOME != Fabricante.NOME)
+                        txtDescricao.Text = txtDescricao.Text + " " + Fabricante.NOME.ToUpper();
+                }
+                else
+                    txtDescricao.Text = txtDescricao.Text + " " + Fabricante.NOME.ToUpper();
+
             }
         }
 
@@ -543,8 +557,21 @@ namespace Libra.Produtos
         {
             if (ddlMarca.SelectedIndex > 0)
             {
+                FABRICANTEPRODUTO Fabricante = null;
+                if (ddlFabricante.SelectedIndex > 0)
+                {
+                    Fabricante = new FabricanteProdutoBll().GetFabricanteProdutoById(Convert.ToInt32(ddlFabricante.SelectedValue));
+                }
+
                 var MarcaProduto = new MarcaProdutoBll().GetMarcaProdutoById(Convert.ToInt32(this.ddlMarca.SelectedValue));
-                txtDescricao.Text = txtDescricao.Text + " " + MarcaProduto.NOME.ToUpper();
+                if (Fabricante != null)
+                {
+                    if (MarcaProduto.NOME != Fabricante.NOME)
+                        txtDescricao.Text = txtDescricao.Text + " " + MarcaProduto.NOME.ToUpper();
+                }
+                else
+                    txtDescricao.Text = txtDescricao.Text + " " + MarcaProduto.NOME.ToUpper();
+
             }
         }
 

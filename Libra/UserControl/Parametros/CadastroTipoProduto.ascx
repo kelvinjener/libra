@@ -9,7 +9,7 @@
             </label>
         </div>
         <div>
-            <asp:TextBox ID="txtTipoProduto" runat="server" CssClass="form-control text-text-uppercase" MaxLength="100"></asp:TextBox>
+            <asp:TextBox ID="txtTipoProduto" runat="server" CssClass="form-control text-uppercase" MaxLength="100"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvTipoProduto" ControlToValidate="txtTipoProduto" SetFocusOnError="True" CssClass="requerid"
                 ValidationGroup="G1Tipo" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
         </div>

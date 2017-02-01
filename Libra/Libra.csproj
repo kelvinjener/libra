@@ -224,10 +224,12 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
+    <Content Include="Relatorios\RelatorioConsolidadoVendas.aspx" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\select\i18n\pt-BR.js" />
     <Content Include="UserControl\Parametros\CadastroCaracteristicaDiversa.ascx" />
     <Content Include="UserControl\Parametros\CadastroCor.ascx" />
     <Content Include="UserControl\Parametros\CadastroDimensoes.ascx" />
@@ -819,6 +821,8 @@
     <Content Include="Seguranca\Unidades.aspx" />
     <Content Include="Seguranca\Usuarios.aspx" />
     <Content Include="Vendas\Venda.aspx" />
+    <Content Include="Vendas\VendasAberto.aspx" />
+    <Content Include="Vendas\VendasRealizadas.aspx" />
     <Content Include="ViewSwitcherOLD.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -839,6 +843,13 @@
   <ItemGroup>
     <Compile Include="Class\BaseUserControl.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioConsolidadoVendas.aspx.cs">
+      <DependentUpon>RelatorioConsolidadoVendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioConsolidadoVendas.aspx.designer.cs">
+      <DependentUpon>RelatorioConsolidadoVendas.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Parametros\CadastroCaracteristicaDiversa.ascx.cs">
       <DependentUpon>CadastroCaracteristicaDiversa.ascx</DependentUpon>
@@ -1190,6 +1201,20 @@
     </Compile>
     <Compile Include="Vendas\Venda.aspx.designer.cs">
       <DependentUpon>Venda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\VendasAberto.aspx.cs">
+      <DependentUpon>VendasAberto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendas\VendasAberto.aspx.designer.cs">
+      <DependentUpon>VendasAberto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\VendasRealizadas.aspx.cs">
+      <DependentUpon>VendasRealizadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendas\VendasRealizadas.aspx.designer.cs">
+      <DependentUpon>VendasRealizadas.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ProdutoViewModels.cs" />
     <Compile Include="ViewSwitcherOLD.ascx.cs">

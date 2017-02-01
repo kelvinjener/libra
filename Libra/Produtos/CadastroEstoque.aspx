@@ -119,8 +119,9 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:DropDownList runat="server" ID="ddlUnidade" CssClass="form-control" ValidationGroup="G1" />
-
+                                        <asp:DropDownList runat="server" ID="ddlUnidade" CssClass="select2_single form-control" Width="100%" ValidationGroup="G1" />
+                                        <asp:RequiredFieldValidator ID="rfvUnidade" ControlToValidate="ddlUnidade" SetFocusOnError="True" CssClass="requerid"
+                                            ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
                             </div>
@@ -133,8 +134,11 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:DropDownList runat="server" ID="ddlProduto" CssClass="form-control"
-                                            OnSelectedIndexChanged="ddlProduto_SelectedIndexChanged" AutoPostBack="true" ValidationGroup="G1" />
+                                        <asp:DropDownList runat="server" ID="ddlProduto" CssClass="select2_single form-control" Width="100%"
+                                            OnSelectedIndexChanged="ddlProduto_SelectedIndexChanged" AutoPostBack="true" />
+                                        <asp:RequiredFieldValidator ID="rfvProduto" ControlToValidate="ddlProduto" SetFocusOnError="True" CssClass="requerid"
+                                            ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
+
                                     </div>
                                     <div class="row">&nbsp;</div>
 
@@ -260,6 +264,8 @@
                                             </div>
                                             <div>
                                                 <asp:TextBox ID="txtValorCusto" runat="server" CssClass="form-control" ValidationGroup="G1"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="rfvValorCusto" ControlToValidate="txtValorCusto" SetFocusOnError="True" CssClass="requerid"
+                                                    ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                     </div>
@@ -271,7 +277,10 @@
                                             </div>
                                             <div>
                                                 <asp:TextBox ID="txtMargemLucro" runat="server" CssClass="form-control"
-                                                    OnTextChanged="txtMargemLucro_TextChanged" AutoPostBack="true" ValidationGroup="G1"></asp:TextBox>
+                                                    OnTextChanged="txtMargemLucro_TextChanged" AutoPostBack="true"></asp:TextBox>
+
+                                                <asp:RequiredFieldValidator ID="tfvMargemLucro" ControlToValidate="txtMargemLucro" SetFocusOnError="True" CssClass="requerid"
+                                                    ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                     </div>
@@ -284,6 +293,8 @@
                                             <div>
                                                 <asp:TextBox ID="txtValorVenda" runat="server" CssClass="form-control"
                                                     OnTextChanged="txtValorVenda_TextChanged" AutoPostBack="true" ValidationGroup="G1"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="rfvValorVenda" ControlToValidate="txtValorVenda" SetFocusOnError="True" CssClass="requerid"
+                                                    ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                     </div>
@@ -304,6 +315,8 @@
                                             </div>
                                             <div>
                                                 <asp:TextBox ID="txtQuatidadeAddEstoque" runat="server" CssClass="form-control" ValidationGroup="G1"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="rfvQtdAddEstoque" ControlToValidate="txtQuatidadeAddEstoque" SetFocusOnError="True" CssClass="requerid"
+                                                    ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                     </div>
@@ -925,6 +938,8 @@
             else if (Counter == TotalChkBx)
                 HeaderCheckBox.checked = true;
         }
+
+
 
 
 

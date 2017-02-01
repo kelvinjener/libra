@@ -215,6 +215,11 @@ namespace Libra
                 MenuCliente.Visible = true;
             #endregion
 
+            #region Relatorios
+            if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Relatório Consolidado de Vendas"))
+                MenuRelatorioVendas.Visible = true;
+            #endregion
+
             #region Vendas
             if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Venda"))
                 MenuVenda.Visible = true;
@@ -227,6 +232,12 @@ namespace Libra
 
             if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Autorização de Vendas"))
                 MenuAutorizacaoVendas.Visible = true;
+
+            if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Vendas em Aberto"))
+                MenuVendasAberto.Visible = true;
+
+            if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Vendas Realizada"))
+                MenuVendasRealizadas.Visible = true;
             #endregion
 
             #endregion

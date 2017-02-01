@@ -141,7 +141,7 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:DropDownList ID="ddlTipoProduto" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlTipoProduto_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlTipoProduto" runat="server" CssClass="select2_single form-control" OnSelectedIndexChanged="ddlTipoProduto_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                         <asp:LinkButton runat="server" ID="lkAddTipoProduto" CssClass="fa fa-plus" OnClick="lkAddTipoProduto_Click" ToolTip="Adicionar Tipo Produto"></asp:LinkButton>
                                         <asp:RequiredFieldValidator ID="rfvTipoProduto" ControlToValidate="ddlTipoProduto" SetFocusOnError="True" CssClass="requerid"
                                             ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
@@ -159,7 +159,7 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:DropDownList ID="ddlFabricante" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlFabricante_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlFabricante" runat="server" CssClass="select2_single form-control" OnSelectedIndexChanged="ddlFabricante_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                         <asp:LinkButton runat="server" ID="lkAddFabricante" CssClass="fa fa-plus" OnClick="lkAddFabricante_Click" ToolTip="Adicionar Fabricante"></asp:LinkButton>
                                         <asp:RequiredFieldValidator ID="rfvFabricante" ControlToValidate="ddlFabricante" SetFocusOnError="True" CssClass="requerid"
                                             ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
@@ -173,7 +173,7 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:DropDownList ID="ddlMarca" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlMarca_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlMarca" runat="server" CssClass="select2_single form-control" OnSelectedIndexChanged="ddlMarca_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                         <asp:LinkButton runat="server" ID="lkAddMarca" CssClass="fa fa-plus" OnClick="lkAddMarca_Click" ToolTip="Adicionar Marca"></asp:LinkButton>
                                         <asp:RequiredFieldValidator ID="rfvMarca" ControlToValidate="ddlMarca" SetFocusOnError="True" CssClass="requerid"
                                             ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
@@ -187,7 +187,7 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:DropDownList ID="ddlModelo" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlModelo_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlModelo" runat="server" CssClass="select2_single form-control" OnSelectedIndexChanged="ddlModelo_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                         <asp:LinkButton runat="server" ID="lkAddModelo" CssClass="fa fa-plus" OnClick="lkAddModelo_Click" ToolTip="Adicionar Modelo"></asp:LinkButton>
 
                                         <asp:RequiredFieldValidator ID="rfvModelo" ControlToValidate="ddlModelo" SetFocusOnError="True" CssClass="requerid"
@@ -206,7 +206,7 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:DropDownList ID="ddlDimensoes" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlDimensoes_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlDimensoes" runat="server" CssClass="select2_single form-control" OnSelectedIndexChanged="ddlDimensoes_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                         <asp:LinkButton runat="server" ID="lkAddDimensoes" CssClass="fa fa-plus" OnClick="lkAddDimensoes_Click" ToolTip="Adicionar Dimensões"></asp:LinkButton>
 
                                         <asp:RequiredFieldValidator ID="rfvDimensoes" ControlToValidate="ddlDimensoes" SetFocusOnError="True" CssClass="requerid"
@@ -221,7 +221,7 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <asp:DropDownList ID="ddlCor" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlCor_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlCor" runat="server" CssClass="select2_single form-control" OnSelectedIndexChanged="ddlCor_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                         <asp:LinkButton runat="server" ID="lkAddCor" CssClass="fa fa-plus" OnClick="lkAddCor_Click" ToolTip="Adicionar Cor"></asp:LinkButton>
 
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="ddlMarca" SetFocusOnError="True" CssClass="requerid"
