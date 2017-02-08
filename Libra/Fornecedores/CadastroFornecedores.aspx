@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="clearfix"></div>
-        <div id="divFiltroETabela" runat="server">
+        <div id="divFiltroETabela" class="div-filtro-tabela" runat="server">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="x_panel">
@@ -26,7 +26,7 @@
                                     <asp:LinkButton runat="server" ID="lbVisualizarUsuario" CssClass="fa fa-ellipsis-h" ToolTip="Visualizar Usuario"></asp:LinkButton>
                                 </li>
                                 <li>
-                                    <asp:LinkButton runat="server" ID="lbAddUsuarios" CssClass="fa fa-plus" ToolTip="Adicionar Usuario"></asp:LinkButton>
+                                    <a id="lbAddUsuarios" class="fa fa-plus add-usuario" title="Adicionar Usuario" style="cursor: pointer" accesskey="a"></a>
                                 </li>
                                 <li>
                                     <asp:LinkButton runat="server" ID="lbEditUsuarios" CssClass="fa fa-pencil" ToolTip="Editar Usuario"></asp:LinkButton>
@@ -82,7 +82,7 @@
                 </div>
             </div>
         </div>
-        <div class="hide" role="tabpanel" data-example-id="togglable-tabs">
+        <div class="tab-panel-fornecedor" role="tabpanel" data-example-id="togglable-tabs" style="display: none">
             <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                 <li role="presentation" class="active" runat="server" id="tabFornecedor">
                     <a href="#tab_content_fornecedor" id="fornecedor-tab" role="tab" data-toggle="tab" aria-expanded="true">Fornecedor</a>
@@ -115,12 +115,12 @@
                                                 <div>
                                                     <label>
                                                         Tipo
-                                            <asp:Label runat="server" ID="lblTipo" Text="*" CssClass="requerid" />
+                                                        <asp:Label runat="server" ID="lblTipo" Text="*" CssClass="requerid" />
                                                     </label>
                                                 </div>
                                                 <div>
-                                                    <asp:RadioButton ID="chkPessoaFisica" name="chkTipo" runat="server"></asp:RadioButton>&nbsp;<span>Pessoa Fisica</span>
-                                                    <asp:RadioButton ID="chkPessoaJuridica" name="chkTipo" runat="server"></asp:RadioButton>&nbsp;<span>Pessoa Juridica</span>
+                                                    <asp:RadioButton ID="chkPessoaFisica" name="chkTipo" GroupName="chkTipo" runat="server"></asp:RadioButton>&nbsp;<span>Pessoa Fisica</span>
+                                                    <asp:RadioButton ID="chkPessoaJuridica" name="chkTipo" GroupName="chkTipo" runat="server"></asp:RadioButton>&nbsp;<span>Pessoa Juridica</span>
                                                 </div>
                                             </div>
                                             <div class="col-md-2 col-sm-2 col-xs-3">
@@ -131,8 +131,8 @@
                                                     </label>
                                                 </div>
                                                 <div>
-                                                    <asp:RadioButton ID="chkNacional" name="chkOrigem" runat="server"></asp:RadioButton>&nbsp;<span>Nacional</span>
-                                                    <asp:RadioButton ID="chkEstrangeira" name="chkOrigem" runat="server"></asp:RadioButton>&nbsp;<span>Estrangeira</span>
+                                                    <asp:RadioButton ID="chkNacional" name="chkOrigem" GroupName="chkOrigem" runat="server"></asp:RadioButton>&nbsp;<span>Nacional</span>
+                                                    <asp:RadioButton ID="chkEstrangeira" name="chkOrigem" GroupName="chkOrigem" runat="server"></asp:RadioButton>&nbsp;<span>Estrangeira</span>
                                                 </div>
                                             </div>
                                             <div class="col-md-4 col-sm-4 col-xs-6">
@@ -152,7 +152,7 @@
                                                 <div>
                                                     <label>
                                                         Nome Fantasia
-                                            <asp:Label runat="server" ID="lblNomeFantasia" Text="*" CssClass="requerid" />
+                                                        <asp:Label runat="server" ID="lblNomeFantasia" Text="*" CssClass="requerid" />
                                                     </label>
                                                 </div>
                                                 <div>
@@ -181,11 +181,13 @@
                                                 <div>
                                                     <label>
                                                         Inscrição Estadual
-                                            <asp:Label runat="server" ID="lblInscricaoEstadual" Text="*" CssClass="requerid" />
+                                                        <asp:Label runat="server" ID="lblInscricaoEstadual" Text="*" CssClass="requerid" />
                                                     </label>
                                                 </div>
                                                 <div>
                                                     <asp:TextBox ID="txtInscricaoEstadual" runat="server" CssClass="form-control" MaxLength="10"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="rfvInscricaoEstadual" ControlToValidate="txtInscricaoEstadual" SetFocusOnError="True" CssClass="requerid"
+                                                        ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
                                                 </div>
                                             </div>
                                             <div class="col-md-4 col-sm-4 col-xs-4">
@@ -197,6 +199,8 @@
                                                 </div>
                                                 <div>
                                                     <asp:TextBox ID="txtInscricaoMunicipal" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="rfvInscricaoMunicipal" ControlToValidate="txtInscricaoMunicipal" SetFocusOnError="True" CssClass="requerid"
+                                                        ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
                                                 </div>
                                             </div>
                                         </div>
@@ -206,11 +210,13 @@
                                                 <div>
                                                     <label>
                                                         Responsável
-                                            <asp:Label runat="server" ID="lblResponsavel" Text="*" CssClass="requerid" />
+                                                        <asp:Label runat="server" ID="lblResponsavel" Text="*" CssClass="requerid" />
                                                     </label>
                                                 </div>
                                                 <div>
                                                     <asp:TextBox ID="txtResponsavel" runat="server" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="rfvResponsavel" ControlToValidate="txtResponsavel" SetFocusOnError="True" CssClass="requerid"
+                                                        ValidationGroup="G1" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
                                                 </div>
                                             </div>
                                             <div class="col-md-4 col-sm-4 col-xs-12">
@@ -246,8 +252,8 @@
                                                                     </label>
                                                                 </div>
                                                                 <div>
-                                                                    <asp:RadioButton ID="radioFabricanteSim" name="radioFabricanteSim" runat="server"></asp:RadioButton>&nbsp;<span>Sim</span>
-                                                                    <asp:RadioButton ID="radioFabricanteNao" name="radioFabricanteNao" runat="server"></asp:RadioButton>&nbsp;<span>Não</span>
+                                                                    <asp:RadioButton ID="radioFabricanteSim" name="radioFabricanteSim" GroupName="radioFabricante" runat="server"></asp:RadioButton>&nbsp;<span>Sim</span>
+                                                                    <asp:RadioButton ID="radioFabricanteNao" name="radioFabricanteNao" GroupName="radioFabricante" runat="server"></asp:RadioButton>&nbsp;<span>Não</span>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-3 col-sm-3 col-xs-3">
@@ -257,8 +263,8 @@
                                                                     </label>
                                                                 </div>
                                                                 <div>
-                                                                    <asp:RadioButton ID="radioReceberEmailSim" name="radioReceberEmailSim" runat="server"></asp:RadioButton>&nbsp;<span>Sim</span>
-                                                                    <asp:RadioButton ID="radioReceberEmailNao" name="radioReceberEmailNao" runat="server"></asp:RadioButton>&nbsp;<span>Não</span>
+                                                                    <asp:RadioButton ID="radioReceberEmailSim" name="radioReceberEmailSim" GroupName="radioReceberEmail" runat="server"></asp:RadioButton>&nbsp;<span>Sim</span>
+                                                                    <asp:RadioButton ID="radioReceberEmailNao" name="radioReceberEmailNao" GroupName="radioReceberEmail" runat="server"></asp:RadioButton>&nbsp;<span>Não</span>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-sm-6 col-xs-6">
@@ -1124,6 +1130,7 @@
             </div>
         </div>
     </asp:Panel>
+
     <script type="text/javascript" src="../js/Controllers/FornecedorController.js"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScripts" runat="server">

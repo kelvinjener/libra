@@ -8,7 +8,7 @@ namespace Libra.Models
 {
     public class FornecedoresModel : BaseModel
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public int TipoFornecedorId { get; set; }
         public int OrigemFornecedorId { get; set; }
         public string RazaoSocial { get; set; }

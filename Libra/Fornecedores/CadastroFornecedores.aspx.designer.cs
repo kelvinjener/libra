@@ -49,15 +49,6 @@ namespace Libra.Fornecedores {
         protected global::System.Web.UI.WebControls.LinkButton lbVisualizarUsuario;
         
         /// <summary>
-        /// lbAddUsuarios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbAddUsuarios;
-        
-        /// <summary>
         /// lbEditUsuarios control.
         /// </summary>
         /// <remarks>
@@ -283,6 +274,15 @@ namespace Libra.Fornecedores {
         protected global::System.Web.UI.WebControls.TextBox txtInscricaoEstadual;
         
         /// <summary>
+        /// rfvInscricaoEstadual control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvInscricaoEstadual;
+        
+        /// <summary>
         /// lblInscricaoMunicipal control.
         /// </summary>
         /// <remarks>
@@ -301,6 +301,15 @@ namespace Libra.Fornecedores {
         protected global::System.Web.UI.WebControls.TextBox txtInscricaoMunicipal;
         
         /// <summary>
+        /// rfvInscricaoMunicipal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvInscricaoMunicipal;
+        
+        /// <summary>
         /// lblResponsavel control.
         /// </summary>
         /// <remarks>
@@ -317,6 +326,15 @@ namespace Libra.Fornecedores {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtResponsavel;
+        
+        /// <summary>
+        /// rfvResponsavel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvResponsavel;
         
         /// <summary>
         /// ddlCRT control.

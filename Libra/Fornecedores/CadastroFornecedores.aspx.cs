@@ -42,6 +42,43 @@ namespace Libra.Fornecedores
         }
 
         [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public static string PersistirFornecedor(int id, int tipoFornecedorId, int origemFornecedorId, string razaoSocial, string nomeFantasia, string cnpj, string inscricaoEstadual, string inscricaoMunicipal, string responsavel, bool indFabricante, bool indRecebEmail, string ramoAtividade, string infoAdicional)
+        {
+            Resultado r = new Resultado();
+            var c = new FornecedoresController();
+
+            var entidade = new FornecedoresModel()
+            {
+                Id = id,
+                TipoFornecedorId = tipoFornecedorId,
+                OrigemFornecedorId = origemFornecedorId,
+                RazaoSocial = razaoSocial,
+                NomeFantasia = nomeFantasia,
+                CNPJ = cnpj,
+                InscricaoEstadual = inscricaoEstadual,
+                InscricaoMunicipal = inscricaoMunicipal,
+                Responsavel = responsavel,
+                IndicadorFabricante = indFabricante,
+                IndicadorReceberEmail = indRecebEmail,
+                RamoAtividade = ramoAtividade,
+                InfoAdicional = infoAdicional
+            };
+
+            if (entidade.Id == null)
+            {
+                r = c.InserirFornecedor(entidade);
+            }
+            else
+            {
+                r = c.AtualizarFornecedor(entidade);
+            }
+
+            var serializer = new JavaScriptSerializer();
+            return serializer.Serialize(r);
+        }
+
+        [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json, UseHttpGet = true)]
         public static string RetornaFornecedores()
         {
