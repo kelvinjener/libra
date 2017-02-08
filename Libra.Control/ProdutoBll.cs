@@ -21,6 +21,11 @@ namespace Libra.Control
             return dc.PRODUTOs.OrderBy(u => u.DESCRICAO).ToList();
         }
 
+        public List<PRODUTO> GetAllProdutosDisponveis()
+        {
+            return dc.PRODUTOs.Where(p => p.DISPONIVELCOMERCIO).OrderBy(u => u.DESCRICAO).ToList();
+        }
+
         public List<ProdutoModelGrid> GetAllProdutosGrid()
         {
             var result = (from produto in dc.PRODUTOs

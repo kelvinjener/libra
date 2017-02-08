@@ -121,6 +121,24 @@ namespace Libra.Vendas {
         protected global::System.Web.UI.WebControls.LinkButton lkbAddCliente;
         
         /// <summary>
+        /// gvResultsProdutos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvResultsProdutos;
+        
+        /// <summary>
+        /// ldsFiltroProdutos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource ldsFiltroProdutos;
+        
+        /// <summary>
         /// lkbAddItem control.
         /// </summary>
         /// <remarks>
@@ -256,6 +274,33 @@ namespace Libra.Vendas {
         protected global::System.Web.UI.WebControls.LinkButton lkbAddNovoPagamento;
         
         /// <summary>
+        /// formAddPagamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl formAddPagamento;
+        
+        /// <summary>
+        /// txtValorPagamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtValorPagamento;
+        
+        /// <summary>
+        /// rfvtxtValorPagamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvtxtValorPagamento;
+        
+        /// <summary>
         /// ddlFormaPagamento control.
         /// </summary>
         /// <remarks>
@@ -283,22 +328,13 @@ namespace Libra.Vendas {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDdlFormaPagamento;
         
         /// <summary>
-        /// txtValorPagamento control.
+        /// divParcelas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtValorPagamento;
-        
-        /// <summary>
-        /// rfvtxtValorPagamento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvtxtValorPagamento;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divParcelas;
         
         /// <summary>
         /// ddlParcelas control.
@@ -319,6 +355,15 @@ namespace Libra.Vendas {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvddlParcelas;
         
         /// <summary>
+        /// divValorParcelas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divValorParcelas;
+        
+        /// <summary>
         /// lblValorParcela control.
         /// </summary>
         /// <remarks>
@@ -335,6 +380,24 @@ namespace Libra.Vendas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lkbAddPagamento;
+        
+        /// <summary>
+        /// gvResultsPagamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvResultsPagamento;
+        
+        /// <summary>
+        /// ldsFiltroPagamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource ldsFiltroPagamento;
         
         /// <summary>
         /// btnEmitirPedito control.

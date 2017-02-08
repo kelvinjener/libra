@@ -446,12 +446,13 @@
     <Type Name="VENDAPRODUTO">
       <Column Name="VENDAPRODUTOID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="VENDAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="PRODUTOID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PRODUTOID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ITEM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="QTD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="VALORUNITARIO" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
       <Column Name="VALORACRESCIMO" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
       <Column Name="VALORDESCONTO" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="PERCENTDESCONTO" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
       <Column Name="SUBTOTAL" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
       <Column Name="CRIADOPOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ALTERADOPOR" Type="System.Int32" DbType="Int" CanBeNull="true" />

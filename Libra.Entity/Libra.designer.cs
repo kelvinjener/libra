@@ -10352,7 +10352,7 @@ namespace Libra.Entity
 		
 		private int _VENDAID;
 		
-		private int _PRODUTOID;
+		private System.Nullable<int> _PRODUTOID;
 		
 		private int _ITEM;
 		
@@ -10363,6 +10363,8 @@ namespace Libra.Entity
 		private System.Nullable<decimal> _VALORACRESCIMO;
 		
 		private System.Nullable<decimal> _VALORDESCONTO;
+		
+		private System.Nullable<decimal> _PERCENTDESCONTO;
 		
 		private System.Nullable<decimal> _SUBTOTAL;
 		
@@ -10396,7 +10398,7 @@ namespace Libra.Entity
     partial void OnVENDAPRODUTOIDChanged();
     partial void OnVENDAIDChanging(int value);
     partial void OnVENDAIDChanged();
-    partial void OnPRODUTOIDChanging(int value);
+    partial void OnPRODUTOIDChanging(System.Nullable<int> value);
     partial void OnPRODUTOIDChanged();
     partial void OnITEMChanging(int value);
     partial void OnITEMChanged();
@@ -10408,6 +10410,8 @@ namespace Libra.Entity
     partial void OnVALORACRESCIMOChanged();
     partial void OnVALORDESCONTOChanging(System.Nullable<decimal> value);
     partial void OnVALORDESCONTOChanged();
+    partial void OnPERCENTDESCONTOChanging(System.Nullable<decimal> value);
+    partial void OnPERCENTDESCONTOChanged();
     partial void OnSUBTOTALChanging(System.Nullable<decimal> value);
     partial void OnSUBTOTALChanged();
     partial void OnCRIADOPORChanging(int value);
@@ -10478,8 +10482,8 @@ namespace Libra.Entity
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRODUTOID", DbType="Int NOT NULL")]
-		public int PRODUTOID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRODUTOID", DbType="Int")]
+		public System.Nullable<int> PRODUTOID
 		{
 			get
 			{
@@ -10598,6 +10602,26 @@ namespace Libra.Entity
 					this._VALORDESCONTO = value;
 					this.SendPropertyChanged("VALORDESCONTO");
 					this.OnVALORDESCONTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PERCENTDESCONTO", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> PERCENTDESCONTO
+		{
+			get
+			{
+				return this._PERCENTDESCONTO;
+			}
+			set
+			{
+				if ((this._PERCENTDESCONTO != value))
+				{
+					this.OnPERCENTDESCONTOChanging(value);
+					this.SendPropertyChanging();
+					this._PERCENTDESCONTO = value;
+					this.SendPropertyChanged("PERCENTDESCONTO");
+					this.OnPERCENTDESCONTOChanged();
 				}
 			}
 		}
@@ -10883,7 +10907,7 @@ namespace Libra.Entity
 					}
 					else
 					{
-						this._PRODUTOID = default(int);
+						this._PRODUTOID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("PRODUTO");
 				}

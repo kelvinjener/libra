@@ -144,12 +144,86 @@
                                     <h2 class="StepTitle">Produtos</h2>
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <%--Tabela--%>
+                                            <asp:GridView ID="gvResultsProdutos" runat="server" AutoGenerateColumns="false" DataKeyNames="VendaId, VendaProdutosId, ClienteId, VendedorId, UnidadeId"
+                                                AllowPaging="true" AllowSorting="true" Width="100%" DataSourceID="ldsFiltroProdutos" CssClass="table table-striped responsive-utilities jambo_table gvResults table-bordered dt-responsive nowrap"
+                                                OnRowDataBound="gvResultsProdutos_RowDataBound">
+                                                <Columns>
+                                                    <asp:TemplateField HeaderText="Item">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="lblItem" runat="server" CssClass="labelInfo" Text='<%# Eval("Item")%>'>
+                                                            </asp:Label>
+                                                        </ItemTemplate>
+                                                        <ItemStyle Width="5%" />
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Produto">
+                                                        <ItemTemplate>
+                                                            <asp:DropDownList ID="ddlProduto" runat="server" CssClass="select2_single form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlProduto_SelectedIndexChanged">
+                                                            </asp:DropDownList>
+                                                        </ItemTemplate>
+                                                        <ItemStyle Width="40%" />
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Quantidade">
+                                                        <ItemTemplate>
+                                                            <asp:TextBox ID="txtQtd" runat="server" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtQtd_TextChanged" Text='<%# Eval("Quantidade") %>'>
+                                                            </asp:TextBox>
+                                                        </ItemTemplate>
+                                                        <ItemStyle Width="5%" />
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Valor Unitário">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="lblValorUnitario" runat="server" CssClass="labelInfo" DataFormatString="{0:C}" Text='<%# Eval("ValorUnitario") %>'>
+                                                            </asp:Label>
+                                                        </ItemTemplate>
+                                                        <ItemStyle Width="10%" />
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Desconto (R$)">
+                                                        <ItemTemplate>
+                                                            <asp:TextBox ID="txtDesconto" runat="server" CssClass="form-control" DataFormatString="{0:C}" AutoPostBack="true" OnTextChanged="txtDesconto_TextChanged" Text='<%# Eval("DescontoReal") %>'>
+                                                            </asp:TextBox>
+                                                        </ItemTemplate>
+                                                        <ItemStyle Width="5%" />
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Desconto (%)">
+                                                        <ItemTemplate>
+                                                            <asp:TextBox ID="txtDescontoPorcentagem" runat="server" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtDescontoPorcentagem_TextChanged" Text='<%# Eval("DescontoPorcentagem") %>'>
+                                                            </asp:TextBox>
+                                                        </ItemTemplate>
+                                                        <ItemStyle Width="5%" />
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Acréscimo (%)">
+                                                        <ItemTemplate>
+                                                            <asp:TextBox ID="txtAcrescimoPorcentagem" runat="server" CssClass="form-control" DataFormatString="{0:C}" AutoPostBack="true" OnTextChanged="txtAcrescimoPorcentagem_TextChanged" Text='<%# Eval("Acrescimo") %>'>
+                                                            </asp:TextBox>
+                                                        </ItemTemplate>
+                                                        <ItemStyle Width="5%" />
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Sub Total">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="lblSubTotal" runat="server" CssClass="labelInfo" DataFormatString="{0:C}" Text='<%# Eval("SubTotal") %>'>
+                                                            </asp:Label>
+                                                        </ItemTemplate>
+                                                        <ItemStyle Width="10%" />
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Excluir">
+                                                        <ItemTemplate>
+                                                            <asp:LinkButton ID="btnDelProdutoVenda" runat="server" CssClass="btn btn-danger" ToolTip="Deletar Item" CommandArgument='<%#Eval("Item")%>' OnCommand="btnDelProdutoVenda_Command"><i class="fa fa-minus" aria-hidden="true"></i>
+                                                            </asp:LinkButton>
+                                                        </ItemTemplate>
+                                                        <ItemStyle Width="5%" />
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                                <EmptyDataTemplate>
+                                                    <asp:Label runat="server" ID="lblNoResults" Text="Nenhum item inserido! Clique em 'Adicionar Item' e selecione o produto que desejar." />
+                                                </EmptyDataTemplate>
+                                            </asp:GridView>
+                                            <asp:LinqDataSource ID="ldsFiltroProdutos" runat="server" ContextTypeName="Libra.Entity.LibraDataContext"
+                                                OnSelecting="ldsFiltroProdutos_Selecting" AutoSort="true" AutoGenerateWhereClause="true">
+                                            </asp:LinqDataSource>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <asp:LinkButton runat="server" ID="lkbAddItem" CssClass="btn">
+                                            <asp:LinkButton runat="server" ID="lkbAddItem" CssClass="btn" OnClick="lkbAddItem_Click">
                                                 <i class="fa fa-plus" aria-hidden="true"></i>&nbsp; Adicionar Item
                                             </asp:LinkButton>
                                         </div>
@@ -342,28 +416,17 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <asp:LinkButton runat="server" ID="lkbAddNovoPagamento" CssClass="btn">
+                                                <asp:LinkButton runat="server" ID="lkbAddNovoPagamento" CssClass="btn" OnClick="lkbAddNovoPagamento_Click">
                                                 <i class="fa fa-plus" aria-hidden="true"></i>&nbsp; Inserir Pagamento
                                                 </asp:LinkButton>
                                             </div>
                                         </div>
                                         <div class="row">&nbsp;</div>
-                                        <div class="row" id="formAddPagamento">
+                                        <div class="row" id="formAddPagamento" runat="server" visible="false">
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <div class="x_panel">
                                                     <div class="x_content">
                                                         <div class="row">
-                                                            <div class="col-md-5 col-sm-12 col-xs-12">
-                                                                <div>
-                                                                    <label>Forma de pagamento</label>
-                                                                </div>
-                                                                <div>
-                                                                    <asp:DropDownList runat="server" ID="ddlFormaPagamento" CssClass="form-control select2_single"></asp:DropDownList>
-                                                                    <asp:LinkButton runat="server" ID="lkbAddFormaPagamento" ToolTip="Adicionar forma de pagamento - Parâmetro" CssClass="btn"><i class="fa fa-plus" aria-hidden="true"></i></asp:LinkButton>
-                                                                    <asp:RequiredFieldValidator ID="rfvDdlFormaPagamento" ControlToValidate="ddlFormaPagamento" SetFocusOnError="True" CssClass="requerid"
-                                                                        ValidationGroup="GPag" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
-                                                                </div>
-                                                            </div>
                                                             <div class="col-md-2 col-sm-12 col-xs-12">
                                                                 <div>
                                                                     <label>Valor</label>
@@ -374,17 +437,30 @@
                                                                         ValidationGroup="GPag" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-2 col-sm-12 col-xs-12" id="divParcelas">
+                                                            <div class="col-md-5 col-sm-12 col-xs-12">
+
+                                                                <div>
+                                                                    <label>Forma de pagamento</label>
+                                                                </div>
+                                                                <div>
+                                                                    <asp:DropDownList runat="server" ID="ddlFormaPagamento" CssClass="form-control select2_single" OnSelectedIndexChanged="ddlFormaPagamento_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                                                                    <asp:LinkButton runat="server" ID="lkbAddFormaPagamento" ToolTip="Adicionar forma de pagamento - Parâmetro" CssClass="btn"><i class="fa fa-plus" aria-hidden="true"></i></asp:LinkButton>
+                                                                    <asp:RequiredFieldValidator ID="rfvDdlFormaPagamento" ControlToValidate="ddlFormaPagamento" SetFocusOnError="True" CssClass="requerid"
+                                                                        ValidationGroup="GPag" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2 col-sm-12 col-xs-12" id="divParcelas" runat="server" visible="false">
                                                                 <div>
                                                                     <label>Parcelas</label>
                                                                 </div>
                                                                 <div>
-                                                                    <asp:DropDownList runat="server" ID="ddlParcelas" CssClass="form-control select2_single"></asp:DropDownList>
+                                                                    <asp:DropDownList runat="server" ID="ddlParcelas" CssClass="form-control select2_single" OnSelectedIndexChanged="ddlParcelas_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                                                     <asp:RequiredFieldValidator ID="rfvddlParcelas" ControlToValidate="ddlParcelas" SetFocusOnError="True" CssClass="requerid"
                                                                         ValidationGroup="GPag" Display="Dynamic" runat="server" ErrorMessage="Atenção! Campo de preenchimento obrigatório."></asp:RequiredFieldValidator>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-2 col-sm-12 col-xs-12" id="divValorParcelas">
+                                                            <div class="col-md-2 col-sm-12 col-xs-12" id="divValorParcelas" runat="server" visible="false">
                                                                 <div>
                                                                     <label>Valor parcela</label>
                                                                 </div>
@@ -397,7 +473,7 @@
                                                                     <label>&nbsp;</label>
                                                                 </div>
                                                                 <div>
-                                                                    <asp:LinkButton runat="server" ID="lkbAddPagamento" CssClass="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i></asp:LinkButton>
+                                                                    <asp:LinkButton runat="server" ID="lkbAddPagamento" CssClass="btn btn-primary" OnClick="lkbAddPagamento_Click" ValidationGroup="GPag"><i class="fa fa-plus" aria-hidden="true"></i></asp:LinkButton>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -408,7 +484,28 @@
 
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <%--Tabela--%>
+                                                <asp:GridView ID="gvResultsPagamento" runat="server" AutoGenerateColumns="false" DataKeyNames="VendaId, VendaPagamentoId, ClienteId, VendedorId, UnidadeId"
+                                                    AllowPaging="true" AllowSorting="true" Width="100%" DataSourceID="ldsFiltroPagamento" CssClass="table table-striped responsive-utilities jambo_table  table-bordered dt-responsive nowrap">
+                                                    <Columns>
+                                                        <asp:BoundField HeaderText="Forma de Pagamento" SortExpression="FormaPagamento" DataField="FormaPagamento" ItemStyle-Width="65%" />
+                                                        <asp:BoundField HeaderText="Parcelas" SortExpression="Parcelas" DataField="Parcelas" ItemStyle-Width="10%" />
+                                                        <asp:BoundField HeaderText="Valor Parcela" SortExpression="ValorParcela" DataField="ValorParcela" DataFormatString="{0:C}" ItemStyle-Width="10%" />
+                                                        <asp:BoundField HeaderText="Total" SortExpression="Total" DataField="Total" DataFormatString="{0:C}" ItemStyle-Width="10%" />
+                                                        <asp:TemplateField HeaderText="Excluir">
+                                                            <ItemTemplate>
+                                                                <asp:LinkButton ID="btnDelPagamento" runat="server" CssClass="btn btn-danger" ToolTip="Deletar Item" CommandArgument='<%#Eval("VendaPagamentoId")%>' OnCommand="btnDelPagamento_Command"><i class="fa fa-minus" aria-hidden="true"></i>
+                                                                </asp:LinkButton>
+                                                            </ItemTemplate>
+                                                            <ItemStyle Width="5%" />
+                                                        </asp:TemplateField>
+                                                    </Columns>
+                                                    <EmptyDataTemplate>
+                                                        <asp:Label runat="server" ID="lblNoResults" Text="Nenhum item inserido! Clique em 'Inserir Pagamento' e selecione a forma de pagamento que desejar." />
+                                                    </EmptyDataTemplate>
+                                                </asp:GridView>
+                                                <asp:LinqDataSource ID="ldsFiltroPagamento" runat="server" ContextTypeName="Libra.Entity.LibraDataContext"
+                                                    OnSelecting="ldsFiltroPagamento_Selecting" AutoSort="true" AutoGenerateWhereClause="true">
+                                                </asp:LinqDataSource>
                                             </div>
                                         </div>
                                     </div>
