@@ -85,6 +85,24 @@ namespace Libra {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuTrocaDecolucao;
         
         /// <summary>
+        /// MenuAutorizacaoVendas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuAutorizacaoVendas;
+        
+        /// <summary>
+        /// Caixa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Caixa;
+        
+        /// <summary>
         /// MenuFechamentoCaixa control.
         /// </summary>
         /// <remarks>
@@ -94,13 +112,13 @@ namespace Libra {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuFechamentoCaixa;
         
         /// <summary>
-        /// MenuAutorizacaoVendas control.
+        /// MenuMovimentacaoCaixa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuAutorizacaoVendas;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuMovimentacaoCaixa;
         
         /// <summary>
         /// Produtos control.
@@ -182,6 +200,15 @@ namespace Libra {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Relatorios;
+        
+        /// <summary>
+        /// MenuRelatorioCaixa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuRelatorioCaixa;
         
         /// <summary>
         /// MenuRelatorioVendas control.

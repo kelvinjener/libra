@@ -53,14 +53,20 @@
                                 <h3>Menu</h3>
                                 <ul class="nav side-menu">
                                     <li runat="server" id="Vendas" visible="false">
-                                        <a><i class="fa fa-money"></i>Vendas <span class="fa fa-chevron-down"></span></a>
+                                        <a><i class="fa fa-shopping-bag" aria-hidden="true"></i>Vendas <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none">
                                             <li runat="server" id="MenuVenda" visible="false"><a runat="server" href="~/Vendas/Venda">Nova Venda</a></li>
                                             <li runat="server" id="MenuVendasAberto" visible="false"><a runat="server" href="~/Vendas/VendasAberto">Vendas em Aberto</a></li>
                                             <li runat="server" id="MenuVendasRealizadas" visible="false"><a runat="server" href="~/Vendas/VendasRealizadas">Vendas Realizadas</a></li>
                                             <li runat="server" id="MenuTrocaDecolucao" visible="false"><a runat="server" href="~/Vendas/TrocaDevolucao">Troca e Devolução</a></li>
-                                            <li runat="server" id="MenuFechamentoCaixa" visible="false"><a runat="server" href="~/Vendas/FechamentoCaixa">Abertura/Fechamento de Caixa</a></li>
                                             <li runat="server" id="MenuAutorizacaoVendas" visible="false"><a runat="server" href="~/Vendas/AutorizacaoVendas">Autorização de Vendas</a></li>
+                                        </ul>
+                                    </li>
+									 <li runat="server" id="Caixa" visible="false">
+                                        <a><i class="fa fa-money"></i>Caixa <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+											<li runat="server" id="MenuFechamentoCaixa" visible="false"><a runat="server" href="~/Caixa/FechamentoCaixa">Abertura/Fechamento de Caixa</a></li>
+                                            <li runat="server" id="MenuMovimentacaoCaixa" visible="false"><a runat="server" href="~/Caixa/SangriaSuprimentoCaixa">Sangria/Suprimento de Caixa</a></li>
                                         </ul>
                                     </li>
                                     <li runat="server" id="Produtos" visible="false">
@@ -91,6 +97,7 @@
                                     <li runat="server" id="Relatorios" visible="false">
                                         <a><i class="fa fa-bar-chart-o"></i>Relatórios <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none">
+                                            <li runat="server" id="MenuRelatorioCaixa" visible="false"><a runat="server" href="~/Relatorios/RelatorioCaixa">Relatório Caixa</a></li>
                                             <li runat="server" id="MenuRelatorioVendas" visible="false"><a runat="server" href="~/Relatorios/RelatorioConsolidadoVendas">Relatório Consolidado de Vendas</a></li>
 
                                         </ul>

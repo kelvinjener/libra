@@ -15,6 +15,18 @@ namespace Libra.Communs.Enumerators
 
         [Description("Finalizada")]
         [IntValue(1)]
-        Finalizada = 1
+        Finalizada = 1,
+		
+		[Description("Aguardando Parecer")]
+        [IntValue(2)]
+        AguardandoParecer = 2,
+		
+		[Description("Desconto Autorizado")]
+        [IntValue(3)]
+        DescontoAutorizado = 3,
+		
+		[Description("Desconto Negado")]
+        [IntValue(4)]
+        DescontoNegado = 4
     }
 }

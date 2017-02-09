@@ -35,91 +35,6 @@ namespace Libra.Vendas
                 CarregarTela();
             }
         }
-        #endregion
-
-        #region Methods
-        public void CarregarTela()
-        {
-            lblNumeroPedido.Text = "Gerado pelo sistema";
-            lblDataHoraCriacao.Text = DateTime.Now.ToString();
-            lblSituacao.Text = Enum<SituacaoVendaEnum>.Description((SituacaoVendaEnum)SituacaoVendaEnum.EmAberto);
-            lblVendedor.Text = this.UsuarioInfo != null ? this.UsuarioInfo.Nome : "---";
-            lblUnidade.Text = this.UsuarioInfo != null ? this.GetUnidadeLogada().APELIDO : "---";
-            ddlCliente.SelectedValue = "";
-            CarregaFormaPagamento();
-            LimparAddProduto();
-            LimparAddPagamento();
-        }
-
-        public void LimparAddProduto()
-        {
-
-        }
-
-        public void LimparAddPagamento()
-        {
-            ddlFormaPagamento.SelectedValue = "";
-            txtValorPagamento.Text = string.Empty;
-            if (divParcelas.Visible && ddlParcelas.Items.Count > 0)
-                ddlParcelas.SelectedValue = "";
-            lblValorParcela.Text = string.Empty;
-
-            divParcelas.Visible = false;
-            divValorParcelas.Visible = false;
-        }
-
-        public void CarregaFormaPagamento()
-        {
-            ddlFormaPagamento.Items.Clear();
-            ddlFormaPagamento.Items.Add(new ListItem("Selecione...", ""));
-
-            foreach (var item in new VendaFormaPagamentoBll().GetAllFormasPagamento())
-                ddlFormaPagamento.Items.Add(new ListItem(item.DESCRICAO, item.FORMAPAGAMENTOID.ToString()));
-        }
-
-        public void Edicao(bool edita)
-        {
-            ddlCliente.Enabled = edita;
-        }
-
-        public void AtualizaVendaProduto(int VendaProdutoID, int? ProdutoId, decimal? ValorUnitario, int? Qtd, decimal? ValorAcrescimo, decimal? ValorDesconto, decimal? PercentDesconto, decimal? SubTotal)
-        {
-            try
-            {
-                VENDAPRODUTO vp = vendaProdutoBll.GetVendaProdutoById(VendaProdutoID);
-                if (vp != null)
-                {
-                    if (ProdutoId != null)
-                        vp.PRODUTOID = ProdutoId;
-
-                    if (Qtd != null)
-                        vp.QTD = (int)Qtd;
-
-                    if (ValorUnitario != null)
-                        vp.VALORUNITARIO = ValorUnitario;
-
-                    if (ValorAcrescimo != null)
-                        vp.VALORACRESCIMO = ValorAcrescimo;
-
-                    if (ValorDesconto != null)
-                        vp.VALORDESCONTO = ValorDesconto;
-
-                    if (PercentDesconto != null)
-                        vp.PERCENTDESCONTO = PercentDesconto;
-
-                    if (SubTotal != null)
-                        vp.SUBTOTAL = SubTotal;
-
-                    vendaProdutoBll.Salvar(vp);
-                }
-            }
-            catch (Exception ex)
-            {
-                HandlerException(ex);
-            }
-
-        }
-        #endregion
 
         protected void gvResultsProdutos_RowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -165,8 +80,6 @@ namespace Libra.Vendas
             {
                 HandlerException(ex);
             }
-
-
         }
 
         protected void txtQtd_TextChanged(object sender, EventArgs e)
@@ -183,7 +96,7 @@ namespace Libra.Vendas
 
                 if (txtQTD.Text.Length > 0 && lblValorUnitario.Text.Length > 0)
                 {
-                    Decimal subTotal = Decimal.Round((Convert.ToDecimal(lblValorUnitario.Text) * Convert.ToInt32(txtQTD.Text)),2);
+                    Decimal subTotal = Decimal.Round((Convert.ToDecimal(lblValorUnitario.Text) * Convert.ToInt32(txtQTD.Text)), 2);
                     lblSubTotal.Text = subTotal.ToString();
                     AtualizaVendaProduto(VendaProdutosId, null, null, Convert.ToInt32(txtQTD.Text), null, null, null, subTotal);
 
@@ -197,17 +110,74 @@ namespace Libra.Vendas
 
         protected void txtDesconto_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                TextBox txtDesconto = (TextBox)sender;
+                var row = (GridViewRow)txtDesconto.NamingContainer;
+                //get the Id of the row
+                Label lblSubTotal = (Label)row.FindControl("lblSubTotal");
+                int VendaProdutosId = (int)this.gvResultsProdutos.DataKeys[row.RowIndex]["VendaProdutosId"];
 
+                if (txtDesconto.Text.Length > 0)
+                {
+                    Decimal subTotal = Decimal.Round((Convert.ToDecimal(lblSubTotal.Text) - Convert.ToInt32(txtDesconto.Text)), 2);
+                    lblSubTotal.Text = subTotal.ToString();
+                    AtualizaVendaProduto(VendaProdutosId, null, null, null, null, Convert.ToInt32(txtDesconto.Text), null, subTotal);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                HandlerException(ex);
+            }
         }
 
         protected void txtDescontoPorcentagem_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                TextBox txtDescontoPorcentagem = (TextBox)sender;
+                var row = (GridViewRow)txtDescontoPorcentagem.NamingContainer;
+                //get the Id of the row
+                Label lblSubTotal = (Label)row.FindControl("lblSubTotal");
+                int VendaProdutosId = (int)this.gvResultsProdutos.DataKeys[row.RowIndex]["VendaProdutosId"];
 
+                if (txtDescontoPorcentagem.Text.Length > 0)
+                {
+                    Decimal subTotal = Decimal.Round((Convert.ToDecimal(lblSubTotal.Text) - (Convert.ToDecimal(lblSubTotal.Text) * Convert.ToInt32(txtDescontoPorcentagem.Text))), 2);
+                    lblSubTotal.Text = subTotal.ToString();
+                    AtualizaVendaProduto(VendaProdutosId, null, null, null, null, null, Convert.ToInt32(txtDescontoPorcentagem.Text), subTotal);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                HandlerException(ex);
+            }
         }
 
         protected void txtAcrescimoPorcentagem_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                TextBox txtAcrescimoPorcentagem = (TextBox)sender;
+                var row = (GridViewRow)txtAcrescimoPorcentagem.NamingContainer;
+                //get the Id of the row
+                Label lblSubTotal = (Label)row.FindControl("lblSubTotal");
+                int VendaProdutosId = (int)this.gvResultsProdutos.DataKeys[row.RowIndex]["VendaProdutosId"];
 
+                if (txtAcrescimoPorcentagem.Text.Length > 0)
+                {
+                    Decimal subTotal = Decimal.Round((Convert.ToDecimal(lblSubTotal.Text) + (Convert.ToDecimal(lblSubTotal.Text) * Convert.ToInt32(txtAcrescimoPorcentagem.Text))), 2);
+                    lblSubTotal.Text = subTotal.ToString();
+                    AtualizaVendaProduto(VendaProdutosId, null, null, null, Convert.ToInt32(txtAcrescimoPorcentagem.Text), null, null, subTotal);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                HandlerException(ex);
+            }
         }
 
         protected void ldsFiltroProdutos_Selecting(object sender, LinqDataSourceSelectEventArgs e)
@@ -330,7 +300,6 @@ namespace Libra.Vendas
             {
                 HandlerException(ex);
             }
-
         }
 
         protected void lkbAddNovoPagamento_Click(object sender, EventArgs e)
@@ -371,7 +340,112 @@ namespace Libra.Vendas
                 lblValorParcela.Text = Decimal.Round((Convert.ToDecimal(txtValorPagamento.Text) / Convert.ToInt32(ddlParcelas.SelectedValue)), 2).ToString();
             }
         }
+        #endregion
 
+        #region Methods
+        public void CarregarTela()
+        {
+            lblNumeroPedido.Text = "Gerado pelo sistema";
+            lblDataHoraCriacao.Text = DateTime.Now.ToString();
+            lblSituacao.Text = Enum<SituacaoVendaEnum>.Description((SituacaoVendaEnum)SituacaoVendaEnum.EmAberto);
+            lblVendedor.Text = this.UsuarioInfo != null ? this.UsuarioInfo.Nome : "---";
+            lblUnidade.Text = this.UsuarioInfo != null ? this.GetUnidadeLogada().APELIDO : "---";
+            ddlCliente.SelectedValue = "";
+            CarregaFormaPagamento();
+            LimparAddProduto();
+            LimparAddPagamento();
+        }
 
+        public void LimparAddProduto()
+        {
+
+        }
+
+        public void LimparAddPagamento()
+        {
+            ddlFormaPagamento.SelectedValue = "";
+            txtValorPagamento.Text = string.Empty;
+            if (divParcelas.Visible && ddlParcelas.Items.Count > 0)
+                ddlParcelas.SelectedValue = "";
+            lblValorParcela.Text = string.Empty;
+
+            divParcelas.Visible = false;
+            divValorParcelas.Visible = false;
+        }
+
+        public void CarregaFormaPagamento()
+        {
+            ddlFormaPagamento.Items.Clear();
+            ddlFormaPagamento.Items.Add(new ListItem("Selecione...", ""));
+
+            foreach (var item in new VendaFormaPagamentoBll().GetAllFormasPagamento())
+                ddlFormaPagamento.Items.Add(new ListItem(item.DESCRICAO, item.FORMAPAGAMENTOID.ToString()));
+        }
+
+        public void Edicao(bool edita)
+        {
+            ddlCliente.Enabled = edita;
+        }
+
+        public void AtualizaVendaProduto(int VendaProdutoID, int? ProdutoId, decimal? ValorUnitario, int? Qtd, decimal? ValorAcrescimo, decimal? ValorDesconto, decimal? PercentDesconto, decimal? SubTotal)
+        {
+            try
+            {
+                VENDAPRODUTO vp = vendaProdutoBll.GetVendaProdutoById(VendaProdutoID);
+                if (vp != null)
+                {
+                    if (ProdutoId != null)
+                        vp.PRODUTOID = ProdutoId;
+
+                    if (Qtd != null)
+                        vp.QTD = (int)Qtd;
+
+                    if (ValorUnitario != null)
+                        vp.VALORUNITARIO = ValorUnitario;
+
+                    if (ValorAcrescimo != null)
+                        vp.VALORACRESCIMO = ValorAcrescimo;
+
+                    if (ValorDesconto != null)
+                        vp.VALORDESCONTO = ValorDesconto;
+
+                    if (PercentDesconto != null)
+                        vp.PERCENTDESCONTO = PercentDesconto;
+
+                    if (SubTotal != null)
+                        vp.SUBTOTAL = SubTotal;
+
+                    vendaProdutoBll.Salvar(vp);
+                }
+            }
+            catch (Exception ex)
+            {
+                HandlerException(ex);
+            }
+
+        }
+        #endregion
+
+        protected void lkbCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lkbSalvarVenda_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                try
+                {
+                    lblClienteProdutos.Text = "teste";
+                    lblClientePagamento.Text = "teste";
+                    LblClienteFinalizarVenda.Text = "teste";
+                }
+                catch (Exception ex)
+                {
+                    HandlerException(ex);
+                }
+            }
+        }
     }
 }

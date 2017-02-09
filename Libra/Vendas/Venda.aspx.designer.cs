@@ -121,6 +121,33 @@ namespace Libra.Vendas {
         protected global::System.Web.UI.WebControls.LinkButton lkbAddCliente;
         
         /// <summary>
+        /// lkbCancelar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbCancelar;
+        
+        /// <summary>
+        /// lkbSalvarVenda control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbSalvarVenda;
+        
+        /// <summary>
+        /// lblClienteProdutos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblClienteProdutos;
+        
+        /// <summary>
         /// gvResultsProdutos control.
         /// </summary>
         /// <remarks>
@@ -200,6 +227,15 @@ namespace Libra.Vendas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbValorTotal;
+        
+        /// <summary>
+        /// lblClientePagamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblClientePagamento;
         
         /// <summary>
         /// lblPagamentoValorTotalProdutos control.
@@ -398,6 +434,15 @@ namespace Libra.Vendas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinqDataSource ldsFiltroPagamento;
+        
+        /// <summary>
+        /// LblClienteFinalizarVenda control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblClienteFinalizarVenda;
         
         /// <summary>
         /// btnEmitirPedito control.

@@ -92,6 +92,14 @@
       <Association Name="USUARIO_VENDAPRODUTO" Member="VENDAPRODUTOs" ThisKey="USUARIOID" OtherKey="ALTERADOPOR" Type="VENDAPRODUTO" />
       <Association Name="USUARIO_VENDAPRODUTO1" Member="VENDAPRODUTOs1" ThisKey="USUARIOID" OtherKey="CRIADOPOR" Type="VENDAPRODUTO" />
       <Association Name="USUARIO_VENDAPRODUTO2" Member="VENDAPRODUTOs2" ThisKey="USUARIOID" OtherKey="EXCLUIDOPOR" Type="VENDAPRODUTO" />
+      <Association Name="USUARIO_CAIXAMOVIMENTACAO" Member="CAIXAMOVIMENTACAOs" ThisKey="USUARIOID" OtherKey="ALTERADOPOR" Type="CAIXAMOVIMENTACAO" />
+      <Association Name="USUARIO_CAIXAMOVIMENTACAO1" Member="CAIXAMOVIMENTACAOs1" ThisKey="USUARIOID" OtherKey="CRIADOPOR" Type="CAIXAMOVIMENTACAO" />
+      <Association Name="USUARIO_CAIXAMOVIMENTACAO2" Member="CAIXAMOVIMENTACAOs2" ThisKey="USUARIOID" OtherKey="EXCLUIDOPOR" Type="CAIXAMOVIMENTACAO" />
+      <Association Name="USUARIO_CAIXAMOVIMENTACAO3" Member="CAIXAMOVIMENTACAOs3" ThisKey="USUARIOID" OtherKey="USUARIORESPONSAVELID" Type="CAIXAMOVIMENTACAO" />
+      <Association Name="USUARIO_CAIXA" Member="CAIXAs" ThisKey="USUARIOID" OtherKey="ALTERADOPOR" Type="CAIXA" />
+      <Association Name="USUARIO_CAIXA1" Member="CAIXAs1" ThisKey="USUARIOID" OtherKey="CRIADOPOR" Type="CAIXA" />
+      <Association Name="USUARIO_CAIXA2" Member="CAIXAs2" ThisKey="USUARIOID" OtherKey="EXCLUIDOPOR" Type="CAIXA" />
+      <Association Name="USUARIO_CAIXA3" Member="CAIXAs3" ThisKey="USUARIOID" OtherKey="USUARIORESPONSAVELID" Type="CAIXA" />
       <Association Name="AspNetUser_USUARIO" Member="AspNetUser" ThisKey="ASPNETUSERID" OtherKey="Id" Type="AspNetUser" IsForeignKey="true" />
     </Type>
   </Table>
@@ -131,6 +139,8 @@
       <Association Name="UNIDADE_USUARIOUNIDADE" Member="USUARIOUNIDADEs" ThisKey="UNIDADEID" OtherKey="UNIDADEID" Type="USUARIOUNIDADE" />
       <Association Name="UNIDADE_ESTOQUEPRODUTO" Member="ESTOQUEPRODUTOs" ThisKey="UNIDADEID" OtherKey="UNIDADEID" Type="ESTOQUEPRODUTO" />
       <Association Name="UNIDADE_VENDA" Member="VENDAs" ThisKey="UNIDADEID" OtherKey="UNIDADEID" Type="VENDA" />
+      <Association Name="UNIDADE_CAIXAMOVIMENTACAO" Member="CAIXAMOVIMENTACAOs" ThisKey="UNIDADEID" OtherKey="UNIDADEID" Type="CAIXAMOVIMENTACAO" />
+      <Association Name="UNIDADE_CAIXA" Member="CAIXAs" ThisKey="UNIDADEID" OtherKey="UNIDADEID" Type="CAIXA" />
     </Type>
   </Table>
   <Table Name="dbo.USUARIOPERFIS" Member="USUARIOPERFIs">
@@ -465,6 +475,61 @@
       <Association Name="USUARIO_VENDAPRODUTO2" Member="USUARIO2" ThisKey="EXCLUIDOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
       <Association Name="PRODUTO_VENDAPRODUTO" Member="PRODUTO" ThisKey="PRODUTOID" OtherKey="PRODUTOID" Type="PRODUTO" IsForeignKey="true" />
       <Association Name="VENDA_VENDAPRODUTO" Member="VENDA" ThisKey="VENDAID" OtherKey="VENDAID" Type="VENDA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CAIXAMOVIMENTACAOS" Member="CAIXAMOVIMENTACAOs">
+    <Type Name="CAIXAMOVIMENTACAO">
+      <Column Name="MOVIMENTACAOCAIXAID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CAIXAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UNIDADEID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="USUARIORESPONSAVELID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DATAHORAMOVIMENTACAO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TIPOMOVIMENTACAO" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="VALOR" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
+      <Column Name="JUSTIFICATIVA" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CRIADOPOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ALTERADOPOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXCLUIDOPOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATACRIACAO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DATAALTERACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATAEXCLUSAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="USUARIO_CAIXAMOVIMENTACAO" Member="USUARIO" ThisKey="ALTERADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="USUARIO_CAIXAMOVIMENTACAO1" Member="USUARIO1" ThisKey="CRIADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="USUARIO_CAIXAMOVIMENTACAO2" Member="USUARIO2" ThisKey="EXCLUIDOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="UNIDADE_CAIXAMOVIMENTACAO" Member="UNIDADE" ThisKey="UNIDADEID" OtherKey="UNIDADEID" Type="UNIDADE" IsForeignKey="true" />
+      <Association Name="USUARIO_CAIXAMOVIMENTACAO3" Member="USUARIO3" ThisKey="USUARIORESPONSAVELID" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="CAIXA_CAIXAMOVIMENTACAO" Member="CAIXA" ThisKey="CAIXAID" OtherKey="CAIXAID" Type="CAIXA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CAIXAS" Member="CAIXAs">
+    <Type Name="CAIXA">
+      <Column Name="CAIXAID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UNIDADEID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="USUARIORESPONSAVELID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SITUACAO" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="COMPETENCIA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DATAHORAABERTURA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="VALORABERTURA" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTALVENDAS" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="VALORDINHEIRO" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="VALORDEBITO" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="VALORCREDITO" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="TOTALSANGRIA" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="TOTALSUPRIMENTOS" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="VALORFECHAMENTO" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="DATAHORAFECHAMENTO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CRIADOPOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ALTERADOPOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXCLUIDOPOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATACRIACAO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DATAALTERACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATAEXCLUSAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="CAIXA_CAIXAMOVIMENTACAO" Member="CAIXAMOVIMENTACAOs" ThisKey="CAIXAID" OtherKey="CAIXAID" Type="CAIXAMOVIMENTACAO" />
+      <Association Name="USUARIO_CAIXA" Member="USUARIO" ThisKey="ALTERADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="USUARIO_CAIXA1" Member="USUARIO1" ThisKey="CRIADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="USUARIO_CAIXA2" Member="USUARIO2" ThisKey="EXCLUIDOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="UNIDADE_CAIXA" Member="UNIDADE" ThisKey="UNIDADEID" OtherKey="UNIDADEID" Type="UNIDADE" IsForeignKey="true" />
+      <Association Name="USUARIO_CAIXA3" Member="USUARIO3" ThisKey="USUARIORESPONSAVELID" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

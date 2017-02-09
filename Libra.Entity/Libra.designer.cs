@@ -123,6 +123,12 @@ namespace Libra.Entity
     partial void InsertVENDAPRODUTO(VENDAPRODUTO instance);
     partial void UpdateVENDAPRODUTO(VENDAPRODUTO instance);
     partial void DeleteVENDAPRODUTO(VENDAPRODUTO instance);
+    partial void InsertCAIXAMOVIMENTACAO(CAIXAMOVIMENTACAO instance);
+    partial void UpdateCAIXAMOVIMENTACAO(CAIXAMOVIMENTACAO instance);
+    partial void DeleteCAIXAMOVIMENTACAO(CAIXAMOVIMENTACAO instance);
+    partial void InsertCAIXA(CAIXA instance);
+    partial void UpdateCAIXA(CAIXA instance);
+    partial void DeleteCAIXA(CAIXA instance);
     #endregion
 		
 		public LibraDataContext() : 
@@ -400,6 +406,22 @@ namespace Libra.Entity
 			get
 			{
 				return this.GetTable<VENDAPRODUTO>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CAIXAMOVIMENTACAO> CAIXAMOVIMENTACAOs
+		{
+			get
+			{
+				return this.GetTable<CAIXAMOVIMENTACAO>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CAIXA> CAIXAs
+		{
+			get
+			{
+				return this.GetTable<CAIXA>();
 			}
 		}
 	}
@@ -1532,6 +1554,22 @@ namespace Libra.Entity
 		
 		private EntitySet<VENDAPRODUTO> _VENDAPRODUTOs2;
 		
+		private EntitySet<CAIXAMOVIMENTACAO> _CAIXAMOVIMENTACAOs;
+		
+		private EntitySet<CAIXAMOVIMENTACAO> _CAIXAMOVIMENTACAOs1;
+		
+		private EntitySet<CAIXAMOVIMENTACAO> _CAIXAMOVIMENTACAOs2;
+		
+		private EntitySet<CAIXAMOVIMENTACAO> _CAIXAMOVIMENTACAOs3;
+		
+		private EntitySet<CAIXA> _CAIXAs;
+		
+		private EntitySet<CAIXA> _CAIXAs1;
+		
+		private EntitySet<CAIXA> _CAIXAs2;
+		
+		private EntitySet<CAIXA> _CAIXAs3;
+		
 		private EntityRef<AspNetUser> _AspNetUser;
 		
     #region Extensibility Method Definitions
@@ -1589,6 +1627,14 @@ namespace Libra.Entity
 			this._VENDAPRODUTOs = new EntitySet<VENDAPRODUTO>(new Action<VENDAPRODUTO>(this.attach_VENDAPRODUTOs), new Action<VENDAPRODUTO>(this.detach_VENDAPRODUTOs));
 			this._VENDAPRODUTOs1 = new EntitySet<VENDAPRODUTO>(new Action<VENDAPRODUTO>(this.attach_VENDAPRODUTOs1), new Action<VENDAPRODUTO>(this.detach_VENDAPRODUTOs1));
 			this._VENDAPRODUTOs2 = new EntitySet<VENDAPRODUTO>(new Action<VENDAPRODUTO>(this.attach_VENDAPRODUTOs2), new Action<VENDAPRODUTO>(this.detach_VENDAPRODUTOs2));
+			this._CAIXAMOVIMENTACAOs = new EntitySet<CAIXAMOVIMENTACAO>(new Action<CAIXAMOVIMENTACAO>(this.attach_CAIXAMOVIMENTACAOs), new Action<CAIXAMOVIMENTACAO>(this.detach_CAIXAMOVIMENTACAOs));
+			this._CAIXAMOVIMENTACAOs1 = new EntitySet<CAIXAMOVIMENTACAO>(new Action<CAIXAMOVIMENTACAO>(this.attach_CAIXAMOVIMENTACAOs1), new Action<CAIXAMOVIMENTACAO>(this.detach_CAIXAMOVIMENTACAOs1));
+			this._CAIXAMOVIMENTACAOs2 = new EntitySet<CAIXAMOVIMENTACAO>(new Action<CAIXAMOVIMENTACAO>(this.attach_CAIXAMOVIMENTACAOs2), new Action<CAIXAMOVIMENTACAO>(this.detach_CAIXAMOVIMENTACAOs2));
+			this._CAIXAMOVIMENTACAOs3 = new EntitySet<CAIXAMOVIMENTACAO>(new Action<CAIXAMOVIMENTACAO>(this.attach_CAIXAMOVIMENTACAOs3), new Action<CAIXAMOVIMENTACAO>(this.detach_CAIXAMOVIMENTACAOs3));
+			this._CAIXAs = new EntitySet<CAIXA>(new Action<CAIXA>(this.attach_CAIXAs), new Action<CAIXA>(this.detach_CAIXAs));
+			this._CAIXAs1 = new EntitySet<CAIXA>(new Action<CAIXA>(this.attach_CAIXAs1), new Action<CAIXA>(this.detach_CAIXAs1));
+			this._CAIXAs2 = new EntitySet<CAIXA>(new Action<CAIXA>(this.attach_CAIXAs2), new Action<CAIXA>(this.detach_CAIXAs2));
+			this._CAIXAs3 = new EntitySet<CAIXA>(new Action<CAIXA>(this.attach_CAIXAs3), new Action<CAIXA>(this.detach_CAIXAs3));
 			this._AspNetUser = default(EntityRef<AspNetUser>);
 			OnCreated();
 		}
@@ -2154,6 +2200,110 @@ namespace Libra.Entity
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_CAIXAMOVIMENTACAO", Storage="_CAIXAMOVIMENTACAOs", ThisKey="USUARIOID", OtherKey="ALTERADOPOR")]
+		public EntitySet<CAIXAMOVIMENTACAO> CAIXAMOVIMENTACAOs
+		{
+			get
+			{
+				return this._CAIXAMOVIMENTACAOs;
+			}
+			set
+			{
+				this._CAIXAMOVIMENTACAOs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_CAIXAMOVIMENTACAO1", Storage="_CAIXAMOVIMENTACAOs1", ThisKey="USUARIOID", OtherKey="CRIADOPOR")]
+		public EntitySet<CAIXAMOVIMENTACAO> CAIXAMOVIMENTACAOs1
+		{
+			get
+			{
+				return this._CAIXAMOVIMENTACAOs1;
+			}
+			set
+			{
+				this._CAIXAMOVIMENTACAOs1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_CAIXAMOVIMENTACAO2", Storage="_CAIXAMOVIMENTACAOs2", ThisKey="USUARIOID", OtherKey="EXCLUIDOPOR")]
+		public EntitySet<CAIXAMOVIMENTACAO> CAIXAMOVIMENTACAOs2
+		{
+			get
+			{
+				return this._CAIXAMOVIMENTACAOs2;
+			}
+			set
+			{
+				this._CAIXAMOVIMENTACAOs2.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_CAIXAMOVIMENTACAO3", Storage="_CAIXAMOVIMENTACAOs3", ThisKey="USUARIOID", OtherKey="USUARIORESPONSAVELID")]
+		public EntitySet<CAIXAMOVIMENTACAO> CAIXAMOVIMENTACAOs3
+		{
+			get
+			{
+				return this._CAIXAMOVIMENTACAOs3;
+			}
+			set
+			{
+				this._CAIXAMOVIMENTACAOs3.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_CAIXA", Storage="_CAIXAs", ThisKey="USUARIOID", OtherKey="ALTERADOPOR")]
+		public EntitySet<CAIXA> CAIXAs
+		{
+			get
+			{
+				return this._CAIXAs;
+			}
+			set
+			{
+				this._CAIXAs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_CAIXA1", Storage="_CAIXAs1", ThisKey="USUARIOID", OtherKey="CRIADOPOR")]
+		public EntitySet<CAIXA> CAIXAs1
+		{
+			get
+			{
+				return this._CAIXAs1;
+			}
+			set
+			{
+				this._CAIXAs1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_CAIXA2", Storage="_CAIXAs2", ThisKey="USUARIOID", OtherKey="EXCLUIDOPOR")]
+		public EntitySet<CAIXA> CAIXAs2
+		{
+			get
+			{
+				return this._CAIXAs2;
+			}
+			set
+			{
+				this._CAIXAs2.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_CAIXA3", Storage="_CAIXAs3", ThisKey="USUARIOID", OtherKey="USUARIORESPONSAVELID")]
+		public EntitySet<CAIXA> CAIXAs3
+		{
+			get
+			{
+				return this._CAIXAs3;
+			}
+			set
+			{
+				this._CAIXAs3.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AspNetUser_USUARIO", Storage="_AspNetUser", ThisKey="ASPNETUSERID", OtherKey="Id", IsForeignKey=true)]
 		public AspNetUser AspNetUser
 		{
@@ -2555,6 +2705,102 @@ namespace Libra.Entity
 			this.SendPropertyChanging();
 			entity.USUARIO2 = null;
 		}
+		
+		private void attach_CAIXAMOVIMENTACAOs(CAIXAMOVIMENTACAO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO = this;
+		}
+		
+		private void detach_CAIXAMOVIMENTACAOs(CAIXAMOVIMENTACAO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO = null;
+		}
+		
+		private void attach_CAIXAMOVIMENTACAOs1(CAIXAMOVIMENTACAO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO1 = this;
+		}
+		
+		private void detach_CAIXAMOVIMENTACAOs1(CAIXAMOVIMENTACAO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO1 = null;
+		}
+		
+		private void attach_CAIXAMOVIMENTACAOs2(CAIXAMOVIMENTACAO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO2 = this;
+		}
+		
+		private void detach_CAIXAMOVIMENTACAOs2(CAIXAMOVIMENTACAO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO2 = null;
+		}
+		
+		private void attach_CAIXAMOVIMENTACAOs3(CAIXAMOVIMENTACAO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO3 = this;
+		}
+		
+		private void detach_CAIXAMOVIMENTACAOs3(CAIXAMOVIMENTACAO entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO3 = null;
+		}
+		
+		private void attach_CAIXAs(CAIXA entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO = this;
+		}
+		
+		private void detach_CAIXAs(CAIXA entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO = null;
+		}
+		
+		private void attach_CAIXAs1(CAIXA entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO1 = this;
+		}
+		
+		private void detach_CAIXAs1(CAIXA entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO1 = null;
+		}
+		
+		private void attach_CAIXAs2(CAIXA entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO2 = this;
+		}
+		
+		private void detach_CAIXAs2(CAIXA entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO2 = null;
+		}
+		
+		private void attach_CAIXAs3(CAIXA entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO3 = this;
+		}
+		
+		private void detach_CAIXAs3(CAIXA entity)
+		{
+			this.SendPropertyChanging();
+			entity.USUARIO3 = null;
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LOGS")]
@@ -2876,6 +3122,10 @@ namespace Libra.Entity
 		
 		private EntitySet<VENDA> _VENDAs;
 		
+		private EntitySet<CAIXAMOVIMENTACAO> _CAIXAMOVIMENTACAOs;
+		
+		private EntitySet<CAIXA> _CAIXAs;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2923,6 +3173,8 @@ namespace Libra.Entity
 			this._USUARIOUNIDADEs = new EntitySet<USUARIOUNIDADE>(new Action<USUARIOUNIDADE>(this.attach_USUARIOUNIDADEs), new Action<USUARIOUNIDADE>(this.detach_USUARIOUNIDADEs));
 			this._ESTOQUEPRODUTOs = new EntitySet<ESTOQUEPRODUTO>(new Action<ESTOQUEPRODUTO>(this.attach_ESTOQUEPRODUTOs), new Action<ESTOQUEPRODUTO>(this.detach_ESTOQUEPRODUTOs));
 			this._VENDAs = new EntitySet<VENDA>(new Action<VENDA>(this.attach_VENDAs), new Action<VENDA>(this.detach_VENDAs));
+			this._CAIXAMOVIMENTACAOs = new EntitySet<CAIXAMOVIMENTACAO>(new Action<CAIXAMOVIMENTACAO>(this.attach_CAIXAMOVIMENTACAOs), new Action<CAIXAMOVIMENTACAO>(this.detach_CAIXAMOVIMENTACAOs));
+			this._CAIXAs = new EntitySet<CAIXA>(new Action<CAIXA>(this.attach_CAIXAs), new Action<CAIXA>(this.detach_CAIXAs));
 			OnCreated();
 		}
 		
@@ -3325,6 +3577,32 @@ namespace Libra.Entity
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UNIDADE_CAIXAMOVIMENTACAO", Storage="_CAIXAMOVIMENTACAOs", ThisKey="UNIDADEID", OtherKey="UNIDADEID")]
+		public EntitySet<CAIXAMOVIMENTACAO> CAIXAMOVIMENTACAOs
+		{
+			get
+			{
+				return this._CAIXAMOVIMENTACAOs;
+			}
+			set
+			{
+				this._CAIXAMOVIMENTACAOs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UNIDADE_CAIXA", Storage="_CAIXAs", ThisKey="UNIDADEID", OtherKey="UNIDADEID")]
+		public EntitySet<CAIXA> CAIXAs
+		{
+			get
+			{
+				return this._CAIXAs;
+			}
+			set
+			{
+				this._CAIXAs.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -3376,6 +3654,30 @@ namespace Libra.Entity
 		}
 		
 		private void detach_VENDAs(VENDA entity)
+		{
+			this.SendPropertyChanging();
+			entity.UNIDADE = null;
+		}
+		
+		private void attach_CAIXAMOVIMENTACAOs(CAIXAMOVIMENTACAO entity)
+		{
+			this.SendPropertyChanging();
+			entity.UNIDADE = this;
+		}
+		
+		private void detach_CAIXAMOVIMENTACAOs(CAIXAMOVIMENTACAO entity)
+		{
+			this.SendPropertyChanging();
+			entity.UNIDADE = null;
+		}
+		
+		private void attach_CAIXAs(CAIXA entity)
+		{
+			this.SendPropertyChanging();
+			entity.UNIDADE = this;
+		}
+		
+		private void detach_CAIXAs(CAIXA entity)
 		{
 			this.SendPropertyChanging();
 			entity.UNIDADE = null;
@@ -10966,6 +11268,1401 @@ namespace Libra.Entity
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CAIXAMOVIMENTACAOS")]
+	public partial class CAIXAMOVIMENTACAO : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MOVIMENTACAOCAIXAID;
+		
+		private int _CAIXAID;
+		
+		private int _UNIDADEID;
+		
+		private int _USUARIORESPONSAVELID;
+		
+		private System.DateTime _DATAHORAMOVIMENTACAO;
+		
+		private short _TIPOMOVIMENTACAO;
+		
+		private decimal _VALOR;
+		
+		private string _JUSTIFICATIVA;
+		
+		private int _CRIADOPOR;
+		
+		private System.Nullable<int> _ALTERADOPOR;
+		
+		private System.Nullable<int> _EXCLUIDOPOR;
+		
+		private System.DateTime _DATACRIACAO;
+		
+		private System.Nullable<System.DateTime> _DATAALTERACAO;
+		
+		private System.Nullable<System.DateTime> _DATAEXCLUSAO;
+		
+		private EntityRef<USUARIO> _USUARIO;
+		
+		private EntityRef<USUARIO> _USUARIO1;
+		
+		private EntityRef<USUARIO> _USUARIO2;
+		
+		private EntityRef<UNIDADE> _UNIDADE;
+		
+		private EntityRef<USUARIO> _USUARIO3;
+		
+		private EntityRef<CAIXA> _CAIXA;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMOVIMENTACAOCAIXAIDChanging(int value);
+    partial void OnMOVIMENTACAOCAIXAIDChanged();
+    partial void OnCAIXAIDChanging(int value);
+    partial void OnCAIXAIDChanged();
+    partial void OnUNIDADEIDChanging(int value);
+    partial void OnUNIDADEIDChanged();
+    partial void OnUSUARIORESPONSAVELIDChanging(int value);
+    partial void OnUSUARIORESPONSAVELIDChanged();
+    partial void OnDATAHORAMOVIMENTACAOChanging(System.DateTime value);
+    partial void OnDATAHORAMOVIMENTACAOChanged();
+    partial void OnTIPOMOVIMENTACAOChanging(short value);
+    partial void OnTIPOMOVIMENTACAOChanged();
+    partial void OnVALORChanging(decimal value);
+    partial void OnVALORChanged();
+    partial void OnJUSTIFICATIVAChanging(string value);
+    partial void OnJUSTIFICATIVAChanged();
+    partial void OnCRIADOPORChanging(int value);
+    partial void OnCRIADOPORChanged();
+    partial void OnALTERADOPORChanging(System.Nullable<int> value);
+    partial void OnALTERADOPORChanged();
+    partial void OnEXCLUIDOPORChanging(System.Nullable<int> value);
+    partial void OnEXCLUIDOPORChanged();
+    partial void OnDATACRIACAOChanging(System.DateTime value);
+    partial void OnDATACRIACAOChanged();
+    partial void OnDATAALTERACAOChanging(System.Nullable<System.DateTime> value);
+    partial void OnDATAALTERACAOChanged();
+    partial void OnDATAEXCLUSAOChanging(System.Nullable<System.DateTime> value);
+    partial void OnDATAEXCLUSAOChanged();
+    #endregion
+		
+		public CAIXAMOVIMENTACAO()
+		{
+			this._USUARIO = default(EntityRef<USUARIO>);
+			this._USUARIO1 = default(EntityRef<USUARIO>);
+			this._USUARIO2 = default(EntityRef<USUARIO>);
+			this._UNIDADE = default(EntityRef<UNIDADE>);
+			this._USUARIO3 = default(EntityRef<USUARIO>);
+			this._CAIXA = default(EntityRef<CAIXA>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MOVIMENTACAOCAIXAID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MOVIMENTACAOCAIXAID
+		{
+			get
+			{
+				return this._MOVIMENTACAOCAIXAID;
+			}
+			set
+			{
+				if ((this._MOVIMENTACAOCAIXAID != value))
+				{
+					this.OnMOVIMENTACAOCAIXAIDChanging(value);
+					this.SendPropertyChanging();
+					this._MOVIMENTACAOCAIXAID = value;
+					this.SendPropertyChanged("MOVIMENTACAOCAIXAID");
+					this.OnMOVIMENTACAOCAIXAIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CAIXAID", DbType="Int NOT NULL")]
+		public int CAIXAID
+		{
+			get
+			{
+				return this._CAIXAID;
+			}
+			set
+			{
+				if ((this._CAIXAID != value))
+				{
+					if (this._CAIXA.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCAIXAIDChanging(value);
+					this.SendPropertyChanging();
+					this._CAIXAID = value;
+					this.SendPropertyChanged("CAIXAID");
+					this.OnCAIXAIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UNIDADEID", DbType="Int NOT NULL")]
+		public int UNIDADEID
+		{
+			get
+			{
+				return this._UNIDADEID;
+			}
+			set
+			{
+				if ((this._UNIDADEID != value))
+				{
+					if (this._UNIDADE.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUNIDADEIDChanging(value);
+					this.SendPropertyChanging();
+					this._UNIDADEID = value;
+					this.SendPropertyChanged("UNIDADEID");
+					this.OnUNIDADEIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USUARIORESPONSAVELID", DbType="Int NOT NULL")]
+		public int USUARIORESPONSAVELID
+		{
+			get
+			{
+				return this._USUARIORESPONSAVELID;
+			}
+			set
+			{
+				if ((this._USUARIORESPONSAVELID != value))
+				{
+					if (this._USUARIO3.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUSUARIORESPONSAVELIDChanging(value);
+					this.SendPropertyChanging();
+					this._USUARIORESPONSAVELID = value;
+					this.SendPropertyChanged("USUARIORESPONSAVELID");
+					this.OnUSUARIORESPONSAVELIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAHORAMOVIMENTACAO", DbType="DateTime NOT NULL")]
+		public System.DateTime DATAHORAMOVIMENTACAO
+		{
+			get
+			{
+				return this._DATAHORAMOVIMENTACAO;
+			}
+			set
+			{
+				if ((this._DATAHORAMOVIMENTACAO != value))
+				{
+					this.OnDATAHORAMOVIMENTACAOChanging(value);
+					this.SendPropertyChanging();
+					this._DATAHORAMOVIMENTACAO = value;
+					this.SendPropertyChanged("DATAHORAMOVIMENTACAO");
+					this.OnDATAHORAMOVIMENTACAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIPOMOVIMENTACAO", DbType="SmallInt NOT NULL")]
+		public short TIPOMOVIMENTACAO
+		{
+			get
+			{
+				return this._TIPOMOVIMENTACAO;
+			}
+			set
+			{
+				if ((this._TIPOMOVIMENTACAO != value))
+				{
+					this.OnTIPOMOVIMENTACAOChanging(value);
+					this.SendPropertyChanging();
+					this._TIPOMOVIMENTACAO = value;
+					this.SendPropertyChanged("TIPOMOVIMENTACAO");
+					this.OnTIPOMOVIMENTACAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALOR", DbType="Decimal(15,2) NOT NULL")]
+		public decimal VALOR
+		{
+			get
+			{
+				return this._VALOR;
+			}
+			set
+			{
+				if ((this._VALOR != value))
+				{
+					this.OnVALORChanging(value);
+					this.SendPropertyChanging();
+					this._VALOR = value;
+					this.SendPropertyChanged("VALOR");
+					this.OnVALORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JUSTIFICATIVA", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string JUSTIFICATIVA
+		{
+			get
+			{
+				return this._JUSTIFICATIVA;
+			}
+			set
+			{
+				if ((this._JUSTIFICATIVA != value))
+				{
+					this.OnJUSTIFICATIVAChanging(value);
+					this.SendPropertyChanging();
+					this._JUSTIFICATIVA = value;
+					this.SendPropertyChanged("JUSTIFICATIVA");
+					this.OnJUSTIFICATIVAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRIADOPOR", DbType="Int NOT NULL")]
+		public int CRIADOPOR
+		{
+			get
+			{
+				return this._CRIADOPOR;
+			}
+			set
+			{
+				if ((this._CRIADOPOR != value))
+				{
+					if (this._USUARIO1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCRIADOPORChanging(value);
+					this.SendPropertyChanging();
+					this._CRIADOPOR = value;
+					this.SendPropertyChanged("CRIADOPOR");
+					this.OnCRIADOPORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ALTERADOPOR", DbType="Int")]
+		public System.Nullable<int> ALTERADOPOR
+		{
+			get
+			{
+				return this._ALTERADOPOR;
+			}
+			set
+			{
+				if ((this._ALTERADOPOR != value))
+				{
+					if (this._USUARIO.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnALTERADOPORChanging(value);
+					this.SendPropertyChanging();
+					this._ALTERADOPOR = value;
+					this.SendPropertyChanged("ALTERADOPOR");
+					this.OnALTERADOPORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EXCLUIDOPOR", DbType="Int")]
+		public System.Nullable<int> EXCLUIDOPOR
+		{
+			get
+			{
+				return this._EXCLUIDOPOR;
+			}
+			set
+			{
+				if ((this._EXCLUIDOPOR != value))
+				{
+					if (this._USUARIO2.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEXCLUIDOPORChanging(value);
+					this.SendPropertyChanging();
+					this._EXCLUIDOPOR = value;
+					this.SendPropertyChanged("EXCLUIDOPOR");
+					this.OnEXCLUIDOPORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATACRIACAO", DbType="DateTime NOT NULL")]
+		public System.DateTime DATACRIACAO
+		{
+			get
+			{
+				return this._DATACRIACAO;
+			}
+			set
+			{
+				if ((this._DATACRIACAO != value))
+				{
+					this.OnDATACRIACAOChanging(value);
+					this.SendPropertyChanging();
+					this._DATACRIACAO = value;
+					this.SendPropertyChanged("DATACRIACAO");
+					this.OnDATACRIACAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAALTERACAO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DATAALTERACAO
+		{
+			get
+			{
+				return this._DATAALTERACAO;
+			}
+			set
+			{
+				if ((this._DATAALTERACAO != value))
+				{
+					this.OnDATAALTERACAOChanging(value);
+					this.SendPropertyChanging();
+					this._DATAALTERACAO = value;
+					this.SendPropertyChanged("DATAALTERACAO");
+					this.OnDATAALTERACAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAEXCLUSAO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DATAEXCLUSAO
+		{
+			get
+			{
+				return this._DATAEXCLUSAO;
+			}
+			set
+			{
+				if ((this._DATAEXCLUSAO != value))
+				{
+					this.OnDATAEXCLUSAOChanging(value);
+					this.SendPropertyChanging();
+					this._DATAEXCLUSAO = value;
+					this.SendPropertyChanged("DATAEXCLUSAO");
+					this.OnDATAEXCLUSAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_CAIXAMOVIMENTACAO", Storage="_USUARIO", ThisKey="ALTERADOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO
+		{
+			get
+			{
+				return this._USUARIO.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO.Entity = null;
+						previousValue.CAIXAMOVIMENTACAOs.Remove(this);
+					}
+					this._USUARIO.Entity = value;
+					if ((value != null))
+					{
+						value.CAIXAMOVIMENTACAOs.Add(this);
+						this._ALTERADOPOR = value.USUARIOID;
+					}
+					else
+					{
+						this._ALTERADOPOR = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("USUARIO");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_CAIXAMOVIMENTACAO1", Storage="_USUARIO1", ThisKey="CRIADOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO1
+		{
+			get
+			{
+				return this._USUARIO1.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO1.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO1.Entity = null;
+						previousValue.CAIXAMOVIMENTACAOs1.Remove(this);
+					}
+					this._USUARIO1.Entity = value;
+					if ((value != null))
+					{
+						value.CAIXAMOVIMENTACAOs1.Add(this);
+						this._CRIADOPOR = value.USUARIOID;
+					}
+					else
+					{
+						this._CRIADOPOR = default(int);
+					}
+					this.SendPropertyChanged("USUARIO1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_CAIXAMOVIMENTACAO2", Storage="_USUARIO2", ThisKey="EXCLUIDOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO2
+		{
+			get
+			{
+				return this._USUARIO2.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO2.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO2.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO2.Entity = null;
+						previousValue.CAIXAMOVIMENTACAOs2.Remove(this);
+					}
+					this._USUARIO2.Entity = value;
+					if ((value != null))
+					{
+						value.CAIXAMOVIMENTACAOs2.Add(this);
+						this._EXCLUIDOPOR = value.USUARIOID;
+					}
+					else
+					{
+						this._EXCLUIDOPOR = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("USUARIO2");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UNIDADE_CAIXAMOVIMENTACAO", Storage="_UNIDADE", ThisKey="UNIDADEID", OtherKey="UNIDADEID", IsForeignKey=true)]
+		public UNIDADE UNIDADE
+		{
+			get
+			{
+				return this._UNIDADE.Entity;
+			}
+			set
+			{
+				UNIDADE previousValue = this._UNIDADE.Entity;
+				if (((previousValue != value) 
+							|| (this._UNIDADE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UNIDADE.Entity = null;
+						previousValue.CAIXAMOVIMENTACAOs.Remove(this);
+					}
+					this._UNIDADE.Entity = value;
+					if ((value != null))
+					{
+						value.CAIXAMOVIMENTACAOs.Add(this);
+						this._UNIDADEID = value.UNIDADEID;
+					}
+					else
+					{
+						this._UNIDADEID = default(int);
+					}
+					this.SendPropertyChanged("UNIDADE");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_CAIXAMOVIMENTACAO3", Storage="_USUARIO3", ThisKey="USUARIORESPONSAVELID", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO3
+		{
+			get
+			{
+				return this._USUARIO3.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO3.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO3.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO3.Entity = null;
+						previousValue.CAIXAMOVIMENTACAOs3.Remove(this);
+					}
+					this._USUARIO3.Entity = value;
+					if ((value != null))
+					{
+						value.CAIXAMOVIMENTACAOs3.Add(this);
+						this._USUARIORESPONSAVELID = value.USUARIOID;
+					}
+					else
+					{
+						this._USUARIORESPONSAVELID = default(int);
+					}
+					this.SendPropertyChanged("USUARIO3");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CAIXA_CAIXAMOVIMENTACAO", Storage="_CAIXA", ThisKey="CAIXAID", OtherKey="CAIXAID", IsForeignKey=true)]
+		public CAIXA CAIXA
+		{
+			get
+			{
+				return this._CAIXA.Entity;
+			}
+			set
+			{
+				CAIXA previousValue = this._CAIXA.Entity;
+				if (((previousValue != value) 
+							|| (this._CAIXA.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CAIXA.Entity = null;
+						previousValue.CAIXAMOVIMENTACAOs.Remove(this);
+					}
+					this._CAIXA.Entity = value;
+					if ((value != null))
+					{
+						value.CAIXAMOVIMENTACAOs.Add(this);
+						this._CAIXAID = value.CAIXAID;
+					}
+					else
+					{
+						this._CAIXAID = default(int);
+					}
+					this.SendPropertyChanged("CAIXA");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CAIXAS")]
+	public partial class CAIXA : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CAIXAID;
+		
+		private int _UNIDADEID;
+		
+		private int _USUARIORESPONSAVELID;
+		
+		private short _SITUACAO;
+		
+		private System.DateTime _COMPETENCIA;
+		
+		private System.DateTime _DATAHORAABERTURA;
+		
+		private decimal _VALORABERTURA;
+		
+		private System.Nullable<decimal> _TOTALVENDAS;
+		
+		private System.Nullable<decimal> _VALORDINHEIRO;
+		
+		private System.Nullable<decimal> _VALORDEBITO;
+		
+		private System.Nullable<decimal> _VALORCREDITO;
+		
+		private System.Nullable<decimal> _TOTALSANGRIA;
+		
+		private System.Nullable<decimal> _TOTALSUPRIMENTOS;
+		
+		private System.Nullable<decimal> _VALORFECHAMENTO;
+		
+		private System.Nullable<System.DateTime> _DATAHORAFECHAMENTO;
+		
+		private int _CRIADOPOR;
+		
+		private System.Nullable<int> _ALTERADOPOR;
+		
+		private System.Nullable<int> _EXCLUIDOPOR;
+		
+		private System.DateTime _DATACRIACAO;
+		
+		private System.Nullable<System.DateTime> _DATAALTERACAO;
+		
+		private System.Nullable<System.DateTime> _DATAEXCLUSAO;
+		
+		private EntitySet<CAIXAMOVIMENTACAO> _CAIXAMOVIMENTACAOs;
+		
+		private EntityRef<USUARIO> _USUARIO;
+		
+		private EntityRef<USUARIO> _USUARIO1;
+		
+		private EntityRef<USUARIO> _USUARIO2;
+		
+		private EntityRef<UNIDADE> _UNIDADE;
+		
+		private EntityRef<USUARIO> _USUARIO3;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCAIXAIDChanging(int value);
+    partial void OnCAIXAIDChanged();
+    partial void OnUNIDADEIDChanging(int value);
+    partial void OnUNIDADEIDChanged();
+    partial void OnUSUARIORESPONSAVELIDChanging(int value);
+    partial void OnUSUARIORESPONSAVELIDChanged();
+    partial void OnSITUACAOChanging(short value);
+    partial void OnSITUACAOChanged();
+    partial void OnCOMPETENCIAChanging(System.DateTime value);
+    partial void OnCOMPETENCIAChanged();
+    partial void OnDATAHORAABERTURAChanging(System.DateTime value);
+    partial void OnDATAHORAABERTURAChanged();
+    partial void OnVALORABERTURAChanging(decimal value);
+    partial void OnVALORABERTURAChanged();
+    partial void OnTOTALVENDASChanging(System.Nullable<decimal> value);
+    partial void OnTOTALVENDASChanged();
+    partial void OnVALORDINHEIROChanging(System.Nullable<decimal> value);
+    partial void OnVALORDINHEIROChanged();
+    partial void OnVALORDEBITOChanging(System.Nullable<decimal> value);
+    partial void OnVALORDEBITOChanged();
+    partial void OnVALORCREDITOChanging(System.Nullable<decimal> value);
+    partial void OnVALORCREDITOChanged();
+    partial void OnTOTALSANGRIAChanging(System.Nullable<decimal> value);
+    partial void OnTOTALSANGRIAChanged();
+    partial void OnTOTALSUPRIMENTOSChanging(System.Nullable<decimal> value);
+    partial void OnTOTALSUPRIMENTOSChanged();
+    partial void OnVALORFECHAMENTOChanging(System.Nullable<decimal> value);
+    partial void OnVALORFECHAMENTOChanged();
+    partial void OnDATAHORAFECHAMENTOChanging(System.Nullable<System.DateTime> value);
+    partial void OnDATAHORAFECHAMENTOChanged();
+    partial void OnCRIADOPORChanging(int value);
+    partial void OnCRIADOPORChanged();
+    partial void OnALTERADOPORChanging(System.Nullable<int> value);
+    partial void OnALTERADOPORChanged();
+    partial void OnEXCLUIDOPORChanging(System.Nullable<int> value);
+    partial void OnEXCLUIDOPORChanged();
+    partial void OnDATACRIACAOChanging(System.DateTime value);
+    partial void OnDATACRIACAOChanged();
+    partial void OnDATAALTERACAOChanging(System.Nullable<System.DateTime> value);
+    partial void OnDATAALTERACAOChanged();
+    partial void OnDATAEXCLUSAOChanging(System.Nullable<System.DateTime> value);
+    partial void OnDATAEXCLUSAOChanged();
+    #endregion
+		
+		public CAIXA()
+		{
+			this._CAIXAMOVIMENTACAOs = new EntitySet<CAIXAMOVIMENTACAO>(new Action<CAIXAMOVIMENTACAO>(this.attach_CAIXAMOVIMENTACAOs), new Action<CAIXAMOVIMENTACAO>(this.detach_CAIXAMOVIMENTACAOs));
+			this._USUARIO = default(EntityRef<USUARIO>);
+			this._USUARIO1 = default(EntityRef<USUARIO>);
+			this._USUARIO2 = default(EntityRef<USUARIO>);
+			this._UNIDADE = default(EntityRef<UNIDADE>);
+			this._USUARIO3 = default(EntityRef<USUARIO>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CAIXAID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int CAIXAID
+		{
+			get
+			{
+				return this._CAIXAID;
+			}
+			set
+			{
+				if ((this._CAIXAID != value))
+				{
+					this.OnCAIXAIDChanging(value);
+					this.SendPropertyChanging();
+					this._CAIXAID = value;
+					this.SendPropertyChanged("CAIXAID");
+					this.OnCAIXAIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UNIDADEID", DbType="Int NOT NULL")]
+		public int UNIDADEID
+		{
+			get
+			{
+				return this._UNIDADEID;
+			}
+			set
+			{
+				if ((this._UNIDADEID != value))
+				{
+					if (this._UNIDADE.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUNIDADEIDChanging(value);
+					this.SendPropertyChanging();
+					this._UNIDADEID = value;
+					this.SendPropertyChanged("UNIDADEID");
+					this.OnUNIDADEIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USUARIORESPONSAVELID", DbType="Int NOT NULL")]
+		public int USUARIORESPONSAVELID
+		{
+			get
+			{
+				return this._USUARIORESPONSAVELID;
+			}
+			set
+			{
+				if ((this._USUARIORESPONSAVELID != value))
+				{
+					if (this._USUARIO3.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUSUARIORESPONSAVELIDChanging(value);
+					this.SendPropertyChanging();
+					this._USUARIORESPONSAVELID = value;
+					this.SendPropertyChanged("USUARIORESPONSAVELID");
+					this.OnUSUARIORESPONSAVELIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SITUACAO", DbType="SmallInt NOT NULL")]
+		public short SITUACAO
+		{
+			get
+			{
+				return this._SITUACAO;
+			}
+			set
+			{
+				if ((this._SITUACAO != value))
+				{
+					this.OnSITUACAOChanging(value);
+					this.SendPropertyChanging();
+					this._SITUACAO = value;
+					this.SendPropertyChanged("SITUACAO");
+					this.OnSITUACAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_COMPETENCIA", DbType="DateTime NOT NULL")]
+		public System.DateTime COMPETENCIA
+		{
+			get
+			{
+				return this._COMPETENCIA;
+			}
+			set
+			{
+				if ((this._COMPETENCIA != value))
+				{
+					this.OnCOMPETENCIAChanging(value);
+					this.SendPropertyChanging();
+					this._COMPETENCIA = value;
+					this.SendPropertyChanged("COMPETENCIA");
+					this.OnCOMPETENCIAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAHORAABERTURA", DbType="DateTime NOT NULL")]
+		public System.DateTime DATAHORAABERTURA
+		{
+			get
+			{
+				return this._DATAHORAABERTURA;
+			}
+			set
+			{
+				if ((this._DATAHORAABERTURA != value))
+				{
+					this.OnDATAHORAABERTURAChanging(value);
+					this.SendPropertyChanging();
+					this._DATAHORAABERTURA = value;
+					this.SendPropertyChanged("DATAHORAABERTURA");
+					this.OnDATAHORAABERTURAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALORABERTURA", DbType="Decimal(15,2) NOT NULL")]
+		public decimal VALORABERTURA
+		{
+			get
+			{
+				return this._VALORABERTURA;
+			}
+			set
+			{
+				if ((this._VALORABERTURA != value))
+				{
+					this.OnVALORABERTURAChanging(value);
+					this.SendPropertyChanging();
+					this._VALORABERTURA = value;
+					this.SendPropertyChanged("VALORABERTURA");
+					this.OnVALORABERTURAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTALVENDAS", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> TOTALVENDAS
+		{
+			get
+			{
+				return this._TOTALVENDAS;
+			}
+			set
+			{
+				if ((this._TOTALVENDAS != value))
+				{
+					this.OnTOTALVENDASChanging(value);
+					this.SendPropertyChanging();
+					this._TOTALVENDAS = value;
+					this.SendPropertyChanged("TOTALVENDAS");
+					this.OnTOTALVENDASChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALORDINHEIRO", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> VALORDINHEIRO
+		{
+			get
+			{
+				return this._VALORDINHEIRO;
+			}
+			set
+			{
+				if ((this._VALORDINHEIRO != value))
+				{
+					this.OnVALORDINHEIROChanging(value);
+					this.SendPropertyChanging();
+					this._VALORDINHEIRO = value;
+					this.SendPropertyChanged("VALORDINHEIRO");
+					this.OnVALORDINHEIROChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALORDEBITO", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> VALORDEBITO
+		{
+			get
+			{
+				return this._VALORDEBITO;
+			}
+			set
+			{
+				if ((this._VALORDEBITO != value))
+				{
+					this.OnVALORDEBITOChanging(value);
+					this.SendPropertyChanging();
+					this._VALORDEBITO = value;
+					this.SendPropertyChanged("VALORDEBITO");
+					this.OnVALORDEBITOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALORCREDITO", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> VALORCREDITO
+		{
+			get
+			{
+				return this._VALORCREDITO;
+			}
+			set
+			{
+				if ((this._VALORCREDITO != value))
+				{
+					this.OnVALORCREDITOChanging(value);
+					this.SendPropertyChanging();
+					this._VALORCREDITO = value;
+					this.SendPropertyChanged("VALORCREDITO");
+					this.OnVALORCREDITOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTALSANGRIA", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> TOTALSANGRIA
+		{
+			get
+			{
+				return this._TOTALSANGRIA;
+			}
+			set
+			{
+				if ((this._TOTALSANGRIA != value))
+				{
+					this.OnTOTALSANGRIAChanging(value);
+					this.SendPropertyChanging();
+					this._TOTALSANGRIA = value;
+					this.SendPropertyChanged("TOTALSANGRIA");
+					this.OnTOTALSANGRIAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTALSUPRIMENTOS", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> TOTALSUPRIMENTOS
+		{
+			get
+			{
+				return this._TOTALSUPRIMENTOS;
+			}
+			set
+			{
+				if ((this._TOTALSUPRIMENTOS != value))
+				{
+					this.OnTOTALSUPRIMENTOSChanging(value);
+					this.SendPropertyChanging();
+					this._TOTALSUPRIMENTOS = value;
+					this.SendPropertyChanged("TOTALSUPRIMENTOS");
+					this.OnTOTALSUPRIMENTOSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALORFECHAMENTO", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> VALORFECHAMENTO
+		{
+			get
+			{
+				return this._VALORFECHAMENTO;
+			}
+			set
+			{
+				if ((this._VALORFECHAMENTO != value))
+				{
+					this.OnVALORFECHAMENTOChanging(value);
+					this.SendPropertyChanging();
+					this._VALORFECHAMENTO = value;
+					this.SendPropertyChanged("VALORFECHAMENTO");
+					this.OnVALORFECHAMENTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAHORAFECHAMENTO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DATAHORAFECHAMENTO
+		{
+			get
+			{
+				return this._DATAHORAFECHAMENTO;
+			}
+			set
+			{
+				if ((this._DATAHORAFECHAMENTO != value))
+				{
+					this.OnDATAHORAFECHAMENTOChanging(value);
+					this.SendPropertyChanging();
+					this._DATAHORAFECHAMENTO = value;
+					this.SendPropertyChanged("DATAHORAFECHAMENTO");
+					this.OnDATAHORAFECHAMENTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRIADOPOR", DbType="Int NOT NULL")]
+		public int CRIADOPOR
+		{
+			get
+			{
+				return this._CRIADOPOR;
+			}
+			set
+			{
+				if ((this._CRIADOPOR != value))
+				{
+					if (this._USUARIO1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCRIADOPORChanging(value);
+					this.SendPropertyChanging();
+					this._CRIADOPOR = value;
+					this.SendPropertyChanged("CRIADOPOR");
+					this.OnCRIADOPORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ALTERADOPOR", DbType="Int")]
+		public System.Nullable<int> ALTERADOPOR
+		{
+			get
+			{
+				return this._ALTERADOPOR;
+			}
+			set
+			{
+				if ((this._ALTERADOPOR != value))
+				{
+					if (this._USUARIO.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnALTERADOPORChanging(value);
+					this.SendPropertyChanging();
+					this._ALTERADOPOR = value;
+					this.SendPropertyChanged("ALTERADOPOR");
+					this.OnALTERADOPORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EXCLUIDOPOR", DbType="Int")]
+		public System.Nullable<int> EXCLUIDOPOR
+		{
+			get
+			{
+				return this._EXCLUIDOPOR;
+			}
+			set
+			{
+				if ((this._EXCLUIDOPOR != value))
+				{
+					if (this._USUARIO2.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEXCLUIDOPORChanging(value);
+					this.SendPropertyChanging();
+					this._EXCLUIDOPOR = value;
+					this.SendPropertyChanged("EXCLUIDOPOR");
+					this.OnEXCLUIDOPORChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATACRIACAO", DbType="DateTime NOT NULL")]
+		public System.DateTime DATACRIACAO
+		{
+			get
+			{
+				return this._DATACRIACAO;
+			}
+			set
+			{
+				if ((this._DATACRIACAO != value))
+				{
+					this.OnDATACRIACAOChanging(value);
+					this.SendPropertyChanging();
+					this._DATACRIACAO = value;
+					this.SendPropertyChanged("DATACRIACAO");
+					this.OnDATACRIACAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAALTERACAO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DATAALTERACAO
+		{
+			get
+			{
+				return this._DATAALTERACAO;
+			}
+			set
+			{
+				if ((this._DATAALTERACAO != value))
+				{
+					this.OnDATAALTERACAOChanging(value);
+					this.SendPropertyChanging();
+					this._DATAALTERACAO = value;
+					this.SendPropertyChanged("DATAALTERACAO");
+					this.OnDATAALTERACAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAEXCLUSAO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DATAEXCLUSAO
+		{
+			get
+			{
+				return this._DATAEXCLUSAO;
+			}
+			set
+			{
+				if ((this._DATAEXCLUSAO != value))
+				{
+					this.OnDATAEXCLUSAOChanging(value);
+					this.SendPropertyChanging();
+					this._DATAEXCLUSAO = value;
+					this.SendPropertyChanged("DATAEXCLUSAO");
+					this.OnDATAEXCLUSAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CAIXA_CAIXAMOVIMENTACAO", Storage="_CAIXAMOVIMENTACAOs", ThisKey="CAIXAID", OtherKey="CAIXAID")]
+		public EntitySet<CAIXAMOVIMENTACAO> CAIXAMOVIMENTACAOs
+		{
+			get
+			{
+				return this._CAIXAMOVIMENTACAOs;
+			}
+			set
+			{
+				this._CAIXAMOVIMENTACAOs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_CAIXA", Storage="_USUARIO", ThisKey="ALTERADOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO
+		{
+			get
+			{
+				return this._USUARIO.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO.Entity = null;
+						previousValue.CAIXAs.Remove(this);
+					}
+					this._USUARIO.Entity = value;
+					if ((value != null))
+					{
+						value.CAIXAs.Add(this);
+						this._ALTERADOPOR = value.USUARIOID;
+					}
+					else
+					{
+						this._ALTERADOPOR = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("USUARIO");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_CAIXA1", Storage="_USUARIO1", ThisKey="CRIADOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO1
+		{
+			get
+			{
+				return this._USUARIO1.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO1.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO1.Entity = null;
+						previousValue.CAIXAs1.Remove(this);
+					}
+					this._USUARIO1.Entity = value;
+					if ((value != null))
+					{
+						value.CAIXAs1.Add(this);
+						this._CRIADOPOR = value.USUARIOID;
+					}
+					else
+					{
+						this._CRIADOPOR = default(int);
+					}
+					this.SendPropertyChanged("USUARIO1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_CAIXA2", Storage="_USUARIO2", ThisKey="EXCLUIDOPOR", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO2
+		{
+			get
+			{
+				return this._USUARIO2.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO2.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO2.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO2.Entity = null;
+						previousValue.CAIXAs2.Remove(this);
+					}
+					this._USUARIO2.Entity = value;
+					if ((value != null))
+					{
+						value.CAIXAs2.Add(this);
+						this._EXCLUIDOPOR = value.USUARIOID;
+					}
+					else
+					{
+						this._EXCLUIDOPOR = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("USUARIO2");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UNIDADE_CAIXA", Storage="_UNIDADE", ThisKey="UNIDADEID", OtherKey="UNIDADEID", IsForeignKey=true)]
+		public UNIDADE UNIDADE
+		{
+			get
+			{
+				return this._UNIDADE.Entity;
+			}
+			set
+			{
+				UNIDADE previousValue = this._UNIDADE.Entity;
+				if (((previousValue != value) 
+							|| (this._UNIDADE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UNIDADE.Entity = null;
+						previousValue.CAIXAs.Remove(this);
+					}
+					this._UNIDADE.Entity = value;
+					if ((value != null))
+					{
+						value.CAIXAs.Add(this);
+						this._UNIDADEID = value.UNIDADEID;
+					}
+					else
+					{
+						this._UNIDADEID = default(int);
+					}
+					this.SendPropertyChanged("UNIDADE");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USUARIO_CAIXA3", Storage="_USUARIO3", ThisKey="USUARIORESPONSAVELID", OtherKey="USUARIOID", IsForeignKey=true)]
+		public USUARIO USUARIO3
+		{
+			get
+			{
+				return this._USUARIO3.Entity;
+			}
+			set
+			{
+				USUARIO previousValue = this._USUARIO3.Entity;
+				if (((previousValue != value) 
+							|| (this._USUARIO3.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USUARIO3.Entity = null;
+						previousValue.CAIXAs3.Remove(this);
+					}
+					this._USUARIO3.Entity = value;
+					if ((value != null))
+					{
+						value.CAIXAs3.Add(this);
+						this._USUARIORESPONSAVELID = value.USUARIOID;
+					}
+					else
+					{
+						this._USUARIORESPONSAVELID = default(int);
+					}
+					this.SendPropertyChanged("USUARIO3");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_CAIXAMOVIMENTACAOs(CAIXAMOVIMENTACAO entity)
+		{
+			this.SendPropertyChanging();
+			entity.CAIXA = this;
+		}
+		
+		private void detach_CAIXAMOVIMENTACAOs(CAIXAMOVIMENTACAO entity)
+		{
+			this.SendPropertyChanging();
+			entity.CAIXA = null;
 		}
 	}
 }
