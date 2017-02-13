@@ -668,18 +668,35 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScripts" runat="server">
     <!-- form wizard -->
+<<<<<<< HEAD
     <%-- <script type="text/javascript" src="../Scripts/wizard/jquery.smartWizard.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             // Smart Wizard
             $('#wizard').smartWizard();
 
+=======
+    <script type="text/javascript" src="../Scripts/wizard/jquery.smartWizard.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Smart Wizard
+            $('#wizard').smartWizard();
+
+>>>>>>> 9790ccb361e67a2f84e51a8f8ec932f59e7516c2
             function onFinishCallback() {
                 $('#wizard').smartWizard('showMessage', 'Finish Clicked');
                 //alert('Finish Clicked');
             }
+<<<<<<< HEAD
         });
 
 
   </script>--%>
+=======
+        });
+
+
+  </script>
+
+>>>>>>> 9790ccb361e67a2f84e51a8f8ec932f59e7516c2
 </asp:Content>
