@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AspNetUserBll.cs" />
+    <Compile Include="CaixaBll.cs" />
+    <Compile Include="CaixaMovimentacaoBll.cs" />
     <Compile Include="CaracteristicasDiversasBll.cs" />
     <Compile Include="ClienteBll.cs" />
     <Compile Include="CorProdutoBll.cs" />
