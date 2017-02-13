@@ -13,6 +13,33 @@ namespace Libra.Vendas {
     public partial class Venda {
         
         /// <summary>
+        /// hdnStep0Concluida control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnStep0Concluida;
+        
+        /// <summary>
+        /// hdnStep1Concluida control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnStep1Concluida;
+        
+        /// <summary>
+        /// hdnStep2Concluida control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnStep2Concluida;
+        
+        /// <summary>
         /// hdnIdVenda control.
         /// </summary>
         /// <remarks>
@@ -38,6 +65,51 @@ namespace Libra.Vendas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPrincipal;
+        
+        /// <summary>
+        /// btnStep0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnStep0;
+        
+        /// <summary>
+        /// btnStep1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnStep1;
+        
+        /// <summary>
+        /// btnStep2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnStep2;
+        
+        /// <summary>
+        /// btnStep3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnStep3;
+        
+        /// <summary>
+        /// divStep0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divStep0;
         
         /// <summary>
         /// lblNumeroPedido control.
@@ -130,13 +202,31 @@ namespace Libra.Vendas {
         protected global::System.Web.UI.WebControls.LinkButton lkbCancelar;
         
         /// <summary>
-        /// lkbSalvarVenda control.
+        /// lkbSalvarStep0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkbSalvarVenda;
+        protected global::System.Web.UI.WebControls.LinkButton lkbSalvarStep0;
+        
+        /// <summary>
+        /// lkbSalvarAvancarStep0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbSalvarAvancarStep0;
+        
+        /// <summary>
+        /// divStep1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divStep1;
         
         /// <summary>
         /// lblClienteProdutos control.
@@ -146,6 +236,15 @@ namespace Libra.Vendas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblClienteProdutos;
+        
+        /// <summary>
+        /// lblNumeroPedidoProdutos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNumeroPedidoProdutos;
         
         /// <summary>
         /// gvResultsProdutos control.
@@ -229,6 +328,51 @@ namespace Libra.Vendas {
         protected global::System.Web.UI.WebControls.Label lbValorTotal;
         
         /// <summary>
+        /// LinkButton1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        
+        /// <summary>
+        /// lkbVoltarStep1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbVoltarStep1;
+        
+        /// <summary>
+        /// lkbSalvarStep1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbSalvarStep1;
+        
+        /// <summary>
+        /// lkbSalvarAvancarStep1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbSalvarAvancarStep1;
+        
+        /// <summary>
+        /// divStep2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divStep2;
+        
+        /// <summary>
         /// lblClientePagamento control.
         /// </summary>
         /// <remarks>
@@ -236,6 +380,15 @@ namespace Libra.Vendas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblClientePagamento;
+        
+        /// <summary>
+        /// lblNumeroPedidoPagamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNumeroPedidoPagamento;
         
         /// <summary>
         /// lblPagamentoValorTotalProdutos control.
@@ -436,13 +589,67 @@ namespace Libra.Vendas {
         protected global::System.Web.UI.WebControls.LinqDataSource ldsFiltroPagamento;
         
         /// <summary>
-        /// LblClienteFinalizarVenda control.
+        /// LinkButton4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblClienteFinalizarVenda;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton4;
+        
+        /// <summary>
+        /// lkbVoltarStep2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbVoltarStep2;
+        
+        /// <summary>
+        /// lkbSalvarStep2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbSalvarStep2;
+        
+        /// <summary>
+        /// lkbSalvarAvancarStep2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbSalvarAvancarStep2;
+        
+        /// <summary>
+        /// divStep3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divStep3;
+        
+        /// <summary>
+        /// lblClienteFinalizarVenda control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblClienteFinalizarVenda;
+        
+        /// <summary>
+        /// lblNumeroPedidoFinalizarVenda control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNumeroPedidoFinalizarVenda;
         
         /// <summary>
         /// btnEmitirPedito control.
@@ -461,5 +668,23 @@ namespace Libra.Vendas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelarVenda;
+        
+        /// <summary>
+        /// LinkButton7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton7;
+        
+        /// <summary>
+        /// lkbVoltarStep3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbVoltarStep3;
     }
 }
