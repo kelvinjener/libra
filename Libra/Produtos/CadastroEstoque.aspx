@@ -407,10 +407,10 @@
                                     </div>
                                     <div class="row">&nbsp;</div>
 
-                                    <div class="row" style="max-height: 50px !important;">
+                                    <div class="row" style="max-height: 50px !important; overflow: scroll;">
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <asp:GridView ID="gvResult_Historico" runat="server" AutoGenerateColumns="false" DataKeyNames="HistoricoId, EstoqueId"
-                                                AllowPaging="true" AllowSorting="true" Width="100%" DataSourceID="ldsHistorico" CssClass="table table-striped responsive-utilities jambo_table gvResults table-bordered dt-responsive nowrap">
+                                                AllowPaging="true" AllowSorting="true" Width="100%" DataSourceID="ldsHistorico" CssClass="table table-striped responsive-utilities jambo_table gvResultsSimple table-bordered dt-responsive nowrap">
                                                 <Columns>
                                                     <asp:BoundField DataField="ValorCompra" HeaderText="Valor Compra" SortExpression="ValorCompra" DataFormatString="{0:C}" ItemStyle-Width="15%" />
                                                     <asp:BoundField DataField="MargemLucro" HeaderText="Margem Lucro" SortExpression="MargemLucro" ItemStyle-Width="10%" />

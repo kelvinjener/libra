@@ -58,8 +58,8 @@ body.nav-sm .navbar.nav_title {
 
 
 .labelInfo {
-    color: black !important;
-    font-weight: bold !important;
+    color: #585858 !important;
+    /*font-weight: bold !important;*/
 }
 
 .requerid {
@@ -1333,6 +1333,10 @@ table.tile_info {
         table.tile_info td:first-child {
             width: 83%;
         }
+
+table > tbody > tr {
+    font-size: small;
+}
 
 td span {
     line-height: 28px;

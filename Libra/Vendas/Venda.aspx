@@ -180,11 +180,11 @@
                         </div>
                         <div class="clearfix"></div>
                         <div class="x_content">
-                            <div class="row">
+                            <div class="row" style="max-height: 40vh; overflow-y: auto;">
                                 <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <asp:GridView ID="gvResultsProdutos" runat="server" AutoGenerateColumns="false" DataKeyNames="VendaId, VendaProdutosId, ClienteId, VendedorId, UnidadeId"
-                                        AllowPaging="true" AllowSorting="true" Width="100%" DataSourceID="ldsFiltroProdutos" CssClass="table table-striped responsive-utilities jambo_table gvResults table-bordered dt-responsive nowrap"
-                                        OnRowDataBound="gvResultsProdutos_RowDataBound">
+                                    <asp:GridView ID="gvResultsProdutos" runat="server" ShowHeader="true" AutoGenerateColumns="false" DataKeyNames="VendaId, VendaProdutosId, ClienteId, VendedorId, UnidadeId"
+                                        AllowPaging="false" AllowSorting="true" Width="100%" DataSourceID="ldsFiltroProdutos" CssClass="table table-striped responsive-utilities jambo_table table-bordered dt-responsive nowrap"
+                                        OnRowDataBound="gvResultsProdutos_RowDataBound" OnPreRender="gvResultsProdutos_PreRender">
                                         <Columns>
                                             <asp:TemplateField HeaderText="Item">
                                                 <ItemTemplate>
@@ -556,10 +556,11 @@
                                     </div>
                                 </div>
 
-                                <div class="row">
+                                <div class="row" style="max-height: 40vh; overflow-y: auto;">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         <asp:GridView ID="gvResultsPagamento" runat="server" AutoGenerateColumns="false" DataKeyNames="VendaId, VendaPagamentoId, ClienteId, VendedorId, UnidadeId"
-                                            AllowPaging="true" AllowSorting="true" Width="100%" DataSourceID="ldsFiltroPagamento" CssClass="table table-striped responsive-utilities jambo_table  table-bordered dt-responsive nowrap">
+                                            AllowPaging="true" AllowSorting="true" Width="100%" DataSourceID="ldsFiltroPagamento" OnPreRender="gvResultsPagamento_PreRender"
+                                            CssClass="table table-striped responsive-utilities jambo_table  table-bordered dt-responsive nowrap">
                                             <Columns>
                                                 <asp:BoundField HeaderText="Forma de Pagamento" SortExpression="FormaPagamento" DataField="FormaPagamento" ItemStyle-Width="65%" />
                                                 <asp:BoundField HeaderText="Parcelas" SortExpression="Parcelas" DataField="Parcelas" ItemStyle-Width="10%" />
@@ -667,36 +668,21 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScripts" runat="server">
-    <!-- form wizard -->
-<<<<<<< HEAD
-    <%-- <script type="text/javascript" src="../Scripts/wizard/jquery.smartWizard.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            // Smart Wizard
-            $('#wizard').smartWizard();
-
-=======
-    <script type="text/javascript" src="../Scripts/wizard/jquery.smartWizard.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            // Smart Wizard
-            $('#wizard').smartWizard();
-
->>>>>>> 9790ccb361e67a2f84e51a8f8ec932f59e7516c2
-            function onFinishCallback() {
-                $('#wizard').smartWizard('showMessage', 'Finish Clicked');
-                //alert('Finish Clicked');
-            }
-<<<<<<< HEAD
+    <script>
+        $('#<%= gvResultsProdutos.ClientID %>').dataTable({
+            "bPaginate": false,
+            "bLengthChange": false,
+            "bFilter": false,
+            "bInfo": false,
+            "bAutoWidth": false
         });
 
-
-  </script>--%>
-=======
+        $('#<%= gvResultsPagamento.ClientID %>').dataTable({
+            "bPaginate": false,
+            "bLengthChange": false,
+            "bFilter": false,
+            "bInfo": false,
+            "bAutoWidth": false
         });
-
-
-  </script>
-
->>>>>>> 9790ccb361e67a2f84e51a8f8ec932f59e7516c2
+    </script>
 </asp:Content>

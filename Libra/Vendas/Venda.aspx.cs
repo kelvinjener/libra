@@ -758,5 +758,22 @@ namespace Libra.Vendas
         }
         #endregion
 
+        protected void gvResultsPagamento_PreRender(object sender, EventArgs e)
+        {
+            if (gvResultsPagamento.Rows.Count > 0)
+            {
+                gvResultsPagamento.UseAccessibleHeader = true;
+                gvResultsPagamento.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+        }
+
+        protected void gvResultsProdutos_PreRender(object sender, EventArgs e)
+        {
+            if (gvResultsProdutos.Rows.Count > 0)
+            {
+                gvResultsProdutos.UseAccessibleHeader = true;
+                gvResultsProdutos.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+        }
     }
 }
