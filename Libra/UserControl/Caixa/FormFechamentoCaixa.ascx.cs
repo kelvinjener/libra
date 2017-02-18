@@ -25,6 +25,8 @@ namespace Libra.UserControl.Caixa
         {
             if (!IsPostBack)
             {
+                this.txtValorAbertura.Attributes.Add("onkeypress", "return MascaraMoeda(this, '.', ',', event);");
+
                 try
                 {
                     if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("fechamentocaixa"))
@@ -39,12 +41,29 @@ namespace Libra.UserControl.Caixa
                             lkbSalvar.Text = "FECHAR CAIXA";
 
                             lblSituacaoCaixa.Text = Enum.GetName(typeof(SituacaoCaixaEnum), caixa.SITUACAO);
-                            lblUnidade.Text = caixa.USUARIO.NOME;
+                            lblUnidade.Text = caixa.USUARIO1.NOME;
                             lblUsuarioResponsavel.Text = caixa.UNIDADE.APELIDO;
-                            //TODO: Campos
+
                             lblDataHoraAbertura.Text = caixa.DATAHORAABERTURA.ToString();
-                            txtValorAbertura.Text = "R$" + string.Format("{0}:C", caixa.VALORABERTURA);
+                            txtValorAbertura.Text = string.Format("{0}:C", caixa.VALORABERTURA);
                             txtValorAbertura.Enabled = false;
+
+                            var valorVendas = caixa.TOTALVENDAS == null ? 0 : caixa.TOTALVENDAS;
+                            var valorDinheiro = caixa.VALORDINHEIRO == null ? 0 : caixa.VALORDINHEIRO;
+                            var valorCredito = caixa.VALORCREDITO == null ? 0 : caixa.VALORCREDITO;
+                            var valorDebito = caixa.VALORDEBITO == null ? 0 : caixa.VALORDEBITO;
+                            var valorSangria = caixa.TOTALSANGRIA == null ? 0 : caixa.TOTALSANGRIA;
+                            var valorSuprimento = caixa.TOTALSUPRIMENTOS == null ? 0 : caixa.TOTALSUPRIMENTOS;
+                            var valorFechamento = caixa.VALORFECHAMENTO == null ? 0 : caixa.VALORFECHAMENTO;
+
+                            lbValorTotalVendas.Text = "R$" + string.Format("{0}:C", valorVendas);
+                            lblValorDinheiro.Text = "R$" + string.Format("{0}:C", valorDinheiro);
+                            lblCartaoDebito.Text = "R$" + string.Format("{0}:C", valorDebito);
+                            lblCartaoCredito.Text = "R$" + string.Format("{0}:C", valorCredito);
+                            lblValorSangria.Text = "R$" + string.Format("{0}:C", valorSangria);
+                            lblValorSuprimentos.Text = "R$" + string.Format("{0}:C", valorSuprimento);
+                            lblValorFechamento.Text = "R$" + string.Format("{0}:C", valorFechamento);
+                            lblDataHoraFechamento.Text = DateTime.Now.ToString();
 
                         }
                         else
@@ -52,16 +71,11 @@ namespace Libra.UserControl.Caixa
                             divFechamento.Visible = false;
                             lkbSalvar.Text = "ABRIR CAIXA";
 
-
                             lblSituacaoCaixa.Text = Enum.GetName(typeof(SituacaoCaixaEnum), SituacaoCaixaEnum.Fechado);
                             lblUnidade.Text = UsuarioInfo.UnidadeLogadaDescricao;
                             lblUsuarioResponsavel.Text = UsuarioInfo.Nome;
                             lblDataHoraAbertura.Text = DateTime.Now.ToString();
-
-
                         }
-
-
                     }
                     else
                     {
@@ -74,29 +88,43 @@ namespace Libra.UserControl.Caixa
                             {
                                 lblTitulo.Text = "DADOS ABERTURA/FECHAMENTO CAIXA";
                                 divFechamento.Visible = true;
-                                lkbSalvar.Visible = false;
-
-
+                                divBtnSalvar.Visible = false;
+                                divBtnFechar.Attributes["class"] = "col-md-offset-10 col-md-2 col-sm-12 col-xs-12";
 
                                 lblSituacaoCaixa.Text = Enum.GetName(typeof(SituacaoCaixaEnum), caixa.SITUACAO);
-                                lblUnidade.Text = caixa.USUARIO.NOME;
+                                lblUnidade.Text = caixa.USUARIO1.NOME;
                                 lblUsuarioResponsavel.Text = caixa.UNIDADE.APELIDO;
 
-                                //TODO: Campos
                                 lblDataHoraAbertura.Text = caixa.DATAHORAABERTURA.ToString();
-                                txtValorAbertura.Text = "R$" + string.Format("{0}:C", caixa.VALORABERTURA);
+                                txtValorAbertura.Text = string.Format("{0}:C", caixa.VALORABERTURA);
+                                txtValorAbertura.Enabled = false;
 
+                                var valorVendas = caixa.TOTALVENDAS == null ? 0 : caixa.TOTALVENDAS;
+                                var valorDinheiro = caixa.VALORDINHEIRO == null ? 0 : caixa.VALORDINHEIRO;
+                                var valorCredito = caixa.VALORCREDITO == null ? 0 : caixa.VALORCREDITO;
+                                var valorDebito = caixa.VALORDEBITO == null ? 0 : caixa.VALORDEBITO;
+                                var valorSangria = caixa.TOTALSANGRIA == null ? 0 : caixa.TOTALSANGRIA;
+                                var valorSuprimento = caixa.TOTALSUPRIMENTOS == null ? 0 : caixa.TOTALSUPRIMENTOS;
+                                var valorFechamento = caixa.VALORFECHAMENTO == null ? 0 : caixa.VALORFECHAMENTO;
+
+                                lbValorTotalVendas.Text = "R$" + string.Format("{0}:C", valorVendas);
+                                lblValorDinheiro.Text = "R$" + string.Format("{0}:C", valorDinheiro);
+                                lblCartaoDebito.Text = "R$" + string.Format("{0}:C", valorDebito);
+                                lblCartaoCredito.Text = "R$" + string.Format("{0}:C", valorCredito);
+                                lblValorSangria.Text = "R$" + string.Format("{0}:C", valorSangria);
+                                lblValorSuprimentos.Text = "R$" + string.Format("{0}:C", valorSuprimento);
+                                lblValorFechamento.Text = "R$" + string.Format("{0}:C", valorFechamento);
+                                lblDataHoraFechamento.Text = caixa.DATAHORAFECHAMENTO.ToString();
                             }
                         }
                     }
 
-                    mpeFechamentoCaixa.Show();
+                    //mpeFechamentoCaixa.Show();
                 }
                 catch (Exception ex)
                 {
                     HandlerException(ex);
                 }
-
             }
         }
 
@@ -104,28 +132,28 @@ namespace Libra.UserControl.Caixa
         {
             if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("fechamentocaixa"))
             {
-                mpeFechamentoCaixa.Hide();
+                //mpeFechamentoCaixa.Hide();
                 Response.Redirect("/");
             }
-            else
-            {
-                mpeFechamentoCaixa.Hide();
+            //else
+            //{
+            //    mpeFechamentoCaixa.Hide();
 
-            }
+            //}
         }
 
         protected void lkbFechar_Click(object sender, EventArgs e)
         {
             if (((System.Web.UI.TemplateControl)(Page)).AppRelativeVirtualPath.ToLower().Contains("fechamentocaixa"))
             {
-                mpeFechamentoCaixa.Hide();
+                //mpeFechamentoCaixa.Hide();
                 Response.Redirect("/");
             }
-            else
-            {
-                mpeFechamentoCaixa.Hide();
+            //else
+            //{
+            //    mpeFechamentoCaixa.Hide();
 
-            }
+            //}
         }
 
         protected void lkbSalvar_Click(object sender, EventArgs e)
@@ -142,18 +170,48 @@ namespace Libra.UserControl.Caixa
 
         public void LimparCapos()
         {
-
+            txtValorAbertura.Text = string.Empty;
         }
 
         public void Salvar()
         {
             try
             {
-                MessageBoxSucesso(this.Page, "Salvo com Sucesso!");
+                string MensagemSucesso = string.Empty;
+                CAIXA caixa = caixaBll.GetCaixaAbertoByDateNowAndUnidade(UsuarioInfo.UnidadeLogada);
+                if (caixa != null)
+                {
+                    caixa.SITUACAO = EnumUtils.GetValueInt(SituacaoCaixaEnum.Fechado);
+                    caixa.DATAHORAFECHAMENTO = Convert.ToDateTime(this.lblDataHoraFechamento.Text);
+                    caixa.DATAALTERACAO = DateTime.Now;
+                    caixa.ALTERADOPOR = UsuarioInfo.IdUsuario;
+                    MensagemSucesso = "Caixa fechado com sucesso!";
+                }
+                else
+                {
+                    caixa = new CAIXA();
+                    caixa.SITUACAO = EnumUtils.GetValueInt(SituacaoCaixaEnum.Aberto);
+                    caixa.USUARIORESPONSAVELID = UsuarioInfo.IdUsuario;
+                    caixa.UNIDADEID = UsuarioInfo.UnidadeLogada;
+                    caixa.DATAHORAABERTURA = Convert.ToDateTime(this.lblDataHoraAbertura.Text);
+                    caixa.COMPETENCIA = DateTime.Now;
+                    caixa.VALORABERTURA = Convert.ToDecimal(this.txtValorAbertura.Text);
+                    caixa.CRIADOPOR = UsuarioInfo.IdUsuario;
+                    caixa.DATACRIACAO = DateTime.Now;
+                    MensagemSucesso = "Caixa aberto com sucesso!";
+
+                }
+
+                caixaBll.Salvar(caixa);
+
+                MessageBoxSucesso(this.Page, MensagemSucesso);
+                //mpeFechamentoCaixa.Show();
             }
             catch (Exception ex)
             {
                 HandlerException(ex);
+                //mpeFechamentoCaixa.Show();
+
             }
         }
 

@@ -56,6 +56,13 @@ namespace Libra.Vendas
         {
             if (!Page.IsPostBack)
             {
+                #region Verificação Caixa
+                var caixa = new CaixaBll().GetCaixaByDateNowAndUnidade(UsuarioInfo.UnidadeLogada);
+                if (caixa == null || caixa.SITUACAO == Convert.ToInt16(EnumUtils.GetValue(SituacaoCaixaEnum.Fechado)))
+                {
+                    Response.Redirect("/?M=CaixaFechado");
+                }
+                #endregion
                 CarregarTela();
             }
         }

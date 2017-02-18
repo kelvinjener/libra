@@ -187,7 +187,7 @@
                                         </label>
                                     </asp:LinkButton>
                                     <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-                                        <li>
+                                        <%--<li>
                                             <a runat="server" href="~/Account/Manage" title="Manage your account">Manage</a>
                                         </li>
                                         <li>
@@ -198,82 +198,36 @@
                                         </li>
                                         <li>
                                             <a href="javascript:;">Help</a>
-                                        </li>
+                                        </li>--%>
                                         <li>
-                                            <asp:LoginStatus runat="server" ID="Logout" LogoutAction="Redirect" LogoutText="Sair" LogoutPageUrl="~/Login" OnLoggingOut="Unnamed_LoggingOut" />
+                                            <asp:LoginStatus runat="server" ID="Logout" LogoutAction="Redirect" LogoutText="SAIR" LogoutPageUrl="~/Login" OnLoggingOut="Unnamed_LoggingOut" />
                                         </li>
                                     </ul>
                                 </li>
                                 <li role="presentation" class="dropdown">
                                     <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                                        <i class="fa fa-envelope-o"></i>
-                                        <span class="badge bg-red">6</span>
+                                        <i class="fa fa-money fa-3x" runat="server" id="iCaixa"></i>
                                     </a>
                                     <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
-                                        <li>
-                                            <a>
-                                                <span class="image">
-                                                    <img src="../images/img.jpg" alt="Profile Image" />
-                                                </span>
-                                                <span>
-                                                    <span>John Smith</span>
-                                                    <span class="time">3 mins ago</span>
-                                                </span>
-                                                <span class="message">Film festivals used to be do-or-die moments for movie makers. They were where...
-                                                </span>
-                                            </a>
+                                        <li runat="server" id="liCaixaFechado">
+                                            <h2>Caixa Fechado!</h2>
                                         </li>
-                                        <li>
-                                            <a>
-                                                <span class="image">
-                                                    <img src="../images/img.jpg" alt="Profile Image" />
-                                                </span>
-                                                <span>
-                                                    <span>John Smith</span>
-                                                    <span class="time">3 mins ago</span>
-                                                </span>
-                                                <span class="message">Film festivals used to be do-or-die moments for movie makers. They were where...
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a>
-                                                <span class="image">
-                                                    <img src="../images/img.jpg" alt="Profile Image" />
-                                                </span>
-                                                <span>
-                                                    <span>John Smith</span>
-                                                    <span class="time">3 mins ago</span>
-                                                </span>
-                                                <span class="message">Film festivals used to be do-or-die moments for movie makers. They were where...
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a>
-                                                <span class="image">
-                                                    <img src="../images/img.jpg" alt="Profile Image" />
-                                                </span>
-                                                <span>
-                                                    <span>John Smith</span>
-                                                    <span class="time">3 mins ago</span>
-                                                </span>
-                                                <span class="message">Film festivals used to be do-or-die moments for movie makers. They were where...
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <div class="text-center">
-                                                <a href="inbox.html">
-                                                    <strong>See All Alerts</strong>
-                                                    <i class="fa fa-angle-right"></i>
-                                                </a>
-                                            </div>
+                                        <li runat="server" id="liCaixaAberto">
+                                            <h2>Caixa Aberto!</h2>
+
+                                            <span class="message">
+                                                <div>
+                                                    Hora de Abertura:
+                                                    <asp:Label runat="server" ID="lbHoraAbertura" CssClass="labelInfo" Text="18/02/2017 08:00"></asp:Label>
+                                                </div>
+                                                <div>
+                                                    Responsável:
+                                                    <asp:Label runat="server" ID="lbResponsavelCaixa" CssClass="labelInfo"></asp:Label>
+                                                </div>
+                                            </span>
                                         </li>
                                     </ul>
-                                </li>
-                            </ul>
-                            <%--</LoggedInTemplate>
+                                    <%--</LoggedInTemplate>
                             </asp:LoginView>--%>
                         </nav>
                     </div>

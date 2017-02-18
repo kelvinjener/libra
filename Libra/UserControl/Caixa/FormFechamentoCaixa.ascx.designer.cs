@@ -13,33 +13,6 @@ namespace Libra.UserControl.Caixa {
     public partial class FormFechamentoCaixa1 {
         
         /// <summary>
-        /// lkbOculto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkbOculto;
-        
-        /// <summary>
-        /// mpeFechamentoCaixa control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender mpeFechamentoCaixa;
-        
-        /// <summary>
-        /// pnlFechamentoCaixa control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlFechamentoCaixa;
-        
-        /// <summary>
         /// lblTitulo control.
         /// </summary>
         /// <remarks>
@@ -47,24 +20,6 @@ namespace Libra.UserControl.Caixa {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTitulo;
-        
-        /// <summary>
-        /// lblCloseFechamentoCaixa control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lblCloseFechamentoCaixa;
-        
-        /// <summary>
-        /// lblCloseFechamentoCaixaOculto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lblCloseFechamentoCaixaOculto;
         
         /// <summary>
         /// lblUnidade control.
@@ -112,6 +67,15 @@ namespace Libra.UserControl.Caixa {
         protected global::System.Web.UI.WebControls.TextBox txtValorAbertura;
         
         /// <summary>
+        /// rfvValorAbertura control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvValorAbertura;
+        
+        /// <summary>
         /// divFechamento control.
         /// </summary>
         /// <remarks>
@@ -130,13 +94,94 @@ namespace Libra.UserControl.Caixa {
         protected global::System.Web.UI.WebControls.Label lbValorTotalVendas;
         
         /// <summary>
-        /// TextBox1 control.
+        /// lblValorDinheiro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.Label lblValorDinheiro;
+        
+        /// <summary>
+        /// lblCartaoDebito control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCartaoDebito;
+        
+        /// <summary>
+        /// lblCartaoCredito control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCartaoCredito;
+        
+        /// <summary>
+        /// lkbDetalharEntradas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbDetalharEntradas;
+        
+        /// <summary>
+        /// lblValorSangria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblValorSangria;
+        
+        /// <summary>
+        /// lblValorSuprimentos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblValorSuprimentos;
+        
+        /// <summary>
+        /// lkDetalharSaidas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkDetalharSaidas;
+        
+        /// <summary>
+        /// lblValorFechamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblValorFechamento;
+        
+        /// <summary>
+        /// lblDataHoraFechamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDataHoraFechamento;
+        
+        /// <summary>
+        /// divBtnFechar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divBtnFechar;
         
         /// <summary>
         /// lkbFechar control.
@@ -146,6 +191,15 @@ namespace Libra.UserControl.Caixa {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lkbFechar;
+        
+        /// <summary>
+        /// divBtnSalvar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divBtnSalvar;
         
         /// <summary>
         /// lkbSalvar control.
