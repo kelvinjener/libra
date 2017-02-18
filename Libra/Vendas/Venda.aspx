@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="Venda" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Venda.aspx.cs" Inherits="Libra.Vendas.Venda" %>
 
+<%@ Register Src="~/UserControl/Clientes/CadastroCliente.ascx" TagName="CadastroCliente"
+    TagPrefix="cuc" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -129,11 +132,11 @@
 
                                                             <div class="col-md-2 col-sm-12 col-xs-12">
                                                                 <asp:LinkButton ID="lkbPesquisarCliente" runat="server" Width="100%" ToolTip="Pesquisar por cliente"
-                                                                    CssClass="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></asp:LinkButton>
+                                                                    CssClass="btn btn-default" OnClick="lkbPesquisarCliente_Click"><i class="fa fa-search" aria-hidden="true"></i></asp:LinkButton>
                                                             </div>
                                                             <div class="col-md-2 col-sm-12 col-xs-12">
                                                                 <asp:LinkButton runat="server" ID="lkbAddCliente" ToolTip="Adicionar novo cliente" ValidationGroup="GCliente"
-                                                                    CssClass="btn btn-primary" Width="100%"><i class="fa fa-plus" aria-hidden="true"></i></asp:LinkButton>
+                                                                    CssClass="btn btn-primary" Width="100%" OnClick="lkbAddCliente_Click"><i class="fa fa-plus" aria-hidden="true"></i></asp:LinkButton>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -183,7 +186,7 @@
                             <div class="row" style="max-height: 40vh; overflow-y: auto;">
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <asp:GridView ID="gvResultsProdutos" runat="server" ShowHeader="true" AutoGenerateColumns="false" DataKeyNames="VendaId, VendaProdutosId, ClienteId, VendedorId, UnidadeId"
-                                        AllowPaging="false" AllowSorting="true" Width="100%" DataSourceID="ldsFiltroProdutos" CssClass="table table-striped responsive-utilities jambo_table table-bordered dt-responsive nowrap"
+                                        AllowPaging="false" AllowSorting="true" Width="100%" DataSourceID="ldsFiltroProdutos" CssClass="table table-striped responsive-utilities jambo_table table-bordered dt-responsive nowrap gvResultSimple"
                                         OnRowDataBound="gvResultsProdutos_RowDataBound" OnPreRender="gvResultsProdutos_PreRender">
                                         <Columns>
                                             <asp:TemplateField HeaderText="Item">
@@ -560,7 +563,7 @@
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         <asp:GridView ID="gvResultsPagamento" runat="server" AutoGenerateColumns="false" DataKeyNames="VendaId, VendaPagamentoId, ClienteId, VendedorId, UnidadeId"
                                             AllowPaging="true" AllowSorting="true" Width="100%" DataSourceID="ldsFiltroPagamento" OnPreRender="gvResultsPagamento_PreRender"
-                                            CssClass="table table-striped responsive-utilities jambo_table  table-bordered dt-responsive nowrap">
+                                            CssClass="table table-striped responsive-utilities jambo_table  table-bordered dt-responsive nowrap gvResultSimple">
                                             <Columns>
                                                 <asp:BoundField HeaderText="Forma de Pagamento" SortExpression="FormaPagamento" DataField="FormaPagamento" ItemStyle-Width="65%" />
                                                 <asp:BoundField HeaderText="Parcelas" SortExpression="Parcelas" DataField="Parcelas" ItemStyle-Width="10%" />
@@ -664,25 +667,111 @@
                 </div>
             </div>
         </div>
-
     </div>
+
+    <asp:LinkButton ID="lkbOculto" runat="server" Text="" Style="display: none"></asp:LinkButton>
+    <asp:ModalPopupExtender ID="mpeCadastroCliente" TargetControlID="lkbOculto" PopupControlID="pnlCadastroCliente"
+        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lbCloseCadastroCliente"
+        ClientIDMode="AutoID">
+    </asp:ModalPopupExtender>
+    <asp:Panel ID="pnlCadastroCliente" runat="server" Style="display: none">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <h2>CADASTRO DE CLIENTE</h2>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1">
+                                            <asp:LinkButton runat="server" ID="lbCloseCadastroCliente" OnClick="lbCloseCadastroCliente_Click"><i class="fa fa-close"></i></asp:LinkButton>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <cuc:CadastroCliente ID="cucCadastroCliente" runat="server" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
+
+    <asp:ModalPopupExtender ID="mpeFiltroCliente" TargetControlID="lkbOculto" PopupControlID="pnlFiltroCliente"
+        BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lbCloseFiltroCliente"
+        ClientIDMode="AutoID">
+    </asp:ModalPopupExtender>
+    <asp:Panel ID="pnlFiltroCliente" runat="server" Style="display: none">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <h2>FILTRO DE CLIENTE</h2>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1">
+                                            <asp:LinkButton runat="server" ID="lbCloseFiltroCliente" OnClick="lbCloseFiltroCliente_Click"><i class="fa fa-close"></i></asp:LinkButton>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>Código</label>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">&nbsp;</div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>CPF</label>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">&nbsp;</div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div>
+                                                <label>Telefone</label>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">&nbsp;</div>
+                                    <div class="row">
+                                        <div class="col-md-2 col-sm-12 col-xs-12">
+                                            <asp:LinkButton runat="server" ID="lkFecharFiltroCliente"
+                                                CssClass="btn btn-default" Width="100%" OnClick="lkFecharFiltroCliente_Click">Fechar</asp:LinkButton>
+                                        </div>
+                                        <div class="col-md-2 col-sm-12 col-xs-12">
+                                            <asp:LinkButton runat="server" ID="lkFiltrarCliente"
+                                                CssClass="btn btn-primary" Width="100%" OnClick="lkFiltrarCliente_Click">Filtrar</asp:LinkButton>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScripts" runat="server">
-    <script>
-        $('#<%= gvResultsProdutos.ClientID %>').dataTable({
-            "bPaginate": false,
-            "bLengthChange": false,
-            "bFilter": false,
-            "bInfo": false,
-            "bAutoWidth": false
-        });
-
-        $('#<%= gvResultsPagamento.ClientID %>').dataTable({
-            "bPaginate": false,
-            "bLengthChange": false,
-            "bFilter": false,
-            "bInfo": false,
-            "bAutoWidth": false
-        });
-    </script>
 </asp:Content>

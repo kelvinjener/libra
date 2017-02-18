@@ -19,6 +19,7 @@ namespace Libra.Communs
         public string Email { get; set; }
         public bool Ativo { get; set; }
         public int UnidadeLogada { get; set; }
+        public string UnidadeLogadaDescricao { get; set; }
         public List<int> Unidades { get; set; }
         public List<int> Perfis { get; set; }
     }

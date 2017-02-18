@@ -109,7 +109,7 @@ namespace Libra.Vendas
 
                     AtualizaVendaProduto(VendaProdutosId, Convert.ToInt32(ddlProduto.SelectedValue), p.VALORCUSTO, null, null, null, null, null);
                 }
-               Step1AtualizarTotal();
+                Step1AtualizarTotal();
                 ddlProduto.Focus();
             }
             catch (Exception ex)
@@ -137,7 +137,7 @@ namespace Libra.Vendas
                     AtualizaVendaProduto(VendaProdutosId, null, null, Convert.ToInt32(txtQTD.Text), null, null, null, subTotal);
 
                 }
-               Step1AtualizarTotal();
+                Step1AtualizarTotal();
 
                 txtQTD.Focus();
             }
@@ -164,7 +164,7 @@ namespace Libra.Vendas
                     AtualizaVendaProduto(VendaProdutosId, null, null, null, null, Convert.ToInt32(txtDesconto.Text), null, subTotal);
 
                 }
-               Step1AtualizarTotal();
+                Step1AtualizarTotal();
 
                 txtDesconto.Focus();
             }
@@ -191,7 +191,7 @@ namespace Libra.Vendas
                     AtualizaVendaProduto(VendaProdutosId, null, null, null, null, null, Convert.ToInt32(txtDescontoPorcentagem.Text), subTotal);
 
                 }
-               Step1AtualizarTotal();
+                Step1AtualizarTotal();
 
                 txtDescontoPorcentagem.Focus();
             }
@@ -218,7 +218,7 @@ namespace Libra.Vendas
                     AtualizaVendaProduto(VendaProdutosId, null, null, null, Convert.ToInt32(txtAcrescimoPorcentagem.Text), null, null, subTotal);
 
                 }
-               Step1AtualizarTotal();
+                Step1AtualizarTotal();
 
                 txtAcrescimoPorcentagem.Focus();
             }
@@ -541,12 +541,63 @@ namespace Libra.Vendas
             btnStep2_Click(this, null);
 
         }
+
+        protected void gvResultsPagamento_PreRender(object sender, EventArgs e)
+        {
+            if (gvResultsPagamento.Rows.Count > 0)
+            {
+                gvResultsPagamento.UseAccessibleHeader = true;
+                gvResultsPagamento.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+        }
+
+        protected void gvResultsProdutos_PreRender(object sender, EventArgs e)
+        {
+            if (gvResultsProdutos.Rows.Count > 0)
+            {
+                gvResultsProdutos.UseAccessibleHeader = true;
+                gvResultsProdutos.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+        }
+
+        protected void lbCloseCadastroCliente_Click(object sender, EventArgs e)
+        {
+            mpeCadastroCliente.Hide();
+        }
+
+        protected void lkbAddCliente_Click(object sender, EventArgs e)
+        {
+            cucCadastroCliente.LimparCampos();
+            mpeCadastroCliente.Show();
+        }
+
+        protected void lbCloseFiltroCliente_Click(object sender, EventArgs e)
+        {
+            mpeFiltroCliente.Hide();
+        }
+
+        protected void lkFecharFiltroCliente_Click(object sender, EventArgs e)
+        {
+            mpeFiltroCliente.Hide();
+        }
+
+        protected void lkFiltrarCliente_Click(object sender, EventArgs e)
+        {
+            mpeFiltroCliente.Hide();
+        }
+
+        protected void lkbPesquisarCliente_Click(object sender, EventArgs e)
+        {
+            mpeFiltroCliente.Show();
+        }
+
         #endregion
 
         #region Methods
         public void CarregarTela()
         {
             CarregaFormaPagamento();
+            CarregarClientes();
             LimparDados();
         }
 
@@ -606,6 +657,31 @@ namespace Libra.Vendas
 
             foreach (var item in new VendaFormaPagamentoBll().GetAllFormasPagamento())
                 ddlFormaPagamento.Items.Add(new ListItem(item.DESCRICAO, item.FORMAPAGAMENTOID.ToString()));
+        }
+
+        public void CarregarClientes()
+        {
+            ddlCliente.Items.Clear();
+            ddlCliente.Items.Add(new ListItem("Selecione...", ""));
+
+            foreach (var item in new ClienteBll().GetAllClientes())
+                ddlCliente.Items.Add(new ListItem(item.NOME, item.CLIENTEID.ToString()));
+        }
+
+        public void AutoSelectCliente(int idCliente)
+        {
+            if (idCliente > 0)
+            {
+                CarregarClientes();
+                ddlCliente.SelectedValue = idCliente.ToString();
+            }
+        }
+
+        public void SalvarCliente(int idCliente)
+        {
+            AutoSelectCliente(idCliente);
+            mpeCadastroCliente.Hide();
+            MessageBoxSucesso(this.Page, "Cliente salvo com sucesso!");
         }
 
         public void Edicao(bool edita)
@@ -757,23 +833,5 @@ namespace Libra.Vendas
 
         }
         #endregion
-
-        protected void gvResultsPagamento_PreRender(object sender, EventArgs e)
-        {
-            if (gvResultsPagamento.Rows.Count > 0)
-            {
-                gvResultsPagamento.UseAccessibleHeader = true;
-                gvResultsPagamento.HeaderRow.TableSection = TableRowSection.TableHeader;
-            }
-        }
-
-        protected void gvResultsProdutos_PreRender(object sender, EventArgs e)
-        {
-            if (gvResultsProdutos.Rows.Count > 0)
-            {
-                gvResultsProdutos.UseAccessibleHeader = true;
-                gvResultsProdutos.HeaderRow.TableSection = TableRowSection.TableHeader;
-            }
-        }
     }
 }

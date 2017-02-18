@@ -232,6 +232,8 @@
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="Scripts\select\i18n\pt-BR.js" />
+    <Content Include="UserControl\Caixa\FormFechamentoCaixa.ascx" />
+    <Content Include="UserControl\Clientes\CadastroCliente.ascx" />
     <Content Include="UserControl\Parametros\CadastroCaracteristicaDiversa.ascx" />
     <Content Include="UserControl\Parametros\CadastroCor.ascx" />
     <Content Include="UserControl\Parametros\CadastroDimensoes.ascx" />
@@ -867,6 +869,20 @@
     <Compile Include="Relatorios\RelatorioConsolidadoVendas.aspx.designer.cs">
       <DependentUpon>RelatorioConsolidadoVendas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\Caixa\FormFechamentoCaixa.ascx.cs">
+      <DependentUpon>FormFechamentoCaixa.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Caixa\FormFechamentoCaixa.ascx.designer.cs">
+      <DependentUpon>FormFechamentoCaixa.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Clientes\CadastroCliente.ascx.cs">
+      <DependentUpon>CadastroCliente.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Clientes\CadastroCliente.ascx.designer.cs">
+      <DependentUpon>CadastroCliente.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\Parametros\CadastroCaracteristicaDiversa.ascx.cs">
       <DependentUpon>CadastroCaracteristicaDiversa.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1244,7 +1260,6 @@
   <ItemGroup>
     <Folder Include="Ajax\" />
     <Folder Include="App_Data\" />
-    <Folder Include="UserControl\Clientes\" />
     <Folder Include="UserControl\Fornecedores\" />
     <Folder Include="UserControl\Produtos\" />
     <Folder Include="UserControl\Seguranca\" />

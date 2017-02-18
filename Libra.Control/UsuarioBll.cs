@@ -123,11 +123,15 @@ namespace Libra.Control
                                    where user.ASPNETUSERID == aspNetUserId
                                    select user).SingleOrDefault();
 
+                UNIDADE unidade = (from u in context.UNIDADEs
+                                   where u.UNIDADEID == UnidadeLogada
+                                   select u).SingleOrDefault();
+
 
                 if (usuario != null)
                 {
                     usuarioInfo = SetUsuarioInfo(usuario.USUARIOID, usuario.AspNetUser.UserName, usuario.NOME, usuario.CPF, usuario.TELEFONE,
-                        usuario.SEXO, Convert.ToDateTime(usuario.DATANASCIMENTO), usuario.AspNetUser.Email, usuario.ATIVO, UnidadeLogada, UnidadesId, PerfisId);
+                        usuario.SEXO, Convert.ToDateTime(usuario.DATANASCIMENTO), usuario.AspNetUser.Email, usuario.ATIVO, UnidadeLogada, unidade.APELIDO, UnidadesId, PerfisId);
                 }
 
                 return usuarioInfo;
@@ -148,6 +152,7 @@ namespace Libra.Control
                                            string Email,
                                            bool Ativo,
                                            int UnidadeLogada,
+                                           string UnidadeLogadaDescricao,
                                            List<int> Unidades,
                                            List<int> Perfis)
         {
@@ -163,6 +168,7 @@ namespace Libra.Control
             usuarioInfo.Email = Email;
             usuarioInfo.Ativo = Ativo;
             usuarioInfo.UnidadeLogada = UnidadeLogada;
+            usuarioInfo.UnidadeLogadaDescricao = UnidadeLogadaDescricao;
             usuarioInfo.Unidades = Unidades;
             usuarioInfo.Perfis = Perfis;
 

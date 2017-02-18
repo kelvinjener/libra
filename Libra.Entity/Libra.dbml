@@ -79,9 +79,6 @@
       <Association Name="USUARIO_ESTOQUEPRODUTO1" Member="ESTOQUEPRODUTOs1" ThisKey="USUARIOID" OtherKey="CRIADOPOR" Type="ESTOQUEPRODUTO" />
       <Association Name="USUARIO_ESTOQUEPRODUTO2" Member="ESTOQUEPRODUTOs2" ThisKey="USUARIOID" OtherKey="EXCLUIDOPOR" Type="ESTOQUEPRODUTO" />
       <Association Name="USUARIO_ESTOQUEPRODUTOSHISTORICO" Member="ESTOQUEPRODUTOSHISTORICOs" ThisKey="USUARIOID" OtherKey="ALTERADOPOR" Type="ESTOQUEPRODUTOSHISTORICO" />
-      <Association Name="USUARIO_CLIENTE" Member="CLIENTEs" ThisKey="USUARIOID" OtherKey="ALTERADOPOR" Type="CLIENTE" />
-      <Association Name="USUARIO_CLIENTE1" Member="CLIENTEs1" ThisKey="USUARIOID" OtherKey="CRIADOPOR" Type="CLIENTE" />
-      <Association Name="USUARIO_CLIENTE2" Member="CLIENTEs2" ThisKey="USUARIOID" OtherKey="EXCLUIDOPOR" Type="CLIENTE" />
       <Association Name="USUARIO_VENDA" Member="VENDAs" ThisKey="USUARIOID" OtherKey="ALTERADOPOR" Type="VENDA" />
       <Association Name="USUARIO_VENDA1" Member="VENDAs1" ThisKey="USUARIOID" OtherKey="CRIADOPOR" Type="VENDA" />
       <Association Name="USUARIO_VENDA2" Member="VENDAs2" ThisKey="USUARIOID" OtherKey="EXCLUIDOPOR" Type="VENDA" />
@@ -100,6 +97,9 @@
       <Association Name="USUARIO_CAIXA1" Member="CAIXAs1" ThisKey="USUARIOID" OtherKey="CRIADOPOR" Type="CAIXA" />
       <Association Name="USUARIO_CAIXA2" Member="CAIXAs2" ThisKey="USUARIOID" OtherKey="EXCLUIDOPOR" Type="CAIXA" />
       <Association Name="USUARIO_CAIXA3" Member="CAIXAs3" ThisKey="USUARIOID" OtherKey="USUARIORESPONSAVELID" Type="CAIXA" />
+      <Association Name="USUARIO_CLIENTE" Member="CLIENTEs" ThisKey="USUARIOID" OtherKey="ALTERADOPOR" Type="CLIENTE" />
+      <Association Name="USUARIO_CLIENTE1" Member="CLIENTEs1" ThisKey="USUARIOID" OtherKey="CRIADOPOR" Type="CLIENTE" />
+      <Association Name="USUARIO_CLIENTE2" Member="CLIENTEs2" ThisKey="USUARIOID" OtherKey="EXCLUIDOPOR" Type="CLIENTE" />
       <Association Name="AspNetUser_USUARIO" Member="AspNetUser" ThisKey="ASPNETUSERID" OtherKey="Id" Type="AspNetUser" IsForeignKey="true" />
     </Type>
   </Table>
@@ -377,21 +377,6 @@
       <Association Name="ESTOQUEPRODUTO_ESTOQUEPRODUTOSHISTORICO" Member="ESTOQUEPRODUTO" ThisKey="ESTOQUEID" OtherKey="ESTOQUEID" Type="ESTOQUEPRODUTO" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.CLIENTES" Member="CLIENTEs">
-    <Type Name="CLIENTE">
-      <Column Name="CLIENTEID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CRIADOPOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ALTERADOPOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EXCLUIDOPOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DATACRIACAO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="DATAALTERACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DATAEXCLUSAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="CLIENTE_VENDA" Member="VENDAs" ThisKey="CLIENTEID" OtherKey="CLIENTEID" Type="VENDA" />
-      <Association Name="USUARIO_CLIENTE" Member="USUARIO" ThisKey="ALTERADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
-      <Association Name="USUARIO_CLIENTE1" Member="USUARIO1" ThisKey="CRIADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
-      <Association Name="USUARIO_CLIENTE2" Member="USUARIO2" ThisKey="EXCLUIDOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.VENDAFORMAPAGAMENTOS" Member="VENDAFORMAPAGAMENTOs">
     <Type Name="VENDAFORMAPAGAMENTO">
       <Column Name="FORMAPAGAMENTOID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -424,11 +409,11 @@
       <Association Name="VENDA_VENDAPAGAMENTO" Member="VENDAPAGAMENTOs" ThisKey="VENDAID" OtherKey="VENDAID" Type="VENDAPAGAMENTO" />
       <Association Name="VENDA_VENDAPRODUTO" Member="VENDAPRODUTOs" ThisKey="VENDAID" OtherKey="VENDAID" Type="VENDAPRODUTO" />
       <Association Name="USUARIO_VENDA" Member="USUARIO" ThisKey="ALTERADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
-      <Association Name="CLIENTE_VENDA" Member="CLIENTE" ThisKey="CLIENTEID" OtherKey="CLIENTEID" Type="CLIENTE" IsForeignKey="true" />
       <Association Name="USUARIO_VENDA1" Member="USUARIO1" ThisKey="CRIADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
       <Association Name="USUARIO_VENDA2" Member="USUARIO2" ThisKey="EXCLUIDOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
       <Association Name="UNIDADE_VENDA" Member="UNIDADE" ThisKey="UNIDADEID" OtherKey="UNIDADEID" Type="UNIDADE" IsForeignKey="true" />
       <Association Name="USUARIO_VENDA3" Member="USUARIO3" ThisKey="VENDEDORID" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="CLIENTE_VENDA" Member="CLIENTE" ThisKey="CLIENTEID" OtherKey="CLIENTEID" Type="CLIENTE" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.VENDAPAGAMENTOS" Member="VENDAPAGAMENTOs">
@@ -530,6 +515,35 @@
       <Association Name="USUARIO_CAIXA2" Member="USUARIO2" ThisKey="EXCLUIDOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
       <Association Name="UNIDADE_CAIXA" Member="UNIDADE" ThisKey="UNIDADEID" OtherKey="UNIDADEID" Type="UNIDADE" IsForeignKey="true" />
       <Association Name="USUARIO_CAIXA3" Member="USUARIO3" ThisKey="USUARIORESPONSAVELID" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLIENTES" Member="CLIENTEs">
+    <Type Name="CLIENTE">
+      <Column Name="CLIENTEID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CRIADOPOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ALTERADOPOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXCLUIDOPOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATACRIACAO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DATAALTERACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATAEXCLUSAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NOME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CPF" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="RG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ORGAOEXPEDIDOR" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DATANASCIMENTO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ENDERECO" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NUMEROCOMPLEMENTO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BAIRRO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CIDADE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CEP" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="TELEFONE" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="CELULAR" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="CLIENTE_VENDA" Member="VENDAs" ThisKey="CLIENTEID" OtherKey="CLIENTEID" Type="VENDA" />
+      <Association Name="USUARIO_CLIENTE" Member="USUARIO" ThisKey="ALTERADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="USUARIO_CLIENTE1" Member="USUARIO1" ThisKey="CRIADOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
+      <Association Name="USUARIO_CLIENTE2" Member="USUARIO2" ThisKey="EXCLUIDOPOR" OtherKey="USUARIOID" Type="USUARIO" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

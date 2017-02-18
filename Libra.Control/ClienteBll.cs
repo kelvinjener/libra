@@ -18,7 +18,7 @@ namespace Libra.Control
 
         public List<CLIENTE> GetAllClientes()
         {
-            return dc.CLIENTEs.ToList();
+            return dc.CLIENTEs.OrderBy(c => c.NOME).ToList();
         }
 
         public void Salvar(CLIENTE cliente)

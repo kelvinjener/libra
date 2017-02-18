@@ -11,5 +11,14 @@ namespace Libra.Caixa {
     
     
     public partial class FechamentoCaixa {
+        
+        /// <summary>
+        /// cucFormFechamentoCaixa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Libra.UserControl.Caixa.FormFechamentoCaixa1 cucFormFechamentoCaixa;
     }
 }

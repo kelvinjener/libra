@@ -404,7 +404,15 @@
                 }
             });
 
-
+            var oTableSimple = $('.gvResultsSimple');
+            oTableSimple.prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable({
+                "responsive": true,
+                "bPaginate": false,
+                "bLengthChange": false,
+                "bFilter": false,
+                "bInfo": false,
+                "bAutoWidth": false
+            });
 
             $("tfoot input").keyup(function () {
                 /* Filter on the column based on the index of this element's parent <th> */
@@ -428,10 +436,7 @@
                     this.value = asInitVals[$("tfoot input").index(this)];
                 }
             });
-
-
         });
-
     </script>
 
 </body>
