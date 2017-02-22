@@ -151,7 +151,7 @@ namespace Libra.UserControl.Caixa
                 var valorDebito = caixa.VALORDEBITO == null ? 0 : caixa.VALORDEBITO;
                 var valorSangria = caixa.TOTALSANGRIA == null ? 0 : caixa.TOTALSANGRIA;
                 var valorSuprimento = caixa.TOTALSUPRIMENTOS == null ? 0 : caixa.TOTALSUPRIMENTOS;
-                var valorFechamento = caixa.VALORFECHAMENTO == null ? (valorVendas - (valorSangria + valorSuprimento)) : caixa.VALORFECHAMENTO;
+                var valorFechamento = caixa.VALORFECHAMENTO == null ? (caixa.VALORABERTURA + (valorVendas - (valorSangria + valorSuprimento))) : caixa.VALORFECHAMENTO;
 
                 lbValorTotalVendas.Text = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", valorVendas);
                 lblValorDinheiro.Text = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", valorDinheiro);
@@ -187,10 +187,11 @@ namespace Libra.UserControl.Caixa
                     caixaAberto.DATAALTERACAO = DateTime.Now;
                     caixaAberto.ALTERADOPOR = UsuarioInfo.IdUsuario;
 
+                    var valorAbertura = caixaAberto.VALORABERTURA == null ? 0 : caixaAberto.VALORABERTURA;
                     var valorVendas = caixaAberto.TOTALVENDAS == null ? 0 : caixaAberto.TOTALVENDAS;
                     var valorSangria = caixaAberto.TOTALSANGRIA == null ? 0 : caixaAberto.TOTALSANGRIA;
                     var valorSuprimento = caixaAberto.TOTALSUPRIMENTOS == null ? 0 : caixaAberto.TOTALSUPRIMENTOS;
-                    caixaAberto.VALORFECHAMENTO = valorVendas - (valorSangria + valorSuprimento);
+                    caixaAberto.VALORFECHAMENTO = valorAbertura + (valorVendas - (valorSangria + valorSuprimento));
 
                     caixa = caixaAberto;
 
@@ -207,10 +208,13 @@ namespace Libra.UserControl.Caixa
                         caixa.DATAHORAFECHAMENTO = Convert.ToDateTime(this.lblDataHoraFechamento.Text);
                         caixa.DATAALTERACAO = DateTime.Now;
                         caixa.ALTERADOPOR = UsuarioInfo.IdUsuario;
+
+                        var valorAbertura = caixa.VALORABERTURA == null ? 0 : caixa.VALORABERTURA;
                         var valorVendas = caixa.TOTALVENDAS == null ? 0 : caixa.TOTALVENDAS;
                         var valorSangria = caixa.TOTALSANGRIA == null ? 0 : caixa.TOTALSANGRIA;
                         var valorSuprimento = caixa.TOTALSUPRIMENTOS == null ? 0 : caixa.TOTALSUPRIMENTOS;
-                        caixa.VALORFECHAMENTO = valorVendas - (valorSangria + valorSuprimento);
+                        caixa.VALORFECHAMENTO = valorAbertura + (valorVendas - (valorSangria + valorSuprimento));
+
                         MensagemSucesso = "Caixa fechado com sucesso!";
                         Fechamento = true;
                     }
