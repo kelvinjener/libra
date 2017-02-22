@@ -132,7 +132,7 @@ namespace Libra
                 }
                 else
                 {
-                    var caixa = new CaixaBll().GetCaixaByDateNowAndUnidade(UsuarioInfo.UnidadeLogada);
+                    var caixa = new CaixaBll().GetCaixaAbertoByDateNowAndUnidade(UsuarioInfo.UnidadeLogada);
                     if (caixa != null && caixa.SITUACAO == Convert.ToInt16(EnumUtils.GetValueInt(SituacaoCaixaEnum.Aberto)))
                     {
                         iCaixa.Style.Add("color", "green");
