@@ -29,6 +29,8 @@ namespace Libra
                 {
                     if (Mensagem == "CaixaFechado")
                         MessageBoxAtencao(this.Page, "Não é possível realizar uma venda com o caixa fechado!");
+                    else if (Mensagem == "CaixaDeOutroDiaAberto")
+                        MessageBoxAtencao(this.Page, "Não é possível realizar vendas em caixas abertos em outro dia. Favor realizar o fechamento do caixa, abrir o do dia atual e realizar a venda novamente.");
 
                 }
             }

@@ -852,6 +852,9 @@
     <Compile Include="Caixa\SangriaSuprimentoCaixa.aspx.designer.cs">
       <DependentUpon>SangriaSuprimentoCaixa.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Class\BaseMasterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Class\BaseUserControl.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

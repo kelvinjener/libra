@@ -10,10 +10,11 @@ using Microsoft.AspNet.Identity;
 using Libra.Communs;
 using Libra.Control;
 using Libra.Communs.Enumerators;
+using Libra.Class;
 
 namespace Libra
 {
-    public partial class SiteMaster : MasterPage
+    public partial class SiteMaster : BaseMasterPage
     {
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
@@ -116,22 +117,39 @@ namespace Libra
                 }
 
                 #region Verificação Caixa
-                var caixa = new CaixaBll().GetCaixaByDateNowAndUnidade(UsuarioInfo.UnidadeLogada);
-                if (caixa != null && caixa.SITUACAO == Convert.ToInt16(EnumUtils.GetValueInt(SituacaoCaixaEnum.Aberto)))
+                var caixaAberto = new CaixaBll().GetCaixaAbertoOutroDiaByUnidade(UsuarioInfo.UnidadeLogada);
+                if (caixaAberto != null)
                 {
                     iCaixa.Style.Add("color", "green");
                     iCaixa.Attributes.Add("title", "Caixa Aberto");
                     liCaixaFechado.Visible = false;
                     liCaixaAberto.Visible = true;
-                    lbHoraAbertura.Text = caixa.DATAHORAABERTURA.ToString();
-                    lbResponsavelCaixa.Text = caixa.USUARIO1.NOME;
+                    lbHoraAbertura.Text = caixaAberto.DATAHORAABERTURA.ToString();
+                    lbResponsavelCaixa.Text = caixaAberto.USUARIO1.NOME;
+
+                    MessageBoxAtencao(this.Page, string.Format("O caixa do dia {0} consta em aberto! Favor realizar o fechamento do caixa.", caixaAberto.DATAHORAABERTURA.ToShortDateString()));
+
                 }
                 else
                 {
-                    iCaixa.Attributes.Add("title", "Caixa Fechado");
-                    iCaixa.Style.Add("color", "red");
-                    liCaixaFechado.Visible = true;
-                    liCaixaAberto.Visible = false;
+                    var caixa = new CaixaBll().GetCaixaByDateNowAndUnidade(UsuarioInfo.UnidadeLogada);
+                    if (caixa != null && caixa.SITUACAO == Convert.ToInt16(EnumUtils.GetValueInt(SituacaoCaixaEnum.Aberto)))
+                    {
+                        iCaixa.Style.Add("color", "green");
+                        iCaixa.Attributes.Add("title", "Caixa Aberto");
+                        liCaixaFechado.Visible = false;
+                        liCaixaAberto.Visible = true;
+                        lbHoraAbertura.Text = caixa.DATAHORAABERTURA.ToString();
+                        lbResponsavelCaixa.Text = caixa.USUARIO1.NOME;
+                    }
+
+                    else
+                    {
+                        iCaixa.Attributes.Add("title", "Caixa Fechado");
+                        iCaixa.Style.Add("color", "red");
+                        liCaixaFechado.Visible = true;
+                        liCaixaAberto.Visible = false;
+                    }
                 }
                 #endregion
             }

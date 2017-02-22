@@ -23,8 +23,14 @@ namespace Libra.Control
 
         public CAIXA GetCaixaAbertoByDateNowAndUnidade(int idUnidade)
         {
-            return dc.CAIXAs.Where(u => u.DATAHORAABERTURA.Date == DateTime.Now.Date && u.SITUACAO == 0 && u.UNIDADEID == idUnidade).FirstOrDefault();
+            return dc.CAIXAs.Where(u => u.DATAHORAABERTURA.Date == DateTime.Now.Date && u.SITUACAO == 1 && u.UNIDADEID == idUnidade).FirstOrDefault();
         }
+
+        public CAIXA GetCaixaAbertoOutroDiaByUnidade(int idUnidade)
+        {
+            return dc.CAIXAs.Where(u => u.DATAHORAABERTURA.Date != DateTime.Now.Date &&  u.SITUACAO ==1 && u.UNIDADEID == idUnidade).FirstOrDefault();
+        }
+
 
         public List<CAIXA> GetAllCaixas()
         {
