@@ -16,6 +16,8 @@ namespace Libra.UserControl.Caixa
     {
         #region Properties
         CaixaBll caixaBll = new CaixaBll();
+        VendaBll vendaBll = new VendaBll();
+        VendaPagamentoBll vendaPagementoBll = new VendaPagamentoBll();
         #endregion
 
         #region Attributes
@@ -145,13 +147,36 @@ namespace Libra.UserControl.Caixa
                 txtValorAbertura.Text = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", caixa.VALORABERTURA).Replace("R$", "");
                 txtValorAbertura.Enabled = false;
 
-                var valorVendas = caixa.TOTALVENDAS == null ? 0 : caixa.TOTALVENDAS;
-                var valorDinheiro = caixa.VALORDINHEIRO == null ? 0 : caixa.VALORDINHEIRO;
-                var valorCredito = caixa.VALORCREDITO == null ? 0 : caixa.VALORCREDITO;
-                var valorDebito = caixa.VALORDEBITO == null ? 0 : caixa.VALORDEBITO;
-                var valorSangria = caixa.TOTALSANGRIA == null ? 0 : caixa.TOTALSANGRIA;
-                var valorSuprimento = caixa.TOTALSUPRIMENTOS == null ? 0 : caixa.TOTALSUPRIMENTOS;
-                var valorFechamento = caixa.VALORFECHAMENTO == null ? (caixa.VALORABERTURA + (valorVendas - (valorSangria + valorSuprimento))) : caixa.VALORFECHAMENTO;
+                decimal valorVendas = 0;
+                decimal valorDinheiro = 0;
+                decimal valorCredito = 0;
+                decimal valorDebito = 0;
+                decimal valorSangria = 0;
+                decimal valorSuprimento = 0;
+                List<VENDA> vendas = vendaBll.GetListVendaByPeriodoCaixa(caixa.DATAHORAABERTURA, caixa.DATAHORAFECHAMENTO);
+
+                foreach (var venda in vendas)
+                {
+                    valorVendas = valorVendas + (decimal)venda.VALORTOTAL;
+
+                    foreach (VENDAPAGAMENTO vp in vendaPagementoBll.GetAllVendaPagamentosByIdVenda(venda.VENDAID))
+                    {
+                        if (vp.FORMAPAGAMENTOID == EnumUtils.GetValueInt(FormaPagamentoEnum.AVista))
+                            valorDinheiro = valorDinheiro + (decimal)vp.VALORTOTAL;
+                        else if (vp.FORMAPAGAMENTOID == EnumUtils.GetValueInt(FormaPagamentoEnum.Debito))
+                            valorDebito = valorDebito + (decimal)vp.VALORTOTAL;
+                        else if (vp.FORMAPAGAMENTOID == EnumUtils.GetValueInt(FormaPagamentoEnum.Credito))
+                            valorCredito = valorCredito + vp.VALORTOTAL;
+                    }
+                }
+
+                valorVendas = caixa.TOTALVENDAS == null ? valorVendas : (decimal)caixa.TOTALVENDAS;
+                valorDinheiro = caixa.VALORDINHEIRO == null ? valorDinheiro : (decimal)caixa.VALORDINHEIRO;
+                valorCredito = caixa.VALORCREDITO == null ? valorCredito : (decimal)caixa.VALORCREDITO;
+                valorDebito = caixa.VALORDEBITO == null ? valorDebito : (decimal)caixa.VALORDEBITO;
+                valorSangria = caixa.TOTALSANGRIA == null ? valorSangria : (decimal)caixa.TOTALSANGRIA;
+                valorSuprimento = caixa.TOTALSUPRIMENTOS == null ? valorSuprimento : (decimal)caixa.TOTALSUPRIMENTOS;
+                decimal valorFechamento = caixa.VALORFECHAMENTO == null ? (caixa.VALORABERTURA + (valorVendas - (valorSangria + valorSuprimento))) : (decimal)caixa.VALORFECHAMENTO;
 
                 lbValorTotalVendas.Text = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", valorVendas);
                 lblValorDinheiro.Text = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", valorDinheiro);

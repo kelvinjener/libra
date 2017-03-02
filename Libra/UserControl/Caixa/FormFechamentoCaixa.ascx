@@ -187,7 +187,7 @@
                 <div class="row">
                     <div class="col-md-offset-8 col-md-2 col-sm-12 col-xs-12" runat="server" id="divBtnFechar">
                         <asp:LinkButton ID="lkbFechar" runat="server" Width="100%"
-                            CssClass="btn btn-default" OnClick="lkbFechar_Click">Fechar</asp:LinkButton>
+                            CssClass="btn btn-default" OnClick="lkbFechar_Click">Cancelar</asp:LinkButton>
                     </div>
                     <div class="col-md-2 col-sm-12 col-xs-12" runat="server" id="divBtnSalvar">
                         <asp:LinkButton runat="server" ID="lkbSalvar" ValidationGroup="G1"

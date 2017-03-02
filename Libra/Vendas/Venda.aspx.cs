@@ -377,7 +377,7 @@ namespace Libra.Vendas
                 VENDAFORMAPAGAMENTO vfp = new VendaFormaPagamentoBll().GetFormaPagamentoById(Convert.ToInt32(ddlFormaPagamento.SelectedValue));
                 if (vfp != null)
                 {
-                    if (vfp.TIPOPAGAMENTO == EnumUtils.GetValueInt(TipoPagamentoEnum.CreditoParcelado))
+                    if (vfp.TIPOPAGAMENTO == EnumUtils.GetValueInt(FormaPagamentoEnum.Credito))
                     {
                         divParcelas.Visible = true;
                         divValorParcelas.Visible = true;

@@ -1,4 +1,5 @@
-﻿using Libra.Entity;
+﻿using Libra.Communs.Enumerators;
+using Libra.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,18 @@ namespace Libra.Control
         public List<VENDA> GetAllVendas()
         {
             return dc.VENDAs.OrderBy(u => u.CODIGOVENDA).ToList();
+        }
+
+        public List<VENDA> GetListVendaByPeriodoCaixa(DateTime dtInicio, DateTime? dtFim)
+        {
+            var result = dc.VENDAs.Where(u => u.SITUACAO == EnumUtils.GetValueInt(SituacaoVendaEnum.Finalizada) && u.DATAALTERACAO >= dtInicio);
+
+            if (dtFim != null)
+                result = result.Where(u => u.DATAALTERACAO <= dtFim);
+            else
+                result = result.Where(u => u.DATAALTERACAO <= DateTime.Now);
+
+            return result.ToList();
         }
 
         public void Salvar(VENDA venda)
