@@ -18,6 +18,7 @@ namespace Libra.UserControl.Caixa
         CaixaBll caixaBll = new CaixaBll();
         VendaBll vendaBll = new VendaBll();
         VendaPagamentoBll vendaPagementoBll = new VendaPagamentoBll();
+        CaixaMovimentacaoBll caixaMovimentacaoBll = new CaixaMovimentacaoBll();
         #endregion
 
         #region Attributes
@@ -41,6 +42,16 @@ namespace Libra.UserControl.Caixa
                             lblTitulo.Text = "FECHAMENTO CAIXA";
                             divFechamento.Visible = true;
                             lkbSalvar.Text = "FECHAR CAIXA";
+
+                            if (caixaAberto.USUARIORESPONSAVELID != UsuarioInfo.IdUsuario)
+                            {
+                                divFechamento.Visible = true;
+                                divBtnSalvar.Visible = false;
+                                divBtnFechar.Attributes["class"] = "col-md-offset-10 col-md-2 col-sm-12 col-xs-12";
+
+                                MessageBoxInfo(this.Page, "Somente o usuário responsável pela abertura, tem permissão de fechar o caixa!");
+                            }
+
                             CarregarDados(caixaAberto.CAIXAID);
                         }
                         else
@@ -51,6 +62,17 @@ namespace Libra.UserControl.Caixa
                                 lblTitulo.Text = "FECHAMENTO CAIXA";
                                 divFechamento.Visible = true;
                                 lkbSalvar.Text = "FECHAR CAIXA";
+
+
+                                if (caixa.USUARIORESPONSAVELID != UsuarioInfo.IdUsuario)
+                                {
+                                    divFechamento.Visible = true;
+                                    divBtnSalvar.Visible = false;
+                                    divBtnFechar.Attributes["class"] = "col-md-offset-10 col-md-2 col-sm-12 col-xs-12";
+
+                                    MessageBoxInfo(this.Page, "Somente o usuário responsável pela abertura, tem permissão de fechar o caixa!");
+                                }
+
                                 CarregarDados(caixa.CAIXAID);
                             }
                             else
@@ -153,7 +175,8 @@ namespace Libra.UserControl.Caixa
                 decimal valorDebito = 0;
                 decimal valorSangria = 0;
                 decimal valorSuprimento = 0;
-                List<VENDA> vendas = vendaBll.GetListVendaByPeriodoCaixa(caixa.DATAHORAABERTURA, caixa.DATAHORAFECHAMENTO);
+
+                List<VENDA> vendas = vendaBll.GetListVendaByPeriodoCaixa(caixa.DATAHORAABERTURA, caixa.DATAHORAFECHAMENTO, UsuarioInfo.UnidadeLogada);
 
                 foreach (var venda in vendas)
                 {
@@ -161,13 +184,23 @@ namespace Libra.UserControl.Caixa
 
                     foreach (VENDAPAGAMENTO vp in vendaPagementoBll.GetAllVendaPagamentosByIdVenda(venda.VENDAID))
                     {
-                        if (vp.FORMAPAGAMENTOID == EnumUtils.GetValueInt(FormaPagamentoEnum.AVista))
+                        if (vp.VENDAFORMAPAGAMENTO.TIPOPAGAMENTO == EnumUtils.GetValueInt(FormaPagamentoEnum.AVista))
                             valorDinheiro = valorDinheiro + (decimal)vp.VALORTOTAL;
-                        else if (vp.FORMAPAGAMENTOID == EnumUtils.GetValueInt(FormaPagamentoEnum.Debito))
+                        else if (vp.VENDAFORMAPAGAMENTO.TIPOPAGAMENTO == EnumUtils.GetValueInt(FormaPagamentoEnum.Debito))
                             valorDebito = valorDebito + (decimal)vp.VALORTOTAL;
-                        else if (vp.FORMAPAGAMENTOID == EnumUtils.GetValueInt(FormaPagamentoEnum.Credito))
+                        else if (vp.VENDAFORMAPAGAMENTO.TIPOPAGAMENTO == EnumUtils.GetValueInt(FormaPagamentoEnum.Credito))
                             valorCredito = valorCredito + vp.VALORTOTAL;
                     }
+                }
+
+                List<CAIXAMOVIMENTACAO> movimentacoes = caixaMovimentacaoBll.GetAllMovimentacaoesCaixaByCaixaId(caixa.CAIXAID, UsuarioInfo.UnidadeLogada);
+
+                foreach (CAIXAMOVIMENTACAO cm in movimentacoes)
+                {
+                    if (cm.TIPOMOVIMENTACAO == EnumUtils.GetValueInt(TipoMovimentacaoEnum.Sangria))
+                        valorSangria = valorSangria + cm.VALOR;
+                    else if (cm.TIPOMOVIMENTACAO == EnumUtils.GetValueInt(TipoMovimentacaoEnum.Suprimento))
+                        valorSuprimento = valorSuprimento + cm.VALOR;
                 }
 
                 valorVendas = caixa.TOTALVENDAS == null ? valorVendas : (decimal)caixa.TOTALVENDAS;
@@ -176,7 +209,7 @@ namespace Libra.UserControl.Caixa
                 valorDebito = caixa.VALORDEBITO == null ? valorDebito : (decimal)caixa.VALORDEBITO;
                 valorSangria = caixa.TOTALSANGRIA == null ? valorSangria : (decimal)caixa.TOTALSANGRIA;
                 valorSuprimento = caixa.TOTALSUPRIMENTOS == null ? valorSuprimento : (decimal)caixa.TOTALSUPRIMENTOS;
-                decimal valorFechamento = caixa.VALORFECHAMENTO == null ? (caixa.VALORABERTURA + (valorVendas - (valorSangria + valorSuprimento))) : (decimal)caixa.VALORFECHAMENTO;
+                decimal valorFechamento = caixa.VALORFECHAMENTO == null ? (caixa.VALORABERTURA + ((valorVendas + valorSuprimento) - valorSangria)) : (decimal)caixa.VALORFECHAMENTO;
 
                 lbValorTotalVendas.Text = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", valorVendas);
                 lblValorDinheiro.Text = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", valorDinheiro);
@@ -212,11 +245,21 @@ namespace Libra.UserControl.Caixa
                     caixaAberto.DATAALTERACAO = DateTime.Now;
                     caixaAberto.ALTERADOPOR = UsuarioInfo.IdUsuario;
 
-                    var valorAbertura = caixaAberto.VALORABERTURA == null ? 0 : caixaAberto.VALORABERTURA;
-                    var valorVendas = caixaAberto.TOTALVENDAS == null ? 0 : caixaAberto.TOTALVENDAS;
-                    var valorSangria = caixaAberto.TOTALSANGRIA == null ? 0 : caixaAberto.TOTALSANGRIA;
-                    var valorSuprimento = caixaAberto.TOTALSUPRIMENTOS == null ? 0 : caixaAberto.TOTALSUPRIMENTOS;
-                    caixaAberto.VALORFECHAMENTO = valorAbertura + (valorVendas - (valorSangria + valorSuprimento));
+                    var valorAbertura = caixaAberto.VALORABERTURA;
+                    var valorVendas = Convert.ToDecimal(ClearCaracter(lbValorTotalVendas.Text, "R$."));
+                    var valorDinheiro = Convert.ToDecimal(ClearCaracter(lblValorDinheiro.Text, "R$."));
+                    var valorDebito = Convert.ToDecimal(ClearCaracter(lblCartaoDebito.Text, "R$."));
+                    var valorCredito = Convert.ToDecimal(ClearCaracter(lblCartaoCredito.Text, "R$."));
+                    var valorSangria = Convert.ToDecimal(ClearCaracter(lblValorSangria.Text, "R$."));
+                    var valorSuprimento = Convert.ToDecimal(ClearCaracter(lblValorSuprimentos.Text, "R$."));
+
+                    caixaAberto.TOTALVENDAS = valorVendas;
+                    caixaAberto.VALORDINHEIRO = valorDinheiro;
+                    caixaAberto.VALORDEBITO = valorDebito;
+                    caixaAberto.VALORCREDITO = valorCredito;
+                    caixaAberto.TOTALSANGRIA = valorSangria;
+                    caixaAberto.TOTALSUPRIMENTOS = valorSuprimento;
+                    caixaAberto.VALORFECHAMENTO = valorAbertura + ((valorVendas + valorSuprimento) - valorSangria);
 
                     caixa = caixaAberto;
 
@@ -234,11 +277,22 @@ namespace Libra.UserControl.Caixa
                         caixa.DATAALTERACAO = DateTime.Now;
                         caixa.ALTERADOPOR = UsuarioInfo.IdUsuario;
 
-                        var valorAbertura = caixa.VALORABERTURA == null ? 0 : caixa.VALORABERTURA;
-                        var valorVendas = caixa.TOTALVENDAS == null ? 0 : caixa.TOTALVENDAS;
-                        var valorSangria = caixa.TOTALSANGRIA == null ? 0 : caixa.TOTALSANGRIA;
-                        var valorSuprimento = caixa.TOTALSUPRIMENTOS == null ? 0 : caixa.TOTALSUPRIMENTOS;
-                        caixa.VALORFECHAMENTO = valorAbertura + (valorVendas - (valorSangria + valorSuprimento));
+
+                        var valorAbertura = caixa.VALORABERTURA;
+                        var valorVendas = Convert.ToDecimal(ClearCaracter(lbValorTotalVendas.Text, "R$."));
+                        var valorDinheiro = Convert.ToDecimal(ClearCaracter(lblValorDinheiro.Text, "R$."));
+                        var valorDebito = Convert.ToDecimal(ClearCaracter(lblCartaoDebito.Text, "R$."));
+                        var valorCredito = Convert.ToDecimal(ClearCaracter(lblCartaoCredito.Text, "R$."));
+                        var valorSangria = Convert.ToDecimal(ClearCaracter(lblValorSangria.Text, "R$."));
+                        var valorSuprimento = Convert.ToDecimal(ClearCaracter(lblValorSuprimentos.Text, "R$."));
+
+                        caixaAberto.TOTALVENDAS = valorVendas;
+                        caixaAberto.VALORDINHEIRO = valorDinheiro;
+                        caixaAberto.VALORDEBITO = valorDebito;
+                        caixaAberto.VALORCREDITO = valorCredito;
+                        caixaAberto.TOTALSANGRIA = valorSangria;
+                        caixaAberto.TOTALSUPRIMENTOS = valorSuprimento;
+                        caixa.VALORFECHAMENTO = valorAbertura + ((valorVendas + valorSuprimento) - valorSangria);
 
                         MensagemSucesso = "Caixa fechado com sucesso!";
                         Fechamento = true;
@@ -278,8 +332,17 @@ namespace Libra.UserControl.Caixa
             }
         }
 
+
         #endregion
 
+        protected void lkbDetalharEntradas_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        protected void lkDetalharMovimentacoes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

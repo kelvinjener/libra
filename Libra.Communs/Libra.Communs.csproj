@@ -55,6 +55,7 @@
     <Compile Include="Enumerators\SituacaoVendaEnum.cs" />
     <Compile Include="Enumerators\TipoLogEnum.cs" />
     <Compile Include="Enumerators\FormaPagamentoEnum.cs" />
+    <Compile Include="Enumerators\TipoMovimentacaoEnum.cs" />
     <Compile Include="Enumerators\TipoUnidadeEnum.cs" />
     <Compile Include="Enumerators\UnidadeFederativaEnum.cs" />
     <Compile Include="Extenso.cs" />

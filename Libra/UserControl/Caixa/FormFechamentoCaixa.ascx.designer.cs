@@ -148,13 +148,13 @@ namespace Libra.UserControl.Caixa {
         protected global::System.Web.UI.WebControls.Label lblValorSuprimentos;
         
         /// <summary>
-        /// lkDetalharSaidas control.
+        /// lkDetalharMovimentacoes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkDetalharSaidas;
+        protected global::System.Web.UI.WebControls.LinkButton lkDetalharMovimentacoes;
         
         /// <summary>
         /// lblValorFechamento control.

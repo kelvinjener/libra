@@ -22,9 +22,9 @@ namespace Libra.Control
             return dc.VENDAs.OrderBy(u => u.CODIGOVENDA).ToList();
         }
 
-        public List<VENDA> GetListVendaByPeriodoCaixa(DateTime dtInicio, DateTime? dtFim)
+        public List<VENDA> GetListVendaByPeriodoCaixa(DateTime dtInicio, DateTime? dtFim, int idUnidade)
         {
-            var result = dc.VENDAs.Where(u => u.SITUACAO == EnumUtils.GetValueInt(SituacaoVendaEnum.Finalizada) && u.DATAALTERACAO >= dtInicio);
+            var result = dc.VENDAs.Where(u => u.SITUACAO == EnumUtils.GetValueInt(SituacaoVendaEnum.Finalizada) && u.DATAALTERACAO >= dtInicio && u.UNIDADEID == idUnidade);
 
             if (dtFim != null)
                 result = result.Where(u => u.DATAALTERACAO <= dtFim);

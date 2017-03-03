@@ -129,7 +129,7 @@
                                 <div class="col-md-3 col-sm-12 col-md-12">
                                     <div>
                                         <asp:LinkButton ID="lkbDetalharEntradas" runat="server" Width="100%"
-                                            CssClass="btn btn-dark" OnClick="lkbFechar_Click">Detalhar Entradas</asp:LinkButton>
+                                            CssClass="btn btn-dark" OnClick="lkbDetalharEntradas_Click">Detalhar Entradas</asp:LinkButton>
                                     </div>
                                 </div>
                             </div>
@@ -154,8 +154,8 @@
 
                                 <div class="col-offset-md-3 col-md-3 col-sm-12 col-md-12">
                                     <div>
-                                        <asp:LinkButton ID="lkDetalharSaidas" runat="server" Width="100%"
-                                            CssClass="btn btn-dark" OnClick="lkbFechar_Click">Detalhar Saídas</asp:LinkButton>
+                                        <asp:LinkButton ID="lkDetalharMovimentacoes" runat="server" Width="100%"
+                                            CssClass="btn btn-dark" OnClick="lkDetalharMovimentacoes_Click">Detalhar Movimentações</asp:LinkButton>
                                     </div>
                                 </div>
                             </div>

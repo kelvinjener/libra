@@ -21,6 +21,11 @@ namespace Libra.Control
             return dc.CAIXAMOVIMENTACAOs.OrderBy(u => u.MOVIMENTACAOCAIXAID).ToList();
         }
 
+        public List<CAIXAMOVIMENTACAO> GetAllMovimentacaoesCaixaByCaixaId(int caixaId, int idUnidade)
+        {
+            return dc.CAIXAMOVIMENTACAOs.Where(u => u.CAIXAID == caixaId && u.UNIDADEID == idUnidade).OrderBy(u => u.MOVIMENTACAOCAIXAID).ToList();
+        }
+
         public List<CAIXAMOVIMENTACAO> GetAllMovimentacaoesCaixasByDate(DateTime dataMovimentacao)
         {
             return dc.CAIXAMOVIMENTACAOs.Where(u => u.DATAHORAMOVIMENTACAO.Date == dataMovimentacao).OrderBy(u => u.MOVIMENTACAOCAIXAID).ToList();
