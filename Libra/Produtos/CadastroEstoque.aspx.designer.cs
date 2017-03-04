@@ -130,6 +130,15 @@ namespace Libra.Produtos {
         protected global::System.Web.UI.WebControls.DropDownList ddlUnidade;
         
         /// <summary>
+        /// rfvUnidade control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvUnidade;
+        
+        /// <summary>
         /// ddlProduto control.
         /// </summary>
         /// <remarks>
@@ -137,6 +146,15 @@ namespace Libra.Produtos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlProduto;
+        
+        /// <summary>
+        /// rfvProduto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvProduto;
         
         /// <summary>
         /// lblCodigoProduto control.
@@ -229,6 +247,15 @@ namespace Libra.Produtos {
         protected global::System.Web.UI.WebControls.TextBox txtValorCusto;
         
         /// <summary>
+        /// rfvValorCusto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvValorCusto;
+        
+        /// <summary>
         /// txtMargemLucro control.
         /// </summary>
         /// <remarks>
@@ -238,6 +265,15 @@ namespace Libra.Produtos {
         protected global::System.Web.UI.WebControls.TextBox txtMargemLucro;
         
         /// <summary>
+        /// tfvMargemLucro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator tfvMargemLucro;
+        
+        /// <summary>
         /// txtValorVenda control.
         /// </summary>
         /// <remarks>
@@ -245,6 +281,15 @@ namespace Libra.Produtos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtValorVenda;
+        
+        /// <summary>
+        /// rfvValorVenda control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvValorVenda;
         
         /// <summary>
         /// lblQtdAtualEstoque control.
@@ -263,6 +308,15 @@ namespace Libra.Produtos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtQuatidadeAddEstoque;
+        
+        /// <summary>
+        /// rfvQtdAddEstoque control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvQtdAddEstoque;
         
         /// <summary>
         /// lblDataUltimaAlteracaoEstoque control.

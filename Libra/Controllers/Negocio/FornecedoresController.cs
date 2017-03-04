@@ -106,12 +106,12 @@ namespace Libra.Controllers.Negocio
             {
                 try
                 {
-                    var r = this.Inserir(ConverterParaEntityModelo(fornecedor));
-                    return Resultado.RetornaSuccessoComCodigo("Fornecedor criado com sucesso!", r.ToString());
+                    var r = this.Inserir(ConverterParaEntidadeModelo(fornecedor));
+                    return Resultado.RetornaSuccessoComCodigo("Fornecedor salvo com sucesso!", r.ToString());
                 }
                 catch (Exception ex)
                 {
-                    return Resultado.RetornaErro("Ocorreu um erro enquanto o sistema tentava criar um fornecedor.", ex);
+                    return Resultado.RetornaErro("Não foi possível salvar o Fornecedor!Verifique os campos informados.", ex);
                 }
             }
             else
@@ -128,7 +128,7 @@ namespace Libra.Controllers.Negocio
             {
                 try
                 {
-                    var r = this.Atualizar(ConverterParaEntityModelo(fornecedor));
+                    var r = this.Atualizar(ConverterParaEntidadeModelo(fornecedor));
                     return Resultado.RetornaSuccessoComCodigo("Fornecedor atualizado com sucesso!", r.ToString());
                 }
                 catch (Exception ex)
@@ -142,11 +142,10 @@ namespace Libra.Controllers.Negocio
             }
         }
 
-        public FORNECEDORE ConverterParaEntityModelo(FornecedoresModel fornecedor)
+        public FORNECEDORE ConverterParaEntidadeModelo(FornecedoresModel fornecedor)
         {
             var entidade = new FORNECEDORE()
             {
-                FORNECEDORID = fornecedor.Id != null ? fornecedor.Id.Value : 1000,
                 TIPOFORNECEDORID = fornecedor.TipoFornecedorId,
                 ORIGEMFORNECEDORID = fornecedor.OrigemFornecedorId,
                 RAZAOSOCIAL = fornecedor.RazaoSocial,
@@ -158,8 +157,16 @@ namespace Libra.Controllers.Negocio
                 INDICADORFABRICANTE = fornecedor.IndicadorFabricante,
                 INDICADORRECEBEREMAIL = fornecedor.IndicadorReceberEmail,
                 RAMOATIVIDADE = fornecedor.RamoAtividade,
-                INFOADICIONAL = fornecedor.InfoAdicional
+                INFOADICIONAL = fornecedor.InfoAdicional,
+                CRIADOPOR = 1,
+                DATACRIACAO = DateTime.Now.Date,
+                ATIVO = true
             };
+
+            if (fornecedor.Id != null)
+            {
+                entidade.FORNECEDORID = fornecedor.Id.Value;
+            }
 
             return entidade;
         }

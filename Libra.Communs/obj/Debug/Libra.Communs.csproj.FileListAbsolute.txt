@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 C:\github\libra\Libra.Communs\bin\Debug\Libra.Communs.dll
 C:\github\libra\Libra.Communs\bin\Debug\Libra.Communs.pdb
 C:\github\libra\Libra.Communs\obj\Debug\Libra.Communs.Resources.EnumLocalization.resources
@@ -6,12 +5,3 @@ C:\github\libra\Libra.Communs\obj\Debug\Libra.Communs.csproj.GenerateResource.Ca
 C:\github\libra\Libra.Communs\obj\Debug\Libra.Communs.dll
 C:\github\libra\Libra.Communs\obj\Debug\Libra.Communs.pdb
 C:\github\libra\Libra.Communs\obj\Debug\Libra.Communs.csprojResolveAssemblyReference.cache
-=======
-C:\github\Libra\Libra.Communs\bin\Debug\Libra.Communs.dll
-C:\github\Libra\Libra.Communs\bin\Debug\Libra.Communs.pdb
-C:\github\Libra\Libra.Communs\obj\Debug\Libra.Communs.Resources.EnumLocalization.resources
-C:\github\Libra\Libra.Communs\obj\Debug\Libra.Communs.csproj.GenerateResource.Cache
-C:\github\Libra\Libra.Communs\obj\Debug\Libra.Communs.dll
-C:\github\Libra\Libra.Communs\obj\Debug\Libra.Communs.pdb
-C:\github\Libra\Libra.Communs\obj\Debug\Libra.Communs.csprojResolveAssemblyReference.cache
->>>>>>> 8d91eb78ba133b80c2722bf4f5edab651ddf6105

@@ -87,13 +87,13 @@
                 <li role="presentation" class="active" runat="server" id="tabFornecedor">
                     <a href="#tab_content_fornecedor" id="fornecedor-tab" role="tab" data-toggle="tab" aria-expanded="true">Fornecedor</a>
                 </li>
-                <li role="presentation" class="" runat="server" id="tabContatos">
+                <li role="presentation" class="hide" runat="server" id="tabContatos">
                     <a href="#tab_content_contatos" id="contatos-tab" role="tab" data-toggle="tab" aria-expanded="true">Contatos</a>
                 </li>
-                <li role="presentation" class="" runat="server" id="tabEnderecos">
+                <li role="presentation" class="hide" runat="server" id="tabEnderecos">
                     <a href="#tab_content_enderecos" id="enderecos-tab" role="tab" data-toggle="tab" aria-expanded="true">Endereços</a>
                 </li>
-                <li role="presentation" class="" runat="server" id="Li1">
+                <li role="presentation" class="hide" runat="server" id="Li1">
                     <a href="#tab_content_produtos" id="produtos-tab" role="tab" data-toggle="tab" aria-expanded="true">Produtos</a>
                 </li>
             </ul>
@@ -127,7 +127,7 @@
                                                 <div>
                                                     <label>
                                                         Origem
-                                            <asp:Label runat="server" ID="Label1" Text="*" CssClass="requerid" />
+                                                        <asp:Label runat="server" ID="Label1" Text="*" CssClass="requerid" />
                                                     </label>
                                                 </div>
                                                 <div>
@@ -349,7 +349,7 @@
                                                     CssClass="btn btn-default" Text="Cancelar" AccessKey="c" />
                                             </div>
                                             <div class="col-md-3 col-sm-3 col-xs-6">
-                                                <asp:Button runat="server" ID="btnSalvar" ValidationGroup="G1" CssClass="btn btn-primary" Width="100%" Text="Salvar" AccessKey="s" />
+                                                <asp:Button runat="server" ID="btnSalvar" ValidationGroup="G1" CssClass="btn btn-primary" Width="100%" Text="Salvar" AccessKey="s" OnClick="btnSalvar_Click" />
                                             </div>
                                         </div>
 
@@ -1130,8 +1130,7 @@
             </div>
         </div>
     </asp:Panel>
-
-    <script type="text/javascript" src="../js/Controllers/FornecedorController.js"></script>
+    <%--<script type="text/javascript" src="../js/Controllers/FornecedorController.js"></script>--%>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScripts" runat="server">
 </asp:Content>

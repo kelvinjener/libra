@@ -58,8 +58,8 @@ body.nav-sm .navbar.nav_title {
 
 
 .labelInfo {
-    color: black !important;
-    font-weight: bold !important;
+    color: #585858 !important;
+    /*font-weight: bold !important;*/
 }
 
 .requerid {
@@ -1333,6 +1333,10 @@ table.tile_info {
         table.tile_info td:first-child {
             width: 83%;
         }
+
+table > tbody > tr {
+    font-size: small;
+}
 
 td span {
     line-height: 28px;
@@ -6559,3 +6563,15 @@ select {
     border-radius: 0px !important;
 }
 
+.select2-container {
+    width: 100% !important;
+}
+
+
+.select2-search__field {
+    width: 98% !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 31px !important;
+}

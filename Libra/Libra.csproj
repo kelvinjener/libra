@@ -224,10 +224,16 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
+    <Content Include="Caixa\SangriaSuprimentoCaixa.aspx" />
+    <Content Include="Relatorios\RelatorioCaixa.aspx" />
+    <Content Include="Relatorios\RelatorioConsolidadoVendas.aspx" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\select\i18n\pt-BR.js" />
+    <Content Include="UserControl\Caixa\FormFechamentoCaixa.ascx" />
+    <Content Include="UserControl\Clientes\CadastroCliente.ascx" />
     <Content Include="UserControl\Parametros\CadastroCaracteristicaDiversa.ascx" />
     <Content Include="UserControl\Parametros\CadastroCor.ascx" />
     <Content Include="UserControl\Parametros\CadastroDimensoes.ascx" />
@@ -379,7 +385,7 @@
     <Content Include="Content\icheck\flat\_all.css" />
     <Content Include="Content\ion.rangeSlider.css" />
     <Content Include="Content\ion.rangeSlider.skinFlat.css" />
-    <Content Include="Vendas\FechamentoCaixa.aspx" />
+    <Content Include="Caixa\FechamentoCaixa.aspx" />
     <Content Include="Forgot.aspx" />
     <Content Include="Fornecedores\CadastroFornecedores.aspx" />
     <Content Include="images\logoMobile.png" />
@@ -819,6 +825,8 @@
     <Content Include="Seguranca\Unidades.aspx" />
     <Content Include="Seguranca\Usuarios.aspx" />
     <Content Include="Vendas\Venda.aspx" />
+    <Content Include="Vendas\VendasAberto.aspx" />
+    <Content Include="Vendas\VendasRealizadas.aspx" />
     <Content Include="ViewSwitcherOLD.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -837,8 +845,43 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caixa\SangriaSuprimentoCaixa.aspx.cs">
+      <DependentUpon>SangriaSuprimentoCaixa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Caixa\SangriaSuprimentoCaixa.aspx.designer.cs">
+      <DependentUpon>SangriaSuprimentoCaixa.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Class\BaseUserControl.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioCaixa.aspx.cs">
+      <DependentUpon>RelatorioCaixa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioCaixa.aspx.designer.cs">
+      <DependentUpon>RelatorioCaixa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioConsolidadoVendas.aspx.cs">
+      <DependentUpon>RelatorioConsolidadoVendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioConsolidadoVendas.aspx.designer.cs">
+      <DependentUpon>RelatorioConsolidadoVendas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Caixa\FormFechamentoCaixa.ascx.cs">
+      <DependentUpon>FormFechamentoCaixa.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Caixa\FormFechamentoCaixa.ascx.designer.cs">
+      <DependentUpon>FormFechamentoCaixa.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Clientes\CadastroCliente.ascx.cs">
+      <DependentUpon>CadastroCliente.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Clientes\CadastroCliente.ascx.designer.cs">
+      <DependentUpon>CadastroCliente.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Parametros\CadastroCaracteristicaDiversa.ascx.cs">
       <DependentUpon>CadastroCaracteristicaDiversa.ascx</DependentUpon>
@@ -917,11 +960,11 @@
     <Compile Include="Controllers\Core\Resultado.cs" />
     <Compile Include="Controllers\Negocio\FornecedoresController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
-    <Compile Include="Vendas\FechamentoCaixa.aspx.cs">
+    <Compile Include="Caixa\FechamentoCaixa.aspx.cs">
       <DependentUpon>FechamentoCaixa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vendas\FechamentoCaixa.aspx.designer.cs">
+    <Compile Include="Caixa\FechamentoCaixa.aspx.designer.cs">
       <DependentUpon>FechamentoCaixa.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forgot.aspx.cs">
@@ -1191,6 +1234,20 @@
     <Compile Include="Vendas\Venda.aspx.designer.cs">
       <DependentUpon>Venda.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vendas\VendasAberto.aspx.cs">
+      <DependentUpon>VendasAberto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendas\VendasAberto.aspx.designer.cs">
+      <DependentUpon>VendasAberto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\VendasRealizadas.aspx.cs">
+      <DependentUpon>VendasRealizadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendas\VendasRealizadas.aspx.designer.cs">
+      <DependentUpon>VendasRealizadas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\ProdutoViewModels.cs" />
     <Compile Include="ViewSwitcherOLD.ascx.cs">
       <DependentUpon>ViewSwitcherOLD.ascx</DependentUpon>
@@ -1203,7 +1260,6 @@
   <ItemGroup>
     <Folder Include="Ajax\" />
     <Folder Include="App_Data\" />
-    <Folder Include="UserControl\Clientes\" />
     <Folder Include="UserControl\Fornecedores\" />
     <Folder Include="UserControl\Produtos\" />
     <Folder Include="UserControl\Seguranca\" />

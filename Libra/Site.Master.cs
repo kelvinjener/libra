@@ -128,6 +128,9 @@ namespace Libra
             #region Menu Pai
             if (new FuncionalidadeBll().ExibeMenuPai(UsuarioInfo.IdUsuario, "Vendas"))
                 Vendas.Visible = true;
+			
+			 if (new FuncionalidadeBll().ExibeMenuPai(UsuarioInfo.IdUsuario, "Caixa"))
+                Caixa.Visible = true;
 
             if (new FuncionalidadeBll().ExibeMenuPai(UsuarioInfo.IdUsuario, "Produtos"))
                 Produtos.Visible = true;
@@ -145,7 +148,8 @@ namespace Libra
                 Relatorios.Visible = true;
 
             if (!Vendas.Visible &&
-                !Produtos.Visible &&
+                !Caixa.Visible &&
+				!Produtos.Visible &&
                 !Logistica.Visible &&
                 !Clientes.Visible &&
                 !Fornecedores.Visible &&
@@ -215,6 +219,14 @@ namespace Libra
                 MenuCliente.Visible = true;
             #endregion
 
+            #region Relatorios
+            if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Relatório Consolidado de Vendas"))
+                MenuRelatorioVendas.Visible = true;
+
+            if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Relatório Caixa"))
+                MenuRelatorioCaixa.Visible = true;
+            #endregion
+
             #region Vendas
             if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Venda"))
                 MenuVenda.Visible = true;
@@ -222,11 +234,24 @@ namespace Libra
             if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Troca e Devolução"))
                 MenuTrocaDecolucao.Visible = true;
 
-            if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Fechamento de Caixa"))
-                MenuFechamentoCaixa.Visible = true;
+            
 
             if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Autorização de Vendas"))
                 MenuAutorizacaoVendas.Visible = true;
+
+            if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Vendas em Aberto"))
+                MenuVendasAberto.Visible = true;
+
+            if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Vendas Realizada"))
+                MenuVendasRealizadas.Visible = true;
+            #endregion
+			
+			 #region Caixa
+            if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Fechamento de Caixa"))
+                MenuFechamentoCaixa.Visible = true;
+
+            if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Sangria/Suprimento de Caixa"))
+                MenuMovimentacaoCaixa.Visible = true;
             #endregion
 
             #endregion

@@ -51,7 +51,10 @@
     <Compile Include="Enumerators\EnumUtils.cs" />
     <Compile Include="Enumerators\EstadoCivilEnum.cs" />
     <Compile Include="Enumerators\SexoEnum.cs" />
+    <Compile Include="Enumerators\SituacaoCaixaEnum.cs" />
+    <Compile Include="Enumerators\SituacaoVendaEnum.cs" />
     <Compile Include="Enumerators\TipoLogEnum.cs" />
+    <Compile Include="Enumerators\TipoPagamentoEnum.cs" />
     <Compile Include="Enumerators\TipoUnidadeEnum.cs" />
     <Compile Include="Enumerators\UnidadeFederativaEnum.cs" />
     <Compile Include="Extenso.cs" />
