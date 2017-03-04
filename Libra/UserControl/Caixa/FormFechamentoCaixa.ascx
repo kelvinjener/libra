@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FormFechamentoCaixa.ascx.cs" Inherits="Libra.UserControl.Caixa.FormFechamentoCaixa1" %>
+<asp:HiddenField ID="hdnCaixaId" runat="server" />
 
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -199,4 +200,79 @@
         </div>
     </div>
 </div>
+<asp:LinkButton ID="lkbOculto" runat="server" Text="" Style="display: none"></asp:LinkButton>
 
+
+<asp:ModalPopupExtender ID="mpeEntradas" TargetControlID="lkbOculto" PopupControlID="pnlEntradas"
+    BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lkCloseEntradas"
+    ClientIDMode="AutoID">
+</asp:ModalPopupExtender>
+<asp:Panel ID="pnlEntradas" runat="server" Style="display: none">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <div class="row">
+                                    <div class="col-md-11 col-sm-11 col-xs-11">
+                                        <h2>Histórico Entradas por Vendas
+                                        </h2>
+                                    </div>
+                                    <div class="col-md-1 col-sm-1 col-xs-1">
+                                        <asp:LinkButton runat="server" ID="lkCloseEntradas" CssClass="right"><i class="fa fa-close"></i></asp:LinkButton>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Panel>
+
+<asp:ModalPopupExtender ID="mpeMovimentacoes" TargetControlID="lkbOculto" PopupControlID="pnlMovimentacoes"
+    BackgroundCssClass="modalBackground" runat="server" Enabled="True" CancelControlID="lkCloseMovimentacoes"
+    ClientIDMode="AutoID">
+</asp:ModalPopupExtender>
+<asp:Panel ID="pnlMovimentacoes" runat="server" Style="display: none">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <div class="row">
+                                    <div class="col-md-11 col-sm-11 col-xs-11">
+                                        <h2>Histórico Movimentações do Caixa
+                                        </h2>
+                                    </div>
+                                    <div class="col-md-1 col-sm-1 col-xs-1">
+                                        <asp:LinkButton runat="server" ID="lkCloseMovimentacoes" CssClass="right"><i class="fa fa-close"></i></asp:LinkButton>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Panel>

@@ -337,12 +337,12 @@ namespace Libra.UserControl.Caixa
 
         protected void lkbDetalharEntradas_Click(object sender, EventArgs e)
         {
-
+            mpeEntradas.Show();
         }
 
         protected void lkDetalharMovimentacoes_Click(object sender, EventArgs e)
         {
-
+            mpeMovimentacoes.Show();
         }
     }
 }

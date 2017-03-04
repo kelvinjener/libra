@@ -13,6 +13,15 @@ namespace Libra.UserControl.Caixa {
     public partial class FormFechamentoCaixa1 {
         
         /// <summary>
+        /// hdnCaixaId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnCaixaId;
+        
+        /// <summary>
         /// lblTitulo control.
         /// </summary>
         /// <remarks>
@@ -209,5 +218,68 @@ namespace Libra.UserControl.Caixa {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lkbSalvar;
+        
+        /// <summary>
+        /// lkbOculto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbOculto;
+        
+        /// <summary>
+        /// mpeEntradas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeEntradas;
+        
+        /// <summary>
+        /// pnlEntradas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlEntradas;
+        
+        /// <summary>
+        /// lkCloseEntradas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkCloseEntradas;
+        
+        /// <summary>
+        /// mpeMovimentacoes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeMovimentacoes;
+        
+        /// <summary>
+        /// pnlMovimentacoes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlMovimentacoes;
+        
+        /// <summary>
+        /// lkCloseMovimentacoes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkCloseMovimentacoes;
     }
 }
