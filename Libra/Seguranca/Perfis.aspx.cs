@@ -575,6 +575,7 @@ namespace Libra.Seguranca
 
             List<FuncionalidadesLista> funionalidades = new FuncionalidadeBll().GetAllListaAtivos();
             cblFuncionalidades.Items.Add(new ListItem());
+            cblFuncionalidades.Items.Add(new ListItem());
 
             foreach (var funionalidade in funionalidades)
                 cblFuncionalidades.Items.Add(new ListItem(funionalidade.Nome, funionalidade.FuncionalidadeId.ToString()));

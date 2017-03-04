@@ -21,11 +21,20 @@ namespace Libra.Control
             return dc.CAIXAs.Where(u => u.DATAHORAABERTURA.Date == DateTime.Now.Date && u.UNIDADEID == idUnidade).FirstOrDefault();
         }
 
+        public CAIXA GetCaixaAbertoByDateNowAndUnidade(int idUnidade)
+        {
+            return dc.CAIXAs.Where(u => u.DATAHORAABERTURA.Date == DateTime.Now.Date && u.SITUACAO == 1 && u.UNIDADEID == idUnidade).FirstOrDefault();
+        }
+
+        public CAIXA GetCaixaAbertoOutroDiaByUnidade(int idUnidade)
+        {
+            return dc.CAIXAs.Where(u => u.DATAHORAABERTURA.Date != DateTime.Now.Date &&  u.SITUACAO ==1 && u.UNIDADEID == idUnidade).FirstOrDefault();
+        }
+
         public List<CAIXA> GetAllCaixas()
         {
             return dc.CAIXAs.OrderBy(u => u.CAIXAID).ToList();
         }
-
 
         public void Salvar(CAIXA caixa)
         {

@@ -561,6 +561,8 @@ namespace Libra.Seguranca
             cblUnidadesFiltro.Items.Clear();
 
             List<UNIDADE> unidades = new UnidadeBll().GetAllUnidades();
+            cblUnidadesFiltro.Items.Add(new ListItem());
+
             foreach (var unidade in unidades)
                 cblUnidadesFiltro.Items.Add(new ListItem(unidade.APELIDO, unidade.UNIDADEID.ToString()));
 
@@ -585,6 +587,7 @@ namespace Libra.Seguranca
             cblUnidades.Items.Clear();
 
             List<UNIDADE> unidades = new UnidadeBll().GetAllUnidadeAtivas();
+            cblUnidades.Items.Add(new ListItem());
             cblUnidades.Items.Add(new ListItem());
 
             foreach (var unidade in unidades)

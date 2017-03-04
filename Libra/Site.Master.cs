@@ -9,10 +9,12 @@ using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Libra.Communs;
 using Libra.Control;
+using Libra.Communs.Enumerators;
+using Libra.Class;
 
 namespace Libra
 {
-    public partial class SiteMaster : MasterPage
+    public partial class SiteMaster : BaseMasterPage
     {
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
@@ -113,6 +115,43 @@ namespace Libra
                 {
                     Response.Redirect(Home + "?AcessoNegado=true");
                 }
+
+                #region Verificação Caixa
+                var caixaAberto = new CaixaBll().GetCaixaAbertoOutroDiaByUnidade(UsuarioInfo.UnidadeLogada);
+                if (caixaAberto != null)
+                {
+                    iCaixa.Style.Add("color", "green");
+                    iCaixa.Attributes.Add("title", "Caixa Aberto");
+                    liCaixaFechado.Visible = false;
+                    liCaixaAberto.Visible = true;
+                    lbHoraAbertura.Text = caixaAberto.DATAHORAABERTURA.ToString();
+                    lbResponsavelCaixa.Text = caixaAberto.USUARIO1.NOME;
+
+                    MessageBoxAtencao(this.Page, string.Format("O caixa do dia {0} consta em aberto! Favor realizar o fechamento do caixa.", caixaAberto.DATAHORAABERTURA.ToShortDateString()));
+
+                }
+                else
+                {
+                    var caixa = new CaixaBll().GetCaixaAbertoByDateNowAndUnidade(UsuarioInfo.UnidadeLogada);
+                    if (caixa != null && caixa.SITUACAO == Convert.ToInt16(EnumUtils.GetValueInt(SituacaoCaixaEnum.Aberto)))
+                    {
+                        iCaixa.Style.Add("color", "green");
+                        iCaixa.Attributes.Add("title", "Caixa Aberto");
+                        liCaixaFechado.Visible = false;
+                        liCaixaAberto.Visible = true;
+                        lbHoraAbertura.Text = caixa.DATAHORAABERTURA.ToString();
+                        lbResponsavelCaixa.Text = caixa.USUARIO1.NOME;
+                    }
+
+                    else
+                    {
+                        iCaixa.Attributes.Add("title", "Caixa Fechado");
+                        iCaixa.Style.Add("color", "red");
+                        liCaixaFechado.Visible = true;
+                        liCaixaAberto.Visible = false;
+                    }
+                }
+                #endregion
             }
 
 
@@ -128,8 +167,8 @@ namespace Libra
             #region Menu Pai
             if (new FuncionalidadeBll().ExibeMenuPai(UsuarioInfo.IdUsuario, "Vendas"))
                 Vendas.Visible = true;
-			
-			 if (new FuncionalidadeBll().ExibeMenuPai(UsuarioInfo.IdUsuario, "Caixa"))
+
+            if (new FuncionalidadeBll().ExibeMenuPai(UsuarioInfo.IdUsuario, "Caixa"))
                 Caixa.Visible = true;
 
             if (new FuncionalidadeBll().ExibeMenuPai(UsuarioInfo.IdUsuario, "Produtos"))
@@ -149,7 +188,7 @@ namespace Libra
 
             if (!Vendas.Visible &&
                 !Caixa.Visible &&
-				!Produtos.Visible &&
+                !Produtos.Visible &&
                 !Logistica.Visible &&
                 !Clientes.Visible &&
                 !Fornecedores.Visible &&
@@ -234,7 +273,7 @@ namespace Libra
             if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Troca e Devolução"))
                 MenuTrocaDecolucao.Visible = true;
 
-            
+
 
             if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Autorização de Vendas"))
                 MenuAutorizacaoVendas.Visible = true;
@@ -245,8 +284,8 @@ namespace Libra
             if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Vendas Realizada"))
                 MenuVendasRealizadas.Visible = true;
             #endregion
-			
-			 #region Caixa
+
+            #region Caixa
             if (new FuncionalidadeBll().ExibeMenu(UsuarioInfo.IdUsuario, "Fechamento de Caixa"))
                 MenuFechamentoCaixa.Visible = true;
 

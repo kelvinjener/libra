@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Libra.SiteMaster" %>
 
 <!DOCTYPE html>
@@ -360,6 +361,319 @@
             });
 
             $(".select2_single").select2({
+=======
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Libra.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %>  | JAF Colchões | Libra</title>
+
+    <asp:PlaceHolder runat="server">
+        <link href="../Content/bootstrap.css" rel="stylesheet" />
+        <link href="../Content/animate.min.css" rel="stylesheet" />
+        <link href="../Content/icheck/flat/green.css" rel="stylesheet" />
+        <link href="../Content/maps/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
+        <link href="../Content/icheck/flat/green.css" rel="stylesheet" />
+        <link href="../Content/floatexamples.css" rel="stylesheet" />
+        <link href="../Content/switchery/switchery.min.css" rel="stylesheet" />
+        <link href="../Content/datatables/tools/css/dataTables.tableTools.css" rel="stylesheet" />
+        <link href="../fonts/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="../Content/custom.css?Version=1.1" rel="stylesheet" />
+        <link href="../Content/select/select2.min.css" rel="stylesheet">
+
+        <script src="../Scripts/jquery-3.1.0.js"></script>
+
+
+        <%--<%: Styles.Render("~/Content/css.*") %>"></script>--%>
+        
+    </asp:PlaceHolder>
+    <%--<webopt:BundleReference runat="server" Path="~/Content/css" />--%>
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body class="nav-md">
+    <form runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True">
+        </asp:ScriptManager>
+        <div class="container body">
+            <div class="main_container">
+                <div class="col-md-3 left_col">
+                    <div class="left_col scroll-view">
+                        <div class="navbar nav_title" style="border: 0;">
+                            <a href="/" class="site_title"></a>
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <br />
+
+                        <!-- sidebar menu -->
+                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                            <div class="menu_section" id="General" runat="server">
+                                <h3>Menu</h3>
+                                <ul class="nav side-menu">
+                                    <li runat="server" id="Vendas" visible="false">
+                                        <a><i class="fa fa-shopping-bag" aria-hidden="true"></i>Vendas <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li runat="server" id="MenuVenda" visible="false"><a runat="server" href="~/Vendas/Venda">Nova Venda</a></li>
+                                            <li runat="server" id="MenuVendasAberto" visible="false"><a runat="server" href="~/Vendas/VendasAberto">Vendas em Aberto</a></li>
+                                            <li runat="server" id="MenuVendasRealizadas" visible="false"><a runat="server" href="~/Vendas/VendasRealizadas">Vendas Realizadas</a></li>
+                                            <li runat="server" id="MenuTrocaDecolucao" visible="false"><a runat="server" href="~/Vendas/TrocaDevolucao">Troca e Devolução</a></li>
+                                            <li runat="server" id="MenuAutorizacaoVendas" visible="false"><a runat="server" href="~/Vendas/AutorizacaoVendas">Autorização de Vendas</a></li>
+                                        </ul>
+                                    </li>
+                                    <li runat="server" id="Caixa" visible="false">
+                                        <a><i class="fa fa-money"></i>Caixa <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li runat="server" id="MenuFechamentoCaixa" visible="false"><a runat="server" href="~/Caixa/FechamentoCaixa">Abertura/Fechamento de Caixa</a></li>
+                                            <li runat="server" id="MenuMovimentacaoCaixa" visible="false"><a runat="server" href="~/Caixa/SangriaSuprimentoCaixa">Sangria/Suprimento de Caixa</a></li>
+                                        </ul>
+                                    </li>
+                                    <li runat="server" id="Produtos" visible="false">
+                                        <a><i class="fa fa-server"></i>Produtos <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li runat="server" id="MenuCadastroProdutos" visible="false"><a runat="server" href="~/Produtos/CadastroProdutos">Cadastro de Produtos</a></li>
+                                            <li runat="server" id="MenuEstoque" visible="false"><a runat="server" href="~/Produtos/CadastroEstoque">Cadastro de Estoque</a></li>
+                                        </ul>
+                                    </li>
+                                    <li runat="server" id="Logistica" visible="false">
+                                        <a><i class="fa fa-truck"></i>Logística <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+                                        </ul>
+                                    </li>
+                                    <li runat="server" id="Clientes" visible="false">
+                                        <a><i class="fa fa-users"></i>Clientes <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li runat="server" id="MenuCliente" visible="false"><a runat="server" href="~/Clientes/CadastroClientes">Cadastro de Clientes</a></li>
+                                        </ul>
+                                    </li>
+                                    <li runat="server" id="Fornecedores" visible="false">
+                                        <a><i class="fa fa-table"></i>Fornecedores <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li runat="server" id="MenuFornecedores" visible="false"><a runat="server" href="~/Fornecedores/CadastroFornecedores">Fornecedores</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li runat="server" id="Relatorios" visible="false">
+                                        <a><i class="fa fa-bar-chart-o"></i>Relatórios <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li runat="server" id="MenuRelatorioCaixa" visible="false"><a runat="server" href="~/Relatorios/RelatorioCaixa">Relatório Caixa</a></li>
+                                            <li runat="server" id="MenuRelatorioVendas" visible="false"><a runat="server" href="~/Relatorios/RelatorioConsolidadoVendas">Relatório Consolidado de Vendas</a></li>
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="menu_section" id="Config" runat="server">
+                                <h3>Configurações do Sistema</h3>
+                                <ul class="nav side-menu">
+                                    <li runat="server" id="Seguranca" visible="false">
+                                        <a><i class="fa fa-lock"></i>Segurança <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li runat="server" id="MenuUsuarios" visible="false"><a runat="server" href="~/Seguranca/Usuarios">Usuários</a></li>
+                                            <li runat="server" id="MenuUnidades" visible="false"><a runat="server" href="~/Seguranca/Unidades">Unidades</a></li>
+                                            <li runat="server" id="MenuPerfis" visible="false"><a runat="server" href="~/Seguranca/Perfis">Perfis</a></li>
+                                        </ul>
+                                    </li>
+                                    <li runat="server" id="Parametros" visible="false">
+                                        <a><i class="fa fa-th-large"></i>Parâmetros <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+                                            <li runat="server" id="MenuParametrosProdutos" visible="false"><a runat="server" href="~/Parametros/ParametrosProdutos">Parâmetros de Produtos</a></li>
+                                            <li runat="server" id="MenuParametrosVendas" visible="false"><a runat="server" href="~/Parametros/ParametrosVendas">Parâmetros de Vendas</a></li>
+
+                                        </ul>
+                                    </li>
+
+                                    <%--<li>
+                                        <a><i class="fa fa-bug"></i>Additional Pages <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a><i class="fa fa-windows"></i>Extras <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu" style="display: none">
+                                        </ul>
+                                    </li>--%>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /sidebar menu -->
+                        <!-- /menu footer buttons -->
+
+                        <%--<div class="sidebar-footer hidden-small">
+
+                            <a runat="server" href="~/Account/Manage" title="Manage your account">
+                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                            </a>
+                            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                            </a>
+                            <a data-toggle="tooltip" data-placement="top" title="Lock">
+                                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                            </a>
+                            <asp:LoginStatus CssClass="glyphicon glyphicon-off" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                        </div>--%>
+
+                        <!-- /menu footer buttons -->
+                    </div>
+                </div>
+
+                <!-- top navigation -->
+                <div class="top_nav">
+                    <div class="nav_menu">
+                        <nav class="" role="navigation">
+                            <div class="nav toggle">
+                                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                            </div>
+                            <%--<asp:LoginView runat="server" ViewStateMode="Disabled">
+                                <AnonymousTemplate>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><a runat="server" href="~/Account/Register">Register</a></li>
+                                        <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                    </ul>
+                                </AnonymousTemplate>
+                                <LoggedInTemplate>--%>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="">
+                                    <asp:LinkButton runat="server" ID="LinkUsuarioSuperior" href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <%--<img src="../images/img.jpg" alt="">--%>
+                                        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;
+                                        <label>
+                                            <asp:Label runat="server" ID="nomeUsuarioSuperior"></asp:Label>
+                                            | Unidade:
+                                        <asp:Label runat="server" ID="labelUnidadeLogada"></asp:Label>
+
+                                            <span class="fa fa-angle-down"></span>
+                                        </label>
+                                    </asp:LinkButton>
+                                    <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
+                                        <%--<li>
+                                            <a runat="server" href="~/Account/Manage" title="Manage your account">Manage</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="badge bg-red pull-right">50%</span>
+                                                <span>Settings</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">Help</a>
+                                        </li>--%>
+                                        <li>
+                                            <asp:LoginStatus runat="server" ID="Logout" LogoutAction="Redirect" LogoutText="SAIR" LogoutPageUrl="~/Login" OnLoggingOut="Unnamed_LoggingOut" />
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li role="presentation" class="dropdown">
+                                    <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-money fa-3x" runat="server" id="iCaixa"></i>
+                                    </a>
+                                    <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
+                                        <li runat="server" id="liCaixaFechado">
+                                            <h2>Caixa Fechado!</h2>
+                                        </li>
+                                        <li runat="server" id="liCaixaAberto">
+                                            <h2>Caixa Aberto!</h2>
+
+                                            <span class="message">
+                                                <div>
+                                                    Hora de Abertura:
+                                                    <asp:Label runat="server" ID="lbHoraAbertura" CssClass="labelInfo" Text="18/02/2017 08:00"></asp:Label>
+                                                </div>
+                                                <div>
+                                                    Responsável:
+                                                    <asp:Label runat="server" ID="lbResponsavelCaixa" CssClass="labelInfo"></asp:Label>
+                                                </div>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <%--</LoggedInTemplate>
+                            </asp:LoginView>--%>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- /top navigation -->
+                <!-- page content -->
+                <div class="right_col" role="main" style="min-height: 777px!important">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                    <!-- footer content -->
+                    <%--<footer>
+                        <div class="copyright-info">
+                            <p class="pull-right">
+                                &copy; <%:DateTime.Now.Year %> - JAF Colchões - Libra by <a href="http://mesklar.com.br" target="_blank">MesKLar</a>
+                            </p>
+                        </div>
+                    </footer>--%>
+                    <!-- /footer content -->
+                </div>
+
+                <div id="custom_notifications" class="custom-notifications dsp_none">
+                    <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group"></ul>
+                    <div class="clearfix"></div>
+                    <div id="notif-group" class="tabbed_notifications"></div>
+                </div>
+
+                <div style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; filter: alpha(opacity=50); -moz-opacity: 0.5; -khtml-opacity: 0.5; opacity: 0.5; z-index: 10000; text-align: center"
+                    id="OverlayLoading">
+                    <img src="../images/ajax-loader.gif" style="position: absolute; top: 50%; left: 50%;">
+                </div>
+
+            </div>
+        </div>
+
+    </form>
+    <!-- /footer content -->
+    <script type="text/javascript" src="../Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/libs/bootbox-4.2.0.js"></script>
+
+
+    <%--<script type="text/javascript" src="Scripts/progressbar/bootstrap-progressbar.min.js"></script>--%>
+    <script type="text/javascript" src="../Scripts/select/select2.full.js"></script>
+    <script type="text/javascript" src="../Scripts/select/i18n/pt-BR.js"></script>
+    <script type="text/javascript" src="../Scripts/nicescroll/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="../Scripts/icheck/icheck.min.js"></script>
+    <script type="text/javascript" src="../Scripts/moment/moment.min.js"></script>
+    <script type="text/javascript" src="../Scripts/datepicker/daterangepicker.js"></script>
+    <script type="text/javascript" src="../Scripts/flot/jquery.flot.js"></script>
+    <script type="text/javascript" src="../Scripts/flot/date.js"></script>
+    <script type="text/javascript" src="../Scripts/flot/curvedLines.js"></script>
+    <script type="text/javascript" src="../Scripts/notify/pnotify.core.js"></script>
+    <script type="text/javascript" src="../Scripts/notify/pnotify.buttons.js"></script>
+    <script type="text/javascript" src="../Scripts/notify/pnotify.nonblock.js"></script>
+    <script type="text/javascript" src="../Scripts/modernizr-2.8.3.js"></script>
+    <%--<script type="text/javascript" src="Scripts/nprogress.js"></script>--%>
+    <script type="text/javascript" src="../Scripts/switchery/switchery.min.js"></script>
+    <script type="text/javascript" src="../Scripts/datatables/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="../Scripts/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../Scripts/datatables/js/responsive.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../Scripts/datatables/tools/js/dataTables.tableTools.js"></script>
+    <script type="text/javascript" src="../Scripts/custom.js?version=1"></script>
+    <!-- JS UTILS-->
+    <script type="text/javascript" src="../js/libs/Libra.js"></script>
+    <script type="text/javascript" src="../js/libs/Libra.UI.js"></script>
+    <script type="text/javascript" src="../js/Util/ServicesUtility.js"></script>
+    <script type="text/javascript" src="../js/Util/DynamicTable.js"></script>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderScripts" runat="server">
+    </asp:ContentPlaceHolder>
+    <script>
+        //NProgress.done();
+
+        $(document).ready(function () {
+            $('input.tableflat').iCheck({
+                checkboxClass: 'icheckbox_flat-green',
+                radioClass: 'iradio_flat-green'
+            });
+
+            $(".select2_single").select2({
+>>>>>>> 7212a94b9b74a80f0b7b40039c28ac7d9362e1d8
                 placeholder: "Selecione...",
                 allowClear: true,
                 language: 'pt-BR'

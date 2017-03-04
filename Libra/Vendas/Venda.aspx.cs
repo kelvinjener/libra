@@ -56,6 +56,18 @@ namespace Libra.Vendas
         {
             if (!Page.IsPostBack)
             {
+                #region Verificação Caixa
+                var caixaAberto = new CaixaBll().GetCaixaAbertoOutroDiaByUnidade(UsuarioInfo.UnidadeLogada);
+                if (caixaAberto != null)
+                { Response.Redirect("/?M=CaixaDeOutroDiaAberto"); }
+                else { 
+                    var caixa = new CaixaBll().GetCaixaAbertoByDateNowAndUnidade(UsuarioInfo.UnidadeLogada);
+                if (caixa == null || caixa.SITUACAO == Convert.ToInt16(EnumUtils.GetValue(SituacaoCaixaEnum.Fechado)))
+                {
+                    Response.Redirect("/?M=CaixaFechado");
+                }
+                }
+                #endregion
                 CarregarTela();
             }
         }
@@ -365,7 +377,7 @@ namespace Libra.Vendas
                 VENDAFORMAPAGAMENTO vfp = new VendaFormaPagamentoBll().GetFormaPagamentoById(Convert.ToInt32(ddlFormaPagamento.SelectedValue));
                 if (vfp != null)
                 {
-                    if (vfp.TIPOPAGAMENTO == EnumUtils.GetValueInt(TipoPagamentoEnum.CreditoParcelado))
+                    if (vfp.TIPOPAGAMENTO == EnumUtils.GetValueInt(FormaPagamentoEnum.Credito))
                     {
                         divParcelas.Visible = true;
                         divValorParcelas.Visible = true;
