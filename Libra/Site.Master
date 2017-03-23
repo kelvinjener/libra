@@ -1,26 +1,28 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Libra.SiteMaster" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head runat="server">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %>  | JAF Colch√µes | Libra</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <%--<meta name="viewport" content="width=device-width, initial-scale=1.0" />--%>
+    <title><%: Page.Title %>  - Libra for JAF Colchıes</title>
 
     <asp:PlaceHolder runat="server">
-        <link href="../Content/bootstrap.css" rel="stylesheet" />
-        <link href="../Content/animate.min.css" rel="stylesheet" />
-        <link href="../Content/icheck/flat/green.css" rel="stylesheet" />
-        <link href="../Content/maps/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
-        <link href="../Content/icheck/flat/green.css" rel="stylesheet" />
-        <link href="../Content/floatexamples.css" rel="stylesheet" />
-        <link href="../Content/switchery/switchery.min.css" rel="stylesheet" />
-        <link href="../Content/datatables/tools/css/dataTables.tableTools.css" rel="stylesheet" />
-        <link href="../fonts/css/font-awesome.min.css" rel="stylesheet" />
-        <link href="../Content/custom.css?Version=1.1" rel="stylesheet" />
-        <link href="../Content/select/select2.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../Content/bootstrap.css" />
+        <link rel="stylesheet" href="../Content/animate.min.css" />
+        <link rel="stylesheet" href="../Content/icheck/flat/green.css" />
+        <link rel="stylesheet" href="../Content/maps/jquery-jvectormap-2.0.3.css" />
+        <link rel="stylesheet" href="../Content/icheck/flat/green.css" />
+        <link rel="stylesheet" href="../Content/floatexamples.css" />
+        <link rel="stylesheet" href="../Content/switchery/switchery.min.css" />
+        <link rel="stylesheet" href="../Scripts/datatables/css/dataTables.tableTools.min.css" />
+        <link rel="stylesheet" href="../Scripts/datatables/css/dataTables.bootstrap.min.css" />
+        <link rel="stylesheet" href="../Scripts/datatables/css/responsive.bootstrap.min.css" />
+        <link rel="stylesheet" href="../fonts/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="../Content/custom.css?Version=1.1" />
+        <link rel="stylesheet" href="../Content/select/select2.min.css" />
 
-        <script src="../Scripts/jquery-3.1.0.js"></script>
+        <script src="../Scripts/jquery-3.1.1.min.js"></script>
 
 
         <%--<%: Styles.Render("~/Content/css.*") %>"></script>--%>
@@ -58,8 +60,8 @@
                                             <li runat="server" id="MenuVenda" visible="false"><a runat="server" href="~/Vendas/Venda">Nova Venda</a></li>
                                             <li runat="server" id="MenuVendasAberto" visible="false"><a runat="server" href="~/Vendas/VendasAberto">Vendas em Aberto</a></li>
                                             <li runat="server" id="MenuVendasRealizadas" visible="false"><a runat="server" href="~/Vendas/VendasRealizadas">Vendas Realizadas</a></li>
-                                            <li runat="server" id="MenuTrocaDecolucao" visible="false"><a runat="server" href="~/Vendas/TrocaDevolucao">Troca e Devolu√ß√£o</a></li>
-                                            <li runat="server" id="MenuAutorizacaoVendas" visible="false"><a runat="server" href="~/Vendas/AutorizacaoVendas">Autoriza√ß√£o de Vendas</a></li>
+                                            <li runat="server" id="MenuTrocaDecolucao" visible="false"><a runat="server" href="~/Vendas/TrocaDevolucao">Troca e DevoluÁ„o</a></li>
+                                            <li runat="server" id="MenuAutorizacaoVendas" visible="false"><a runat="server" href="~/Vendas/AutorizacaoVendas">AutorizaÁ„o de Vendas</a></li>
                                         </ul>
                                     </li>
                                     <li runat="server" id="Caixa" visible="false">
@@ -77,7 +79,7 @@
                                         </ul>
                                     </li>
                                     <li runat="server" id="Logistica" visible="false">
-                                        <a><i class="fa fa-truck"></i>Log√≠stica <span class="fa fa-chevron-down"></span></a>
+                                        <a><i class="fa fa-truck"></i>LogÌstica <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none">
                                         </ul>
                                     </li>
@@ -95,31 +97,31 @@
                                     </li>
 
                                     <li runat="server" id="Relatorios" visible="false">
-                                        <a><i class="fa fa-bar-chart-o"></i>Relat√≥rios <span class="fa fa-chevron-down"></span></a>
+                                        <a><i class="fa fa-bar-chart-o"></i>RelatÛrios <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none">
-                                            <li runat="server" id="MenuRelatorioCaixa" visible="false"><a runat="server" href="~/Relatorios/RelatorioCaixa">Relat√≥rio Caixa</a></li>
-                                            <li runat="server" id="MenuRelatorioVendas" visible="false"><a runat="server" href="~/Relatorios/RelatorioConsolidadoVendas">Relat√≥rio Consolidado de Vendas</a></li>
+                                            <li runat="server" id="MenuRelatorioCaixa" visible="false"><a runat="server" href="~/Relatorios/RelatorioCaixa">RelatÛrio Caixa</a></li>
+                                            <li runat="server" id="MenuRelatorioVendas" visible="false"><a runat="server" href="~/Relatorios/RelatorioConsolidadoVendas">RelatÛrio Consolidado de Vendas</a></li>
 
                                         </ul>
                                     </li>
                                 </ul>
                             </div>
                             <div class="menu_section" id="Config" runat="server">
-                                <h3>Configura√ß√µes do Sistema</h3>
+                                <h3>ConfiguraÁıes do Sistema</h3>
                                 <ul class="nav side-menu">
                                     <li runat="server" id="Seguranca" visible="false">
-                                        <a><i class="fa fa-lock"></i>Seguran√ßa <span class="fa fa-chevron-down"></span></a>
+                                        <a><i class="fa fa-lock"></i>SeguranÁa <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none">
-                                            <li runat="server" id="MenuUsuarios" visible="false"><a runat="server" href="~/Seguranca/Usuarios">Usu√°rios</a></li>
+                                            <li runat="server" id="MenuUsuarios" visible="false"><a runat="server" href="~/Seguranca/Usuarios">Usu·rios</a></li>
                                             <li runat="server" id="MenuUnidades" visible="false"><a runat="server" href="~/Seguranca/Unidades">Unidades</a></li>
                                             <li runat="server" id="MenuPerfis" visible="false"><a runat="server" href="~/Seguranca/Perfis">Perfis</a></li>
                                         </ul>
                                     </li>
                                     <li runat="server" id="Parametros" visible="false">
-                                        <a><i class="fa fa-th-large"></i>Par√¢metros <span class="fa fa-chevron-down"></span></a>
+                                        <a><i class="fa fa-th-large"></i>Par‚metros <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none">
-                                            <li runat="server" id="MenuParametrosProdutos" visible="false"><a runat="server" href="~/Parametros/ParametrosProdutos">Par√¢metros de Produtos</a></li>
-                                            <li runat="server" id="MenuParametrosVendas" visible="false"><a runat="server" href="~/Parametros/ParametrosVendas">Par√¢metros de Vendas</a></li>
+                                            <li runat="server" id="MenuParametrosProdutos" visible="false"><a runat="server" href="~/Parametros/ParametrosProdutos">Par‚metros de Produtos</a></li>
+                                            <li runat="server" id="MenuParametrosVendas" visible="false"><a runat="server" href="~/Parametros/ParametrosVendas">Par‚metros de Vendas</a></li>
 
                                         </ul>
                                     </li>
@@ -221,7 +223,7 @@
                                                     <asp:Label runat="server" ID="lbHoraAbertura" CssClass="labelInfo" Text="18/02/2017 08:00"></asp:Label>
                                                 </div>
                                                 <div>
-                                                    Respons√°vel:
+                                                    Respons·vel:
                                                     <asp:Label runat="server" ID="lbResponsavelCaixa" CssClass="labelInfo"></asp:Label>
                                                 </div>
                                             </span>
@@ -243,7 +245,7 @@
                     <%--<footer>
                         <div class="copyright-info">
                             <p class="pull-right">
-                                &copy; <%:DateTime.Now.Year %> - JAF Colch√µes - Libra by <a href="http://mesklar.com.br" target="_blank">MesKLar</a>
+                                &copy; <%:DateTime.Now.Year %> - JAF Colchıes - Libra by <a href="http://mesklar.com.br" target="_blank">MesKLar</a>
                             </p>
                         </div>
                     </footer>--%>
@@ -287,9 +289,9 @@
     <%--<script type="text/javascript" src="Scripts/nprogress.js"></script>--%>
     <script type="text/javascript" src="../Scripts/switchery/switchery.min.js"></script>
     <script type="text/javascript" src="../Scripts/datatables/js/jquery.dataTables.js"></script>
-    <script type="text/javascript" src="../Scripts/datatables/js/dataTables.responsive.min.js"></script>
-    <script type="text/javascript" src="../Scripts/datatables/js/responsive.bootstrap.min.js"></script>
-    <script type="text/javascript" src="../Scripts/datatables/tools/js/dataTables.tableTools.js"></script>
+    <script type="text/javascript" src="../scripts/datatables/js/datatables.responsive.min.js"></script>
+    <script type="text/javascript" src="../scripts/datatables/js/responsive.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../scripts/datatables/js/datatables.tabletools.js"></script>
     <script type="text/javascript" src="../Scripts/custom.js?version=1"></script>
     <!-- JS UTILS-->
     <script type="text/javascript" src="../js/libs/Libra.js"></script>
@@ -300,6 +302,7 @@
     <asp:ContentPlaceHolder ID="ContentPlaceHolderScripts" runat="server">
     </asp:ContentPlaceHolder>
     <script>
+        var asInitVals = new Array();
         //NProgress.done();
 
         $(document).ready(function () {
@@ -313,16 +316,13 @@
                 allowClear: true,
                 language: 'pt-BR'
             });
-        });
 
-        var asInitVals = new Array();
-        $(document).ready(function () {
             var oTable = $('.gvResults');
-            oTable.prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable({
+            oTable.prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable({
                 "responsive": true,
                 "language": {
                     "decimal": "",
-                    "emptyTable": "Nenhuma informa√ß√£o encontrada!",
+                    "emptyTable": "Nenhuma informaÁ„o encontrada!",
                     "info": "Exibindo _START_ a _END_ de _TOTAL_ registros",
                     "infoEmpty": "Exibindo 0 a 0 de 0 registros",
                     "infoFiltered": "(Filtrado de total de _MAX_ registros)",
@@ -335,8 +335,8 @@
                     "zeroRecords": "Nenhum registro correspondente encontrado",
                     "paginate": {
                         "first": "Primeiro",
-                        "last": "√öltimo",
-                        "next": "Pr√≥ximo",
+                        "last": "⁄ltimo",
+                        "next": "PrÛximo",
                         "previous": "Anterior"
                     },
                     "aria": {

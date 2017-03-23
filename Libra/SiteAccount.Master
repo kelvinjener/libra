@@ -1,12 +1,12 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteAccount.Master.cs" Inherits="Libra.SiteAccount" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteAccount.Master.cs" Inherits="Libra.SiteAccount" %>
 
 <!DOCTYPE html>
 
 <html lang="en">
 <head runat="server">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %>  | JAF Colchões | Libra</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <%--<meta name="viewport" content="width=device-width, initial-scale=1.0" />--%>
+    <title><%: Page.Title %>  Libra for JAF Colch�es</title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/animate.min.css" rel="stylesheet" />
     <link href="Content/icheck/flat/green.css" rel="stylesheet" />
@@ -30,7 +30,7 @@
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-  
+
 </head>
 <body>
     <form id="form1" runat="server">
