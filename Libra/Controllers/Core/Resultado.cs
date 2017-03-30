@@ -24,7 +24,7 @@ namespace Libra.Controllers.Core
         {
             get
             {
-                return Resultado.RetornaSuccessComCodigo("Operação realizada com sucesso!", "1001");
+                return Resultado.RetornaSuccessoComCodigo("Operação realizada com sucesso!", "1001");
             }
         }
 
@@ -47,7 +47,7 @@ namespace Libra.Controllers.Core
             };
         }
 
-        public static Resultado RetornaSuccessComCodigo(string message, string code)
+        public static Resultado RetornaSuccessoComCodigo(string message, string code)
         {
             return Resultado.RetornaSuccesso(message, code, null);
         }
