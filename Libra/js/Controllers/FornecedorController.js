@@ -14,6 +14,12 @@
 
     loadPage: function () {
         var _this = this;
+
+        $('.add-usuario').click(function () {
+            $('.div-filtro-tabela').hide();
+            $('.tab-panel-fornecedor').show();
+        });
+
         var table = $('.table-fornecedor');
 
         services.runWebMethod('GET', 'CadastroFornecedores.aspx/RetornaFornecedores', {}, function (data) {

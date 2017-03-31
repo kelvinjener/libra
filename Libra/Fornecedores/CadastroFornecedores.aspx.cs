@@ -19,6 +19,13 @@ namespace Libra.Fornecedores
 {
     public partial class CadastroFornecedores : BasePage
     {
+        private FornecedoresController _controller;
+
+        public CadastroFornecedores()
+        {
+            _controller = new FornecedoresController();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             CarregaCRT();
@@ -72,6 +79,47 @@ namespace Libra.Fornecedores
 
             var serializer = new JavaScriptSerializer();
             return serializer.Serialize(r);
+        }
+
+        protected void btnSalvar_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                try
+                {
+                    Resultado r = new Resultado();
+
+                    var entidade = new FornecedoresModel()
+                    {
+                        TipoFornecedorId = chkPessoaFisica.Checked ? 1 : 2,
+                        OrigemFornecedorId = chkNacional.Checked ? 1 : 2,
+                        RazaoSocial = txtRazaoSocial.Text,
+                        NomeFantasia = txtNomeFantasia.Text,
+                        CNPJ = txtCNPJ.Text,
+                        InscricaoEstadual = txtInscricaoEstadual.Text,
+                        InscricaoMunicipal = txtInscricaoMunicipal.Text,
+                        Responsavel = txtResponsavel.Text,
+                        IndicadorFabricante = radioFabricanteSim.Checked ? true : false,
+                        IndicadorReceberEmail = radioReceberEmailSim.Checked ? true : false,
+                        RamoAtividade = txtRamoAtividade.Text,
+                        InfoAdicional = txtInformacaoAdicional.Text
+                    };
+
+                    if (entidade.Id == null)
+                        r = _controller.InserirFornecedor(entidade);
+                    else
+                        r = _controller.AtualizarFornecedor(entidade);
+
+                    if (r.IsError)
+                        this.MessageBoxError(this.Page, r.Message);
+                    else
+                        this.MessageBoxSucesso(this.Page, r.Message);
+                }
+                catch (Exception ex)
+                {
+                    HandlerException(ex);
+                }
+            }
         }
     }
 }
